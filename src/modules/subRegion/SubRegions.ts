@@ -51,7 +51,8 @@ SubRegions.addSubRegion(Region.kanto, new SubRegion('Sevii Islands 4567', KantoS
 
 SubRegions.addSubRegion(Region.johto, new SubRegion('Johto', JohtoSubRegions.Johto));
 
-SubRegions.addSubRegion(Region.hoenn, new SubRegion('Hoenn', HoennSubRegions.Hoenn));
+SubRegions.addSubRegion(Region.hoenn, new SubRegion('Hoenn', HoennSubRegions.Hoenn, undefined, 'Slateport City'));
+SubRegions.addSubRegion(Region.hoenn, new SubRegion('Sevii Islands 4567', HoennSubRegions.Sevii4567, new GymBadgeRequirement(BadgeEnums.Elite_HoennChampion), 'Four Island'));
 
 SubRegions.addSubRegion(Region.sinnoh, new SubRegion('Sinnoh', SinnohSubRegions.Sinnoh));
 

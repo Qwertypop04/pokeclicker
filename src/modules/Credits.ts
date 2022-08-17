@@ -522,6 +522,16 @@ export const SpriteCredits: Credit[] = [
         ],
     },
     {
+        name: 'Someone Soul',
+        link: 'https://discordapp.com/users/824384977633411082/',
+        resources: [
+            'Valencian Butterfree',
+            'Valencian Vileplume',
+            'Valencian Weepinbell',
+        ],
+        // NOTES: Made specifically for Pokeclicker.
+    },
+    {
         name: 'Smogon Sprite Project',
         link: 'https://www.smogon.com/forums/forums/smeargles-laptop.325/',
         resources: [
