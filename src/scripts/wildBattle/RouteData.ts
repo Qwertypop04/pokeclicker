@@ -1081,7 +1081,9 @@ Routes.add(new RegionRoute(
     }),
     [new GymBadgeRequirement(BadgeEnums.Elite_HoennChampion)],
     undefined,
-    GameConstants.HoennSubRegions.Sevii4567
+    GameConstants.HoennSubRegions.Sevii4567,
+    true,
+    900000
 ));
 Routes.add(new RegionRoute(
     'Memorial Pillar', GameConstants.Region.hoenn, 136,
@@ -1090,7 +1092,9 @@ Routes.add(new RegionRoute(
     }),
     [new RouteKillRequirement(10, GameConstants.Region.hoenn, 135)],
     undefined,
-    GameConstants.HoennSubRegions.Sevii4567
+    GameConstants.HoennSubRegions.Sevii4567,
+    true,
+    900000
 ));
 Routes.add(new RegionRoute(
     'Water Labyrinth', GameConstants.Region.hoenn, 137,
@@ -1099,7 +1103,9 @@ Routes.add(new RegionRoute(
     }),
     [new GymBadgeRequirement(BadgeEnums.Elite_HoennChampion)],
     undefined,
-    GameConstants.HoennSubRegions.Sevii4567
+    GameConstants.HoennSubRegions.Sevii4567,
+    true,
+    900000
 ));
 Routes.add(new RegionRoute(
     'Resort Gorgeous', GameConstants.Region.hoenn, 138,
@@ -1108,7 +1114,9 @@ Routes.add(new RegionRoute(
     }),
     [new RouteKillRequirement(10, GameConstants.Region.hoenn, 137)],
     undefined,
-    GameConstants.HoennSubRegions.Sevii4567
+    GameConstants.HoennSubRegions.Sevii4567,
+    true,
+    900000
 ));
 Routes.add(new RegionRoute(
     'Water Path', GameConstants.Region.hoenn, 139,
@@ -1118,7 +1126,9 @@ Routes.add(new RegionRoute(
     }),
     [new GymBadgeRequirement(BadgeEnums.Elite_HoennChampion)],
     undefined,
-    GameConstants.HoennSubRegions.Sevii4567
+    GameConstants.HoennSubRegions.Sevii4567,
+    true,
+    900000
 ));
 Routes.add(new RegionRoute(
     'Green Path', GameConstants.Region.hoenn, 140,
@@ -1127,7 +1137,9 @@ Routes.add(new RegionRoute(
     }),
     [new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Pattern Bush'))],
     undefined,
-    GameConstants.HoennSubRegions.Sevii4567
+    GameConstants.HoennSubRegions.Sevii4567,
+    true,
+    900000
 ));
 Routes.add(new RegionRoute(
     'Outcast Island', GameConstants.Region.hoenn, 141,
@@ -1136,7 +1148,9 @@ Routes.add(new RegionRoute(
     }),
     [new RouteKillRequirement(10, GameConstants.Region.hoenn, 140)],
     undefined,
-    GameConstants.HoennSubRegions.Sevii4567
+    GameConstants.HoennSubRegions.Sevii4567,
+    true,
+    900000
 ));
 Routes.add(new RegionRoute(
     'Ruin Valley', GameConstants.Region.hoenn, 142,
@@ -1146,7 +1160,9 @@ Routes.add(new RegionRoute(
     }),
     [new RouteKillRequirement(10, GameConstants.Region.hoenn, 139)],
     undefined,
-    GameConstants.HoennSubRegions.Sevii4567
+    GameConstants.HoennSubRegions.Sevii4567,
+    true,
+    900000
 ));
 Routes.add(new RegionRoute(
     'Canyon Entrance', GameConstants.Region.hoenn, 143,
@@ -1155,7 +1171,9 @@ Routes.add(new RegionRoute(
     }),
     [new GymBadgeRequirement(BadgeEnums.Elite_HoennChampion)],
     undefined,
-    GameConstants.HoennSubRegions.Sevii4567
+    GameConstants.HoennSubRegions.Sevii4567,
+    true,
+    900000
 ));
 Routes.add(new RegionRoute(
     'Sevault Canyon', GameConstants.Region.hoenn, 144,
@@ -1165,7 +1183,9 @@ Routes.add(new RegionRoute(
     }),
     [new RouteKillRequirement(10, GameConstants.Region.hoenn, 143)],
     undefined,
-    GameConstants.HoennSubRegions.Sevii4567
+    GameConstants.HoennSubRegions.Sevii4567,
+    true,
+    900000
 ));
 Routes.add(new RegionRoute(
     'Valencia Island', GameConstants.Region.hoenn, 145,
@@ -1173,7 +1193,7 @@ Routes.add(new RegionRoute(
         land: ['Valencian Butterfree', 'Valencian Raticate', 'Valencian Vileplume', 'Valencian Paras', 'Valencian Weepinbell', 'Nidoran(M)', 'Nidoran(F)', 'Nidorina'],
         water: ['Gyarados', 'Cloyster', 'Poliwhirl'],
     }),
-    [],
+    [new GymBadgeRequirement(BadgeEnums.Elite_HoennChampion)],
     undefined,
     GameConstants.HoennSubRegions.Sevii4567,
     true,
