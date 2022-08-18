@@ -1643,7 +1643,7 @@ const pokemonList = createPokemonArray(
         'type': [PokemonType.Poison, PokemonType.Ground],
         'levelType': LevelType.mediumslow,
         'exp': 227,
-        'eggCycles': 20,
+        'eggCycles': 45,
         'base': {
             'hitpoints': 81,
             'attack': 102,
@@ -1932,7 +1932,7 @@ const pokemonList = createPokemonArray(
         'type': [PokemonType.Grass, PokemonType.Poison],
         'levelType': LevelType.mediumslow,
         'exp': 221,
-        'eggCycles': 20,
+        'eggCycles': 45,
         'base': {
             'hitpoints': 75,
             'attack': 80,
@@ -3599,7 +3599,7 @@ const pokemonList = createPokemonArray(
         'type': [PokemonType.Grass, PokemonType.Psychic],
         'levelType': LevelType.slow,
         'exp': 186,
-        'eggCycles': 20,
+        'eggCycles': 30,
         'base': {
             'hitpoints': 95,
             'attack': 95,
