@@ -2006,6 +2006,14 @@ TownList['Six Island'] = new Town(
         requirements: [new GymBadgeRequirement(BadgeEnums.Elite_HoennChampion)],
     }
 );
+TownList['Valencia Pokecenter'] = new Town(
+    'Valencia Pokecenter',
+    GameConstants.Region.hoenn,
+    [],
+    {
+        requirements: [],
+    }
+);
 
 //Hoenn Dungeons
 TownList['Petalburg Woods'] = new DungeonTown(
