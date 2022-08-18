@@ -580,7 +580,6 @@ namespace GameConstants {
     }
     declare enum HoennSubRegions {
         Hoenn,
-        Sevii4567,
     }
     declare enum SinnohSubRegions {
         Sinnoh,
