@@ -944,6 +944,7 @@ TownList['Dotted Hole'] = new Town(
     [],
     {
         requirements: [new RouteKillRequirement(10, GameConstants.Region.kanto, 37)],
+        npcs: [SeviiGideon1, SeviiGideon2],
     }
 );
 TownList['Valencia Pokémon Center'] = new Town(
@@ -1103,10 +1104,19 @@ TownList['Pinkan Mountain'] = new DungeonTown(
         new GymBadgeRequirement(BadgeEnums.Elite_OrangeChampion),
     ]
 );
+TownList['Ruby Path'] = new DungeonTown(
+    'Ruby Path',
+    GameConstants.Region.kanto,
+    [new QuestLineStepCompletedRequirement('Celio\'s Errand', 2)],
+    [],
+    [SeviiRuby]
+);
 TownList['Icefall Cave'] = new DungeonTown(
     'Icefall Cave',
     GameConstants.Region.kanto,
-    [new GymBadgeRequirement(BadgeEnums.Elite_HoennChampion)]
+    [new GymBadgeRequirement(BadgeEnums.Elite_HoennChampion)],
+    [],
+    [SeviiLorelei]
 );
 TownList['Lost Cave'] = new DungeonTown(
     'Lost Cave',
