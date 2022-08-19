@@ -979,6 +979,14 @@ export const OrangeGyms = [
     'Supreme Gym Leader Drake',
 ];
 
+export const OrangeGyms = [
+    'Mikan Island',
+    'Navel Island',
+    'Trovita Island',
+    'Kumquat Island',
+    'Supreme Gym Leader Drake',
+];
+
 export const RegionGyms = [
     KantoGyms,
     JohtoGyms,
