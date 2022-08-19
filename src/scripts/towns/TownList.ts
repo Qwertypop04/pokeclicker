@@ -2141,7 +2141,6 @@ TownList['Sealed Chamber'] = new DungeonTown(
     ]
 );
 
-
 //Sinnoh Shops
 const SandgemTownShop = new Shop([
     ItemList.Pokeball,
