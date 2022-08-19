@@ -498,7 +498,7 @@ Routes.add(new RegionRoute(
 Routes.add(new RegionRoute(
     'Pinkan Forest', GameConstants.Region.kanto, 41,
     new RoutePokemon({
-        land: ['Pinkan Caterpie', 'Pinkan Weedle', 'Pinkan Pidgey', 'Pinkan Vileplume', 'Pinkan Paras', 'Pinkan Venonat', 'Pinkan Mankey', 'Pinkan Exeggcute', 'Pinkan Bellsprout'],
+        land: ['Pinkan Caterpie', 'Pinkan Weedle', 'Pinkan Pidgey', 'Pinkan Vileplume', 'Pinkan Paras', 'Pinkan Venonat', 'Pinkan Mankey', 'Pinkan Exeggutor', 'Pinkan Bellsprout'],
     }),
     [
         new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Pattern Bush')),
@@ -508,6 +508,7 @@ Routes.add(new RegionRoute(
     GameConstants.KantoSubRegions.Sevii4567,
     true,
     900000
+));
 Routes.add(new RegionRoute(
     'Pinkan Plains', GameConstants.Region.kanto, 42,
     new RoutePokemon({
