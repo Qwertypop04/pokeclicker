@@ -858,6 +858,14 @@ TownList['Rocket Warehouse'] = new Town(
         ],
     }
 );
+TownList['Rocket Warehouse'] = new Town(
+    'Rocket Warehouse',
+    GameConstants.Region.kanto,
+    [TemporaryBattleList['Sevii Rocket Grunt 3'], TemporaryBattleList['Sevii Rocket Grunt 4'], TemporaryBattleList['Sevii Rocket Grunt 5'], TemporaryBattleList['Sevii Rocket Ariana'], TemporaryBattleList['Sevii Rocket Archer'], TemporaryBattleList['Scientist Gideon']],
+    {
+        requirements: [new RouteKillRequirement(10, GameConstants.Region.kanto, 30)],
+    }
+);
 TownList['Six Island'] = new Town(
     'Six Island',
     GameConstants.Region.kanto,
@@ -928,6 +936,14 @@ TownList['Pummelo Island'] = new Town(
             new GymBadgeRequirement(BadgeEnums.Spike_Shell),
             new GymBadgeRequirement(BadgeEnums.Jade_Star),
         ],
+    }
+);
+TownList['Dotted Hole'] = new Town(
+    'Dotted Hole',
+    GameConstants.Region.kanto,
+    [],
+    {
+        requirements: [new RouteKillRequirement(10, GameConstants.Region.kanto, 37)],
     }
 );
 TownList['Valencia Pokémon Center'] = new Town(
