@@ -1235,7 +1235,7 @@
 
         <!--Valencia Island extension-->
         <%- include('templates/mapRoute',
-        { route: 40, region: 0
+            { route: 40, region: 0
             , width: 1, height: 2
             , x: 3, y: 7
             , noText: true
@@ -1494,6 +1494,40 @@
             { name: "Icefall Cave"
             , x: 41, y: 11
             , width: 3, height: 2
+            })
+        %>
+
+        <!--Lost Cave-->
+        <%- include('templates/mapDungeon',
+            { name: "Lost Cave"
+            , x: 74, y: 17
+            , width: 3, height: 3
+            })
+        %>
+
+        <!--Lost Cave extension-->
+        <%- include('templates/mapDungeon',
+            { name: "Lost Cave"
+            , x: 84, y: 14
+            , width: 3, height: 2
+            , isExtension: true
+            })
+        %>
+
+        <!--Sunburst Island-->
+        <%- include('templates/mapDungeon',
+            { name: "Sunburst Island"
+            , x: 71, y: 41
+            , width: 5, height: 3
+            })
+        %>
+
+        <!--Sunburst Island extension-->
+        <%- include('templates/mapDungeon',
+            { name: "Sunburst Island"
+            , x: 71, y: 44
+            , width: 2, height: 1
+            , isExtension: true
             })
         %>
     </g>
