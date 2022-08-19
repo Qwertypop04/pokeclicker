@@ -952,7 +952,7 @@ TownList['Kumquat Island'] = new Town(
     GameConstants.Region.kanto,
     [],
     {
-        requirements: [new GymBadgeRequirement(BadgeEnums.Elite_HoennChampion)], //TODO: unlock after defeating Four island
+        requirements: [new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Icefall Cave'))],
     }
 );
 TownList['Valencia Pokémon Center'] = new Town(
