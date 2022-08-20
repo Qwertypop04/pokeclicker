@@ -1133,7 +1133,7 @@ TownList['Ruby Path'] = new DungeonTown(
 TownList['Icefall Cave'] = new DungeonTown(
     'Icefall Cave',
     GameConstants.Region.kanto,
-    [new GymBadgeRequirement(BadgeEnums.Elite_HoennChampion)],
+    [new QuestLineStepCompletedRequirement('Celio\'s Errand', 5)],
     [],
     [SeviiLorelei]
 );
