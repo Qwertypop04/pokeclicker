@@ -1512,7 +1512,7 @@ const pokemonList = createPokemonArray(
         },
     },
     {
-        'id': 29.1,
+        'id': 29.01,
         'name': 'Pinkan Nidoran(F)',
         'catchRate': 235,
         'type': [PokemonType.Poison],
@@ -2639,7 +2639,7 @@ const pokemonList = createPokemonArray(
         },
     },
     {
-        'id': 69.1,
+        'id': 69.01,
         'name': 'Pinkan Bellsprout',
         'catchRate': 255,
         'type': [PokemonType.Grass, PokemonType.Poison],
