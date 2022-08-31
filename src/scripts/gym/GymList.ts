@@ -1083,6 +1083,22 @@ GymList['Champion Iris'] = new Champion(
         new GymBadgeRequirement(BadgeEnums.Elite_Caitlin),
     ]
 );
+GymList['Champion Alder'] = new Champion(
+    'Alder',
+    'Champion Alder',
+    [
+        new GymPokemon('Accelgor', 12458300, 75),
+        new GymPokemon('Bouffalant', 12462000, 75),
+        new GymPokemon('Druddigon', 12464000, 75),
+        new GymPokemon('Vanilluxe', 12460250, 75),
+        new GymPokemon('Escavalier', 12470000, 75),
+        new GymPokemon('Volcarona', 14570000, 77),
+    ],
+    BadgeEnums.Elite_UnovaMemoryChampion,
+    96000,
+    'After the battle, a fresh wind blew through my heart... Use the battle with me as a stepping stone and move forward!',
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)]
+);
 
 //Kalos Gyms
 //TODO: Balancing of gym Pokemon HP & rewards.
