@@ -750,6 +750,12 @@ class QuestLineHelper {
         App.game.quests.questLines().push(plasmaUnovaQuestLine);
     }
 
+    public static createBlackWhiteQuestLine() {
+        const blackWhiteQuestLine = new QuestLine('A memory in Black and White', 'Experience N\'s memories of events that took place 2 years ago.');
+
+        App.game.quests.questLines().push(blackWhiteQuestLine);
+    }
+
     // Kalos QuestLines
     public static createDetectivePikachuQuestLine() {
         const detectivePikachuQuestLine = new QuestLine('Detective Pikachu', 'Detective Pikachu\'s partner has gone missing, and he needs your help!', new MultiRequirement([new ObtainedPokemonRequirement(pokemonMap['Detective Pikachu']), new GymBadgeRequirement(BadgeEnums.Bug)]) , GameConstants.BulletinBoards.Kalos);
@@ -1826,6 +1832,7 @@ class QuestLineHelper {
         this.createPinkanThemeparkQuestLine();
         this.createGalacticSinnohQuestLine();
         this.createPlasmaUnovaQuestLine();
+        this.createBlackWhiteQuestline();
         this.createDetectivePikachuQuestLine();
         this.createVivillonQuestLine();
         this.createPrincessDiancieQuestLine();

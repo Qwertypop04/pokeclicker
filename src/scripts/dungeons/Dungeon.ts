@@ -5714,7 +5714,6 @@ dungeonList['Victory Road Unova'] = new Dungeon('Victory Road Unova',
     5003000,
     [
         new DungeonBossPokemon('Golurk', 44000000, 100),
-        new DungeonBossPokemon('Terrakion', 45000000, 100),
         new DungeonBossPokemon('Audino', 45000000, 100),
         new DungeonBossPokemon('Druddigon', 44000000, 100),
     ],
@@ -5859,8 +5858,8 @@ dungeonList['Dragonspiral Tower'] = new Dungeon('Dragonspiral Tower',
     5203000,
     [
         new DungeonBossPokemon('Dragonite', 48000000, 100),
-        new DungeonBossPokemon('Reshiram', 48000000, 100),
-        new DungeonBossPokemon('Zekrom', 50000000, 100),
+        new DungeonBossPokemon('Reshiram', 48000000, 100, {hide: true, requirement: new QuestLineCompletedRequirement('A memory in Black and White')}),
+        new DungeonBossPokemon('Zekrom', 50000000, 100, {hide: true, requirement: new QuestLineCompletedRequirement('A memory in Black and White')}),
     ],
     356500, 7);
 
@@ -6206,6 +6205,167 @@ dungeonList.Dreamyard = new Dungeon('Dreamyard',
         new DungeonBossPokemon('Latios', 48000000, 100),
     ],
     356500, 3);
+
+dungeonList['Cold Storage'] = new Dungeon('Cold Storage',
+    [
+        {pokemon: 'Herdier', options: { weight: 1 }},
+        {pokemon: 'Timburr', options: { weight: 1 }},
+        {pokemon: 'Minccino', options: { weight: 1 }},
+        {pokemon: 'Vanillite', options: { weight: 1 }},
+        new DungeonTrainer('Youngster',
+            [
+                new GymPokemon('Whirlipede', 356500, 24),
+                new GymPokemon('Karrablast', 356500, 24),
+            ], { weight: 0.25 }, 'Kenneth',
+        new DungeonTrainer('Youngster',
+            [
+                new GymPokemon('Joltik', 356500, 24),
+                new GymPokemon('Dwebble', 356500, 24),
+            ], { weight: 0.25 }, 'Albert',
+        new DungeonTrainer('Worker',
+            [
+                new GymPokemon('Pansage', 356500, 24),
+                new GymPokemon('Timburr', 356500, 24),
+            ], { weight: 0.25 }, 'Eddie', '(ice)'),
+        new DungeonTrainer('Worker',
+            [
+                new GymPokemon('Pansear', 356500, 24),
+                new GymPokemon('Timburr', 356500, 24),
+            ], { weight: 0.25 }, 'Victor', '(ice)'),
+        new DungeonTrainer('Worker',
+            [
+                new GymPokemon('Panpour', 356500, 24),
+                new GymPokemon('Timburr', 356500, 24),
+            ], { weight: 0.25 }, 'Glenn', '(ice)'),
+        new DungeonTrainer('Worker',
+            [new GymPokemon('Gurdurr', 356500, 25)], { weight: 1 }, 'Filipe', '(ice)'),
+        new DungeonTrainer('Worker',
+            [
+                new GymPokemon('Vanillite', 356500, 24),
+                new GymPokemon('Timburr', 356500, 24),
+            ], { weight: 0.25 }, 'Patton', '(ice)'),
+    ],
+    {
+        common: [
+            {loot: 'xClick'},
+            {loot: 'Pokeball'},
+        ],
+        rare: [
+            {loot: 'Green Shard'},
+            {loot: 'Blue Shard'},
+        ],
+        epic: [
+            {loot: 'Icicle Plate'},
+        ],
+        legendary: [
+            {loot: 'SmallRestore', weight: 2},
+            {loot: 'Ultraball', weight: 2},
+            {loot: 'Revive', weight: 2},
+            {loot: 'LargeRestore'},
+        ],
+    },
+    5203000,
+    [
+        new DungeonTrainer('Worker',
+            [
+                new GymPokemon('Timburr', 356500, 23),
+                new GymPokemon('Timburr', 356500, 23),
+                new GymPokemon('Vanillite', 356500, 23),
+            ], { weight: 1 }, 'Ryan', '(ice)'),
+    ],
+    356500, 3);
+
+dungeonList['Victory Road Unova Ruins'] = new Dungeon('Victory Road Unova Ruins',
+    [
+        {pokemon: 'Fraxure', options: { weight: 1 }},
+        {pokemon: 'Mienfoo', options: { weight: 1 }},
+        {pokemon: 'Rufflet', options: { weight: 1 }},
+        {pokemon: 'Vullaby', options: { weight: 1 }},
+        {pokemon: 'Boldore', options: { weight: 1 }},
+        {pokemon: 'Woobat', options: { weight: 1 }},
+        {pokemon: 'Basculin (Red-Striped)', options: { weight: 1 }},
+        {pokemon: 'Basculin (Blue-Striped)', options: { weight: 1 }},
+        {pokemon: 'Poliwag', options: { weight: 1 }},
+        {pokemon: 'Poliwhirl', options: { weight: 1 }},
+        new DungeonTrainer('Ace Trainer',
+            [
+                new GymPokemon('Whimsicott', 326500, 45),
+                new GymPokemon('Zebstrika', 326500, 45),
+            ], { weight: 1 }, 'Shanta', '(female)'),
+        new DungeonTrainer('Ace Trainer',
+            [
+                new GymPokemon('Stoutland', 326500, 45),
+                new GymPokemon('Scolipede', 326500, 45),
+            ], { weight: 1 }, 'Dwayne', '(male)'),
+        new DungeonTrainer('Veteran',
+            [
+                new GymPokemon('Beheeyem', 326500, 44),
+                new GymPokemon('Heatmor', 326500, 44),
+                new GymPokemon('Lilligant', 326500, 45),
+            ], { weight: 1 }, 'Tiffany', '(female)'),
+        new DungeonTrainer('Black Belt',
+            [
+                new GymPokemon('Scrafty', 326500, 43),
+                new GymPokemon('Mienfoo', 326500, 43),
+                new GymPokemon('Conkeldurr', 326500, 43),
+            ], { weight: 1 }, 'Tyrone'),
+        new DungeonTrainer('Ace Trainer',
+            [
+                new GymPokemon('Simisage', 326500, 44),
+                new GymPokemon('Simisear', 326500, 44),
+                new GymPokemon('Simipour', 326500, 44),
+            ], { weight: 1 }, 'Cathy', '(female)'),
+        new DungeonTrainer('Doctor',
+            [
+                new GymPokemon('Gothorita', 326500, 43),
+                new GymPokemon('Leavanny', 326500, 43),
+            ], { weight: 1 }, 'Logan',
+        new DungeonTrainer('Ace Trainer',
+            [
+                new GymPokemon('Klang', 326500, 44),
+                new GymPokemon('Darmanitan', 326500, 44),
+                new GymPokemon('Seismitoad', 326500, 44),
+            ], { weight: 1 }, 'David', '(male)'),
+        new DungeonTrainer('Veteran',
+            [
+                new GymPokemon('Gigalith', 326500, 45),
+                new GymPokemon('Eelektross', 326500, 46),
+            ], { weight: 1 }, 'Martell', '(male)'),
+    ],
+    {
+        common: [
+            {loot: 'xClick', weight: 3},
+            {loot: 'xAttack', weight: 3},
+            {loot: 'Zoroark'},
+        ],
+        rare: [
+            {loot: 'Red Shard'},
+            {loot: 'Blue Shard'},
+            {loot: 'Green Shard'},
+            {loot: 'Yellow Shard'},
+        ],
+        epic: [
+            {loot: 'Quickball'},
+            {loot: 'Timerball'},
+            {loot: 'Duskball'},
+            {loot: 'Nestball'},
+            {loot: 'Repeatball'},
+        ],
+        legendary: [
+            {loot: 'Ultraball'},
+            {loot: 'Star Piece'},
+            {loot: 'LargeRestore'},
+        ],
+        mythic: [{loot: 'Max Revive'}],
+    },
+    5003000,
+    [
+        new DungeonBossPokemon('Excadrill', 44000000, 100),
+        new DungeonBossPokemon('Heatmor', 44000000, 100),
+        new DungeonBossPokemon('Durant', 44000000, 100),
+        new DungeonBossPokemon('Terrakion', 45000000, 100),
+    ],
+    326500, 10);
 
 dungeonList['P2 Laboratory'] = new Dungeon('P2 Laboratory',
     ['Scyther', 'Electrode', 'Pineco', 'Forretress', 'Metang', 'Ferroseed', 'Ferrothorn'],

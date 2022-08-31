@@ -1502,6 +1502,14 @@ Routes.add(new RegionRoute(
     [new RouteKillRequirement(10, GameConstants.Region.unova, 17)],
     23.5
 ));
+Routes.add(new RegionRoute(
+    'Unova Route 10', GameConstants.Region.unova, 10,
+    new RoutePokemon({
+        land: ['Herdier', 'Foongus', 'Bouffalant'. 'Rufflet', 'Vullaby', 'Amoonguss'],
+    }),
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    23.6
+));
 
 /*
 KALOS

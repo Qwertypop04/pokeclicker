@@ -3127,6 +3127,14 @@ TownList['Pokémon League Unova'] = new Town(
         ],
     }
 );
+TownList['N\'s Castle'] = new Town(
+    'N\'s Castle',
+    GameConstants.Region.unova,
+    [],
+    {
+        requirements: [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    }
+);
 
 //Unova Dungeons
 TownList['Pledge Grove'] = new DungeonTown(
@@ -3282,6 +3290,16 @@ TownList.Dreamyard = new DungeonTown(
     'Dreamyard',
     GameConstants.Region.unova,
     [new RouteKillRequirement(10, GameConstants.Region.unova, 3)]
+);
+TownList['Cold Storage'] = new DungeonTown(
+    'Cold Storage',
+    GameConstants.Region.unova,
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)]
+);
+TownList['Victory Road Unova Ruins'] = new DungeonTown(
+    'Victory Road Unova Ruins',
+    GameConstants.Region.unova,
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)]
 );
 TownList['P2 Laboratory'] = new DungeonTown(
     'P2 Laboratory',
