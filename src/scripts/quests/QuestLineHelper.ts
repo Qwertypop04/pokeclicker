@@ -751,7 +751,7 @@ class QuestLineHelper {
     }
 
     public static createBlackWhiteQuestLine() {
-        const blackWhiteQuestLine = new QuestLine('A memory in Black and White', 'Experience N\'s memories of events that took place 2 years ago.');
+        const blackWhiteQuestLine = new QuestLine('A memory in Black and White', 'Experience N\'s memories of events that took place 2 years ago.', new MultiRequirement([new GymBadgeRequirement(BadgeEnums.Elite_UnovaChampion), new RouteKillRequirement(10, GameConstants.Region.unova, 1)]) , GameConstants.BulletinBoards.Unova);
 
         App.game.quests.questLines().push(blackWhiteQuestLine);
     }

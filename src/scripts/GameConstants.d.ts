@@ -398,6 +398,7 @@ namespace GameConstants {
         Johto,
         Hoenn,
         Sevii4567,
+        Unova,
         Kalos,
         Alola,
         Galar,
