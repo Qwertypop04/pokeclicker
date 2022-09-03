@@ -6206,6 +6206,79 @@ dungeonList.Dreamyard = new Dungeon('Dreamyard',
     ],
     356500, 3);
 
+dungeonList['Wellspring Cave'] = new Dungeon('Wellspring Cave',
+    [
+        {pokemon: 'Boldore', options: { weight: 1 }},
+        {pokemon: 'Woobat', options: { weight: 1 }},
+        {pokemon: 'Basculin (Red-Striped)', options: { weight: 1 }},
+        {pokemon: 'Basculin (Blue-Striped)', options: { weight: 1 }},
+        {pokemon: 'Poliwag', options: { weight: 1 }},
+        new DungeonTrainer('Black Belt',
+            [
+                new GymPokemon('Throh', 356500, 62),
+                new GymPokemon('Machamp', 356500, 62),
+                new GymPokemon('Hitmontop', 356500, 62),
+            ], { weight: 0.21 }, 'Edward',
+        new DungeonTrainer('Battle Girl',
+            [
+                new GymPokemon('Medicham', 356500, 62),
+                new GymPokemon('Mienshao', 356500, 62),
+                new GymPokemon('Hitmonlee', 356500, 62),
+            ], { weight: 0.21 }, 'Maggie',
+        new DungeonTrainer('Battle Girl',
+            [
+                new GymPokemon('Primeape', 356500, 62),
+                new GymPokemon('Scrafty', 356500, 62),
+                new GymPokemon('Hitmonchan', 356500, 62),
+            ], { weight: 0.21 }, 'Xiao',
+        new DungeonTrainer('Hiker',
+            [
+                new GymPokemon('Hippowdon', 356500, 61),
+                new GymPokemon('Marowak', 356500, 61),
+                new GymPokemon('Rhydon', 356500, 61),
+            ], { weight: 0.21 }, 'Zaiem',
+        new DungeonTrainer('Black Belt',
+            [
+                new GymPokemon('Sawk', 356500, 62),
+                new GymPokemon('Conkeldurr', 356500, 62),
+                new GymPokemon('Breloom', 356500, 62),
+            ], { weight: 0.21 }, 'Thomas'),
+        new DungeonTrainer('Veteran',
+            [
+                new GymPokemon('Gyarados', 356500, 62),
+                new GymPokemon('Snorlax', 356500, 62),
+                new GymPokemon('Crobat', 356500, 62),
+                new GymPokemon('Druddigon', 356500, 62),
+                new GymPokemon('Excadrill', 356500, 62),
+                new GymPokemon('Gigalith', 356500, 62),
+            ], { weight: 0.21 }, 'Shaun', '(male)'),
+    ],
+    {
+        common: [
+            {loot: 'xClick'},
+            {loot: 'Pokeball'},
+        ],
+        rare: [
+            {loot: 'Green Shard'},
+            {loot: 'Blue Shard'},
+        ],
+        epic: [
+            {loot: 'Icicle Plate'},
+        ],
+        legendary: [
+            {loot: 'SmallRestore', weight: 2},
+            {loot: 'Ultraball', weight: 2},
+            {loot: 'Revive', weight: 2},
+            {loot: 'LargeRestore'},
+        ],
+    },
+    5203000,
+    [
+        new DungeonTrainer('Team Plasma Grunt',
+            [new GymPokemon('Patrat', 356500, 12)], { weight: 1 }, undefined, '(memory male)'),
+    ],
+    356500, 3);
+
 dungeonList['Cold Storage'] = new Dungeon('Cold Storage',
     [
         {pokemon: 'Herdier', options: { weight: 1 }},

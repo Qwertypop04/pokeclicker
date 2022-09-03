@@ -2913,7 +2913,7 @@ TownList['Virbank City'] = new Town(
 TownList['Castelia City'] = new Town(
     'Castelia City',
     GameConstants.Region.unova,
-    [CasteliaCityShop, new ShardTraderShop(GameConstants.ShardTraderLocations['Castelia City']), new MoveToDungeon(dungeonList['Castelia Sewers'])],
+    [TemporaryBattleList['Memory Team Plasma Grunt 5'], TemporaryBattleList['Burgh'], CasteliaCityShop, new ShardTraderShop(GameConstants.ShardTraderLocations['Castelia City']), new MoveToDungeon(dungeonList['Castelia Sewers'])],
     {
         requirements: [new GymBadgeRequirement(BadgeEnums.Toxic)],
         npcs: [CasteliaMusician],
@@ -2935,7 +2935,7 @@ TownList['A Perfectly Ordinary Frigate'] = new Town(
 TownList['Nimbasa City'] = new Town(
     'Nimbasa City',
     GameConstants.Region.unova,
-    [NimbasaCityShop, new ShardTraderShop(GameConstants.ShardTraderLocations['Nimbasa City']), TemporaryBattleList['Team Plasma Grunt 2'], TemporaryBattleList['Team Plasma Grunt 3']],
+    [TemporaryBattleList['Memory Team Plasma Grunt 6'], TemporaryBattleList['Elesa'], NimbasaCityShop, new ShardTraderShop(GameConstants.ShardTraderLocations['Nimbasa City']), TemporaryBattleList['Team Plasma Grunt 2'], TemporaryBattleList['Team Plasma Grunt 3']],
     {
         requirements: [
             new RouteKillRequirement(10, GameConstants.Region.unova, 4),
@@ -2948,7 +2948,7 @@ TownList['Nimbasa City'] = new Town(
 TownList['Driftveil City'] = new Town(
     'Driftveil City',
     GameConstants.Region.unova,
-    [DriftveilCityShop, new ShardTraderShop(GameConstants.ShardTraderLocations['Driftveil City'])],
+    [TemporaryBattleList['Clay'], DriftveilCityShop, new ShardTraderShop(GameConstants.ShardTraderLocations['Driftveil City'])],
     {
         requirements: [
             new RouteKillRequirement(10, GameConstants.Region.unova,5),
@@ -2973,7 +2973,7 @@ TownList['A Totally Unsuspicious Frigate'] = new Town(
 TownList['Mistralton City'] = new Town(
     'Mistralton City',
     GameConstants.Region.unova,
-    [MistraltonCityShop, new ShardTraderShop(GameConstants.ShardTraderLocations['Mistralton City'])],
+    [TemporaryBattleList['Skyla'], MistraltonCityShop, new ShardTraderShop(GameConstants.ShardTraderLocations['Mistralton City'])],
     {
         requirements: [
             new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Chargestone Cave')),
@@ -3012,7 +3012,7 @@ TownList['Lacunosa Town'] = new Town(
 TownList['Opelucid City'] = new Town(
     'Opelucid City',
     GameConstants.Region.unova,
-    [OpelucidCityShop, new ShardTraderShop(GameConstants.ShardTraderLocations['Opelucid City'])],
+    [TemporaryBattleList['Iris'], OpelucidCityShop, new ShardTraderShop(GameConstants.ShardTraderLocations['Opelucid City'])],
     {
         requirements: [new RouteKillRequirement(10, GameConstants.Region.unova, 11)],
     }
@@ -3046,18 +3046,6 @@ TownList['Humilau City'] = new Town(
         npcs: [ExcitedChild],
     }
 );
-TownList['Icirrus City'] = new Town(
-    'Icirrus City',
-    GameConstants.Region.unova,
-    [IcirrusCityShop, new ShardTraderShop(GameConstants.ShardTraderLocations['Icirrus City'])],
-    {
-        requirements: [new OneFromManyRequirement([
-            new RouteKillRequirement(10, GameConstants.Region.unova, 8),
-            new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Twist Mountain')),
-        ])],
-        npcs: [IcirrusFanClubChairman],
-    }
-);
 TownList['Black and White Park'] = new Town(
     'Black and White Park',
     GameConstants.Region.unova,
@@ -3072,20 +3060,13 @@ TownList['Black and White Park'] = new Town(
         ])],
     }
 );
-TownList['Nacrene City'] = new Town(
-    'Nacrene City',
+TownList['Nuvema Town'] = new Town(
+    'Nuvema Town',
     GameConstants.Region.unova,
-    [NacreneCityShop, new ShardTraderShop(GameConstants.ShardTraderLocations['Nacrene City'])],
+    [TemporaryBattleList['Bianca 6'], NuvemaTownShop, new ShardTraderShop(GameConstants.ShardTraderLocations['Nuvema Town']), TemporaryBattleList['Lab Ambush']],
     {
-        requirements: [new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Pinwheel Forest'))],
-    }
-);
-TownList['Striaton City'] = new Town(
-    'Striaton City',
-    GameConstants.Region.unova,
-    [StriatonCityShop, new ShardTraderShop(GameConstants.ShardTraderLocations['Striaton City'])],
-    {
-        requirements: [new RouteKillRequirement(10, GameConstants.Region.unova, 3)],
+        requirements: [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+        npcs: [ProfJuniper, UnovaRoamerNPC],
     }
 );
 TownList['Accumula Town'] = new Town(
@@ -3093,16 +3074,32 @@ TownList['Accumula Town'] = new Town(
     GameConstants.Region.unova,
     [AccumulaTownShop, new ShardTraderShop(GameConstants.ShardTraderLocations['Accumula Town'])],
     {
+        requirements: [new RouteKillRequirement(10, GameConstants.Region.unova, 1)],
+    }
+);
+TownList['Striaton City'] = new Town(
+    'Striaton City',
+    GameConstants.Region.unova,
+    [TemporaryBattleList['Cilan'], TemporaryBattleList['Chili'], TemporaryBattleList['Cress'], StriatonCityShop, new ShardTraderShop(GameConstants.ShardTraderLocations['Striaton City'])],
+    {
         requirements: [new RouteKillRequirement(10, GameConstants.Region.unova, 2)],
     }
 );
-TownList['Nuvema Town'] = new Town(
-    'Nuvema Town',
+TownList['Nacrene City'] = new Town(
+    'Nacrene City',
     GameConstants.Region.unova,
-    [NuvemaTownShop, new ShardTraderShop(GameConstants.ShardTraderLocations['Nuvema Town']), TemporaryBattleList['Lab Ambush']],
+    [TemporaryBattleList['Lenora'], NacreneCityShop, new ShardTraderShop(GameConstants.ShardTraderLocations['Nacrene City'])],
     {
-        requirements: [new RouteKillRequirement(10, GameConstants.Region.unova, 1)],
-        npcs: [ProfJuniper, UnovaRoamerNPC],
+        requirements: [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    }
+);
+TownList['Icirrus City'] = new Town(
+    'Icirrus City',
+    GameConstants.Region.unova,
+    [TemporaryBattleList['Brycen'], IcirrusCityShop, new ShardTraderShop(GameConstants.ShardTraderLocations['Icirrus City'])],
+    {
+        requirements: [new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Twist Mountain'))],
+        npcs: [IcirrusFanClubChairman],
     }
 );
 TownList['Anville Town'] = new Town(
@@ -3119,7 +3116,7 @@ TownList['Anville Town'] = new Town(
 TownList['Pokémon League Unova'] = new Town(
     'Pokémon League Unova',
     GameConstants.Region.unova,
-    [GymList['Elite Shauntal'], GymList['Elite Marshal'], GymList['Elite Grimsley'], GymList['Elite Caitlin'], GymList['Champion Iris'], pokeLeagueShop()],
+    [TemporaryBattleList['Shauntal'], TemporaryBattleList['Marshal'], TemporaryBattleList['Grimsley'], TemporaryBattleList['Caitlin'], GymList['Elite Shauntal'], GymList['Elite Marshal'], GymList['Elite Grimsley'], GymList['Elite Caitlin'], GymList['Champion Iris'], GymList['Champion Alder'], pokeLeagueShop()],
     {
         requirements: [
             new RouteKillRequirement(10, GameConstants.Region.unova, 23),
@@ -3130,7 +3127,7 @@ TownList['Pokémon League Unova'] = new Town(
 TownList['N\'s Castle'] = new Town(
     'N\'s Castle',
     GameConstants.Region.unova,
-    [],
+    [TemporaryBattleList['Reshiram'], TemporaryBattleList['Zekrom'], TemporaryBattleList['N Black'], TemporaryBattleList['N White'], TemporaryBattleList['Ghetsis 3'], TemporaryBattleList['N Black 2'], TemporaryBattleList['N White 2']],
     {
         requirements: [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
     }
@@ -3173,7 +3170,7 @@ TownList['Relic Castle'] = new DungeonTown(
     'Relic Castle',
     GameConstants.Region.unova,
     [new RouteKillRequirement(10, GameConstants.Region.unova, 25)],
-    [],
+    [TemporaryBattleList['Memory Team Plasma Grunt 17'], TemporaryBattleList['Memory Team Plasma Grunt 18'], TemporaryBattleList['Memory Team Plasma Grunts 8'], TemporaryBattleList['Memory Team Plasma Grunt 19'], TemporaryBattleList['Memory Team Plasma Grunts 9']],
     [RelicCastleRuinmaniac]
 );
 TownList['Lostlorn Forest'] = new DungeonTown(
@@ -3184,7 +3181,8 @@ TownList['Lostlorn Forest'] = new DungeonTown(
 TownList['Chargestone Cave'] = new DungeonTown(
     'Chargestone Cave',
     GameConstants.Region.unova,
-    [new RouteKillRequirement(10, GameConstants.Region.unova, 6)]
+    [new RouteKillRequirement(10, GameConstants.Region.unova, 6)],
+    [TemporaryBattleList['Memory Team Plasma Grunt 9'], TemporaryBattleList['Memory Team Plasma Grunt 10'], TemporaryBattleList['Memory Team Plasma Grunt 11'], TemporaryBattleList['Memory Team Plasma Grunt 12'], TemporaryBattleList['Memory Team Plasma Grunt 13'], TemporaryBattleList['Memory Team Plasma Grunts 4'], TemporaryBattleList['N 4']]
 );
 TownList['Mistralton Cave'] = new DungeonTown(
     'Mistralton Cave',
@@ -3255,21 +3253,16 @@ TownList['Victory Road Unova'] = new DungeonTown(
 TownList['Twist Mountain'] = new DungeonTown(
     'Twist Mountain',
     GameConstants.Region.unova,
-    [new OneFromManyRequirement([
-        new MultiRequirement([
-            new GymBadgeRequirement(BadgeEnums.Elite_UnovaChampion),
-            new RouteKillRequirement(10, GameConstants.Region.unova, 7),
-        ]),
-        new RouteKillRequirement(10, GameConstants.Region.unova, 8),
-    ])]
+    [
+        new QuestLineStepCompletedRequirement('A memory in Black and White', ?),
+        new RouteKillRequirement(10, GameConstants.Region.unova, 7),
+    ]
 );
 TownList['Dragonspiral Tower'] = new DungeonTown(
     'Dragonspiral Tower',
     GameConstants.Region.unova,
-    [new OneFromManyRequirement([
-        new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Twist Mountain')),
-        new RouteKillRequirement(10, GameConstants.Region.unova, 8),
-    ])]
+    [new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Twist Mountain'))],
+    [TemporaryBattleList['Memory Team Plasma Grunt 14'], TemporaryBattleList['Memory Team Plasma Grunts 5'], TemporaryBattleList['Memory Team Plasma Grunt 15'], TemporaryBattleList['Memory Team Plasma Grunt 16'], TemporaryBattleList['Memory Team Plasma Grunts 6'], TemporaryBattleList['Memory Team Plasma Grunts 7']]
 );
 TownList['Moor of Icirrus'] = new DungeonTown(
     'Moor of Icirrus',
@@ -3284,22 +3277,32 @@ TownList['Moor of Icirrus'] = new DungeonTown(
 TownList['Pinwheel Forest'] = new DungeonTown(
     'Pinwheel Forest',
     GameConstants.Region.unova,
-    [new GymBadgeRequirement(BadgeEnums.Elite_UnovaChampion)]
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [TemporaryBattleList['Memory Team Plasma Grunt 3'], TemporaryBattleList['Memory Team Plasma Grunt 4']]
 );
 TownList.Dreamyard = new DungeonTown(
     'Dreamyard',
     GameConstants.Region.unova,
-    [new RouteKillRequirement(10, GameConstants.Region.unova, 3)]
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [TemporaryBattleList['Memory Team Plasma Grunt 1'], TemporaryBattleList['Memory Team Plasma Grunts 2'], TemporaryBattleList['Memory Team Plasma Grunt 2']]
+);
+TownList['Wellspring Cave'] = new DungeonTown(
+    'Wellspring Cave',
+    GameConstants.Region.unova,
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [TemporaryBattleList['Memory Team Plasma Grunts 1']]
 );
 TownList['Cold Storage'] = new DungeonTown(
     'Cold Storage',
     GameConstants.Region.unova,
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)]
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [TemporaryBattleList['Memory Team Plasma Grunt 7'], TemporaryBattleList['Memory Team Plasma Grunt 8'], TemporaryBattleList['Memory Team Plasma Grunts 3']]
 );
 TownList['Victory Road Unova Ruins'] = new DungeonTown(
     'Victory Road Unova Ruins',
     GameConstants.Region.unova,
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)]
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [TemporaryBattleList['Cheren 8']]
 );
 TownList['P2 Laboratory'] = new DungeonTown(
     'P2 Laboratory',

@@ -1435,15 +1435,7 @@ Routes.add(new RegionRoute(
     new RoutePokemon({
         land: ['Croagunk', 'Tympole', 'Palpitoad', 'Karrablast', 'Shelmet', 'Stunfisk'],
     }),
-    [
-        new OneFromManyRequirement([
-            new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Twist Mountain')),
-            new MultiRequirement([
-                new RouteKillRequirement(10, GameConstants.Region.unova, 9),
-                new GymBadgeRequirement(BadgeEnums.Elite_UnovaChampion),
-            ]),
-        ]),
-    ],
+    [new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Twist Mountain'))],
     23.1
 ));
 Routes.add(new RegionRoute(
@@ -1465,7 +1457,7 @@ Routes.add(new RegionRoute(
     new RoutePokemon({
         land: ['Yanma', 'Watchog', 'Herdier', 'Purrloin', 'Tranquill'],
     }),
-    [new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Pinwheel Forest'))],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
     23.1
 ));
 Routes.add(new RegionRoute(
@@ -1473,7 +1465,7 @@ Routes.add(new RegionRoute(
     new RoutePokemon({
         land: ['Jigglypuff', 'Lickitung', 'Watchog', 'Herdier', 'Liepard'],
     }),
-    [new RouteKillRequirement(10, GameConstants.Region.unova, 3)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
     23.2
 ));
 Routes.add(new RegionRoute(
@@ -1482,7 +1474,7 @@ Routes.add(new RegionRoute(
         land: ['Jigglypuff', 'Watchog', 'Herdier', 'Scrafty'],
         water: ['Basculin (Red-Striped)', 'Basculin (Blue-Striped)'],
     }),
-    [new RouteKillRequirement(10, GameConstants.Region.unova, 2)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
     23.3
 ));
 Routes.add(new RegionRoute(
@@ -1490,7 +1482,7 @@ Routes.add(new RegionRoute(
     new RoutePokemon({
         land: ['Frillish', 'Alomomola'],
     }),
-    [new RouteKillRequirement(10, GameConstants.Region.unova, 1)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
     23.4
 ));
 Routes.add(new RegionRoute(

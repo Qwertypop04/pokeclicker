@@ -1139,6 +1139,7 @@ export const UnovaDungeons = [
     'Pledge Grove',
     'Pinwheel Forest',
     'Dreamyard',
+    'Wellspring Cave',
     'Cold Storage',
     'Victory Road Unova Ruins',
     'P2 Laboratory', // 102
@@ -1332,6 +1333,73 @@ export const TemporaryBattles = [
     'Plasma Shadow 4',
     'Ghetsis 1',
     'Ghetsis 2',
+    'Bianca 1',
+    'Cheren 1',
+    'N 1',
+    'Bianca 2',
+    'Cheren 2',
+    'Cilan',
+    'Chili',
+    'Cress',
+    'Memory Team Plasma Grunt 1',//Dreamyard
+    'Memory Team Plasma Grunt 2',//Dreamyard
+    'Cheren 3',
+    'Memory Team Plasma Grunts 1',//Wellspring
+    'N 2',
+    'Lenora',
+    'Memory Team Plasma Grunt 3',//Pinwheel
+    'Memory Team Plasma Grunts 2',//Pinwheel
+    'Memory Team Plasma Grunt 4',//Pinwheel
+    'Memory Team Plasma Grunt 5',//Castelia
+    'Burgh',
+    'Bianca 3',
+    'Cheren 4',
+    'Memory Team Plasma Grunt 6',//Nimbasa
+    'N 3',
+    'Elesa',
+    'Cheren 5',
+    'Memory Team Plasma Grunt 7',//Cold Storage
+    'Memory Team Plasma Grunt 8',//Cold Storage
+    'Memory Team Plasma Grunts 3',//Cold Storage
+    'Clay',
+    'Bianca 4',
+    'Memory Team Plasma Grunt 9',//Chargestone
+    'Memory Team Plasma Grunt 10',//Chargestone
+    'Memory Team Plasma Grunt 11',//Chargestone
+    'Memory Team Plasma Grunt 12',//Chargestone
+    'Memory Team Plasma Grunt 13',//Chargestone
+    'Memory Team Plasma Grunts 4',//Chargestone
+    'N 4',
+    'Skyla',
+    'Cheren 6',
+    'Brycen',
+    'Memory Team Plasma Grunt 14',//Dragonspiral
+    'Memory Team Plasma Grunts 5',//Dragonspiral
+    'Memory Team Plasma Grunt 15',//Dragonspiral
+    'Memory Team Plasma Grunt 16',//Dragonspiral
+    'Memory Team Plasma Grunts 6',//Dragonspiral
+    'Memory Team Plasma Grunts 7',//Dragonspiral
+    'Memory Team Plasma Grunt 17',//Relic Castle
+    'Memory Team Plasma Grunt 18',//Relic Castle
+    'Memory Team Plasma Grunts 8',//Relic Castle
+    'Memory Team Plasma Grunt 19',//Relic Castle
+    'Memory Team Plasma Grunts 9',//Relic Castle
+    'Bianca 5',
+    'Iris',
+    'Cheren 7',
+    'Shauntal',
+    'Marshal',
+    'Grimsley',
+    'Caitlin',
+    'Reshiram',
+    'Zekrom',
+    'N Black',
+    'N White',
+    'Ghetsis 3',
+    'N Black 2',
+    'N White 2',
+    'Bianca 6',
+    'Cheren 8',
     'Aipom Alley',
     'Mime Interview',
     'Underground Fighting Ring',

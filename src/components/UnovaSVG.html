@@ -122,6 +122,23 @@
         })
     %>
 
+    <!--Route 10-->
+    <%- include('templates/mapRoute',
+        { route: 10, region: 4
+        , width: 10, height: 3
+        , x: 48, y: 9
+        })
+    %>
+
+    <!--Route 10 extension-->
+    <%- include('templates/mapRoute',
+        { route: 10, region: 4
+        , width: 4, height: 2.5
+        , x: 52, y: 9
+        , noText: true
+        })
+    %>
+
     <!--Route 11-->
     <%- include('templates/mapRoute',
         { route: 11, region: 4
@@ -605,6 +622,14 @@
         })
     %>
 
+    <!--N's Castle-->
+    <%- include('templates/mapTown',
+        { name: "N's Castle"
+        , x: 53, y: 0
+        , width: 3, height: 5
+        })
+    %>
+
     <!-- -------- -->
     <!-- DUNGEONS -->
     <!-- -------- -->
@@ -826,6 +851,30 @@
         })
     %>
 
+    <!--Wellspring Cave-->
+    <%- include('templates/mapDungeon',
+        { name: "Wellspring Cave"
+        , x: 77, y: 36
+        , width: 4, height: 3
+        })
+    %>
+
+    <!--Cold Storage-->
+    <%- include('templates/mapDungeon',
+        { name: "Cold Storage"
+        , x: 28, y: 35
+        , width: 4, height: 3
+        })
+    %>
+
+    <!--Victory Road Unova Ruins-->
+    <%- include('templates/mapDungeon',
+        { name: "Victory Road Unova"
+        , x: 59, y: 6
+        , width: 3, height: 3
+        })
+    %>
+
     <!--P2 Laboratory-->
     <%- include('templates/mapDungeon',
         { name: "P2 Laboratory"
@@ -909,6 +958,156 @@
         , databind: "click:function(){MapHelper.moveToTown('Aspertia City')}, attr:{ class: MapHelper.calculateTownCssClass('Aspertia City') }"
         , visible:  "MapHelper.ableToTravel() && player.starter() == GameConstants.Starter.Pikachu"
         , image: "assets/images/map/blimp_pikachu.png"
+        })
+    %>
+
+    <%- include('templates/mapOverlay',
+        { name: "Bianca"
+        , x: 84, y: 54
+        , width: 4, height: 4
+        , databind: "click: () => TemporaryBattleList['Bianca 1'].protectedOnclick()"
+        , visible:  "TemporaryBattleList['Bianca 1'] && TemporaryBattleList['Bianca 1'].isVisible()"
+        , image: "assets/images/map/bianca.png"
+        })
+    %>
+
+    <%- include('templates/mapOverlay',
+        { name: "Cheren"
+        , x: 84, y: 54
+        , width: 4, height: 4
+        , databind: "click: () => TemporaryBattleList['Cheren 1'].protectedOnclick()"
+        , visible:  "TemporaryBattleList['Cheren 1'] && TemporaryBattleList['Cheren 1'].isVisible()"
+        , image: "assets/images/map/cheren2.png"
+        })
+    %>
+
+    <%- include('templates/mapOverlay',
+        { name: "N"
+        , x: 82, y: 46
+        , width: 4, height: 4
+        , databind: "click: () => TemporaryBattleList['N 1'].protectedOnclick()"
+        , visible:  "TemporaryBattleList['N 1'] && TemporaryBattleList['N 1'].isVisible()"
+        , image: "assets/images/map/n.png"
+        })
+    %>
+
+    <%- include('templates/mapOverlay',
+        { name: "Bianca"
+        , x: 88, y: 41
+        , width: 4, height: 4
+        , databind: "click: () => TemporaryBattleList['Bianca 2'].protectedOnclick()"
+        , visible:  "TemporaryBattleList['Bianca 2'] && TemporaryBattleList['Bianca 2'].isVisible()"
+        , image: "assets/images/map/bianca.png"
+        })
+    %>
+
+    <%- include('templates/mapOverlay',
+        { name: "Cheren"
+        , x: 86, y: 36
+        , width: 4, height: 4
+        , databind: "click: () => TemporaryBattleList['Cheren 2'].protectedOnclick()"
+        , visible:  "TemporaryBattleList['Cheren 2'] && TemporaryBattleList['Cheren 2'].isVisible()"
+        , image: "assets/images/map/cheren2.png"
+        })
+    %>
+
+    <%- include('templates/mapOverlay',
+        { name: "Cheren"
+        , x: 82, y: 37
+        , width: 4, height: 4
+        , databind: "click: () => TemporaryBattleList['Cheren 3'].protectedOnclick()"
+        , visible:  "TemporaryBattleList['Cheren 3'] && TemporaryBattleList['Cheren 3'].isVisible()"
+        , image: "assets/images/map/cheren2.png"
+        })
+    %>
+
+    <%- include('templates/mapOverlay',
+        { name: "N"
+        , x: 76, y: 43
+        , width: 4, height: 4
+        , databind: "click: () => TemporaryBattleList['N 2'].protectedOnclick()"
+        , visible:  "TemporaryBattleList['N 2'] && TemporaryBattleList['N 2'].isVisible()"
+        , image: "assets/images/map/n.png"
+        })
+    %>
+
+    <%- include('templates/mapOverlay',
+        { name: "Bianca"
+        , x: 50.5, y: 45.5
+        , width: 4, height: 4
+        , databind: "click: () => TemporaryBattleList['Bianca 3'].protectedOnclick()"
+        , visible:  "TemporaryBattleList['Bianca 3'] && TemporaryBattleList['Bianca 3'].isVisible()"
+        , image: "assets/images/map/bianca.png"
+        })
+    %>
+
+    <%- include('templates/mapOverlay',
+        { name: "Cheren"
+        , x: 50.5, y: 36
+        , width: 4, height: 4
+        , databind: "click: () => TemporaryBattleList['Cheren 4'].protectedOnclick()"
+        , visible:  "TemporaryBattleList['Cheren 4'] && TemporaryBattleList['Cheren 4'].isVisible()"
+        , image: "assets/images/map/cheren2.png"
+        })
+    %>
+
+    <%- include('templates/mapOverlay',
+        { name: "N"
+        , x: 52, y: 31
+        , width: 4, height: 4
+        , databind: "click: () => TemporaryBattleList['N 3'].protectedOnclick()"
+        , visible:  "TemporaryBattleList['N 3'] && TemporaryBattleList['N 3'].isVisible()"
+        , image: "assets/images/map/n.png"
+        })
+    %>
+
+    <%- include('templates/mapOverlay',
+        { name: "Cheren"
+        , x: 42, y: 31
+        , width: 4, height: 4
+        , databind: "click: () => TemporaryBattleList['Cheren 5'].protectedOnclick()"
+        , visible:  "TemporaryBattleList['Cheren 5'] && TemporaryBattleList['Cheren 5'].isVisible()"
+        , image: "assets/images/map/cheren2.png"
+        })
+    %>
+
+    <%- include('templates/mapOverlay',
+        { name: "Bianca"
+        , x: 21, y: 31
+        , width: 4, height: 4
+        , databind: "click: () => TemporaryBattleList['Bianca 4'].protectedOnclick()"
+        , visible:  "TemporaryBattleList['Bianca 4'] && TemporaryBattleList['Bianca 4'].isVisible()"
+        , image: "assets/images/map/bianca.png"
+        })
+    %>
+
+    <%- include('templates/mapOverlay',
+        { name: "Cheren"
+        , x: 20, y: 15
+        , width: 4, height: 4
+        , databind: "click: () => TemporaryBattleList['Cheren 6'].protectedOnclick()"
+        , visible:  "TemporaryBattleList['Cheren 6'] && TemporaryBattleList['Cheren 6'].isVisible()"
+        , image: "assets/images/map/cheren2.png"
+        })
+    %>
+
+    <%- include('templates/mapOverlay',
+        { name: "Bianca"
+        , x: 43, y: 12
+        , width: 4, height: 4
+        , databind: "click: () => TemporaryBattleList['Bianca 5'].protectedOnclick()"
+        , visible:  "TemporaryBattleList['Bianca 5'] && TemporaryBattleList['Bianca 5'].isVisible()"
+        , image: "assets/images/map/bianca.png"
+        })
+    %>
+
+    <%- include('templates/mapOverlay',
+        { name: "Cheren"
+        , x: 52, y: 8
+        , width: 4, height: 4
+        , databind: "click: () => TemporaryBattleList['Cheren 7'].protectedOnclick()"
+        , visible:  "TemporaryBattleList['Cheren 7'] && TemporaryBattleList['Cheren 7'].isVisible()"
+        , image: "assets/images/map/cheren2.png"
         })
     %>
 
