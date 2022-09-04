@@ -744,7 +744,7 @@ class QuestLineHelper {
             });
         };
 
-        const clearGhetsis2 = new CustomQuest (1, ghetsisReward, 'Defeat Ghetis one final time!', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Ghetsis 2')]());
+        const clearGhetsis2 = new CustomQuest (1, ghetsisReward, 'Defeat Ghetsis one final time!', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Ghetsis 2')]());
         plasmaUnovaQuestLine.addQuest(clearGhetsis2);
 
         App.game.quests.questLines().push(plasmaUnovaQuestLine);
@@ -752,6 +752,190 @@ class QuestLineHelper {
 
     public static createBlackWhiteQuestLine() {
         const blackWhiteQuestLine = new QuestLine('A memory in Black and White', 'Experience N\'s memories of events that took place 2 years ago.', new MultiRequirement([new GymBadgeRequirement(BadgeEnums.Elite_UnovaChampion), new RouteKillRequirement(10, GameConstants.Region.unova, 1)]) , GameConstants.BulletinBoards.Unova);
+
+        const clearBianca1 = new CustomQuest (1, 0, 'Defeat Bianca at Nuvema Town.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Bianca 1')]());
+        blackWhiteQuestLine.addQuest(clearBianca1);
+
+        const clearCheren1 = new CustomQuest (1, 0, 'Defeat Cheren at Nuvema Town.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Cheren 1')]());
+        blackWhiteQuestLine.addQuest(clearCheren1);
+
+        const clearN1 = new CustomQuest (1, 0, 'Defeat N at Accumula Town.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('N 1')]());
+        blackWhiteQuestLine.addQuest(clearN1);
+
+        const clearBianca2 = new CustomQuest (1, 0, 'Defeat Bianca on Route 2.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Bianca 2')]());
+        blackWhiteQuestLine.addQuest(clearBianca2);
+
+        const clearCheren2 = new CustomQuest (1, 0, 'Defeat Cheren at Striaton City.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Cheren 2')]());
+        blackWhiteQuestLine.addQuest(clearCheren2);
+
+        const clearCilanChiliCress = new CustomQuest (3, 0, 'Defeat Cilan, Chili and Cress in Striaton City.', () =>
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Cilan')]() +
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Chili')]() +
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Cress')]()
+        );
+        blackWhiteQuestLine.addQuest(clearCilanChiliCress);
+
+        const clearDreamyard = new CustomQuest(1, 0, 'Something is going on in the Dreamyard. Clear Dreamyard to find out what.', () => App.game.statistics.dungeonsCleared[GameConstants.getDungeonIndex('Dreamyard')]());
+        blackWhiteQuestLine.addQuest(clearDreamyard);
+
+        const clearDreamyardGrunts = new CustomQuest (2, 0, 'Two Team Plasma Grunts are bullying a Munna. Defeat them.', () =>
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunt 1')]() +
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunt 2')]()
+        );
+        blackWhiteQuestLine.addQuest(clearDreamyardGrunts);
+
+        const clearCheren3 = new CustomQuest (1, 0, 'Defeat Cheren on Route 3.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Cheren 3')]());
+        blackWhiteQuestLine.addQuest(clearCheren3);
+
+        const clearWellspringCave = new CustomQuest(1, 0, 'Some Team Plasma Grunts are hiding in Wellspring Cave with stolen Pokémon. Clear Wellspring Cave.', () => App.game.statistics.dungeonsCleared[GameConstants.getDungeonIndex('Wellspring Cave')]());
+        blackWhiteQuestLine.addQuest(clearWellspringCave);
+
+        const clearWellspringGrunts = new CustomQuest (1, 0, 'There are more of them! Defeat Team Plasma Grunts in Wellspring Cave.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunts 1')]());
+        blackWhiteQuestLine.addQuest(clearWellspringGrunts);
+
+        const clearN2 = new CustomQuest (1, 0, 'Defeat N at Nacrene City.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('N 2')]());
+        blackWhiteQuestLine.addQuest(clearN2);
+
+        const clearLenora = new CustomQuest (1, 0, 'Defeat Lenora in Nacrene City.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Lenora')]());
+        blackWhiteQuestLine.addQuest(clearLenora);
+
+        const clearPinwheelGrunts = new CustomQuest (3, 0, 'Team Plasma Grunts have stolen a dragon head fossil from Nacrene Museum and escaped to Pinwheel Forest. Defeat them.', () =>
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunt 3')]() +
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunts 2')]() +
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunt 4')]()
+        );
+        blackWhiteQuestLine.addQuest(clearPinwheelGrunts);
+
+        const clearCastliaGrunt = new CustomQuest (1, 0, 'Team Plasma have stolen Bianca\'s Pokémon! Defeat Team Plasma Grunt to get it back.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunt 5')]());
+        blackWhiteQuestLine.addQuest(clearCastliaGrunt);
+
+        const clearBurgh = new CustomQuest (1, 0, 'Defeat Burgh in Castelia City.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Burgh')]());
+        blackWhiteQuestLine.addQuest(clearBurgh);
+
+        const clearBianca3 = new CustomQuest (1, 0, 'Defeat Bianca on Route 4.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Bianca 3')]());
+        blackWhiteQuestLine.addQuest(clearBianca3);
+
+        const clearCheren4 = new CustomQuest (1, 0, 'Defeat Cheren on Route 4.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Cheren 4')]());
+        blackWhiteQuestLine.addQuest(clearCheren4);
+
+        const clearNimbasaGrunt = new CustomQuest (1, 0, 'Team Plasma Grunts are trying to take Pokémon from the Day Care Man. Defeat Team Plasma Grunt in Nimbasa City.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunt 6')]());
+        blackWhiteQuestLine.addQuest(clearNimbasaGrunt);
+
+        const clearN3 = new CustomQuest (1, 0, 'Defeat N at Nimbasa City.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('N 3')]());
+        blackWhiteQuestLine.addQuest(clearN3);
+
+        const clearElesa = new CustomQuest (1, 0, 'Defeat Elesa in Nimbasa City.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Elesa')]());
+        blackWhiteQuestLine.addQuest(clearElesa);
+
+        const clearCheren5 = new CustomQuest (1, 0, 'Defeat Cheren on Route 5.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Cheren 5')]());
+        blackWhiteQuestLine.addQuest(clearCheren5);
+
+        const clearColdStorage = new CustomQuest(1, 0, 'Some Plasma Grunts that Clay had caught have escaped into Cold Storage. Clear Cold Storage.', () => App.game.statistics.dungeonsCleared[GameConstants.getDungeonIndex('Cold Storage')]());
+        blackWhiteQuestLine.addQuest(clearColdStorage);
+
+        const clearColdStorageGrunts = new CustomQuest (3, 0, 'You found the escaped Grunts in a container in Cold Storage. Defeat them.', () =>
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunt 7')]() +
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunt 8')]() +
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunts 3')]()
+        );
+        blackWhiteQuestLine.addQuest(clearColdStorageGrunts);
+
+        const clearClay = new CustomQuest (1, 0, 'Defeat Clay in Driftveil City.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Clay')]());
+        blackWhiteQuestLine.addQuest(clearClay);
+
+        const clearBianca4 = new CustomQuest (1, 0, 'Defeat Bianca on Route 6.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Bianca 4')]());
+        blackWhiteQuestLine.addQuest(clearBianca4);
+
+        const clearChargestoneGrunts = new CustomQuest (6, 0, 'A large group of Team Plasma Grunts are blocking your way through Chargestone Cave. Defeat them all.', () =>
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunt 9')]() +
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunt 10')]() +
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunt 11')]() +
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunt 12')]() +
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunt 13')]() +
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunts 4')]()
+        );
+        blackWhiteQuestLine.addQuest(clearChargestoneGrunts);
+
+        const clearN4 = new CustomQuest (1, 0, 'Defeat N in Chargestone Cave.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('N 4 ')]());
+        blackWhiteQuestLine.addQuest(clearN4);
+
+        const clearSkyla = new CustomQuest (1, 0, 'Defeat Skyla in Mistralton City.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Skyla')]());
+        blackWhiteQuestLine.addQuest(clearSkyla);
+
+        const clearCheren6 = new CustomQuest (1, 0, 'Defeat Cheren near Twist Mountain.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Cheren 6')]());
+        blackWhiteQuestLine.addQuest(clearCheren6);
+
+        const clearTwistMountain = new CustomQuest(1, 0, 'Team Plasma aren\'t causing any more problems, so clear Twist Mountain to reach Icirrus City.', () => App.game.statistics.dungeonsCleared[GameConstants.getDungeonIndex('Twist Mountain')]());
+        blackWhiteQuestLine.addQuest(clearTwistMountain);
+
+        const clearBrycen = new CustomQuest (1, 0, 'Defeat Brycen in Icirrus City.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Brycen')]());
+        blackWhiteQuestLine.addQuest(clearBrycen);
+
+        const clearDragonspiralTower = new CustomQuest(1, 0, 'It seems N is at Dragonspiral Tower. Clear the dungeon.', () => App.game.statistics.dungeonsCleared[GameConstants.getDungeonIndex('Dragonspiral Tower')]());
+        blackWhiteQuestLine.addQuest(clearDragonspiralTower);
+
+        const clearDragonspiralGrunts1 = new CustomQuest (4, 0, 'Team Plasma Grunts are trying to stop you from reaching the top of Dragonspiral Tower. Defeat them.', () =>
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunt 14')]() +
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunts 5')]() +
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunt 15')]() +
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunt 16')]()
+        );
+        blackWhiteQuestLine.addQuest(clearDragonspiralGrunts1);
+
+        const clearDragonspiralGrunts2 = new CustomQuest (2, 0, 'Team Plasma Grunts have surrounded you. Defeat them so you can reach N!', () =>
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunts 6')]() +
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunts 7')]()
+        );
+        blackWhiteQuestLine.addQuest(clearDragonspiralGrunts2);
+
+        const clearDragonspiralGrunts1 = new CustomQuest (5, 0, 'Team Plasma Grunts are trying to stop you from finding the legendary Stone that is in Relic Castle. Defeat them.', () =>
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunt 17')]() +
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunt 18')]() +
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunts 8')]() +
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunt 19')]() +
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunts 9')]()
+        );
+        blackWhiteQuestLine.addQuest(clearDragonspiralGrunts1);
+
+        const clearBianca5 = new CustomQuest (1, 0, 'Defeat Bianca on Route 8.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Bianca 5')]());
+        blackWhiteQuestLine.addQuest(clearBianca5);
+
+        const clearIris = new CustomQuest (1, 0, 'Defeat Iris in Opelucid City.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Iris')]());
+        blackWhiteQuestLine.addQuest(clearIris);
+
+        const clearCheren7 = new CustomQuest (1, 0, 'Defeat Cheren on Route 10.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Cheren 7')]());
+        blackWhiteQuestLine.addQuest(clearCheren7);
+
+        const clearVictoryRoadUnovaRuins = new CustomQuest(1, 0, 'Clear Victory Road Unova Ruins to reach the Pokémon League.', () => App.game.statistics.dungeonsCleared[GameConstants.getDungeonIndex('Victory Road Unova Ruins')]());
+        blackWhiteQuestLine.addQuest(clearVictoryRoadUnovaRuins);
+
+        const clearUnovaEliteFour = new CustomQuest (4, 0, 'Defeat the Elite Four at Pokémon League Unova to reach the Champion!', () =>
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Shauntal')]() +
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Marshal')]() +
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Grimsley')]() +
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Caitlin')]()
+        );
+        blackWhiteQuestLine.addQuest(clearUnovaEliteFour);
+
+        const catchUnovaDragon = new CustomQuest (1, 0, 'Defeat and Catch the Legendary Dragon!', () =>
+            App.game.statistics.pokemonCaptured[pokemonMap.Reshiram.id](), 0 +
+            App.game.statistics.pokemonCaptured[pokemonMap.Zekrom.id](), 0
+        blackWhiteQuestLine.addQuest(catchUnovaDragon);
+
+        const clearN5 = new CustomQuest (1, 0, 'Defeat N at N\'s Castle!', () =>
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('N Black')]() +
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('N White')]()
+        );
+        blackWhiteQuestLine.addQuest(clearN5);
+
+        const clearGhetsis3 = new CustomQuest (1, 0, 'Defeat Ghetsis at N\'s Castle to finally put an end to Team Plasma!', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Ghetsis 3')]());
+        blackWhiteQuestLine.addQuest(clearGhetsis3);
+
+        const clearN6 = new CustomQuest (1, 0, 'Defeat N at N\'s Castle.', () =>
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('N Black 2')]() +
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('N White 2')]()
+        );
+        blackWhiteQuestLine.addQuest(clearN6);
 
         App.game.quests.questLines().push(blackWhiteQuestLine);
     }
