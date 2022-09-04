@@ -882,6 +882,35 @@ TemporaryBattleList['Memory Team Plasma Grunts 1'] = new TemporaryBattle(
         imageName: 'Memory Team Plasma Grunts (male)',
     }
 );
+TemporaryBattleList['School Kid Lydia'] = new TemporaryBattle(
+    'School Kid Lydia',
+    [
+        new GymPokemon('Lillipup', 1689240, 15),
+        new GymPokemon('Lillipup', 1689240, 15),
+        new GymPokemon('Lillipup', 1689240, 15),
+    ],
+    'Oh, wow! I lost, but thanks for a great battle!',
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)]
+);
+TemporaryBattleList['School Kid Carter'] = new TemporaryBattle(
+    'School Kid Carter',
+    [new GymPokemon('Patrat', 1689240, 17)],
+    'I may be a bookworm, but I am not a bug Pokémon.',
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)]
+);
+TemporaryBattleList['Lenora'] = new TemporaryBattle(
+    'Lenora',
+    [
+        new GymPokemon('Herdier', 1689240, 18),
+        new GymPokemon('Watchog', 1689240, 20),
+    ],
+    'My theory about you was correct. You\'re more than just talented... You\'re motivated! I salute you!',
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    undefined,
+    {
+        displayName: 'Gym Leader Lenora',
+    }
+);
 TemporaryBattleList['N 2'] = new TemporaryBattle(
     'N 2',
     [
@@ -896,19 +925,6 @@ TemporaryBattleList['N 2'] = new TemporaryBattle(
         displayName: 'Pokémon Trainer N',
         returnTown: 'Nacrene City',
         imageName: 'N',
-    }
-);
-TemporaryBattleList['Lenora'] = new TemporaryBattle(
-    'Lenora',
-    [
-        new GymPokemon('Herdier', 1689240, 18),
-        new GymPokemon('Watchog', 1689240, 20),
-    ],
-    'My theory about you was correct. You\'re more than just talented... You\'re motivated! I salute you!',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
-    undefined,
-    {
-        displayName: 'Gym Leader Lenora',
     }
 );
 TemporaryBattleList['Memory Team Plasma Grunt 3'] = new TemporaryBattle(

@@ -1345,8 +1345,10 @@ export const TemporaryBattles = [
     'Memory Team Plasma Grunt 2',//Dreamyard
     'Cheren 3',
     'Memory Team Plasma Grunts 1',//Wellspring
-    'N 2',
+    'School Kid Lydia',
+    'School Kid Carter',
     'Lenora',
+    'N 2',
     'Memory Team Plasma Grunt 3',//Pinwheel
     'Memory Team Plasma Grunts 2',//Pinwheel
     'Memory Team Plasma Grunt 4',//Pinwheel

@@ -793,13 +793,19 @@ class QuestLineHelper {
         const clearWellspringGrunts = new CustomQuest (1, 0, 'There are more of them! Defeat Team Plasma Grunts in Wellspring Cave.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunts 1')]());
         blackWhiteQuestLine.addQuest(clearWellspringGrunts);
 
-        const clearN2 = new CustomQuest (1, 0, 'Defeat N at Nacrene City.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('N 2')]());
-        blackWhiteQuestLine.addQuest(clearN2);
+        const clearSchoolKid = new CustomQuest (1, 0, 'If the stone was White, fight Lydia. If you thought it was Black, fight Carter.', () =>
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('School Kid Lydia')]() +
+            App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('School Kid Carter')]()
+        );
+        plasmaUnovaQuestLine.addQuest(clearSchoolKid);
 
         const clearLenora = new CustomQuest (1, 0, 'Defeat Lenora in Nacrene City.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Lenora')]());
         blackWhiteQuestLine.addQuest(clearLenora);
 
-        const clearPinwheelGrunts = new CustomQuest (3, 0, 'Team Plasma Grunts have stolen a dragon head fossil from Nacrene Museum and escaped to Pinwheel Forest. Defeat them.', () =>
+        const clearN2 = new CustomQuest (1, 0, 'Defeat N at Nacrene City.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('N 2')]());
+        blackWhiteQuestLine.addQuest(clearN2);
+
+        const clearPinwheelGrunts = new CustomQuest (3, 0, 'Team Plasma Grunts have stolen a dragon skull from Nacrene Museum and escaped to Pinwheel Forest. Defeat them.', () =>
             App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunt 3')]() +
             App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunts 2')]() +
             App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunt 4')]()
