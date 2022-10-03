@@ -979,14 +979,6 @@ export const OrangeGyms = [
     'Supreme Gym Leader Drake',
 ];
 
-export const OrangeGyms = [
-    'Mikan Island',
-    'Navel Island',
-    'Trovita Island',
-    'Kumquat Island',
-    'Supreme Gym Leader Drake',
-];
-
 export const RegionGyms = [
     KantoGyms,
     JohtoGyms,
@@ -1070,7 +1062,7 @@ export const HoennDungeons = [
     'Sealed Chamber',
     'Cave of Origin',
     'Sky Pillar',
-    'Victory Road Hoenn',
+    'Victory Road Hoenn', // 55
     // These aren't implemented anywhere yet
     /*
     "Island Cave",

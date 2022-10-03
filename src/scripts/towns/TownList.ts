@@ -858,17 +858,6 @@ TownList['Rocket Warehouse'] = new Town(
         ],
     }
 );
-TownList['Rocket Warehouse'] = new Town(
-    'Rocket Warehouse',
-    GameConstants.Region.kanto,
-    [TemporaryBattleList['Sevii Rocket Grunt 3'], TemporaryBattleList['Sevii Rocket Grunt 4'], TemporaryBattleList['Sevii Rocket Grunt 5'], TemporaryBattleList['Sevii Rocket Ariana'], TemporaryBattleList['Sevii Rocket Archer'], TemporaryBattleList['Scientist Gideon']],
-    {
-        requirements: [
-            new RouteKillRequirement(10, GameConstants.Region.kanto, 30),
-            new QuestLineStepCompletedRequirement('Celio\'s Errand', 8),
-        ],
-    }
-);
 TownList['Six Island'] = new Town(
     'Six Island',
     GameConstants.Region.kanto,
@@ -931,45 +920,6 @@ TownList['Pummelo Island'] = new Town(
     'Pummelo Island',
     GameConstants.Region.kanto,
     [GymList['Supreme Gym Leader Drake'], pokeLeagueShop(), new BulletinBoard(GameConstants.BulletinBoards.Sevii4567)],
-    {
-        requirements:
-        [
-            new GymBadgeRequirement(BadgeEnums['Coral-Eye']),
-            new GymBadgeRequirement(BadgeEnums.Sea_Ruby),
-            new GymBadgeRequirement(BadgeEnums.Spike_Shell),
-            new GymBadgeRequirement(BadgeEnums.Jade_Star),
-        ],
-    }
-);
-TownList['Dotted Hole'] = new Town(
-    'Dotted Hole',
-    GameConstants.Region.kanto,
-    [],
-    {
-        requirements: [new RouteKillRequirement(10, GameConstants.Region.kanto, 37)],
-        npcs: [SeviiGideon1, SeviiGideon2],
-    }
-);
-TownList['Navel Island'] = new Town(
-    'Navel Island',
-    GameConstants.Region.kanto,
-    [],
-    {
-        requirements: [new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Lost Cave'))],
-    }
-);
-TownList['Kumquat Island'] = new Town(
-    'Kumquat Island',
-    GameConstants.Region.kanto,
-    [],
-    {
-        requirements: [new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Icefall Cave'))],
-    }
-);
-TownList['Pummelo Island'] = new Town(
-    'Pummelo Island',
-    GameConstants.Region.kanto,
-    [GymList['Supreme Gym Leader Drake']],
     {
         requirements:
         [
@@ -1128,53 +1078,6 @@ TownList['Tanoby Ruins'] = new DungeonTown(
     [new RouteKillRequirement(10, GameConstants.Region.kanto, 39)],
     [TanobyRuinsShop],
     [TanobyProfIvy]
-);
-TownList['Pinkan Mountain'] = new DungeonTown(
-    'Pinkan Mountain',
-    GameConstants.Region.kanto,
-    [
-        new RouteKillRequirement(10, GameConstants.Region.kanto, 42),
-        new GymBadgeRequirement(BadgeEnums.Elite_OrangeChampion),
-    ]
-);
-TownList['Ruby Path'] = new DungeonTown(
-    'Ruby Path',
-    GameConstants.Region.kanto,
-    [new QuestLineStepCompletedRequirement('Celio\'s Errand', 2)],
-    [],
-    [SeviiRuby]
-);
-TownList['Icefall Cave'] = new DungeonTown(
-    'Icefall Cave',
-    GameConstants.Region.kanto,
-    [new QuestLineStepCompletedRequirement('Celio\'s Errand', 5)],
-    [],
-    [SeviiLorelei]
-);
-TownList['Sunburst Island'] = new DungeonTown(
-    'Sunburst Island',
-    GameConstants.Region.kanto,
-    [new RouteKillRequirement(10, GameConstants.Region.kanto, 31)]
-);
-TownList['Lost Cave'] = new DungeonTown(
-    'Lost Cave',
-    GameConstants.Region.kanto,
-    [new RouteKillRequirement(10, GameConstants.Region.kanto, 33)]
-);
-TownList['Pattern Bush'] = new DungeonTown(
-    'Pattern Bush',
-    GameConstants.Region.kanto,
-    [new RouteKillRequirement(10, GameConstants.Region.kanto, 34)]
-);
-TownList['Altering Cave'] = new DungeonTown(
-    'Altering Cave',
-    GameConstants.Region.kanto,
-    [new RouteKillRequirement(10, GameConstants.Region.kanto, 36)]
-);
-TownList['Tanoby Ruins'] = new DungeonTown(
-    'Tanoby Ruins',
-    GameConstants.Region.kanto,
-    [new RouteKillRequirement(10, GameConstants.Region.kanto, 39)]
 );
 TownList['Pinkan Mountain'] = new DungeonTown(
     'Pinkan Mountain',
@@ -2985,7 +2888,7 @@ const ProfJuniper = new ProfNPC('Prof. Juniper',
 TownList['Aspertia City'] = new Town(
     'Aspertia City',
     GameConstants.Region.unova,
-    [new BulletinBoard(GameConstants.BulletinBoards.Kanto)],
+    [new BulletinBoard(GameConstants.BulletinBoards.Unova)],
     {
         requirements: [new GymBadgeRequirement(BadgeEnums.Elite_SinnohChampion)],
         npcs: [],

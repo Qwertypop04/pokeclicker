@@ -1450,18 +1450,7 @@ dungeonList['Sunburst Island'] = new Dungeon('Sunburst Island',
     [new DungeonBossPokemon('Crystal Onix', 4500000, 20)],
     43000, 31,
     () => {},
-    {dungeonRegionalDifficulty: GameConstants.Region.hoenn});
-
-dungeonList['Sunburst Island'] = new Dungeon('Sunburst Island',
-    ['Hoppip', 'Tentacool', 'Tentacruel', 'Magikarp', 'Horsea', 'Krabby', 'Qwilfish', 'Remoraid', 'Gyarados', 'Seadra', 'Kingler', 'Psyduck', 'Slowpoke'],
-    {
-        common: [
-            {loot: 'xClick'},
-            {loot: 'Token_collector'},
-        ],
-    },
-    500000,
-    [new DungeonBossPokemon('Crystal Onix', 4500000, 20)],
+    {dungeonRegionalDifficulty: GameConstants.Region.hoenn});kemon('Crystal Onix', 4500000, 20)],
     36000, 101);
 
 dungeonList['Lost Cave'] = new Dungeon('Lost Cave',
@@ -1703,22 +1692,6 @@ dungeonList['Pinkan Mountain'] = new Dungeon('Pinkan Mountain',
     89500, 42,
     () => {},
     {dungeonRegionalDifficulty: GameConstants.Region.hoenn});
-
-dungeonList['Pinkan Mountain'] = new Dungeon('Pinkan Mountain',
-    ['Pinkan Rattata', 'Pinkan Nidoran(M)', 'Pinkan Nidoran(F)', 'Pinkan Mankey', 'Pinkan Rhyhorn'],
-    {
-        common: [
-            {loot: 'xClick'},
-            {loot: 'Token_collector'},
-        ],
-    },
-    500000,
-    [
-        new DungeonBossPokemon('Pinkan Primeape', 4500000, 20),
-        new DungeonBossPokemon('Pinkan Rhyhorn', 4500000, 20),
-        new DungeonBossPokemon('Pinkan Nidoking', 4500000, 20),
-    ],
-    36000, 101);
 
 // Johto Dungeons
 
