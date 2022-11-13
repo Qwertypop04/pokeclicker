@@ -19,7 +19,7 @@ TemporaryBattleList['Fighting Dojo'] = new TemporaryBattle(
         firstTimeRewardFunction: () => {
             BagHandler.gainItem({type: ItemType.item, id: 'Fighting_egg'}, 1);
             Notifier.notify({
-                message: 'You were awarded a Fighting Egg for defeating the Fighting Dojo',
+                message: 'You were awarded a Fighting Egg for defeating the Fighting Dojo!',
                 type: NotificationConstants.NotificationOption.success,
                 setting: NotificationConstants.NotificationSetting.Dungeons.rare_dungeon_item_found,
             });
@@ -35,7 +35,7 @@ TemporaryBattleList['Snorlax route 12'] = new TemporaryBattle(
         new RouteKillRequirement(10, GameConstants.Region.kanto, 12),
         new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Pokémon Tower')),
     ],
-    [new TemporaryBattleRequirement('Snorlax route 12'), new ObtainedPokemonRequirement(pokemonMap.Snorlax)],
+    [new TemporaryBattleRequirement('Snorlax route 12'), new ObtainedPokemonRequirement('Snorlax')],
     {
         displayName: 'Snorlax',
         returnTown: 'Lavender Town',
@@ -49,7 +49,7 @@ TemporaryBattleList['Snorlax route 16'] = new TemporaryBattle(
     [new GymPokemon('Snorlax', 189990, 30)],
     undefined,
     [new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Pokémon Tower'))],
-    [new TemporaryBattleRequirement('Snorlax route 16'), new ObtainedPokemonRequirement(pokemonMap.Snorlax)],
+    [new TemporaryBattleRequirement('Snorlax route 16'), new ObtainedPokemonRequirement('Snorlax')],
     {
         displayName: 'Snorlax',
         returnTown: 'Celadon City',
@@ -97,8 +97,8 @@ TemporaryBattleList['Biker Goon 3'] = new TemporaryBattle(
 TemporaryBattleList['Cue Ball Paxton'] = new TemporaryBattle(
     'Cue Ball Paxton',
     [
-        new GymPokemon('Koffing', 221664, 39),
-        new GymPokemon('Grimer', 221664, 39),
+        new GymPokemon('Weezing', 221664, 39),
+        new GymPokemon('Muk', 221664, 39),
     ],
     'All right, enough! We\'ll leave like you wanted! We\'ll be happy to see the last of this boring island!',
     [
@@ -117,7 +117,7 @@ TemporaryBattleList.Sudowoodo = new TemporaryBattle(
         new GymBadgeRequirement(BadgeEnums.Plain),
         new RouteKillRequirement(10, GameConstants.Region.johto, 36),
     ],
-    [new TemporaryBattleRequirement('Sudowoodo'), new ObtainedPokemonRequirement(pokemonMap.Sudowoodo)],
+    [new TemporaryBattleRequirement('Sudowoodo'), new ObtainedPokemonRequirement('Sudowoodo')],
     {
         isTrainerBattle: false,
         returnTown: 'Goldenrod City',
@@ -272,6 +272,43 @@ TemporaryBattleList['Rocket Boss Giovanni'] = new TemporaryBattle(
 );
 
 // Hoenn Temporary Battles
+TemporaryBattleList['Kecleon 1'] = new TemporaryBattle(
+    'Kecleon 1',
+    [new GymPokemon('Kecleon', 6000000, 20)],
+    undefined,
+    [new RouteKillRequirement(10, GameConstants.Region.hoenn, 119)],
+    [new TemporaryBattleRequirement('Kecleon 1'), new ObtainedPokemonRequirement('Kecleon')],
+    {
+        isTrainerBattle: false,
+        returnTown: 'Fortree City',
+        hideTrainer: true,
+        visibleRequirement: new RouteKillRequirement(10, GameConstants.Region.hoenn, 119),
+    }
+);
+TemporaryBattleList['Kecleon 2'] = new TemporaryBattle(
+    'Kecleon 2',
+    [new GymPokemon('Kecleon', 7000000, 20)],
+    undefined,
+    [new TemporaryBattleRequirement('Kecleon 1')],
+    [new TemporaryBattleRequirement('Kecleon 2')],
+    {
+        isTrainerBattle: false,
+        returnTown: 'Fortree City',
+        hideTrainer: true,
+    }
+);
+TemporaryBattleList['Kecleon 3'] = new TemporaryBattle(
+    'Kecleon 3',
+    [new GymPokemon('Kecleon', 7000000, 20)],
+    undefined,
+    [new TemporaryBattleRequirement('Kecleon 2')],
+    [new TemporaryBattleRequirement('Kecleon 3')],
+    {
+        isTrainerBattle: false,
+        returnTown: 'Fortree City',
+        hideTrainer: true,
+    }
+);
 TemporaryBattleList['Sevii Rocket Grunt 1'] = new TemporaryBattle(
     'Sevii Rocket Grunt 1',
     [
@@ -1775,6 +1812,17 @@ TemporaryBattleList['Cheren 8'] = new TemporaryBattle(
 );
 
 // Kalos Temporary Battles
+TemporaryBattleList.Korrina = new TemporaryBattle(
+    'Korrina',
+    [new GymPokemon('Mega Lucario', 135000000, 32)],
+    'What an incredible bond you have! What amazing power! You and Lucario are worthy of this Lucarionite!</br><img src="assets/images/megaStone/448.png"/>',
+    [new GymBadgeRequirement(BadgeEnums.Rumble), new ObtainedPokemonRequirement('Lucario')],
+    undefined,
+    {
+        imageName: '../gymLeaders/Korrina',
+        firstTimeRewardFunction: () => App.game.party.getPokemonByName('Lucario').giveMegastone(),
+    }
+);
 TemporaryBattleList['Aipom Alley'] = new TemporaryBattle(
     'Aipom Alley',
     [
@@ -1851,9 +1899,9 @@ TemporaryBattleList['Possessed Mewtwo'] = new TemporaryBattle(
 TemporaryBattleList.Riot = new TemporaryBattle(
     'Riot',
     [
-        new GymPokemon('Ninjask', 160554441, 70),
-        new GymPokemon('Ninjask', 160554441, 70),
-        new GymPokemon('Greninja', 165551573, 70),
+        new GymPokemon('Ninjask', 136471274, 70),
+        new GymPokemon('Ninjask', 136471274, 70),
+        new GymPokemon('Greninja', 140718837, 70),
     ],
     'Curse you! Diancie has escaped!',
     [new QuestLineStepCompletedRequirement('Princess Diancie', 0)]
@@ -1861,8 +1909,8 @@ TemporaryBattleList.Riot = new TemporaryBattle(
 TemporaryBattleList.Merilyn = new TemporaryBattle(
     'Merilyn',
     [
-        new GymPokemon('Yanma', 243684567, 80),
-        new GymPokemon('Delphox', 249682234, 80),
+        new GymPokemon('Yanma', 207131881, 80),
+        new GymPokemon('Delphox', 212229898, 80),
     ],
     'You ruined my shopping spree!',
     [new QuestLineStepCompletedRequirement('Princess Diancie', 1)]
@@ -1870,10 +1918,10 @@ TemporaryBattleList.Merilyn = new TemporaryBattle(
 TemporaryBattleList['Millis and Argus Steel'] = new TemporaryBattle(
     'Millis and Argus Steel',
     [
-        new GymPokemon('Honedge', 126325325, 70),
-        new GymPokemon('Doublade', 129983175, 70),
-        new GymPokemon('Aegislash (Blade)', 130012468, 70),
-        new GymPokemon('Chesnaught', 131462975, 70),
+        new GymPokemon('Honedge', 107376526, 70),
+        new GymPokemon('Doublade', 110485698, 70),
+        new GymPokemon('Aegislash (Blade)', 110510597, 70),
+        new GymPokemon('Chesnaught', 111743528, 70),
     ],
     'Our plans are ruined! Retreat!',
     [new QuestLineStepCompletedRequirement('Princess Diancie', 3)]
@@ -1881,9 +1929,9 @@ TemporaryBattleList['Millis and Argus Steel'] = new TemporaryBattle(
 TemporaryBattleList.AZ = new TemporaryBattle(
     'AZ',
     [
-        new GymPokemon('Torkoal', 247996000, 60),
-        new GymPokemon('Golurk', 247996000, 60),
-        new GymPokemon('Sigilyph', 247996000, 60),
+        new GymPokemon('Torkoal', 153757520, 60),
+        new GymPokemon('Golurk', 153757520, 60),
+        new GymPokemon('Sigilyph', 153757520, 60),
     ],
     'Thank you very much for battling with me. Now I finally feel free…',
     [new GymBadgeRequirement(BadgeEnums.Elite_KalosChampion)],
@@ -1897,12 +1945,12 @@ TemporaryBattleList.AZ = new TemporaryBattle(
 TemporaryBattleList['Ash Ketchum Kanto'] = new TemporaryBattle(
     'Ash Ketchum Kanto',
     [
-        new GymPokemon('Pikachu (Partner Cap)', 123998000, 58),
-        new GymPokemon('Pidgeot', 123998000, 56),
-        new GymPokemon('Bulbasaur', 123998000, 56),
-        new GymPokemon('Charizard', 123998000, 60),
-        new GymPokemon('Squirtle', 123998000, 62),
-        new GymPokemon('Muk', 123998000, 62),
+        new GymPokemon('Pikachu (Partner Cap)', 83333000, 58),
+        new GymPokemon('Pidgeot', 83333000, 56),
+        new GymPokemon('Bulbasaur', 83333000, 56),
+        new GymPokemon('Charizard', 83333000, 60),
+        new GymPokemon('Squirtle', 83333000, 62),
+        new GymPokemon('Muk', 83333000, 62),
     ],
     'That was a fun battle!',
     [new QuestLineStartedRequirement('The New Kid')],
@@ -1916,12 +1964,12 @@ TemporaryBattleList['Ash Ketchum Kanto'] = new TemporaryBattle(
 TemporaryBattleList['Ash Ketchum Johto'] = new TemporaryBattle(
     'Ash Ketchum Johto',
     [
-        new GymPokemon('Pikachu (Partner Cap)', 123998000, 58),
-        new GymPokemon('Heracross', 123998000, 56),
-        new GymPokemon('Noctowl', 123998000, 56),
-        new GymPokemon('Bayleef', 123998000, 60),
-        new GymPokemon('Cyndaquil', 123998000, 62),
-        new GymPokemon('Totodile', 123998000, 62),
+        new GymPokemon('Pikachu (Partner Cap)', 83333000, 58),
+        new GymPokemon('Heracross', 83333000, 56),
+        new GymPokemon('Noctowl', 83333000, 56),
+        new GymPokemon('Bayleef', 83333000, 60),
+        new GymPokemon('Cyndaquil', 83333000, 62),
+        new GymPokemon('Totodile', 83333000, 62),
     ],
     'Don\'t I know you from somewhere?',
     [new QuestLineStepCompletedRequirement('The New Kid', 0), new RouteKillRequirement(10, GameConstants.Region.johto, 48)],
@@ -1935,12 +1983,12 @@ TemporaryBattleList['Ash Ketchum Johto'] = new TemporaryBattle(
 TemporaryBattleList['Ash Ketchum Hoenn'] = new TemporaryBattle(
     'Ash Ketchum Hoenn',
     [
-        new GymPokemon('Pikachu (Partner Cap)', 123998000, 58),
-        new GymPokemon('Swellow', 123998000, 56),
-        new GymPokemon('Grovyle', 123998000, 56),
-        new GymPokemon('Torkoal', 123998000, 62),
-        new GymPokemon('Corphish', 123998000, 60),
-        new GymPokemon('Glalie', 123998000, 62),
+        new GymPokemon('Pikachu (Partner Cap)', 83333000, 58),
+        new GymPokemon('Swellow', 83333000, 56),
+        new GymPokemon('Grovyle', 83333000, 56),
+        new GymPokemon('Torkoal', 83333000, 62),
+        new GymPokemon('Corphish', 83333000, 60),
+        new GymPokemon('Glalie', 83333000, 62),
     ],
     'That was a nice rematch. You sure are a strong Pokémon trainer! I\'ll beat you next time!',
     [new QuestLineStepCompletedRequirement('The New Kid', 1)],
@@ -1954,12 +2002,12 @@ TemporaryBattleList['Ash Ketchum Hoenn'] = new TemporaryBattle(
 TemporaryBattleList['Ash Ketchum Sinnoh'] = new TemporaryBattle(
     'Ash Ketchum Sinnoh',
     [
-        new GymPokemon('Pikachu (Partner Cap)', 123998000, 58),
-        new GymPokemon('Staraptor', 123998000, 56),
-        new GymPokemon('Torterra', 123998000, 56),
-        new GymPokemon('Infernape', 123998000, 60),
-        new GymPokemon('Buizel', 123998000, 62),
-        new GymPokemon('Gible', 123998000, 62),
+        new GymPokemon('Pikachu (Partner Cap)', 83333000, 58),
+        new GymPokemon('Staraptor', 83333000, 56),
+        new GymPokemon('Torterra', 83333000, 56),
+        new GymPokemon('Infernape', 83333000, 60),
+        new GymPokemon('Buizel', 83333000, 62),
+        new GymPokemon('Gible', 83333000, 62),
     ],
     'Wow, these battles are intense. It\'s getting hard to keep up with you... I think I need a break.',
     [new QuestLineStepCompletedRequirement('The New Kid', 2), new RouteKillRequirement(10, GameConstants.Region.sinnoh, 226)],
@@ -1973,12 +2021,12 @@ TemporaryBattleList['Ash Ketchum Sinnoh'] = new TemporaryBattle(
 TemporaryBattleList['Ash Ketchum Unova'] = new TemporaryBattle(
     'Ash Ketchum Unova',
     [
-        new GymPokemon('Pikachu (Partner Cap)', 123998000, 58),
-        new GymPokemon('Unfezant', 123998000, 56),
-        new GymPokemon('Snivy', 123998000, 62),
-        new GymPokemon('Pignite', 123998000, 60),
-        new GymPokemon('Oshawott', 123998000, 56),
-        new GymPokemon('Krookodile', 123998000, 62),
+        new GymPokemon('Pikachu (Partner Cap)', 83333000, 58),
+        new GymPokemon('Unfezant', 83333000, 56),
+        new GymPokemon('Snivy', 83333000, 62),
+        new GymPokemon('Pignite', 83333000, 60),
+        new GymPokemon('Oshawott', 83333000, 56),
+        new GymPokemon('Krookodile', 83333000, 62),
     ],
     'Hey, what gives? I was just trying to relax here!',
     [new QuestLineStepCompletedRequirement('The New Kid', 3)],
@@ -1992,12 +2040,12 @@ TemporaryBattleList['Ash Ketchum Unova'] = new TemporaryBattle(
 TemporaryBattleList['Ash Ketchum Kalos'] = new TemporaryBattle(
     'Ash Ketchum Kalos',
     [
-        new GymPokemon('Pikachu (Partner Cap)', 123998000, 58),
-        new GymPokemon('Talonflame', 123998000, 56),
-        new GymPokemon('Hawlucha', 123998000, 56),
-        new GymPokemon('Goodra', 123998000, 60),
-        new GymPokemon('Noivern', 123998000, 62),
-        new GymPokemon('Ash-Greninja', 123998000, 62),
+        new GymPokemon('Pikachu (Partner Cap)', 83333000, 58),
+        new GymPokemon('Talonflame', 83333000, 56),
+        new GymPokemon('Hawlucha', 83333000, 56),
+        new GymPokemon('Goodra', 83333000, 60),
+        new GymPokemon('Noivern', 83333000, 62),
+        new GymPokemon('Ash-Greninja', 83333000, 62),
     ],
     'I forgive you for chasing me around. I\'m going to take some time off with a long vacation on a tropical island! Will you take care of my Greninja for me? He has a special Bond while in Battle with his trainer.',
     [new QuestLineStepCompletedRequirement('The New Kid', 4)],
@@ -2011,12 +2059,12 @@ TemporaryBattleList['Ash Ketchum Kalos'] = new TemporaryBattle(
 TemporaryBattleList['Ash Ketchum Pinkan'] = new TemporaryBattle(
     'Ash Ketchum Pinkan',
     [
-        new GymPokemon('Pinkan Pikachu', 123998000, 58),
-        new GymPokemon('Snorlax', 123998000, 56),
-        new GymPokemon('Lapras', 123998000, 56),
-        new GymPokemon('Kingler', 123998000, 60),
-        new GymPokemon('Tauros', 123998000, 62),
-        new GymPokemon('Charizard', 123998000, 62),
+        new GymPokemon('Pinkan Pikachu', 83333000, 58),
+        new GymPokemon('Snorlax', 83333000, 56),
+        new GymPokemon('Lapras', 83333000, 56),
+        new GymPokemon('Kingler', 83333000, 60),
+        new GymPokemon('Tauros', 83333000, 62),
+        new GymPokemon('Charizard', 83333000, 62),
     ],
     'Hey, you found me on my vacation! Just make sure your Pikachu does not eat the berries here.',
     [new QuestLineCompletedRequirement('The New Kid'), new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Pinkan Mountain'))],
@@ -2045,7 +2093,7 @@ TemporaryBattleList['Ultra Wormhole'] = new TemporaryBattle(
 );
 TemporaryBattleList['Ultra Megalopolis'] = new TemporaryBattle(
     'Ultra Megalopolis',
-    [new GymPokemon('Necrozma (Ultra)', 282601920, 60)],
+    [new GymPokemon('Ultra Necrozma', 282601920, 60)],
     '<i>Necrozma fled.</i>',
     [new GymBadgeRequirement(BadgeEnums.DarkiniumZ)],
     undefined,
@@ -2213,10 +2261,166 @@ TemporaryBattleList['Ash Ketchum Alola'] = new TemporaryBattle(
     }
 );
 
+TemporaryBattleList['Rainbow Rocket Grunt 1'] = new TemporaryBattle(
+    'Rainbow Rocket Grunt 1',
+    [
+        new GymPokemon('Golbat', 433000000, 100),
+        new GymPokemon('Raticate', 433000000, 100),
+        new GymPokemon('Persian', 450000000, 100),
+    ],
+    'Hmph! I\'ll have you know defeating me won\'t do you any good, anyway.',
+    [
+        new QuestLineStepCompletedRequirement('Let\'s Go, Meltan!', 9),
+        new QuestLineStepCompletedRequirement('Defeat Rainbow Rocket', 0, GameConstants.AchievementOption.less ),
+    ],
+    undefined,
+    {
+        displayName: 'Rainbow Rocket Grunt',
+        returnTown: 'Aether Paradise',
+        imageName: 'Team Rainbow Rocket Grunt (female)',
+    }
+);
+TemporaryBattleList['Rainbow Rocket Grunt 2'] = new TemporaryBattle(
+    'Rainbow Rocket Grunt 2',
+    [
+        new GymPokemon('Weezing', 433000000, 100),
+        new GymPokemon('Electrode', 433000000, 100),
+        new GymPokemon('Cloyster', 450000000, 100),
+    ],
+    'Hmph! I\'ll have you know defeating me won\'t do you any good, anyway.',
+    [
+        new QuestLineStepCompletedRequirement('Let\'s Go, Meltan!', 9),
+        new QuestLineStepCompletedRequirement('Defeat Rainbow Rocket', 0, GameConstants.AchievementOption.less ),
+    ],
+    undefined,
+    {
+        displayName: 'Rainbow Rocket Grunt',
+        returnTown: 'Aether Paradise',
+        imageName: 'Team Rainbow Rocket Grunt (male)',
+    }
+);
+
+TemporaryBattleList['Aether Branch Chief Faba'] = new TemporaryBattle(
+    'Aether Branch Chief Faba',
+    [
+        new GymPokemon('Claydol', 450000000, 60),
+        new GymPokemon('Bruxish', 450000000, 60),
+        new GymPokemon('Hypno', 480000000, 60),
+    ],
+    'Hmph! I\'ll have you know defeating me won\'t do you any good, anyway.',
+    [new QuestLineStepCompletedRequirement('Defeat Rainbow Rocket', 0)],
+    undefined,
+    {
+        imageName: '../trainers/Aether Branch Chief (faba)',
+    }
+);
+
+TemporaryBattleList['Team Aqua Leader Archie'] = new TemporaryBattle(
+    'Team Aqua Leader Archie',
+    [
+        new GymPokemon('Mightyena', 270000000, 60),
+        new GymPokemon('Crobat', 270000000, 60),
+        new GymPokemon('Muk', 270000000, 60),
+        new GymPokemon('Sharpedo', 270000000, 60),
+        new GymPokemon('Kyogre', 300000000, 60),
+    ],
+    'You\'ve made your point. I can see you are not one to be trifled with.',
+    [new QuestLineStepCompletedRequirement('Defeat Rainbow Rocket', 1)],
+    undefined,
+    {
+        imageName: '../trainers/Aqua Leader',
+    }
+);
+
+TemporaryBattleList['Team Magma Leader Maxie'] = new TemporaryBattle(
+    'Team Magma Leader Maxie',
+    [
+        new GymPokemon('Mightyena', 270000000, 60),
+        new GymPokemon('Crobat', 270000000, 60),
+        new GymPokemon('Weezing', 270000000, 60),
+        new GymPokemon('Camerupt', 270000000, 60),
+        new GymPokemon('Groudon', 300000000, 60),
+    ],
+    'I fell behind, but only by an inch.',
+    [new QuestLineStepCompletedRequirement('Defeat Rainbow Rocket', 1)],
+    undefined,
+    {
+        imageName: '../trainers/Magma Leader',
+    }
+);
+
+TemporaryBattleList['Team Galactic Leader Cyrus'] = new TemporaryBattle(
+    'Team Galactic Leader Cyrus',
+    [
+        new GymPokemon('Houndoom', 225000000, 60),
+        new GymPokemon('Honchkrow', 225000000, 60),
+        new GymPokemon('Crobat', 225000000, 60),
+        new GymPokemon('Weavile', 225000000, 60),
+        new GymPokemon('Dialga', 225000000, 60),
+        new GymPokemon('Palkia', 250000000, 60),
+    ],
+    'Impressive. Your prowess is notable.',
+    [new QuestLineStepCompletedRequirement('Defeat Rainbow Rocket', 2)],
+    undefined,
+    {
+        imageName: '../trainers/Galactic Boss (cyrus)',
+    }
+);
+
+TemporaryBattleList['Team Flare Leader Lysandre'] = new TemporaryBattle(
+    'Team Flare Leader Lysandre',
+    [
+        new GymPokemon('Mienshao', 225000000, 60),
+        new GymPokemon('Pyroar', 225000000, 60),
+        new GymPokemon('Honchkrow', 225000000, 60),
+        new GymPokemon('Mega Gyarados', 225000000, 60),
+        new GymPokemon('Xerneas', 225000000, 60),
+        new GymPokemon('Yveltal', 250000000, 60),
+    ],
+    'I can feel the fire of your convictions burning deep within your heart!',
+    [new QuestLineStepCompletedRequirement('Defeat Rainbow Rocket', 3)],
+    undefined,
+    {
+        imageName: '../trainers/Team Flare Lysandre',
+    }
+);
+
+TemporaryBattleList['Team Plasma Leader Ghetsis'] = new TemporaryBattle(
+    'Team Plasma Leader Ghetsis',
+    [
+        new GymPokemon('Cofagrigus', 225000000, 60),
+        new GymPokemon('Bouffalant', 225000000, 60),
+        new GymPokemon('Bisharp', 225000000, 60),
+        new GymPokemon('Hydreigon', 225000000, 60),
+        new GymPokemon('Zekrom', 225000000, 60),
+        new GymPokemon('Reshiram', 250000000, 60),
+    ],
+    'I couldn\'t have been defeated by some random Trainer from who knows where!',
+    [new QuestLineStepCompletedRequirement('Defeat Rainbow Rocket', 4)],
+    undefined,
+    {
+        imageName: 'Ghetsis',
+    }
+);
+
+TemporaryBattleList['Team Rainbow Leader Giovanni'] = new TemporaryBattle(
+    'Team Rainbow Leader Giovanni',
+    [
+        new GymPokemon('Dugtrio', 230000000, 60),
+        new GymPokemon('Nidoking', 230000000, 60),
+        new GymPokemon('Nidoqueen', 230000000, 60),
+        new GymPokemon('Rhyperior', 230000000, 60),
+        new GymPokemon('Mega Mewtwo X', 230000000, 60),
+        new GymPokemon('Mega Mewtwo Y', 260000000, 60),
+    ],
+    'Ha! That was a truly intense fight!',
+    [new QuestLineStepCompletedRequirement('Defeat Rainbow Rocket', 5)]
+);
+
 //Galar Temporary Battles
 //TODO: Have Hop's starter depend on the players Galar starter
-TemporaryBattleList.Hop1 = new TemporaryBattle(
-    'Hop1',
+TemporaryBattleList['Hop 1'] = new TemporaryBattle(
+    'Hop 1',
     [
         new GymPokemon('Wooloo', 96928085, 3),
         new GymPokemon('Sobble', 105005426, 5),
@@ -2237,14 +2441,14 @@ TemporaryBattleList.Mirages = new TemporaryBattle(
         new GymPokemon('Zamazenta (Battle Hero)', 114428989, 70),
     ],
     '<i>The Pokémon fled.</i>',
-    [new TemporaryBattleRequirement('Hop1')],
+    [new TemporaryBattleRequirement('Hop 1')],
     undefined,
     {
         hideTrainer: true,
     }
 );
-TemporaryBattleList.Hop2 = new TemporaryBattle(
-    'Hop2',
+TemporaryBattleList['Hop 2'] = new TemporaryBattle(
+    'Hop 2',
     [
         new GymPokemon('Wooloo', 88822988, 6),
         new GymPokemon('Rookidee', 88822988, 5),
@@ -2259,8 +2463,8 @@ TemporaryBattleList.Hop2 = new TemporaryBattle(
         imageName: '../gymLeaders/Hop',
     }
 );
-TemporaryBattleList.Hop3 = new TemporaryBattle(
-    'Hop3',
+TemporaryBattleList['Hop 3'] = new TemporaryBattle(
+    'Hop 3',
     [
         new GymPokemon('Wooloo', 102249719, 11),
         new GymPokemon('Rookidee', 102249719, 12),
@@ -2275,8 +2479,8 @@ TemporaryBattleList.Hop3 = new TemporaryBattle(
         imageName: '../gymLeaders/Hop',
     }
 );
-TemporaryBattleList.Bede1 = new TemporaryBattle(
-    'Bede1',
+TemporaryBattleList['Bede 1'] = new TemporaryBattle(
+    'Bede 1',
     [
         new GymPokemon('Solosis', 110628515, 13),
         new GymPokemon('Gothita', 110628515, 15),
@@ -2290,8 +2494,8 @@ TemporaryBattleList.Bede1 = new TemporaryBattle(
         imageName: 'Bede',
     }
 );
-TemporaryBattleList.Hop4 = new TemporaryBattle(
-    'Hop4',
+TemporaryBattleList['Hop 4'] = new TemporaryBattle(
+    'Hop 4',
     [
         new GymPokemon('Wooloo', 145167441, 18),
         new GymPokemon('Corvisquire', 145167441, 19),
@@ -2306,8 +2510,8 @@ TemporaryBattleList.Hop4 = new TemporaryBattle(
         imageName: '../gymLeaders/Hop',
     }
 );
-TemporaryBattleList.Bede2 = new TemporaryBattle(
-    'Bede2',
+TemporaryBattleList['Bede 2'] = new TemporaryBattle(
+    'Bede 2',
     [
         new GymPokemon('Solosis', 135596164, 21),
         new GymPokemon('Gothita', 135596164, 22),
@@ -2322,8 +2526,8 @@ TemporaryBattleList.Bede2 = new TemporaryBattle(
         imageName: 'Bede',
     }
 );
-TemporaryBattleList.Marnie1 = new TemporaryBattle(
-    'Marnie1',
+TemporaryBattleList['Marnie 1'] = new TemporaryBattle(
+    'Marnie 1',
     [
         new GymPokemon('Croagunk', 183113060, 24),
         new GymPokemon('Scraggy', 183113060, 24),
@@ -2337,8 +2541,8 @@ TemporaryBattleList.Marnie1 = new TemporaryBattle(
         imageName: '../gymLeaders/Marnie',
     }
 );
-TemporaryBattleList.Hop5 = new TemporaryBattle(
-    'Hop5',
+TemporaryBattleList['Hop 5'] = new TemporaryBattle(
+    'Hop 5',
     [
         new GymPokemon('Cramorant', 184350136, 28),
         new GymPokemon('Toxel', 184350136, 29),
@@ -2354,8 +2558,8 @@ TemporaryBattleList.Hop5 = new TemporaryBattle(
         imageName: '../gymLeaders/Hop',
     }
 );
-TemporaryBattleList.Bede3 = new TemporaryBattle(
-    'Bede3',
+TemporaryBattleList['Bede 3'] = new TemporaryBattle(
+    'Bede 3',
     [
         new GymPokemon('Duosion', 197836220, 32),
         new GymPokemon('Gothorita', 197836220, 32),
@@ -2371,8 +2575,8 @@ TemporaryBattleList.Bede3 = new TemporaryBattle(
         imageName: 'Bede',
     }
 );
-TemporaryBattleList.Hop6 = new TemporaryBattle(
-    'Hop6',
+TemporaryBattleList['Hop 6'] = new TemporaryBattle(
+    'Hop 6',
     [
         new GymPokemon('Trevenant', 164138786, 34),
         new GymPokemon('Heatmor', 164138786, 34),
@@ -2389,8 +2593,8 @@ TemporaryBattleList.Hop6 = new TemporaryBattle(
         imageName: '../gymLeaders/Hop',
     }
 );
-TemporaryBattleList.Hop7 = new TemporaryBattle(
-    'Hop7',
+TemporaryBattleList['Hop 7'] = new TemporaryBattle(
+    'Hop 7',
     [
         new GymPokemon('Dubwool', 169633690, 40),
         new GymPokemon('Corviknight', 169633690, 40),
@@ -2412,8 +2616,8 @@ TemporaryBattleList.Hop7 = new TemporaryBattle(
         imageName: '../gymLeaders/Hop',
     }
 );
-TemporaryBattleList.Marnie2 = new TemporaryBattle(
-    'Marnie2',
+TemporaryBattleList['Marnie 2'] = new TemporaryBattle(
+    'Marnie 2',
     [
         new GymPokemon('Liepard', 214035920, 42),
         new GymPokemon('Toxicroak', 214035920, 43),
@@ -2454,8 +2658,8 @@ TemporaryBattleList['The Darkest Day'] = new TemporaryBattle(
         imageName: '../pokemon/890',
     }
 );
-TemporaryBattleList.Hop8 = new TemporaryBattle(
-    'Hop8',
+TemporaryBattleList['Hop 8'] = new TemporaryBattle(
+    'Hop 8',
     [
         new GymPokemon('Dubwool', 372064692, 59),
         new GymPokemon('Pincurchin', 372064692, 59),
@@ -2472,8 +2676,8 @@ TemporaryBattleList.Hop8 = new TemporaryBattle(
         imageName: '../gymLeaders/Hop',
     }
 );
-TemporaryBattleList.Sordward1 = new TemporaryBattle(
-    'Sordward1',
+TemporaryBattleList['Sordward 1'] = new TemporaryBattle(
+    'Sordward 1',
     [
         new GymPokemon('Sirfetch\'d', 443615594, 60),
         new GymPokemon('Golisopod', 443615594, 60),
@@ -2488,8 +2692,8 @@ TemporaryBattleList.Sordward1 = new TemporaryBattle(
         imageName: 'Sordward',
     }
 );
-TemporaryBattleList.Shielbert1 = new TemporaryBattle(
-    'Shielbert1',
+TemporaryBattleList['Shielbert 1'] = new TemporaryBattle(
+    'Shielbert 1',
     [
         new GymPokemon('Sirfetch\'d', 443615594, 60),
         new GymPokemon('Bronzong', 443615594, 60),
@@ -2636,8 +2840,8 @@ TemporaryBattleList['Rampaging Haxorus'] = new TemporaryBattle(
         imageName: '../pokemon/612',
     }
 );
-TemporaryBattleList.Sordward2 = new TemporaryBattle(
-    'Sordward2',
+TemporaryBattleList['Sordward 2'] = new TemporaryBattle(
+    'Sordward 2',
     [
         new GymPokemon('Sirfetch\'d', 554746301, 64),
         new GymPokemon('Golisopod', 554746301, 64),
@@ -2652,8 +2856,8 @@ TemporaryBattleList.Sordward2 = new TemporaryBattle(
         imageName: 'Sordward',
     }
 );
-TemporaryBattleList.Shielbert2 = new TemporaryBattle(
-    'Shielbert2',
+TemporaryBattleList['Shielbert 2'] = new TemporaryBattle(
+    'Shielbert 2',
     [
         new GymPokemon('Sirfetch\'d', 554746301, 64),
         new GymPokemon('Bronzong', 554746301, 64),
@@ -2690,8 +2894,8 @@ TemporaryBattleList['Rampaging Zamazenta'] = new TemporaryBattle(
         imageName: '../pokemon/889.1',
     }
 );
-TemporaryBattleList.Klara1 = new TemporaryBattle(
-    'Klara1',
+TemporaryBattleList['Klara 1'] = new TemporaryBattle(
+    'Klara 1',
     [
         new GymPokemon('Venipede', 799982445, 58),
         new GymPokemon('Galarian Slowpoke', 816143704, 60),
@@ -2705,8 +2909,8 @@ TemporaryBattleList.Klara1 = new TemporaryBattle(
         imageName: '../gymLeaders/Klara',
     }
 );
-TemporaryBattleList.Avery1 = new TemporaryBattle(
-    'Avery1',
+TemporaryBattleList['Avery 1'] = new TemporaryBattle(
+    'Avery 1',
     [
         new GymPokemon('Abra', 799982445, 58),
         new GymPokemon('Galarian Slowpoke', 816143704, 60),
@@ -2733,8 +2937,8 @@ TemporaryBattleList.Mustard = new TemporaryBattle(
         displayName: 'Dojo Master Mustard',
     }
 );
-TemporaryBattleList.Klara2 = new TemporaryBattle(
-    'Klara2',
+TemporaryBattleList['Klara 2'] = new TemporaryBattle(
+    'Klara 2',
     [
         new GymPokemon('Galarian Slowpoke', 564237041, 62),
         new GymPokemon('Koffing', 564237041, 62),
@@ -2751,8 +2955,8 @@ TemporaryBattleList.Klara2 = new TemporaryBattle(
         imageName: '../gymLeaders/Klara',
     }
 );
-TemporaryBattleList.Avery2 = new TemporaryBattle(
-    'Avery2',
+TemporaryBattleList['Avery 2'] = new TemporaryBattle(
+    'Avery 2',
     [
         new GymPokemon('Galarian Slowpoke', 564237041, 62),
         new GymPokemon('Woobat', 564237041, 62),
@@ -2769,8 +2973,8 @@ TemporaryBattleList.Avery2 = new TemporaryBattle(
         imageName: '../gymLeaders/Avery',
     }
 );
-TemporaryBattleList.Klara3 = new TemporaryBattle(
-    'Klara3',
+TemporaryBattleList['Klara 3'] = new TemporaryBattle(
+    'Klara 3',
     [
         new GymPokemon('Skorupi', 452051518, 65),
         new GymPokemon('Galarian Weezing', 452051518, 66),
@@ -2786,8 +2990,8 @@ TemporaryBattleList.Klara3 = new TemporaryBattle(
         imageName: '../gymLeaders/Klara',
     }
 );
-TemporaryBattleList.Avery3 = new TemporaryBattle(
-    'Avery3',
+TemporaryBattleList['Avery 3'] = new TemporaryBattle(
+    'Avery 3',
     [
         new GymPokemon('Galarian Ponyta', 452051518, 65),
         new GymPokemon('Swoobat', 452051518, 66),
@@ -2808,7 +3012,7 @@ TemporaryBattleList.Kubfu = new TemporaryBattle(
     [new GymPokemon('Kubfu', 1886555626, 50)],
     undefined,
     [new QuestLineStepCompletedRequirement('The Dojo\'s Armor', 11)],
-    [new ObtainedPokemonRequirement(pokemonMap.Kubfu)],
+    [new ObtainedPokemonRequirement('Kubfu')],
     {
         isTrainerBattle: false,
         hideTrainer: true,
@@ -2906,7 +3110,7 @@ TemporaryBattleList['Flowering Celebi'] = new TemporaryBattle(
     [new GymPokemon('Flowering Celebi', 2132963238, 100)],
     'Cel Cel! Celebi!',
     [new QuestLineStepCompletedRequirement('Secrets of the Jungle', 12)],
-    [new ObtainedPokemonRequirement(pokemonMap['Flowering Celebi'])],
+    [new ObtainedPokemonRequirement('Flowering Celebi')],
     {
         isTrainerBattle: false,
         hideTrainer: true,
@@ -3133,6 +3337,7 @@ TemporaryBattleList.Regigigas = new TemporaryBattle(
     {
         hideTrainer: true,
         isTrainerBattle: false,
+        returnTown: 'Freezington',
         imageName: '../pokemon/486',
     }
 );
