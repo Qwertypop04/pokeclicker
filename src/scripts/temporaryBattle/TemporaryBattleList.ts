@@ -1810,6 +1810,17 @@ TemporaryBattleList['Cheren 8'] = new TemporaryBattle(
         imageName: 'Cheren2',
     }
 );
+TemporaryBattleList.DreamResearcher = new TemporaryBattle(
+    'Dream Researcher',
+    [new GymPokemon('Mega Audino', 125000000, 32)],
+    'Wow! You have proven that you have total power over the realm of dreams! The location of this Audinite was revealed to me in a dream, you deserve to have it!</br><img src="assets/images/megaStone/531.png"/>',
+    [new ObtainedPokemonRequirement('Landorus (Therian)'), new ObtainedPokemonRequirement('Audino')],
+    undefined,
+    {
+        imageName: '../trainers/Scientist (female)',
+        firstTimeRewardFunction: () => App.game.party.getPokemonByName('Audino').giveMegastone(),
+    }
+);
 
 // Kalos Temporary Battles
 TemporaryBattleList.Korrina = new TemporaryBattle(

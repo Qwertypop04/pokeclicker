@@ -1413,6 +1413,7 @@ export const TemporaryBattles = [
     'N White 2',
     'Bianca 6',
     'Cheren 8',
+    'Dream Researcher',
     'Korrina',
     'Aipom Alley',
     'Mime Interview',
