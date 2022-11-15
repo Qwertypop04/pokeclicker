@@ -1149,11 +1149,11 @@ export const UnovaDungeons = [
     'Wellspring Cave',
     'Cold Storage',
     'Victory Road Unova Ruins',
-    'P2 Laboratory', // 102
+    'P2 Laboratory', // 105
 ];
 
 export const KalosDungeons = [
-    'Santalune Forest', // 103
+    'Santalune Forest', // 106
     'Connecting Cave',
     'Glittering Cave',
     'Reflection Cave',
@@ -1166,12 +1166,12 @@ export const KalosDungeons = [
     'Team Flare Secret HQ',
     'Terminus Cave',
     'Pokémon Village',
-    'Victory Road Kalos', // 115
+    'Victory Road Kalos', // 118
     // 'Unknown Dungeon',
 ];
 
 export const AlolaDungeons = [
-    'Trainers\' School', // 116
+    'Trainers\' School', // 119
     'Hau\'oli Cemetery',
     'Verdant Cavern',
     'Melemele Meadow',
@@ -1200,11 +1200,11 @@ export const AlolaDungeons = [
     'Ruins of Abundance',
     'Ruins of Hope',
     'Poni Meadow',
-    'Resolution Cave', // 145
+    'Resolution Cave', // 148
 ];
 
 export const GalarDungeons = [
-    'Slumbering Weald Shrine', // 146
+    'Slumbering Weald Shrine', // 149
     'Galar Mine',
     'Galar Mine No. 2',
     'Glimwood Tangle',
@@ -1224,7 +1224,7 @@ export const GalarDungeons = [
     'Lakeside Cave',
     'Dyna Tree Hill',
     'Tunnel to the Top',
-    'Crown Shrine', // 166
+    'Crown Shrine', // 169
 ];
 
 export const RegionDungeons = [
