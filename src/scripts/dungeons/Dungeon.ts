@@ -1454,8 +1454,7 @@ dungeonList['Sunburst Island'] = new Dungeon('Sunburst Island',
     [new DungeonBossPokemon('Crystal Onix', 4500000, 20)],
     43000, 31,
     () => {},
-    {dungeonRegionalDifficulty: GameConstants.Region.hoenn});kemon('Crystal Onix', 4500000, 20)],
-    36000, 101);
+    {dungeonRegionalDifficulty: GameConstants.Region.hoenn});
 
 dungeonList['Lost Cave'] = new Dungeon('Lost Cave',
     [
@@ -5901,8 +5900,8 @@ dungeonList['Dragonspiral Tower'] = new Dungeon('Dragonspiral Tower',
     5203000,
     [
         new DungeonBossPokemon('Dragonite', 48000000, 100),
-        new DungeonBossPokemon('Reshiram', 50000000, 100, {hide: true, requirement: new QuestLineCompletedRequirement('A memory in Black and White')}),
-        new DungeonBossPokemon('Zekrom', 50000000, 100, {hide: true, requirement: new QuestLineCompletedRequirement('A memory in Black and White')}),
+        new DungeonBossPokemon('Reshiram', 50000000, 100, {hide: true, requirement: new QuestLineStepCompletedRequirement('A memory in Black and White', ?)}),
+        new DungeonBossPokemon('Zekrom', 50000000, 100, {hide: true, requirement: new QuestLineStepCompletedRequirement('A memory in Black and White', ?)}),
     ],
     356500, 7);
 
