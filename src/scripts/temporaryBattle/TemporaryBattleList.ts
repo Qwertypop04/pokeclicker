@@ -777,9 +777,9 @@ TemporaryBattleList['Ghetsis 2'] = new TemporaryBattle(
 TemporaryBattleList['Bianca 1'] = new TemporaryBattle(
     'Bianca 1',
     [
-        new GymPokemon('Oshawott', 1689240, 5/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)*/),
-        new GymPokemon('Snivy', 1689240, 5/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)*/),
-        new GymPokemon('Tepig', 1689240, 5/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)*/),
+        new GymPokemon('Oshawott', 1689240, 5, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)),
+        new GymPokemon('Snivy', 1689240, 5, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)),
+        new GymPokemon('Tepig', 1689240, 5, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
     ],
     'Wow... You\'re going to be a great trainer someday, I can tell! No doubt!',
     [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
@@ -793,9 +793,9 @@ TemporaryBattleList['Bianca 1'] = new TemporaryBattle(
 TemporaryBattleList['Cheren 1'] = new TemporaryBattle(
     'Cheren 1',
     [
-        new GymPokemon('Tepig', 1689240, 5/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)*/),
-        new GymPokemon('Oshawott', 1689240, 5/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)*/),
-        new GymPokemon('Snivy', 1689240, 5/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)*/),
+        new GymPokemon('Tepig', 1689240, 5, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)),
+        new GymPokemon('Oshawott', 1689240, 5, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)),
+        new GymPokemon('Snivy', 1689240, 5, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
     ],
     'I made a strange blunder in my first battle, but this feeling I have... ...I\'m finally a trainer.',
     [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
@@ -803,7 +803,7 @@ TemporaryBattleList['Cheren 1'] = new TemporaryBattle(
     {
         displayName: 'Pokémon Trainer Cheren',
         returnTown: 'Nuvema Town',
-        imageName: 'Cheren2',
+        imageName: 'Cheren',
     }
 );
 TemporaryBattleList['N 1'] = new TemporaryBattle(
@@ -822,9 +822,9 @@ TemporaryBattleList['Bianca 2'] = new TemporaryBattle(
     'Bianca 2',
     [
         new GymPokemon('Lillipup', 1689240, 6),
-        new GymPokemon('Oshawott', 1689240, 7/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)*/),
-        new GymPokemon('Snivy', 1689240, 7/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)*/),
-        new GymPokemon('Tepig', 1689240, 7/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)*/),
+        new GymPokemon('Oshawott', 1689240, 7, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)),
+        new GymPokemon('Snivy', 1689240, 7, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)),
+        new GymPokemon('Tepig', 1689240, 7, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
     ],
     'Woo-hoo! You are a tough cookie. I\'m gonna work hard on training my Pokémon so we won\'t lose anymore! OK, bye-bye!',
     [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
@@ -838,9 +838,9 @@ TemporaryBattleList['Bianca 2'] = new TemporaryBattle(
 TemporaryBattleList['Cheren 2'] = new TemporaryBattle(
     'Cheren 2',
     [
-        new GymPokemon('Tepig', 1689240, 8/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)*/),
-        new GymPokemon('Oshawott', 1689240, 8/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)*/),
-        new GymPokemon('Snivy', 1689240, 8/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)*/),
+        new GymPokemon('Tepig', 1689240, 8, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)),
+        new GymPokemon('Oshawott', 1689240, 8, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)),
+        new GymPokemon('Snivy', 1689240, 8, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
         new GymPokemon('Purrloin', 1689240, 8),
     ],
     'I see! Losing to you means that I still have a lot to learn.',
@@ -849,7 +849,7 @@ TemporaryBattleList['Cheren 2'] = new TemporaryBattle(
     {
         displayName: 'Pokémon Trainer Cheren',
         returnTown: 'Striaton City',
-        imageName: 'Cheren2',
+        imageName: 'Cheren',
     }
 );
 TemporaryBattleList['Cilan'] = new TemporaryBattle(
@@ -916,9 +916,9 @@ TemporaryBattleList['Memory Team Plasma Grunt 2'] = new TemporaryBattle(
 TemporaryBattleList['Cheren 3'] = new TemporaryBattle(
     'Cheren 3',
     [
-        new GymPokemon('Tepig', 1689240, 14/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)*/),
-        new GymPokemon('Oshawott', 1689240, 14/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)*/),
-        new GymPokemon('Snivy', 1689240, 14/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)*/),
+        new GymPokemon('Tepig', 1689240, 14, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)),
+        new GymPokemon('Oshawott', 1689240, 14, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)),
+        new GymPokemon('Snivy', 1689240, 14, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
         new GymPokemon('Purrloin', 1689240, 12),
     ],
     'Why do you keep beating me? We have the same number of Gym Badges. We should be equals in strength...',
@@ -927,7 +927,7 @@ TemporaryBattleList['Cheren 3'] = new TemporaryBattle(
     {
         displayName: 'Pokémon Trainer Cheren',
         returnTown: 'Striaton City',
-        imageName: 'Cheren2',
+        imageName: 'Cheren',
     }
 );
 TemporaryBattleList['Memory Team Plasma Grunts 1'] = new TemporaryBattle(
@@ -1061,13 +1061,13 @@ TemporaryBattleList['Bianca 3'] = new TemporaryBattle(
     'Bianca 3',
     [
       new GymPokemon('Herdier', 1689240, 18),
-      new GymPokemon('Pansear', 1689240, 18/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)*/),
-      new GymPokemon('Panpour', 1689240, 18/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)*/),
-      new GymPokemon('Pansage', 1689240, 18/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)*/),
+      new GymPokemon('Pansear', 1689240, 18, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)),
+      new GymPokemon('Panpour', 1689240, 18, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)),
+      new GymPokemon('Pansage', 1689240, 18, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
       new GymPokemon('Munna', 1689240, 18),
-      new GymPokemon('Dewott', 1689240, 20/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)*/),
-      new GymPokemon('Servine', 1689240, 20/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)*/),
-      new GymPokemon('Pignite', 1689240, 20/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)*/),
+      new GymPokemon('Dewott', 1689240, 20, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)),
+      new GymPokemon('Servine', 1689240, 20, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)),
+      new GymPokemon('Pignite', 1689240, 20, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
     ],
     'I\'ll never be a strong Trainer like you or Cheren or Iris, but... You know since we left Nuvema Town, I\'ve met a lot of people and I\'ve been thinking about what I want to do in life! When you look at it that way, Pokémon have given me a lot of new experiences. And I also learned that being with Pokémon is really, really important! OK, well, I hope to see you again soon!',
     [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
@@ -1082,13 +1082,13 @@ TemporaryBattleList['Cheren 4'] = new TemporaryBattle(
     'Cheren 4',
     [
         new GymPokemon('Pidove', 1689240, 20),
-        new GymPokemon('Pansage', 1689240, 20/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)*/),
-        new GymPokemon('Pansear', 1689240, 20/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)*/),
-        new GymPokemon('Panpour', 1689240, 20/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)*/),
+        new GymPokemon('Pansage', 1689240, 20, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)),
+        new GymPokemon('Pansear', 1689240, 20, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)),
+        new GymPokemon('Panpour', 1689240, 20, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
         new GymPokemon('Liepard', 1689240, 20),
-        new GymPokemon('Pignite', 1689240, 22/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)*/),
-        new GymPokemon('Dewott', 1689240, 22/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)*/),
-        new GymPokemon('Servine', 1689240, 22/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)*/),
+        new GymPokemon('Pignite', 1689240, 22, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)),
+        new GymPokemon('Dewott', 1689240, 22, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)),
+        new GymPokemon('Servine', 1689240, 22, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
     ],
     'It\'s now clear to me. The reason you are so tough is the trust between you and your Pokémon. But... that shouldn\'t be a problem. I can get more out of my Pokémon, too.',
     [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
@@ -1096,7 +1096,7 @@ TemporaryBattleList['Cheren 4'] = new TemporaryBattle(
     {
         displayName: 'Pokémon Trainer Cheren',
         returnTown: 'Castelia City',
-        imageName: 'Cheren2',
+        imageName: 'Cheren',
     }
 );
 TemporaryBattleList['Memory Team Plasma Grunt 6'] = new TemporaryBattle(
@@ -1148,13 +1148,13 @@ TemporaryBattleList['Cheren 5'] = new TemporaryBattle(
     'Cheren 5',
     [
         new GymPokemon('Tranquill', 1689240, 24),
-        new GymPokemon('Pansage', 1689240, 24/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)*/),
-        new GymPokemon('Pansear', 1689240, 24/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)*/),
-        new GymPokemon('Panpour', 1689240, 24/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)*/),
+        new GymPokemon('Pansage', 1689240, 24, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)),
+        new GymPokemon('Pansear', 1689240, 24, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)),
+        new GymPokemon('Panpour', 1689240, 24, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
         new GymPokemon('Liepard', 1689240, 24),
-        new GymPokemon('Pignite', 1689240, 26/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)*/),
-        new GymPokemon('Dewott', 1689240, 26/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)*/),
-        new GymPokemon('Servine', 1689240, 26/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)*/),
+        new GymPokemon('Pignite', 1689240, 26, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)),
+        new GymPokemon('Dewott', 1689240, 26, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)),
+        new GymPokemon('Servine', 1689240, 26, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
     ],
     'Why? Why can\'t I best you?',
     [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
@@ -1162,7 +1162,7 @@ TemporaryBattleList['Cheren 5'] = new TemporaryBattle(
     {
         displayName: 'Pokémon Trainer Cheren',
         returnTown: 'Nimbasa City',
-        imageName: 'Cheren2',
+        imageName: 'Cheren',
     }
 );
 TemporaryBattleList['Memory Team Plasma Grunt 7'] = new TemporaryBattle(
@@ -1225,13 +1225,13 @@ TemporaryBattleList['Bianca 4'] = new TemporaryBattle(
     'Bianca 4',
     [
       new GymPokemon('Herdier', 1689240, 26),
-      new GymPokemon('Pansear', 1689240, 26/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)*/),
-      new GymPokemon('Panpour', 1689240, 26/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)*/),
-      new GymPokemon('Pansage', 1689240, 26/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)*/),
+      new GymPokemon('Pansear', 1689240, 26, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)),
+      new GymPokemon('Panpour', 1689240, 26, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)),
+      new GymPokemon('Pansage', 1689240, 26, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
       new GymPokemon('Musharna', 1689240, 26),
-      new GymPokemon('Dewott', 1689240, 28/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)*/),
-      new GymPokemon('Servine', 1689240, 28/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)*/),
-      new GymPokemon('Pignite', 1689240, 28/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)*/),
+      new GymPokemon('Dewott', 1689240, 28, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)),
+      new GymPokemon('Servine', 1689240, 28, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)),
+      new GymPokemon('Pignite', 1689240, 28, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
     ],
     'I haven\'t had a Pokémon battle with you in a while. You\'ve become totally strong, huh? I\'m not that strong so I don\'t know how to say it, but I think you\'re way tuned in to how your Pokémon feel!',
     [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
@@ -1362,13 +1362,13 @@ TemporaryBattleList['Cheren 6'] = new TemporaryBattle(
     'Cheren 6',
     [
         new GymPokemon('Unfezant', 1689240, 33),
-        new GymPokemon('Simisage', 1689240, 33/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)*/),
-        new GymPokemon('Simisear', 1689240, 33/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)*/),
-        new GymPokemon('Simipour', 1689240, 33/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)*/),
+        new GymPokemon('Simisage', 1689240, 33, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)),
+        new GymPokemon('Simisear', 1689240, 33, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)),
+        new GymPokemon('Simipour', 1689240, 33, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
         new GymPokemon('Liepard', 1689240, 33),
-        new GymPokemon('Pignite', 1689240, 35/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)*/),
-        new GymPokemon('Dewott', 1689240, 35/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)*/),
-        new GymPokemon('Servine', 1689240, 35/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)*/),
+        new GymPokemon('Pignite', 1689240, 35, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)),
+        new GymPokemon('Dewott', 1689240, 35, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)),
+        new GymPokemon('Servine', 1689240, 35, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
     ],
     'Pokémon battles are fun. But what is it to be truly strong?',
     [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
@@ -1376,7 +1376,7 @@ TemporaryBattleList['Cheren 6'] = new TemporaryBattle(
     {
         displayName: 'Pokémon Trainer Cheren',
         returnTown: 'Twist Mountain',
-        imageName: 'Cheren2',
+        imageName: 'Cheren',
     }
 );
 TemporaryBattleList['Brycen'] = new TemporaryBattle(
@@ -1555,13 +1555,13 @@ TemporaryBattleList['Bianca 5'] = new TemporaryBattle(
     'Bianca 5',
     [
       new GymPokemon('Stoutland', 1689240, 38),
-      new GymPokemon('Simisear', 1689240, 38/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)*/),
-      new GymPokemon('Simipour', 1689240, 38/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)*/),
-      new GymPokemon('Simisage', 1689240, 38/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)*/),
+      new GymPokemon('Simisear', 1689240, 38, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)),
+      new GymPokemon('Simipour', 1689240, 38, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)),
+      new GymPokemon('Simisage', 1689240, 38, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
       new GymPokemon('Musharna', 1689240, 38),
-      new GymPokemon('Samurott', 1689240, 40/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)*/),
-      new GymPokemon('Serperior', 1689240, 40/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)*/),
-      new GymPokemon('Emboar', 1689240, 40/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)*/),
+      new GymPokemon('Samurott', 1689240, 40, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)),
+      new GymPokemon('Serperior', 1689240, 40, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)),
+      new GymPokemon('Emboar', 1689240, 40, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
     ],
     'Yep! You\'re amazing! I\'m really, really, really impressed! In Castelia City, my precious Pokémon was stolen by Team Plasma. So I really, really understand! If Team Plasma forces everyone to liberate their Pokémon, there will be nothing but sad people! Stop Team Plasma! Don't allow Pokémon to be stolen from trainers who love them! I think that's the truth—or ideal—that you've been pursuing...',
     [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
@@ -1590,13 +1590,13 @@ TemporaryBattleList['Cheren 7'] = new TemporaryBattle(
     'Cheren 7',
     [
         new GymPokemon('Unfezant', 1689240, 43),
-        new GymPokemon('Simisage', 1689240, 43/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)*/),
-        new GymPokemon('Simisear', 1689240, 43/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)*/),
-        new GymPokemon('Simipour', 1689240, 43/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)*/),
+        new GymPokemon('Simisage', 1689240, 43, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)),
+        new GymPokemon('Simisear', 1689240, 43, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)),
+        new GymPokemon('Simipour', 1689240, 43, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
         new GymPokemon('Liepard', 1689240, 43),
-        new GymPokemon('Emboar', 1689240, 45/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)*/),
-        new GymPokemon('Samurott', 1689240, 45/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)*/),
-        new GymPokemon('Serperior', 1689240, 45/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)*/),
+        new GymPokemon('Emboar', 1689240, 45, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)),
+        new GymPokemon('Samurott', 1689240, 45, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)),
+        new GymPokemon('Serperior', 1689240, 45, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
     ],
     'Yep, you are something else. And I mean that sincerely. Right now, there\'s no way I can compare with you. If there is anything I can do to help in the battle with N, just say so...',
     [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
@@ -1604,7 +1604,7 @@ TemporaryBattleList['Cheren 7'] = new TemporaryBattle(
     {
         displayName: 'Pokémon Trainer Cheren',
         returnTown: 'Opelucid City',
-        imageName: 'Cheren2',
+        imageName: 'Cheren',
     }
 );
 TemporaryBattleList['Shauntal'] = new TemporaryBattle(
@@ -1770,15 +1770,15 @@ TemporaryBattleList['Bianca 6'] = new TemporaryBattle(
     'Bianca 6',
     [
       new GymPokemon('Stoutland', 1689240, 63),
-      new GymPokemon('Simisear', 1689240, 63/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)*/),
-      new GymPokemon('Simipour', 1689240, 63/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)*/),
-      new GymPokemon('Simisage', 1689240, 63/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)*/),
+      new GymPokemon('Simisear', 1689240, 63, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)),
+      new GymPokemon('Simipour', 1689240, 63, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)),
+      new GymPokemon('Simisage', 1689240, 63, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
       new GymPokemon('Musharna', 1689240, 63),
       new GymPokemon('Mienshao', 1689240, 63),
       new GymPokemon('Chandelure', 1689240, 63),
-      new GymPokemon('Samurott', 1689240, 65/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)*/),
-      new GymPokemon('Serperior', 1689240, 65/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)*/),
-      new GymPokemon('Emboar', 1689240, 65/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)*/),
+      new GymPokemon('Samurott', 1689240, 65, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)),
+      new GymPokemon('Serperior', 1689240, 65, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)),
+      new GymPokemon('Emboar', 1689240, 65, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
     ],
     'Phew! I\'m totally sure. You\'re really a strong Trainer. I love your style of Pokémon battling. Somehow your Pokémon look like they\'re having so much fun!',
     [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
@@ -1792,22 +1792,22 @@ TemporaryBattleList['Cheren 8'] = new TemporaryBattle(
     'Cheren 8',
     [
         new GymPokemon('Liepard', 1689240, 65),
-        new GymPokemon('Simisage', 1689240, 65/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)*/),
-        new GymPokemon('Simisear', 1689240, 65/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)*/),
-        new GymPokemon('Simipour', 1689240, 65/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)*/),
+        new GymPokemon('Simisage', 1689240, 65, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)),
+        new GymPokemon('Simisear', 1689240, 65, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)),
+        new GymPokemon('Simipour', 1689240, 65, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
         new GymPokemon('Unfezant', 1689240, 65),
         new GymPokemon('Gigalith', 1689240, 65),
         new GymPokemon('Haxorus', 1689240, 65),
-        new GymPokemon('Emboar', 1689240, 67/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)*/),
-        new GymPokemon('Samurott', 1689240, 67/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)*/),
-        new GymPokemon('Serperior', 1689240, 67/*, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)*/),
+        new GymPokemon('Emboar', 1689240, 67, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Grass)),
+        new GymPokemon('Samurott', 1689240, 67, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)),
+        new GymPokemon('Serperior', 1689240, 67, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
     ],
     'I\'ll keep battling many Trainers and Pokémon like this, and if I can learn what kind of person I am, it will open up my path. I\'m sure this path will lead me to become the person I\'m meant to be. Our Pokémon will always be with you and me as we go down our own paths. Our important friends, Pokémon...',
     [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
     undefined,
     {
         displayName: 'Pokémon Trainer Cheren',
-        imageName: 'Cheren2',
+        imageName: 'Cheren',
     }
 );
 TemporaryBattleList.DreamResearcher = new TemporaryBattle(
