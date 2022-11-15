@@ -76,6 +76,7 @@ enum BadgeEnums {
     'Elite_Grimsley',
     'Elite_Caitlin',
     'Elite_UnovaChampion',
+    'Elite_UnovaMemoryChampion',
     // Kalos
     'Bug',
     'Cliff',

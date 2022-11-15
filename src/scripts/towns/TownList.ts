@@ -3505,6 +3505,7 @@ TownList['Nacrene City'] = new Town(
 TownList['Icirrus City'] = new Town(
     'Icirrus City',
     GameConstants.Region.unova,
+    GameConstants.UnovaSubRegions.Unova,
     [TemporaryBattleList['Brycen'], IcirrusCityShop, new ShardTraderShop(GameConstants.ShardTraderLocations['Icirrus City'])],
     {
         requirements: [new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Twist Mountain'))],
@@ -3538,6 +3539,7 @@ TownList['Pokémon League Unova'] = new Town(
 TownList['N\'s Castle'] = new Town(
     'N\'s Castle',
     GameConstants.Region.unova,
+    GameConstants.UnovaSubRegions.Unova,
     [TemporaryBattleList['Reshiram'], TemporaryBattleList['Zekrom'], TemporaryBattleList['N Black'], TemporaryBattleList['N White'], TemporaryBattleList['Ghetsis 3'], TemporaryBattleList['N Black 2'], TemporaryBattleList['N White 2']],
     {
         requirements: [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
@@ -3726,18 +3728,21 @@ TownList.Dreamyard = new DungeonTown(
 TownList['Wellspring Cave'] = new DungeonTown(
     'Wellspring Cave',
     GameConstants.Region.unova,
+    GameConstants.UnovaSubRegions.Unova,
     [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     [TemporaryBattleList['Memory Team Plasma Grunts 1']]
 );
 TownList['Cold Storage'] = new DungeonTown(
     'Cold Storage',
     GameConstants.Region.unova,
+    GameConstants.UnovaSubRegions.Unova,
     [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     [TemporaryBattleList['Memory Team Plasma Grunt 7'], TemporaryBattleList['Memory Team Plasma Grunt 8'], TemporaryBattleList['Memory Team Plasma Grunts 3']]
 );
 TownList['Victory Road Unova Ruins'] = new DungeonTown(
     'Victory Road Unova Ruins',
     GameConstants.Region.unova,
+    GameConstants.UnovaSubRegions.Unova,
     [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     [TemporaryBattleList['Cheren 8']]
 );

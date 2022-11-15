@@ -1185,7 +1185,7 @@ TemporaryBattleList['Memory Team Plasma Grunt 8'] = new TemporaryBattle(
         new GymPokemon('Sandile', 1689240, 23),
         new GymPokemon('Watchog', 1689240, 23),
     ],
-    'If you take something away, I will take it back... Remember that!'
+    'If you take something away, I will take it back... Remember that!',
     [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
@@ -1199,7 +1199,7 @@ TemporaryBattleList['Memory Team Plasma Grunts 3'] = new TemporaryBattle(
         new GymPokemon('Trubbish', 1689240, 24),
         new GymPokemon('Liepard', 1689240, 24),
     ],
-    'Have you learned you\'re lesson now? ...We\'re such sore losers'
+    'Have you learned you\'re lesson now? ...We\'re such sore losers',
     [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
@@ -1328,7 +1328,7 @@ TemporaryBattleList['Memory Team Plasma Grunts 4'] = new TemporaryBattle(
         imageName: 'Memory Team Plasma Grunts (both)',
     }
 );
-TemporaryBattleList['N 4'] = new TemporaryBattle(Hey! What was that? You\'re too strong! Ugh!
+TemporaryBattleList['N 4'] = new TemporaryBattle(
     'N 4',
     [
         new GymPokemon('Boldore', 1689240, 28),
@@ -1563,7 +1563,7 @@ TemporaryBattleList['Bianca 5'] = new TemporaryBattle(
       new GymPokemon('Serperior', 1689240, 40, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Fire)),
       new GymPokemon('Emboar', 1689240, 40, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
     ],
-    'Yep! You\'re amazing! I\'m really, really, really impressed! In Castelia City, my precious Pokémon was stolen by Team Plasma. So I really, really understand! If Team Plasma forces everyone to liberate their Pokémon, there will be nothing but sad people! Stop Team Plasma! Don't allow Pokémon to be stolen from trainers who love them! I think that's the truth—or ideal—that you've been pursuing...',
+    'Yep! You\'re amazing! I\'m really, really, really impressed! In Castelia City, my precious Pokémon was stolen by Team Plasma. So I really, really understand! If Team Plasma forces everyone to liberate their Pokémon, there will be nothing but sad people! Stop Team Plasma! Don\'t allow Pokémon to be stolen from trainers who love them! I think that\'s the truth—or ideal—that you\'ve been pursuing...',
     [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {

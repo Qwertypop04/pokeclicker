@@ -933,7 +933,7 @@ class QuestLineHelper {
             App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('School Kid Lydia')]() +
             App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('School Kid Carter')]()
         );
-        plasmaUnovaQuestLine.addQuest(clearSchoolKid);
+        blackWhiteQuestLine.addQuest(clearSchoolKid);
 
         const clearLenora = new CustomQuest (1, 0, 'Defeat Lenora in Nacrene City.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Lenora')]());
         blackWhiteQuestLine.addQuest(clearLenora);
@@ -1030,14 +1030,14 @@ class QuestLineHelper {
         );
         blackWhiteQuestLine.addQuest(clearDragonspiralGrunts2);
 
-        const clearDragonspiralGrunts1 = new CustomQuest (5, 0, 'Team Plasma Grunts are trying to stop you from finding the legendary Stone that is in Relic Castle. Defeat them.', () =>
+        const clearRelicGrunts = new CustomQuest (5, 0, 'Team Plasma Grunts are trying to stop you from finding the legendary Stone that is in Relic Castle. Defeat them.', () =>
             App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunt 17')]() +
             App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunt 18')]() +
             App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunts 8')]() +
             App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunt 19')]() +
             App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunts 9')]()
         );
-        blackWhiteQuestLine.addQuest(clearDragonspiralGrunts1);
+        blackWhiteQuestLine.addQuest(clearRelicGrunts);
 
         const clearBianca5 = new CustomQuest (1, 0, 'Defeat Bianca on Route 8.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Bianca 5')]());
         blackWhiteQuestLine.addQuest(clearBianca5);
@@ -1062,6 +1062,7 @@ class QuestLineHelper {
         const catchUnovaDragon = new CustomQuest (1, 0, 'Defeat and Catch the Legendary Dragon!', () =>
             App.game.statistics.pokemonCaptured[pokemonMap.Reshiram.id](), 0 +
             App.game.statistics.pokemonCaptured[pokemonMap.Zekrom.id](), 0
+        );
         blackWhiteQuestLine.addQuest(catchUnovaDragon);
 
         const clearN5 = new CustomQuest (1, 0, 'Defeat N at N\'s Castle!', () =>
@@ -2359,7 +2360,7 @@ class QuestLineHelper {
         this.createRegiTrioQuestLine();
         this.createGalacticSinnohQuestLine();
         this.createPlasmaUnovaQuestLine();
-        this.createBlackWhiteQuestline();
+        this.createBlackWhiteQuestLine();
         this.createDetectivePikachuQuestLine();
         this.createVivillonQuestLine();
         this.createPrincessDiancieQuestLine();

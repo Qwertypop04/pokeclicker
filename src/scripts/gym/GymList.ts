@@ -1083,7 +1083,7 @@ GymList['Champion Iris'] = new Gym(
     () => {},
     { champion: true }
 );
-GymList['Champion Alder'] = new Champion(
+GymList['Champion Alder'] = new Gym(
     'Alder',
     'Champion Alder',
     [
@@ -1097,7 +1097,9 @@ GymList['Champion Alder'] = new Champion(
     BadgeEnums.Elite_UnovaMemoryChampion,
     96000,
     'After the battle, a fresh wind blew through my heart... Use the battle with me as a stepping stone and move forward!',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)]
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
+    () => {},
+    { champion: true }
 );
 
 //Kalos Gyms
