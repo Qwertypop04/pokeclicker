@@ -1515,7 +1515,7 @@ Routes.add(new RegionRoute(
 Routes.add(new RegionRoute(
     'Unova Route 10', GameConstants.Region.unova, 10,
     new RoutePokemon({
-        land: ['Herdier', 'Foongus', 'Bouffalant'. 'Rufflet', 'Vullaby', 'Amoonguss'],
+        land: ['Herdier', 'Foongus', 'Bouffalant', 'Rufflet', 'Vullaby', 'Amoonguss'],
     }),
     [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     23.6

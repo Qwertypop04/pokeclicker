@@ -6438,7 +6438,7 @@ dungeonList['Victory Road Unova Ruins'] = new Dungeon('Victory Road Unova Ruins'
             [
                 new GymPokemon('Gothorita', 326500, 43),
                 new GymPokemon('Leavanny', 326500, 43),
-            ], { weight: 1 }, 'Logan',
+            ], { weight: 1 }, 'Logan'),
         new DungeonTrainer('Ace Trainer',
             [
                 new GymPokemon('Klang', 326500, 44),

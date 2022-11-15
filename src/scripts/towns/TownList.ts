@@ -3471,7 +3471,7 @@ TownList['Nuvema Town'] = new Town(
     GameConstants.UnovaSubRegions.Unova,
     [TemporaryBattleList['Bianca 6'], NuvemaTownShop, new ShardTraderShop(GameConstants.ShardTraderLocations['Nuvema Town']), TemporaryBattleList['Lab Ambush']],
     {
-        requirements: [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
+        requirements: [new QuestLineStartedRequirement('A memory in Black and White')],
         npcs: [ProfJuniper, UnovaRoamerNPC],
     }
 );

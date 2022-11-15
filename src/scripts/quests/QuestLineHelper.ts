@@ -1060,8 +1060,8 @@ class QuestLineHelper {
         blackWhiteQuestLine.addQuest(clearUnovaEliteFour);
 
         const catchUnovaDragon = new CustomQuest (1, 0, 'Defeat and Catch the Legendary Dragon!', () =>
-            App.game.statistics.pokemonCaptured[pokemonMap.Reshiram.id](), 0 +
-            App.game.statistics.pokemonCaptured[pokemonMap.Zekrom.id](), 0
+            App.game.statistics.pokemonCaptured[pokemonMap.Reshiram.id]() +
+            App.game.statistics.pokemonCaptured[pokemonMap.Zekrom.id]()
         );
         blackWhiteQuestLine.addQuest(catchUnovaDragon);
 
