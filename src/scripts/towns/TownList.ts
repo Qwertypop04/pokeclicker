@@ -3471,7 +3471,7 @@ TownList['Nuvema Town'] = new Town(
     GameConstants.UnovaSubRegions.Unova,
     [TemporaryBattleList['Bianca 6'], NuvemaTownShop, new ShardTraderShop(GameConstants.ShardTraderLocations['Nuvema Town']), TemporaryBattleList['Lab Ambush']],
     {
-        requirements: [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+        requirements: [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
         npcs: [ProfJuniper, UnovaRoamerNPC],
     }
 );
@@ -3499,7 +3499,7 @@ TownList['Nacrene City'] = new Town(
     GameConstants.UnovaSubRegions.Unova,
     [TemporaryBattleList['Lenora'], NacreneCityShop, new ShardTraderShop(GameConstants.ShardTraderLocations['Nacrene City'])],
     {
-        requirements: [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+        requirements: [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     }
 );
 TownList['Icirrus City'] = new Town(
@@ -3540,7 +3540,7 @@ TownList['N\'s Castle'] = new Town(
     GameConstants.Region.unova,
     [TemporaryBattleList['Reshiram'], TemporaryBattleList['Zekrom'], TemporaryBattleList['N Black'], TemporaryBattleList['N White'], TemporaryBattleList['Ghetsis 3'], TemporaryBattleList['N Black 2'], TemporaryBattleList['N White 2']],
     {
-        requirements: [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+        requirements: [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     }
 );
 
@@ -3687,7 +3687,7 @@ TownList['Twist Mountain'] = new DungeonTown(
     GameConstants.Region.unova,
     GameConstants.UnovaSubRegions.Unova,
     [
-        new QuestLineStepCompletedRequirement('A memory in Black and White', ?),
+        new QuestLineStepCompletedRequirement('A memory in Black and White', 0),
         new RouteKillRequirement(10, GameConstants.Region.unova, 7),
     ]
 );
@@ -3713,32 +3713,32 @@ TownList['Pinwheel Forest'] = new DungeonTown(
     'Pinwheel Forest',
     GameConstants.Region.unova,
     GameConstants.UnovaSubRegions.Unova,
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     [TemporaryBattleList['Memory Team Plasma Grunt 3'], TemporaryBattleList['Memory Team Plasma Grunt 4']]
 );
 TownList.Dreamyard = new DungeonTown(
     'Dreamyard',
     GameConstants.Region.unova,
     GameConstants.UnovaSubRegions.Unova,
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     [TemporaryBattleList['Memory Team Plasma Grunt 1'], TemporaryBattleList['Memory Team Plasma Grunts 2'], TemporaryBattleList['Memory Team Plasma Grunt 2']]
 );
 TownList['Wellspring Cave'] = new DungeonTown(
     'Wellspring Cave',
     GameConstants.Region.unova,
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     [TemporaryBattleList['Memory Team Plasma Grunts 1']]
 );
 TownList['Cold Storage'] = new DungeonTown(
     'Cold Storage',
     GameConstants.Region.unova,
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     [TemporaryBattleList['Memory Team Plasma Grunt 7'], TemporaryBattleList['Memory Team Plasma Grunt 8'], TemporaryBattleList['Memory Team Plasma Grunts 3']]
 );
 TownList['Victory Road Unova Ruins'] = new DungeonTown(
     'Victory Road Unova Ruins',
     GameConstants.Region.unova,
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     [TemporaryBattleList['Cheren 8']]
 );
 TownList['P2 Laboratory'] = new DungeonTown(

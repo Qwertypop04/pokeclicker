@@ -5900,8 +5900,8 @@ dungeonList['Dragonspiral Tower'] = new Dungeon('Dragonspiral Tower',
     5203000,
     [
         new DungeonBossPokemon('Dragonite', 48000000, 100),
-        new DungeonBossPokemon('Reshiram', 50000000, 100, {hide: true, requirement: new QuestLineStepCompletedRequirement('A memory in Black and White', ?)}),
-        new DungeonBossPokemon('Zekrom', 50000000, 100, {hide: true, requirement: new QuestLineStepCompletedRequirement('A memory in Black and White', ?)}),
+        new DungeonBossPokemon('Reshiram', 50000000, 100, {hide: true, requirement: new QuestLineStepCompletedRequirement('A memory in Black and White', 0)}),
+        new DungeonBossPokemon('Zekrom', 50000000, 100, {hide: true, requirement: new QuestLineStepCompletedRequirement('A memory in Black and White', 0)}),
     ],
     356500, 7);
 

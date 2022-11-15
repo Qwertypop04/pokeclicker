@@ -782,7 +782,7 @@ TemporaryBattleList['Bianca 1'] = new TemporaryBattle(
         new GymPokemon('Tepig', 1689240, 5, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
     ],
     'Wow... You\'re going to be a great trainer someday, I can tell! No doubt!',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Pokémon Trainer Bianca',
@@ -798,7 +798,7 @@ TemporaryBattleList['Cheren 1'] = new TemporaryBattle(
         new GymPokemon('Snivy', 1689240, 5, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
     ],
     'I made a strange blunder in my first battle, but this feeling I have... ...I\'m finally a trainer.',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Pokémon Trainer Cheren',
@@ -810,7 +810,7 @@ TemporaryBattleList['N 1'] = new TemporaryBattle(
     'N 1',
     [new GymPokemon('Purrloin', 1689240, 7)],
     'I never expected to hear Pokémon say such things...',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Pokémon Trainer N',
@@ -827,7 +827,7 @@ TemporaryBattleList['Bianca 2'] = new TemporaryBattle(
         new GymPokemon('Tepig', 1689240, 7, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
     ],
     'Woo-hoo! You are a tough cookie. I\'m gonna work hard on training my Pokémon so we won\'t lose anymore! OK, bye-bye!',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Pokémon Trainer Bianca',
@@ -844,7 +844,7 @@ TemporaryBattleList['Cheren 2'] = new TemporaryBattle(
         new GymPokemon('Purrloin', 1689240, 8),
     ],
     'I see! Losing to you means that I still have a lot to learn.',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Pokémon Trainer Cheren',
@@ -859,7 +859,7 @@ TemporaryBattleList['Cilan'] = new TemporaryBattle(
         new GymPokemon('Pansage', 1689240, 14),
     ],
     '...What a surprise. You...are very strong. Seems like not even Chili or Cress could beat you..',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Gym Leader Cilan',
@@ -872,7 +872,7 @@ TemporaryBattleList['Chili'] = new TemporaryBattle(
         new GymPokemon('Pansear', 1689240, 14),
     ],
     'Whoa ho! You\'re on fire!',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Gym Leader Chili',
@@ -885,7 +885,7 @@ TemporaryBattleList['Cress'] = new TemporaryBattle(
         new GymPokemon('Panpour', 1689240, 14),
     ],
     'Why, you\'re quite remarkable.',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Gym Leader Cress',
@@ -895,7 +895,7 @@ TemporaryBattleList['Memory Team Plasma Grunt 1'] = new TemporaryBattle(
     'Memory Team Plasma Grunt 1',
     [new GymPokemon('Patrat', 1689240, 10)],
     'Plasmaaaa! Ah, our beautiful dream...',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Team Plasma Grunt',
@@ -906,7 +906,7 @@ TemporaryBattleList['Memory Team Plasma Grunt 2'] = new TemporaryBattle(
     'Memory Team Plasma Grunt 2',
     [new GymPokemon('Purrloin', 1689240, 10)],
     'Plasmaaaa! This is a nightmare!',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Team Plasma Grunt',
@@ -922,7 +922,7 @@ TemporaryBattleList['Cheren 3'] = new TemporaryBattle(
         new GymPokemon('Purrloin', 1689240, 12),
     ],
     'Why do you keep beating me? We have the same number of Gym Badges. We should be equals in strength...',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Pokémon Trainer Cheren',
@@ -937,7 +937,7 @@ TemporaryBattleList['Memory Team Plasma Grunts 1'] = new TemporaryBattle(
         new GymPokemon('Patrat', 1689240, 12),
     ],
     'Plasmaaaa! I cannot believe that Team Plasma lost to such kids!',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Team Plasma Grunts',
@@ -952,13 +952,13 @@ TemporaryBattleList['School Kid Lydia'] = new TemporaryBattle(
         new GymPokemon('Lillipup', 1689240, 15),
     ],
     'Oh, wow! I lost, but thanks for a great battle!',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)]
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)]
 );
 TemporaryBattleList['School Kid Carter'] = new TemporaryBattle(
     'School Kid Carter',
     [new GymPokemon('Patrat', 1689240, 17)],
     'I may be a bookworm, but I am not a bug Pokémon.',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)]
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)]
 );
 TemporaryBattleList['Lenora'] = new TemporaryBattle(
     'Lenora',
@@ -967,7 +967,7 @@ TemporaryBattleList['Lenora'] = new TemporaryBattle(
         new GymPokemon('Watchog', 1689240, 20),
     ],
     'My theory about you was correct. You\'re more than just talented... You\'re motivated! I salute you!',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Gym Leader Lenora',
@@ -981,7 +981,7 @@ TemporaryBattleList['N 2'] = new TemporaryBattle(
         new GymPokemon('Tympole', 1689240, 13),
     ],
     'I cannot see the future yet... The world is still to be determined...',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Pokémon Trainer N',
@@ -993,7 +993,7 @@ TemporaryBattleList['Memory Team Plasma Grunt 3'] = new TemporaryBattle(
     'Memory Team Plasma Grunt 3',
     [new GymPokemon('Sandile', 1689240, 16)],
     'Come on! You\'re just a kid--a kid on an ego trip!',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Team Plasma Grunt',
@@ -1007,7 +1007,7 @@ TemporaryBattleList['Memory Team Plasma Grunts 2'] = new TemporaryBattle(
         new GymPokemon('Patrat', 1689240, 16),
     ],
     'My hunch is you\'re sabotaging us because you\'re flat-out jealous of our cool outfits.',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Team Plasma Grunts',
@@ -1022,7 +1022,7 @@ TemporaryBattleList['Memory Team Plasma Grunt 4'] = new TemporaryBattle(
         new GymPokemon('Sandile', 1689240, 14),
     ],
     'Plasmaaaa! If this keeps up, we won\'t save the Pokémon!',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Team Plasma Grunt',
@@ -1036,7 +1036,7 @@ TemporaryBattleList['Memory Team Plasma Grunt 5'] = new TemporaryBattle(
         new GymPokemon('Sandile', 1689240, 17),
     ],
     'Come on! Seriously?! All I did was take away people\'s Pokémon.',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Team Plasma Grunt',
@@ -1051,7 +1051,7 @@ TemporaryBattleList['Burgh'] = new TemporaryBattle(
         new GymPokemon('Leavanny', 1689240, 23),
     ],
     'Aww... I lost. Whatever! Losing to you doesn\'t bug me because you are a-MAZ-ingly strong!',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Gym Leader Burgh',
@@ -1070,7 +1070,7 @@ TemporaryBattleList['Bianca 3'] = new TemporaryBattle(
       new GymPokemon('Pignite', 1689240, 20, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
     ],
     'I\'ll never be a strong Trainer like you or Cheren or Iris, but... You know since we left Nuvema Town, I\'ve met a lot of people and I\'ve been thinking about what I want to do in life! When you look at it that way, Pokémon have given me a lot of new experiences. And I also learned that being with Pokémon is really, really important! OK, well, I hope to see you again soon!',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Pokémon Trainer Bianca',
@@ -1091,7 +1091,7 @@ TemporaryBattleList['Cheren 4'] = new TemporaryBattle(
         new GymPokemon('Servine', 1689240, 22, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
     ],
     'It\'s now clear to me. The reason you are so tough is the trust between you and your Pokémon. But... that shouldn\'t be a problem. I can get more out of my Pokémon, too.',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Pokémon Trainer Cheren',
@@ -1106,7 +1106,7 @@ TemporaryBattleList['Memory Team Plasma Grunt 6'] = new TemporaryBattle(
         new GymPokemon('Trubbish', 1689240, 18),
     ],
     'Plasmaaaa! Wahhhhh!',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Team Plasma Grunt',
@@ -1122,7 +1122,7 @@ TemporaryBattleList['N 3'] = new TemporaryBattle(
         new GymPokemon('Sigilyph', 1689240, 22),
     ],
     'The result was the same... But you... Who are you?',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Team Plasma N',
@@ -1138,7 +1138,7 @@ TemporaryBattleList['Elesa'] = new TemporaryBattle(
         new GymPokemon('Zebstrika', 1689240, 27),
     ],
     'I meant to make your head spin, but you shocked me instead.',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Gym Leader Elesa',
@@ -1157,7 +1157,7 @@ TemporaryBattleList['Cheren 5'] = new TemporaryBattle(
         new GymPokemon('Servine', 1689240, 26, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
     ],
     'Why? Why can\'t I best you?',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Pokémon Trainer Cheren',
@@ -1172,7 +1172,7 @@ TemporaryBattleList['Memory Team Plasma Grunt 7'] = new TemporaryBattle(
         new GymPokemon('Scraggy', 1689240, 23),
     ],
     'Long live Team Plasma!',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Team Plasma Grunt',
@@ -1186,7 +1186,7 @@ TemporaryBattleList['Memory Team Plasma Grunt 8'] = new TemporaryBattle(
         new GymPokemon('Watchog', 1689240, 23),
     ],
     'If you take something away, I will take it back... Remember that!'
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Team Plasma Grunt',
@@ -1200,7 +1200,7 @@ TemporaryBattleList['Memory Team Plasma Grunts 3'] = new TemporaryBattle(
         new GymPokemon('Liepard', 1689240, 24),
     ],
     'Have you learned you\'re lesson now? ...We\'re such sore losers'
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Team Plasma Grunts',
@@ -1215,7 +1215,7 @@ TemporaryBattleList['Clay'] = new TemporaryBattle(
         new GymPokemon('Excadrill', 1689240, 31),
     ],
     'Mrrrmph. I see. But I sure don\'t like it! Fer such a young \'un, ya have an imposin\' battle style. I know ya got people who can dig up yer potential. Mrmph.',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Gym Leader Clay',
@@ -1234,7 +1234,7 @@ TemporaryBattleList['Bianca 4'] = new TemporaryBattle(
       new GymPokemon('Pignite', 1689240, 28, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
     ],
     'I haven\'t had a Pokémon battle with you in a while. You\'ve become totally strong, huh? I\'m not that strong so I don\'t know how to say it, but I think you\'re way tuned in to how your Pokémon feel!',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Pokémon Trainer Bianca',
@@ -1250,7 +1250,7 @@ TemporaryBattleList['Memory Team Plasma Grunt 9'] = new TemporaryBattle(
         new GymPokemon('Watchog', 1689240, 26),
     ],
     'Argh! I can\'t believe I lost...',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Team Plasma Grunt',
@@ -1264,7 +1264,7 @@ TemporaryBattleList['Memory Team Plasma Grunt 10'] = new TemporaryBattle(
         new GymPokemon('Liepard', 1689240, 27),
     ],
     'Oh, my! No, no. Plasmaaaa!',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Team Plasma Grunt',
@@ -1279,7 +1279,7 @@ TemporaryBattleList['Memory Team Plasma Grunt 11'] = new TemporaryBattle(
         new GymPokemon('Trubbish', 1689240, 26),
     ],
     'You may have beaten me, but you\re still no better than other trainers around here.',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Team Plasma Grunt',
@@ -1293,7 +1293,7 @@ TemporaryBattleList['Memory Team Plasma Grunt 12'] = new TemporaryBattle(
         new GymPokemon('Sandile', 1689240, 27),
     ],
     'As a proud member of... Team Plasma...',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Team Plasma Grunt',
@@ -1307,7 +1307,7 @@ TemporaryBattleList['Memory Team Plasma Grunt 13'] = new TemporaryBattle(
         new GymPokemon('Watchog', 1689240, 27),
     ],
     '...I see. You\'re very good at using Pokémon.',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Team Plasma Grunt',
@@ -1321,7 +1321,7 @@ TemporaryBattleList['Memory Team Plasma Grunts 4'] = new TemporaryBattle(
         new GymPokemon('Liepard', 1689240, 28),
     ],
     'Hey! What was that? You\'re too strong! Plasmaaaa!',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Team Plasma Grunts',
@@ -1337,7 +1337,7 @@ TemporaryBattleList['N 4'] = new TemporaryBattle(Hey! What was that? You\'re too
         new GymPokemon('Klink', 1689240, 28),
     ],
     'My friends getting hurt... That\'s what a Pokémon battle is.',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Team Plasma N',
@@ -1352,7 +1352,7 @@ TemporaryBattleList['Skyla'] = new TemporaryBattle(
         new GymPokemon('Swanna', 1689240, 35),
     ],
     'You\'re an amazing Pokémon Trainer. My Pokémon and I are happy, because for the first time in a while, we could fight with our full strength.',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Gym Leader Skyla',
@@ -1371,7 +1371,7 @@ TemporaryBattleList['Cheren 6'] = new TemporaryBattle(
         new GymPokemon('Servine', 1689240, 35, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
     ],
     'Pokémon battles are fun. But what is it to be truly strong?',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Pokémon Trainer Cheren',
@@ -1387,7 +1387,7 @@ TemporaryBattleList['Brycen'] = new TemporaryBattle(
         new GymPokemon('Beartic', 1689240, 39),
     ],
     'The wonderful combination of you and your Pokémon! What a beautiful friendship!',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Gym Leader Brycen',
@@ -1397,7 +1397,7 @@ TemporaryBattleList['Memory Team Plasma Grunt 14'] = new TemporaryBattle(
     'Memory Team Plasma Grunt 14',
     [new GymPokemon('Watchog', 1689240, 34)],
     'I don\'t understand... I don\'t understand you guys...',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Team Plasma Grunt',
@@ -1411,7 +1411,7 @@ TemporaryBattleList['Memory Team Plasma Grunts 5'] = new TemporaryBattle(
         new GymPokemon('Liepard', 1689240, 34),
     ],
     'Ouch, ouuuuch! My Pokémon got hurt!',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Team Plasma Grunts',
@@ -1425,7 +1425,7 @@ TemporaryBattleList['Memory Team Plasma Grunt 15'] = new TemporaryBattle(
         new GymPokemon('Liepard', 1689240, 33),
     ],
     'Ah! Our lord N!',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Team Plasma Grunt',
@@ -1440,7 +1440,7 @@ TemporaryBattleList['Memory Team Plasma Grunt 16'] = new TemporaryBattle(
         new GymPokemon('Scraggy', 1689240, 32),
     ],
     'Bahhh. I have lost my motivation.',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Team Plasma Grunt',
@@ -1455,7 +1455,7 @@ TemporaryBattleList['Memory Team Plasma Grunts 6'] = new TemporaryBattle(
         new GymPokemon('Krokorok', 1689240, 34),
     ],
     'The dawn of Unova has faded into the distance...',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Team Plasma Grunts',
@@ -1470,7 +1470,7 @@ TemporaryBattleList['Memory Team Plasma Grunts 7'] = new TemporaryBattle(
         new GymPokemon('Watchog', 1689240, 34),
     ],
     'What? It looks like you can still fight!',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Team Plasma Grunts',
@@ -1485,7 +1485,7 @@ TemporaryBattleList['Memory Team Plasma Grunt 17'] = new TemporaryBattle(
         new GymPokemon('Krokorok', 1689240, 34),
     ],
     'Yes, I heard you are strong. You match what I heard exactly.',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Team Plasma Grunt',
@@ -1499,7 +1499,7 @@ TemporaryBattleList['Memory Team Plasma Grunt 18'] = new TemporaryBattle(
         new GymPokemon('Watchog', 1689240, 35),
     ],
     'What a trainer!',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Team Plasma Grunt',
@@ -1513,7 +1513,7 @@ TemporaryBattleList['Memory Team Plasma Grunts 8'] = new TemporaryBattle(
         new GymPokemon('Krokorok', 1689240, 36),
     ],
     'If I don\'t have Pokémon, I won\'t lose like this!',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Team Plasma Grunts',
@@ -1528,7 +1528,7 @@ TemporaryBattleList['Memory Team Plasma Grunt 19'] = new TemporaryBattle(
         new GymPokemon('Trubbish', 1689240, 34),
     ],
     'Argh! Annoying!',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Team Plasma Grunt',
@@ -1544,7 +1544,7 @@ TemporaryBattleList['Memory Team Plasma Grunts 9'] = new TemporaryBattle(
         new GymPokemon('Liepard', 1689240, 35),
     ],
     'My king... I am so sorry.',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Team Plasma Grunts',
@@ -1564,7 +1564,7 @@ TemporaryBattleList['Bianca 5'] = new TemporaryBattle(
       new GymPokemon('Emboar', 1689240, 40, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
     ],
     'Yep! You\'re amazing! I\'m really, really, really impressed! In Castelia City, my precious Pokémon was stolen by Team Plasma. So I really, really understand! If Team Plasma forces everyone to liberate their Pokémon, there will be nothing but sad people! Stop Team Plasma! Don't allow Pokémon to be stolen from trainers who love them! I think that's the truth—or ideal—that you've been pursuing...',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Pokémon Trainer Bianca',
@@ -1580,7 +1580,7 @@ TemporaryBattleList['Iris'] = new TemporaryBattle(
         new GymPokemon('Haxorus', 1689240, 43),
     ],
     'Whoooa! That was so cool! I\'m sooo happy I could battle a Trainer as strong as you!',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Gym Leader Iris',
@@ -1599,7 +1599,7 @@ TemporaryBattleList['Cheren 7'] = new TemporaryBattle(
         new GymPokemon('Serperior', 1689240, 45, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
     ],
     'Yep, you are something else. And I mean that sincerely. Right now, there\'s no way I can compare with you. If there is anything I can do to help in the battle with N, just say so...',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Pokémon Trainer Cheren',
@@ -1616,7 +1616,7 @@ TemporaryBattleList['Shauntal'] = new TemporaryBattle(
         new GymPokemon('Chandelure', 1689240, 50),
     ],
     'Wow. I\'m dumbstruck! I know a lot of words, but right now I can\'t figure out how to say this. Perhaps, if the feeling I\'m having now is put into words, it will be trapped there. So let me say this... My feeling is you\'re a great Trainer!',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Elite Four Shauntal',
@@ -1631,7 +1631,7 @@ TemporaryBattleList['Marshal'] = new TemporaryBattle(
         new GymPokemon('Mienshao', 1689240, 50),
     ],
     'There is no single strongest Pokémon or sole best combination... That\'s why it is difficult to keep winning. However, I think a heart that desires strength and strives to grow stronger is a precious ideal. That is why I respect you--because you have these things.',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Elite Four Marshal',
@@ -1646,7 +1646,7 @@ TemporaryBattleList['Grimsley'] = new TemporaryBattle(
         new GymPokemon('Bisharp', 1689240, 50),
     ],
     'Whether or not you get to fight at full strength, whether or not luck smiles on you--none of that matters. Only results matter. And a loss is a loss. See, victory shines like a bright light. And right now, you and your Pokémon are shining brilliantly.',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Elite Four Grimsley',
@@ -1661,7 +1661,7 @@ TemporaryBattleList['Caitlin'] = new TemporaryBattle(
         new GymPokemon('Gothitelle', 1689240, 50),
     ],
     'As a Trainer, you are both excellent and elegant. Your Pokémon have class. I am very pleased to have battled you.',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Elite Four Caitlin',
@@ -1671,19 +1671,19 @@ TemporaryBattleList['Reshiram'] = new TemporaryBattle(
     'Reshiram',
     [new GymPokemon('Reshiram', 1689240, 50)],
     'Reshiram was caught!',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)]
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)]
 );
 TemporaryBattleList['Zekrom'] = new TemporaryBattle(
     'Zekrom',
     [new GymPokemon('Zekrom', 1689240, 50)],
     'Zekrom was caught!',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)]
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)]
 );
 TemporaryBattleList['N White 2'] = new TemporaryBattle(
     'N White',
     [new GymPokemon('Reshiram', 1689240, 70)],
     'I never expected to hear Pokémon say such things...',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Pokémon Trainer N',
@@ -1701,7 +1701,7 @@ TemporaryBattleList['N Black'] = new TemporaryBattle(
         new GymPokemon('Zoroark', 1689240, 50),
     ],
     'Everything\'s ruined. The ideals I held... The dreams Pokémon shared...',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Team Plasma N',
@@ -1719,7 +1719,7 @@ TemporaryBattleList['N White'] = new TemporaryBattle(
         new GymPokemon('Zoroark', 1689240, 50),
     ],
     'Everything\'s ruined. The truth I held... The dreams Pokémon shared...',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Team Plasma N',
@@ -1737,7 +1737,7 @@ TemporaryBattleList['Ghetsis 3'] = new TemporaryBattle(
         new GymPokemon('Hydreigon', 1689240, 54),
     ],
     'My calculations... No! My careful schemes! The world should be mine!',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Team Plasma Ghetsis',
@@ -1748,7 +1748,7 @@ TemporaryBattleList['N Black 2'] = new TemporaryBattle(
     'N Black 2',
     [new GymPokemon('Zekrom', 1689240, 70)],
     'I never expected to hear Pokémon say such things...',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Pokémon Trainer N',
@@ -1759,7 +1759,7 @@ TemporaryBattleList['N White 2'] = new TemporaryBattle(
     'N White',
     [new GymPokemon('Reshiram', 1689240, 70)],
     'I never expected to hear Pokémon say such things...',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Pokémon Trainer N',
@@ -1781,7 +1781,7 @@ TemporaryBattleList['Bianca 6'] = new TemporaryBattle(
       new GymPokemon('Emboar', 1689240, 65, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
     ],
     'Phew! I\'m totally sure. You\'re really a strong Trainer. I love your style of Pokémon battling. Somehow your Pokémon look like they\'re having so much fun!',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Pokémon Trainer Bianca',
@@ -1803,7 +1803,7 @@ TemporaryBattleList['Cheren 8'] = new TemporaryBattle(
         new GymPokemon('Serperior', 1689240, 67, new StarterRequirement(GameConstants.Region.unova, GameConstants.Starter.Water)),
     ],
     'I\'ll keep battling many Trainers and Pokémon like this, and if I can learn what kind of person I am, it will open up my path. I\'m sure this path will lead me to become the person I\'m meant to be. Our Pokémon will always be with you and me as we go down our own paths. Our important friends, Pokémon...',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
         displayName: 'Pokémon Trainer Cheren',

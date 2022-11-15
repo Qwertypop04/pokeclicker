@@ -1470,7 +1470,7 @@ Routes.add(new RegionRoute(
     new RoutePokemon({
         land: ['Yanma', 'Yanmega', 'Watchog', 'Herdier', 'Purrloin', 'Tranquill'],
     }),
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     23.1
 ));
 Routes.add(new RegionRoute(
@@ -1478,7 +1478,7 @@ Routes.add(new RegionRoute(
     new RoutePokemon({
         land: ['Jigglypuff', 'Lickitung', 'Watchog', 'Herdier', 'Liepard'],
     }),
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     23.2
 ));
 Routes.add(new RegionRoute(
@@ -1487,7 +1487,7 @@ Routes.add(new RegionRoute(
         land: ['Jigglypuff', 'Watchog', 'Herdier', 'Scrafty'],
         water: ['Basculin (Red-Striped)', 'Basculin (Blue-Striped)'],
     }),
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     23.3
 ));
 Routes.add(new RegionRoute(
@@ -1495,7 +1495,7 @@ Routes.add(new RegionRoute(
     new RoutePokemon({
         land: ['Frillish', 'Alomomola'],
     }),
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     23.4
 ));
 Routes.add(new RegionRoute(
@@ -1517,7 +1517,7 @@ Routes.add(new RegionRoute(
     new RoutePokemon({
         land: ['Herdier', 'Foongus', 'Bouffalant'. 'Rufflet', 'Vullaby', 'Amoonguss'],
     }),
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', ?)],
+    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     23.6
 ));
 
