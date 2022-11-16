@@ -2561,10 +2561,12 @@ TemporaryBattleList['Bianca 6'] = new TemporaryBattle(
     ],
     'Phew! I\'m totally sure. You\'re really a strong Trainer. I love your style of Pokémon battling. Somehow your Pokémon look like they\'re having so much fun!',
     [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
-    undefined,
+    [new NullRequirement],
     {
         displayName: 'Pokémon Trainer Bianca',
         imageName: 'Bianca',
+        rewardFunction: () =>
+            Notifier.notify({message: 'Congratulations on beating Bianca at her best! Come back to fight her again at any time.'}),
     }
 );
 TemporaryBattleList['Cheren 8'] = new TemporaryBattle(
@@ -2583,10 +2585,12 @@ TemporaryBattleList['Cheren 8'] = new TemporaryBattle(
     ],
     'I\'ll keep battling many Trainers and Pokémon like this, and if I can learn what kind of person I am, it will open up my path. I\'m sure this path will lead me to become the person I\'m meant to be. Our Pokémon will always be with you and me as we go down our own paths. Our important friends, Pokémon...',
     [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
-    undefined,
+    [new NullRequirement],
     {
         displayName: 'Pokémon Trainer Cheren',
         imageName: 'Cheren',
+        rewardFunction: () =>
+            Notifier.notify({message: 'Congratulations on beating Cheren at his best! Come back to fight him again at any time.'}),
     }
 );
 TemporaryBattleList.DreamResearcher = new TemporaryBattle(
