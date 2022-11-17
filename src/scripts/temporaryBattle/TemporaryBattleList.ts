@@ -3512,7 +3512,7 @@ TemporaryBattleList['Ash Ketchum Alola'] = new TemporaryBattle(
     undefined,
     {
         displayName: 'Ash Ketchum',
-        returnTown: 'Seafolk Village',
+        returnTown: 'A Tree Maybe',
         imageName: 'Ash Ketchum',
         firstTimeRewardFunction: () => {
             App.game.party.gainPokemonById(25.07);
