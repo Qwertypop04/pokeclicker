@@ -1575,6 +1575,177 @@ GymList['Champion Hau'] = new Gym(
     { champion: true }
 );
 
+// Magikarp Jump Gyms
+GymList['Friend League'] = new Gym(
+    'Karson',
+    'Friend League',
+    [new GymPokemon('Magikarp', 1, 20)],
+    BadgeEnums.Friend_League,
+    0, //TODO
+    'TODO',
+    [new RouteKillRequirement(10, GameConstants.Region.alola, 31)]
+);
+
+GymList['Quick League'] = new Gym(
+    'Koichiro',
+    'Quick League',
+    [new GymPokemon('Magikarp Skelly', 1, 20)],
+    BadgeEnums.Quick_League,
+    0, //TODO
+    'TODO',
+    [new RouteKillRequirement(10, GameConstants.Region.alola, 32)],
+    () => {
+        if (!App.game.party.alreadyCaughtPokemonByName('Magikarp Skelly')) {
+            Notifier.notify({
+                message: 'You were awarded a Magikarp Skelly!',
+                type: NotificationConstants.NotificationOption.success,
+                setting: NotificationConstants.NotificationSetting.General.new_catch,
+            });
+            App.game.party.gainPokemonById(pokemonMap['Magikarp Skelly'].id, PokemonFactory.generateShiny(GameConstants.SHINY_CHANCE_REWARD), true);
+        }
+    }
+);
+
+GymList['Heavy League'] = new Gym(
+    'Kareign',
+    'Heavy League',
+    [new GymPokemon('Magikarp Orange Two Tone', 1, 20)],
+    BadgeEnums.Heavy_League,
+    0, //TODO
+    'TODO',
+    [new RouteKillRequirement(10, GameConstants.Region.alola, 33)],
+    () => {
+        if (!App.game.party.alreadyCaughtPokemonByName('Magikarp Orange Two Tone')) {
+            Notifier.notify({
+                message: 'You were awarded a Magikarp Orange Two Tone!',
+                type: NotificationConstants.NotificationOption.success,
+                setting: NotificationConstants.NotificationSetting.General.new_catch,
+            });
+            App.game.party.gainPokemonById(pokemonMap['Magikarp Orange Two Tone'].id, PokemonFactory.generateShiny(GameConstants.SHINY_CHANCE_REWARD), true);
+        }
+    }
+);
+
+GymList['Great League'] = new Gym(
+    'Karbuck',
+    'Great League',
+    [new GymPokemon('Magikarp', 1, 20)],
+    BadgeEnums.Great_League,
+    0, //TODO
+    'TODO',
+    [new RouteKillRequirement(10, GameConstants.Region.alola, 34)]
+);
+
+GymList['Fast League'] = new Gym(
+    'Kareign 2',
+    'Fast League',
+    [new GymPokemon('Magikarp Pink Dapples', 1, 20)],
+    BadgeEnums.Fast_League,
+    0, //TODO
+    'TODO',
+    [new RouteKillRequirement(10, GameConstants.Region.alola, 35)],
+    () => {
+        if (!App.game.party.alreadyCaughtPokemonByName('Magikarp Pink Dapples')) {
+            Notifier.notify({
+                message: 'You were awarded a Magikarp Pink Dapples!',
+                type: NotificationConstants.NotificationOption.success,
+                setting: NotificationConstants.NotificationSetting.General.new_catch,
+            });
+            App.game.party.gainPokemonById(pokemonMap['Magikarp Pink Dapples'].id, PokemonFactory.generateShiny(GameConstants.SHINY_CHANCE_REWARD), true);
+        }
+    }
+);
+
+GymList['Luxury League'] = new Gym(
+    'Jump Champ',
+    'Luxury League',
+    [new GymPokemon('Magikarp Pink Orca', 1, 20)],
+    BadgeEnums.Luxury_League,
+    0, //TODO
+    'TODO',
+    [new RouteKillRequirement(10, GameConstants.Region.alola, 36)],
+    () => {
+        if (!App.game.party.alreadyCaughtPokemonByName('Magikarp Pink Orca')) {
+            Notifier.notify({
+                message: 'You were awarded a Magikarp Pink Orca!',
+                type: NotificationConstants.NotificationOption.success,
+                setting: NotificationConstants.NotificationSetting.General.new_catch,
+            });
+            App.game.party.gainPokemonById(pokemonMap['Magikarp Pink Orca'].id, PokemonFactory.generateShiny(GameConstants.SHINY_CHANCE_REWARD), true);
+        }
+    }
+);
+
+GymList['Heal League'] = new Gym(
+    'Karami',
+    'Heal League',
+    [new GymPokemon('Magikarp Purple Bubbles', 1, 20)],
+    BadgeEnums.Heal_League,
+    0, //TODO
+    'TODO',
+    [new RouteKillRequirement(10, GameConstants.Region.alola, 37)],
+    () => {
+        if (!App.game.party.alreadyCaughtPokemonByName('Magikarp Purple Bubbles')) {
+            Notifier.notify({
+                message: 'You were awarded a Magikarp Purple Bubbles!',
+                type: NotificationConstants.NotificationOption.success,
+                setting: NotificationConstants.NotificationSetting.General.new_catch,
+            });
+            App.game.party.gainPokemonById(pokemonMap['Magikarp Purple Bubbles'].id, PokemonFactory.generateShiny(GameConstants.SHINY_CHANCE_REWARD), true);
+        }
+    }
+);
+
+GymList['Ultra League'] = new Gym(
+    'Jump Champ 2',
+    'Ultra League',
+    [new GymPokemon('Magikarp Brown Tiger', 1, 20)],
+    BadgeEnums.Ultra_League,
+    0, //TODO
+    'TODO',
+    [new RouteKillRequirement(10, GameConstants.Region.alola, 38)],
+    () => {
+        if (!App.game.party.alreadyCaughtPokemonByName('Magikarp Brown Tiger')) {
+            Notifier.notify({
+                message: 'You were awarded a Magikarp Brown Tiger!',
+                type: NotificationConstants.NotificationOption.success,
+                setting: NotificationConstants.NotificationSetting.General.new_catch,
+            });
+            App.game.party.gainPokemonById(pokemonMap['Magikarp Brown Tiger'].id, PokemonFactory.generateShiny(GameConstants.SHINY_CHANCE_REWARD), true);
+        }
+    }
+);
+
+GymList['E4 League'] = new Gym(
+    'Jump Champ 3',
+    'E4 League',
+    [new GymPokemon('Magikarp Orange Forehead', 1, 20)],
+    BadgeEnums.E4_League,
+    0, //TODO
+    'TODO',
+    [new RouteKillRequirement(10, GameConstants.Region.alola, 39)],
+    () => {
+        if (!App.game.party.alreadyCaughtPokemonByName('Magikarp Orange Forehead')) {
+            Notifier.notify({
+                message: 'You were awarded a Magikarp Orange Forehead!',
+                type: NotificationConstants.NotificationOption.success,
+                setting: NotificationConstants.NotificationSetting.General.new_catch,
+            });
+            App.game.party.gainPokemonById(pokemonMap['Magikarp Orange Forehead'].id, PokemonFactory.generateShiny(GameConstants.SHINY_CHANCE_REWARD), true);
+        }
+    }
+);
+
+GymList['Master League'] = new Gym(
+    'Magikarp',
+    'Master League',
+    [new GymPokemon('Magikarp', 1, 20)],
+    BadgeEnums.Master_League,
+    0, //TODO
+    'TODO',
+    [new RouteKillRequirement(10, GameConstants.Region.alola, 40)]
+);
+
 //Galar Leaders
 GymList.Turffield = new Gym(
     'Milo',
