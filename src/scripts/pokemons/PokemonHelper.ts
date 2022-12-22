@@ -211,8 +211,9 @@ class PokemonHelper extends TmpPokemonHelper {
     }
 
     public static getPokemonSafariChance(pokemonName: PokemonNameType): number {
-        const safariWeight = SafariPokemon.list.reduce((sum, p) => sum += p.weight, 0);
-        const safariPokemon = SafariPokemon.list.find(p => p.name == pokemonName);
+        const safariList = SafariPokemonList.list[player.region]()[0].safariPokemon;
+        const safariWeight = safariList.reduce((sum, p) => sum += p.weight, 0);
+        const safariPokemon = safariList.find(p => p.name = pokemonName);
         return safariPokemon ? +((SafariPokemon.calcPokemonWeight(safariPokemon) / safariWeight) * 100).toFixed(2) : 0;
     }
 
@@ -221,6 +222,10 @@ class PokemonHelper extends TmpPokemonHelper {
         const prevolutionPokemon = pokemonList.filter((p: PokemonListData) => p.evolutions?.find(e => e.evolvedPokemon == pokemonName));
         prevolutionPokemon.forEach((p: PokemonListData) => p.evolutions.forEach(e => {
             if (e.evolvedPokemon == pokemonName) {
+                // ignore dummy evolutions
+                if (e.trigger === EvoTrigger.NONE) {
+                    return false;
+                }
                 if (maxRegion != GameConstants.Region.none && p.nativeRegion > maxRegion) {
                     return false;
                 }
