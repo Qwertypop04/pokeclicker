@@ -1031,11 +1031,20 @@ class QuestLineHelper {
     public static createBlackWhiteQuestLine() {
         const blackWhiteQuestLine = new QuestLine('A memory in Black and White', 'Experience N\'s memories of events that took place 2 years ago.', new MultiRequirement([new GymBadgeRequirement(BadgeEnums.Elite_UnovaChampion), new RouteKillRequirement(10, GameConstants.Region.unova, 1)]) , GameConstants.BulletinBoards.Unova);
 
+        const talktoNsCastleN1 = new TalkToNPCQuest(NsCastleN1, 'Talk to N in N\'s Castle');
+        blackWhiteQuestLine.addQuest(talktoNsCastleN1);
+
         const clearBianca1 = new CustomQuest (1, 0, 'Defeat Bianca at Nuvema Town.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Bianca 1')]());
         blackWhiteQuestLine.addQuest(clearBianca1);
 
         const clearCheren1 = new CustomQuest (1, 0, 'Defeat Cheren at Nuvema Town.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Cheren 1')]());
         blackWhiteQuestLine.addQuest(clearCheren1);
+
+        const talktoAccumulaGhetsis = new TalkToNPCQuest(AccumulaGhetsis, 'Listen to Ghetsis\' speech in Accumula Town');
+        blackWhiteQuestLine.addQuest(talktoAccumulaGhetsis);
+
+        const talktoAccumulaN = new TalkToNPCQuest(AccumulaN, 'Talk to N in Accumula Town');
+        blackWhiteQuestLine.addQuest(talktoAccumulaN);
 
         const clearN1 = new CustomQuest (1, 0, 'Defeat N at Accumula Town.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('N 1')]());
         blackWhiteQuestLine.addQuest(clearN1);
@@ -1056,6 +1065,9 @@ class QuestLineHelper {
         const clearDreamyard = new CustomQuest(1, 0, 'Something is going on in the Dreamyard. Clear Dreamyard to find out what.', () => App.game.statistics.dungeonsCleared[GameConstants.getDungeonIndex('Dreamyard')]());
         blackWhiteQuestLine.addQuest(clearDreamyard);
 
+        const talktoDreamyardPlasmaGrunt = new TalkToNPCQuest(DreamyardPlasmaGrunt, 'Talk to the Team Plasma Grunt in the Dreamyard');
+        blackWhiteQuestLine.addQuest(talktoDreamyardPlasmaGrunt);
+
         const clearDreamyardGrunts = new CustomQuest (2, 0, 'Two Team Plasma Grunts are bullying a Munna. Defeat them.', () =>
             App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunt 1')]() +
             App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunt 2')]()
@@ -1068,10 +1080,16 @@ class QuestLineHelper {
         const clearWellspringCave = new CustomQuest(1, 0, 'Some Team Plasma Grunts are hiding in Wellspring Cave with stolen Pokémon. Clear Wellspring Cave.', () => App.game.statistics.dungeonsCleared[GameConstants.getDungeonIndex('Wellspring Cave')]());
         blackWhiteQuestLine.addQuest(clearWellspringCave);
 
+        const talktoWellspringPlasmaGrunt = new TalkToNPCQuest(WellspringPlasmaGrunt, 'Talk to the Team Plasma Grunt in Wellspring Cave');
+        blackWhiteQuestLine.addQuest(talktoWellspringPlasmaGrunt);
+
         const clearWellspringGrunts = new CustomQuest (1, 0, 'There are more of them! Defeat Team Plasma Grunts in Wellspring Cave.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunts 1')]());
         blackWhiteQuestLine.addQuest(clearWellspringGrunts);
 
-        const clearSchoolKid = new CustomQuest (1, 0, 'If the stone was White, fight Lydia. If you thought it was Black, fight Carter.', () =>
+        const talktoNacreneScientist = new TalkToNPCQuest(NacreneScientist, 'Talk to Scientist Satomi in Nacrene City');
+        blackWhiteQuestLine.addQuest(talktoNacreneScientist);
+
+        const clearSchoolKid = new CustomQuest (1, 0, 'If the stone was White, fight Lydia. If it was Black, fight Carter.', () =>
             App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('School Kid Lydia')]() +
             App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('School Kid Carter')]()
         );
@@ -1080,8 +1098,15 @@ class QuestLineHelper {
         const clearLenora = new CustomQuest (1, 0, 'Defeat Lenora in Nacrene City.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Lenora')]());
         blackWhiteQuestLine.addQuest(clearLenora);
 
+        const talktoNacreneN1 = new TalkToNPCQuest(AccumulaN1, 'Talk to N in Nacrene City');
+        blackWhiteQuestLine.addQuest(talktoNacreneN1);
+
         const clearN2 = new CustomQuest (1, 0, 'Defeat N at Nacrene City.', () => App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('N 2')]());
         blackWhiteQuestLine.addQuest(clearN2);
+
+        // Needs option for NPCs
+        const talktoNacreneN2 = new TalkToNPCQuest(AccumulaN2W, 'Talk to N in Nacrene City');
+        blackWhiteQuestLine.addQuest(talktoNacreneN2);
 
         const clearPinwheelGrunts = new CustomQuest (3, 0, 'Team Plasma Grunts have stolen a dragon skull from Nacrene Museum and escaped to Pinwheel Forest. Defeat them.', () =>
             App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex('Memory Team Plasma Grunt 3')]() +

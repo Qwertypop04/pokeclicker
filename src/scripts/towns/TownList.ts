@@ -3423,6 +3423,94 @@ const DreamResearcher2 = new NPC('Dream Researcher', [
     requirement: new TemporaryBattleRequirement('Dream Researcher'),
 });
 
+const NsCastleN1 = new NPC('N', [
+    'So you came...',
+    'This is Team Plasma\'s castle. The ruins of Ghetsis\'s dreams...',
+    'It was here, two years ago, that I fought a certain trainer, and I lost... But at the same time, I learned something important. To make the world better, you must accept different ideas.',
+    'I learned that this is the formula for changing the world. Accepting different ideas... I want to see if you are a Trainer whose heart is strong enough to do that.',
+    'First, I should tell you of the adventures that certain trainer experienced. Their journey started in Nuvema Town, where they started their journey along with two friends...',
+], {
+    image: 'assets/images/temporaryBattle/N.png',
+    requirement: new MultiRequirement([new QuestLineStartedRequirement('A memory in Black and White'), new QuestLineStepCompletedRequirement('A memory in Black and White', 1, GameConstants.AchievementOption.less)])
+});
+
+const AccumulaGhetsis = new NPC('Ghetsis', [
+    'My name is Ghetsis. I am here representing Team Plasma.',
+    'Today, ladies and gentlemen, I would like to talk to you about Pokémon liberation.',
+    'I\'m sure most of you believe that we humans and Pokémon are partners that have come to live together because we want and need each other. However... Is that really the truth? Have you ever considered that perhaps we humans... only assume that this is the truth?',
+    'Pokémon are subject to the selfish commands of Trainers... They get pushed around when they are our "partners" at work... Can anyone say with confidence that there is no truth in what I\'m saying?',
+    'Now, ladies and gentlemen, Pokémon are different from humans. They are living beings that contain unknown potential. They are living beings from whom we humans have much to learn. Tell me, what is our responsibility toward these wonderful beings called Pokémon?',
+    'That\'s right! We must liberate the Pokémon! Then, and only then, will humans and Pokémon truly be equals. Everyone, I end my words here today by imploring you to consider the relationship between people and Pokémon... and the correct way to proceed. We sincerely appreciate your attention.',
+], {
+    image: 'assets/images/temporaryBattle/Ghetsis2.png',
+    requirement: new MultiRequirement([new QuestLineStepCompletedRequirement('A memory in Black and White', 0), new QuestLineStepCompletedRequirement('A memory in Black and White', 0, GameConstants.AchievementOption.less)])
+});
+
+const AccumulaN = new NPC('N', [
+    'Your Pokémon... Just now, it was saying...',
+    'Yes, they\'re talking. Oh. Then, you can\'t hear it, either... How sad. My name is N.',
+    'You have a Pokédex, eh? So... You\'re going to confine many, many Pokémon in Poké Balls for that, then. I\'m a Trainer, too, but I can\'t help wondering... Are Pokémon really happy that way?',
+    'Let me hear your Pokémon\'s voice again!',
+], {
+    image: 'assets/images/temporaryBattle/N.png',
+    requirement: new MultiRequirement([new QuestLineStepCompletedRequirement('A memory in Black and White', 0), new QuestLineStepCompletedRequirement('A memory in Black and White', 0, GameConstants.AchievementOption.less)])
+});
+
+const DreamyardPlasmaGrunt = new NPC('Team Plasma Grunt', [
+    'Are you talking to us? We\'re Team Plasma.',
+    'We battle day and night to liberate Pokémon from foolish humans!',
+    'What are we doing? The Pokémon Munna and Musharna emit a mysterious vapor called Dream Mist, which shows people\'s dreams.',
+    'We\'re going to use that to make people want to release their Pokémon...',
+    'We\'ll show them dreams to manipulate their hearts.',
+    'On the note of releasing Pokémon, we are going to be taking yours!',
+], {
+    image: 'assets/images/temporaryBattle/Memory Team Plasma Grunt (male).png',
+    requirement: new MultiRequirement([new QuestLineStepCompletedRequirement('A memory in Black and White', 0), new QuestLineStepCompletedRequirement('A memory in Black and White', 0, GameConstants.AchievementOption.less)])
+});
+
+const WellspringPlasmaGrunt = new NPC('Team Plasma Grunt', [
+    'That child we stole this Pokémon from cannot use it to its full potential.',
+    'Doesn\'t that make the Pokémon sad?',
+    'It\'s the same thing for all your Pokémon, so hand them over to us now!',
+    'Better yet... We\'ll just take them!',
+], {
+    image: 'assets/images/temporaryBattle/Memory Team Plasma Grunt (male).png',
+    requirement: new MultiRequirement([new QuestLineStepCompletedRequirement('A memory in Black and White', 0), new QuestLineStepCompletedRequirement('A memory in Black and White', 0, GameConstants.AchievementOption.less)])
+});
+
+const NacreneScientist = new NPC('Scientist Satomi', [
+    'Before you can challenge the Gym Leader, Lenora, you must answer a question correctly.',
+    'There is a unique stone in Nacrene Museum. Do you remember, was it Black or White?',
+    'Fight Lydia if it was White, and Carter if it was Black.',
+], {
+    image: 'assets/images/trainers/Scientist (female).png',
+    requirement: new MultiRequirement([new QuestLineStepCompletedRequirement('A memory in Black and White', 0), new QuestLineStepCompletedRequirement('A memory in Black and White', 0, GameConstants.AchievementOption.less)])
+});
+
+const NacreneN1 = new NPC('N', [
+    'I... want to see things no one can see. The truths of Pokémon inside Poké Balls. The ideals of how Trainers should be. And a future where Pokémon have become perfect...',
+    'I think my friends and I should test you to see if you can see this future, too.',
+], {
+    image: 'assets/images/temporaryBattle/N.png',
+    requirement: new MultiRequirement([new QuestLineStepCompletedRequirement('A memory in Black and White', 0), new QuestLineStepCompletedRequirement('A memory in Black and White', 0, GameConstants.AchievementOption.less)])
+});
+
+const NacreneN2B = new NPC('N', [
+    'Right now, my friends aren\'t strong enough to save all Pokémon. Maybe I can\'t solve the equation that will change the world. So, I need power... Power enough to make anyone agree with me.',
+    'Now I know what power I need. Zekrom! The legendary Pokémon that, along with the hero, created the Unova region. It\'s my turn to become that hero--and you and I will be friends!',
+], {
+    image: 'assets/images/temporaryBattle/N.png',
+    requirement: new MultiRequirement([new QuestLineStepCompletedRequirement('A memory in Black and White', 0), new QuestLineStepCompletedRequirement('A memory in Black and White', 0, GameConstants.AchievementOption.less), new TemporaryBattleRequirement('School Kid Lydia')])
+});
+
+const NacreneN2W = new NPC('N', [
+    'Right now, my friends aren\'t strong enough to save all Pokémon. Maybe I can\'t solve the equation that will change the world. So, I need power... Power enough to make anyone agree with me.',
+    'Now I know what power I need. Reshiram! The legendary Pokémon that, along with the hero, created the Unova region. It\'s my turn to become that hero--and you and I will be friends!',
+], {
+    image: 'assets/images/temporaryBattle/N.png',
+    requirement: new MultiRequirement([new QuestLineStepCompletedRequirement('A memory in Black and White', 0), new QuestLineStepCompletedRequirement('A memory in Black and White', 0, GameConstants.AchievementOption.less), new TemporaryBattleRequirement('School Kid Carter')])
+});
+
 //Unova Towns
 TownList['Aspertia City'] = new Town(
     'Aspertia City',
@@ -3697,7 +3785,7 @@ TownList['N\'s Castle'] = new Town(
     GameConstants.UnovaSubRegions.Unova,
     [TemporaryBattleList['Reshiram'], TemporaryBattleList['Zekrom'], TemporaryBattleList['N Black'], TemporaryBattleList['N White'], TemporaryBattleList['Ghetsis 3'], TemporaryBattleList['N Black 2'], TemporaryBattleList['N White 2']],
     {
-        requirements: [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
+        requirements: [new QuestLineStartedRequirement('A memory in Black and White')],
     }
 );
 

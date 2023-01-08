@@ -1690,7 +1690,7 @@ TemporaryBattleList['Cheren 1'] = new TemporaryBattle(
 TemporaryBattleList['N 1'] = new TemporaryBattle(
     'N 1',
     [new GymPokemon('Purrloin', 1689240, 7)],
-    'I never expected to hear Pokémon say such things...',
+    'I never expected to hear Pokémon say such things... As long as Pokémon are confined in Pokéballs they will never become perfect beings. I have to change the world for Pokémon, because they\'re my friends.',
     [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
     undefined,
     {
@@ -1832,13 +1832,13 @@ TemporaryBattleList['School Kid Lydia'] = new TemporaryBattle(
         new GymPokemon('Lillipup', 1689240, 15),
         new GymPokemon('Lillipup', 1689240, 15),
     ],
-    'Oh, wow! I lost, but thanks for a great battle!',
+    'You remembered right! The stone in the museum is White!',
     [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)]
 );
 TemporaryBattleList['School Kid Carter'] = new TemporaryBattle(
     'School Kid Carter',
     [new GymPokemon('Patrat', 1689240, 17)],
-    'I may be a bookworm, but I am not a bug Pokémon.',
+    'You remembered right! The stone in the museum is Black!',
     [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)]
 );
 TemporaryBattleList['Lenora'] = new TemporaryBattle(
