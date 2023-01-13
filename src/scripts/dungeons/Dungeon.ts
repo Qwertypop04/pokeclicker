@@ -5893,8 +5893,8 @@ dungeonList['Dragonspiral Tower'] = new Dungeon('Dragonspiral Tower',
             {loot: 'Pinap'},
         ],
         rare: [
-            {loot: 'Red Shard'},
-            {loot: 'Yellow Shard'},
+            {loot: 'Black Shard'},
+            {loot: 'White Shard'},
         ],
         epic: [
             {loot: 'Draco Plate'},
