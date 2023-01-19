@@ -194,6 +194,15 @@ namespace GameConstants {
         battlePoint,
         contestToken,
     }
+    declare const LuxuryBallCurrencyRate: Record<Currency, number> = {
+        [Currency.money]: 300000,
+        [Currency.questPoint]: 900,
+        [Currency.dungeonToken]: 15000,
+        [Currency.diamond]: 15,
+        [Currency.farmPoint]: 900,
+        [Currency.battlePoint]: 150,
+        [Currency.contestToken]: 900,
+    };
     declare enum TypeEffectiveness {
         Immune,
         NotVery,
@@ -646,11 +655,12 @@ namespace GameConstants {
     }
 
     // Pokemon Statistics
-    declare enum PokemonStatiticsType {
+    declare enum PokemonStatisticsType {
         Captured = 'Captured',
         Defeated = 'Defeated',
         Encountered = 'Encountered',
         Hatched = 'Hatched',
+        Seen = 'Seen',
     }
 
     declare enum AlcremieSweet {
@@ -671,7 +681,7 @@ namespace GameConstants {
         nightCounterclockwiseBelow5,
         dayClockwiseAbove5,
         dayCounterclockwiseAbove5,
-        at7Above10
+        at5Above10
     }
     declare enum ExtraAchievementCategories {
         global,
