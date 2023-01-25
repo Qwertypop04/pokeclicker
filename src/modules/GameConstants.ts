@@ -1,3 +1,5 @@
+import DayCyclePart from './dayCycle/DayCyclePart';
+
 export const SECOND = 1000;
 export const MINUTE = SECOND * 60;
 export const HOUR = MINUTE * 60;
@@ -1448,6 +1450,8 @@ export const TemporaryBattles = [
     'Butler 1',
     'Butler 2',
     'Meta Groudon',
+    'Latios',
+    'Latias',
     'Sevii Rocket Grunt 1',
     'Sevii Rocket Grunt 2',
     'Sevii Rocket Grunt 3',
@@ -1469,6 +1473,15 @@ export const TemporaryBattles = [
     'Barry 5',
     'Barry 6',
     'Barry 7',
+    'Manaphy Go-Rock MGrunt 1',
+    'Manaphy Go-Rock MGrunt 2',
+    'Manaphy Go-Rock MGrunt 3',
+    'Manaphy Go-Rock MGrunt 4',
+    'Manaphy Go-Rock FGrunt 1',
+    'Manaphy Go-Rock FGrunt 2',
+    'Manaphy Go-Rock Commander',
+    'Manaphy Go-Rock Pincher',
+    'Manaphy Egg Protectors',
     'Zero',
     'Hugh 1',
     'Hugh 2',
@@ -1603,6 +1616,7 @@ export const TemporaryBattles = [
     'Ash Ketchum Kalos',
     'Ash Ketchum Pinkan',
     'Calem 6',
+    'Marquis Grant',
     'Grand Duchess Diantha',
     'Hau 1',
     'Hau 2',
@@ -1892,3 +1906,9 @@ export enum ExtraAchievementCategories {
     sevii,
     magikarpJump,
 }
+export const DayCycleStartHours: Record<DayCyclePart, number> = {
+    [DayCyclePart.Dawn]: 5,
+    [DayCyclePart.Day]: 6,
+    [DayCyclePart.Dusk]: 17,
+    [DayCyclePart.Night]: 18,
+};
