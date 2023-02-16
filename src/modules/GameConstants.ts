@@ -164,6 +164,8 @@ export const BerryColor = [
     '#7AC74C', // Green
     '#F7D02C', // Yellow
     '#6390F0', // Blue
+    '#B1CBDC', // Silver placeholder
+    '#FFE48E', // Gold placeholder
     '#B7B7CE', // Hinted
     '#1C1C1C', // Locked
 ];
@@ -866,8 +868,17 @@ export enum UltraBeastType {
 export enum PokeBlockColor {
     Black,
     Red,
+    Blue,
+    Pink,
+    Green,
+    Yellow,
     Gold,
     Purple,
+    Indigo,
+    Brown,
+    LiteBlue,
+    Olive,
+    Flaxen,
     Gray,
     White,
 }
@@ -1418,6 +1429,7 @@ export const TemporaryBattles = [
     'Biker Goon 2',
     'Biker Goon 3',
     'Cue Ball Paxton',
+    'Bill\'s Grandpa',
     'Blue 6',
     'Silver 1',
     'Silver 2',
@@ -1618,6 +1630,8 @@ export const TemporaryBattles = [
     'Calem 6',
     'Marquis Grant',
     'Grand Duchess Diantha',
+    'Wild Houndour Horde',
+    'Wild Electrike Horde',
     'Hau 1',
     'Hau 2',
     'Hau 3',
