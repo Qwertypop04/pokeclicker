@@ -675,7 +675,7 @@ export const Environments: Record<string, EnvironmentData> = {
     PowerPlant: {
         [Region.kanto]: new Set(['Vermilion City', 'Rocket Game Corner', 'Power Plant']),
         [Region.johto]: new Set(['Tin Tower', 'Team Rocket\'s Hideout', 'Radio Tower']),
-        [Region.hoenn]: new Set(['Mauville City', 'New Mauville', 'Weather Institute', 'Aqua Hideout']),
+        [Region.hoenn]: new Set(['Mauville City', 'New Mauville', 'Weather Institute', 'Aqua Hideout', 'Near Space']),
         [Region.sinnoh]: new Set(['Sunyshore City', 'Valley Windworks', 'Team Galactic Eterna Building', 'Team Galactic HQ']),
         [Region.unova]: new Set(['Castelia Sewers', 'Virbank City', 'Nimbasa City', 'A Totally Unsuspicious Frigate', 'Plasma Frigate']),
         [Region.kalos]: new Set(['Lumiose City', 'Kalos Power Plant', 'Poké Ball Factory', 'Team Flare Secret HQ']),
@@ -1204,7 +1204,8 @@ export const HoennDungeons = [
     'Sealed Chamber',
     'Cave of Origin',
     'Sky Pillar',
-    'Victory Road Hoenn', // 55
+    'Victory Road Hoenn',
+    'Near Space', // 56
     // These aren't implemented anywhere yet
     /*
     "Island Cave",
@@ -1233,7 +1234,7 @@ export const HoennDungeons = [
 ];
 
 export const SinnohDungeons = [
-    'Oreburgh Gate', // 56
+    'Oreburgh Gate', // 57
     'Valley Windworks',
     'Eterna Forest',
     'Old Chateau',
@@ -1256,11 +1257,11 @@ export const SinnohDungeons = [
     'Flower Paradise',
     'Snowpoint Temple',
     'Stark Mountain',
-    'Hall of Origin', // 79
+    'Hall of Origin', // 80
 ];
 
 export const UnovaDungeons = [
-    'Floccesy Ranch', // 80
+    'Floccesy Ranch', // 81
     'Liberty Garden',
     'Castelia Sewers',
     'Relic Passage',
@@ -1285,11 +1286,11 @@ export const UnovaDungeons = [
     'Wellspring Cave',
     'Cold Storage',
     'Victory Road Unova Ruins',
-    'P2 Laboratory', // 105
+    'P2 Laboratory', // 106
 ];
 
 export const KalosDungeons = [
-    'Santalune Forest', // 106
+    'Santalune Forest', // 107
     'Connecting Cave',
     'Glittering Cave',
     'Reflection Cave',
@@ -1302,12 +1303,12 @@ export const KalosDungeons = [
     'Team Flare Secret HQ',
     'Terminus Cave',
     'Pokémon Village',
-    'Victory Road Kalos', // 118
+    'Victory Road Kalos', // 119
     // 'Unknown Dungeon',
 ];
 
 export const AlolaDungeons = [
-    'Trainers\' School', // 119
+    'Trainers\' School', // 120
     'Hau\'oli Cemetery',
     'Verdant Cavern',
     'Melemele Meadow',
@@ -1336,11 +1337,11 @@ export const AlolaDungeons = [
     'Ruins of Abundance',
     'Ruins of Hope',
     'Poni Meadow',
-    'Resolution Cave', // 148
+    'Resolution Cave', // 149
 ];
 
 export const GalarDungeons = [
-    'Slumbering Weald Shrine', // 149
+    'Slumbering Weald Shrine', // 150
     'Galar Mine',
     'Galar Mine No. 2',
     'Glimwood Tangle',
@@ -1360,7 +1361,7 @@ export const GalarDungeons = [
     'Lakeside Cave',
     'Dyna Tree Hill',
     'Tunnel to the Top',
-    'Crown Shrine', // 169
+    'Crown Shrine', // 170
 ];
 
 export const RegionDungeons = [
@@ -1601,6 +1602,29 @@ export const TemporaryBattles = [
     'Trevor & Tierno',
     'Calem 1',
     'Korrina',
+    'Courtney 1',
+    'Matt 1',
+    'Zinnia 1',
+    'Draconid Elder',
+    'Aqua Grunt',
+    'Magma Grunt',
+    'Courtney 2',
+    'Matt 2',
+    'Delta Wallace',
+    'Zinnia 2',
+    'Deoxys',
+    'Delta Giovanni',
+    'Mr. Stone',
+    'Shoal Fisherman',
+    'Delta Brock',
+    'Delta Tabitha',
+    'Delta Shelly',
+    'Icy Boulder',
+    'Mega Draconid Elder',
+    'Delta Steven',
+    'Dr Cozmo',
+    'Matt 3',
+    'Courtney 3',
     'Aipom Alley',
     'Mime Interview',
     'Underground Fighting Ring',
@@ -1619,6 +1643,7 @@ export const TemporaryBattles = [
     'Riot',
     'Merilyn',
     'Millis and Argus Steel',
+    'Rampaging Yveltal',
     'AZ',
     'Ash Ketchum Kanto',
     'Ash Ketchum Johto',
