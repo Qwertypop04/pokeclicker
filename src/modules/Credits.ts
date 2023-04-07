@@ -283,6 +283,7 @@ export const SpriteCredits: Credit[] = [
             'Rudy',
             'Rusted Shield and Sword icons',
             'Sea Mauville',
+            'Shadow Makuhita',
             'Shady Salesman',
             'Spooky Togepi (shiny)',
             'Spooky Togetic',
@@ -756,6 +757,7 @@ export const SpriteCredits: Credit[] = [
             'Valencian Butterfree',
             'Valencian Vileplume',
             'Valencian Weepinbell',
+            'Team Flare Boss Lysandre',
         ],
         // NOTES: Made specifically for Pokeclicker.
     },
