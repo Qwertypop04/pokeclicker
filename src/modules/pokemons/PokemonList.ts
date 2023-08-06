@@ -16,6 +16,8 @@ import {
     DayTimedLevelEvolution,
     DayCyclePartRestrictedLevelEvolution,
     MegaEvolution,
+    DayTimedMegaEvolution,
+    NightTimedMegaEvolution,
 } from './evolutions/Methods';
 import BerryType from '../enums/BerryType';
 import ItemType from '../enums/ItemType';
@@ -150,7 +152,7 @@ export const pokemonList = createPokemonArray(
     {
         'id': 1.02,
         'name': 'Spooky Bulbasaur',
-        'catchRate': 25,
+        'catchRate': 45,
         'type': [PokemonType.Grass, PokemonType.Dark],
         'levelType': LevelType.mediumslow,
         'exp': 64,
@@ -171,7 +173,7 @@ export const pokemonList = createPokemonArray(
     {
         'id': 1.03,
         'name': 'Bulbasaur (Rose)',
-        'catchRate': 25,
+        'catchRate': 45,
         'type': [PokemonType.Grass, PokemonType.Fairy],
         'levelType': LevelType.mediumslow,
         'exp': 64,
@@ -281,7 +283,7 @@ export const pokemonList = createPokemonArray(
         'levelType': LevelType.mediumslow,
         'exp': 236,
         'eggCycles': 20,
-        // 'evolutions': [MegaEvolution('Venusaur', 'Mega Venusaur')],
+        'evolutions': [MegaEvolution(MegaStoneType.Venusaurite, 'Venusaur', 'Mega Venusaur')],
         'base': {
             'hitpoints': 80,
             'attack': 82,
@@ -302,7 +304,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 20,
         'levelType': LevelType.mediumslow,
         'exp': 281,
-        'catchRate': 10,
+        'catchRate': 45,
         'base': {
             'hitpoints': 80,
             'attack': 100,
@@ -489,10 +491,10 @@ export const pokemonList = createPokemonArray(
         'levelType': LevelType.mediumslow,
         'exp': 240,
         'eggCycles': 20,
-        // 'evolutions': [
-        //     MegaEvolution(MegaStoneType.Charizardite_X, 'Charizard', 'Mega Charizard X'),
-        //     MegaEvolution(MegaStoneType.Charizardite_Y, 'Charizard', 'Mega Charizard Y'),
-        // ],
+        'evolutions': [
+            DayTimedMegaEvolution(MegaStoneType.Charizardite_X, 'Charizard', 'Mega Charizard X'),
+            NightTimedMegaEvolution(MegaStoneType.Charizardite_Y, 'Charizard', 'Mega Charizard Y'),
+        ],
         'base': {
             'hitpoints': 78,
             'attack': 84,
@@ -512,7 +514,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 20,
         'levelType': LevelType.mediumslow,
         'exp': 285,
-        'catchRate': 10,
+        'catchRate': 45,
         'base': {
             'hitpoints': 78,
             'attack': 130,
@@ -532,7 +534,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 20,
         'levelType': LevelType.mediumslow,
         'exp': 285,
-        'catchRate': 10,
+        'catchRate': 45,
         'base': {
             'hitpoints': 78,
             'attack': 104,
@@ -678,7 +680,7 @@ export const pokemonList = createPokemonArray(
         'levelType': LevelType.mediumslow,
         'exp': 239,
         'eggCycles': 20,
-        // 'evolutions': [MegaEvolution('Blastoise', 'Mega Blastoise')],
+        'evolutions': [MegaEvolution(MegaStoneType.Blastoisinite, 'Blastoise', 'Mega Blastoise')],
         'base': {
             'hitpoints': 79,
             'attack': 83,
@@ -698,7 +700,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 20,
         'levelType': LevelType.mediumslow,
         'exp': 284,
-        'catchRate': 10,
+        'catchRate': 45,
         'base': {
             'hitpoints': 79,
             'attack': 103,
@@ -986,7 +988,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 15,
         'levelType': LevelType.mediumfast,
         'exp': 223,
-        'catchRate': 10,
+        'catchRate': 45,
         'base': {
             'hitpoints': 65,
             'attack': 150,
@@ -1092,7 +1094,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 15,
         'levelType': LevelType.mediumfast,
         'exp': 261,
-        'catchRate': 10,
+        'catchRate': 45,
         'base': {
             'hitpoints': 83,
             'attack': 80,
@@ -1554,7 +1556,7 @@ export const pokemonList = createPokemonArray(
     {
         'id': 25.10,
         'name': 'Flying Pikachu',
-        'catchRate': 50,
+        'catchRate': 190,
         'type': [PokemonType.Electric, PokemonType.Flying],
         'levelType': LevelType.mediumfast,
         'exp': 112,
@@ -1571,7 +1573,7 @@ export const pokemonList = createPokemonArray(
     {
         'id': 25.11,
         'name': 'Surfing Pikachu',
-        'catchRate': 50,
+        'catchRate': 190,
         'type': [PokemonType.Electric, PokemonType.Water],
         'levelType': LevelType.mediumfast,
         'exp': 112,
@@ -1588,7 +1590,7 @@ export const pokemonList = createPokemonArray(
     {
         'id': 25.12,
         'name': 'Pikachu (Gengar)',
-        'catchRate': 50,
+        'catchRate': 190,
         'type': [PokemonType.Electric, PokemonType.Ghost],
         'levelType': LevelType.mediumfast,
         'exp': 112,
@@ -1608,7 +1610,7 @@ export const pokemonList = createPokemonArray(
     {
         'id': 25.13,
         'name': 'Let\'s Go Pikachu',
-        'catchRate': 50,
+        'catchRate': 190,
         'type': [PokemonType.Electric],
         'levelType': LevelType.mediumfast,
         'exp': 112,
@@ -1654,6 +1656,26 @@ export const pokemonList = createPokemonArray(
         'exp': 112,
         'eggCycles': 10,
         'evolutions': [QuestlineStoneEvolution('Detective Pikachu', 'Detective Pikachu', 'Detective Raichu', StoneType.Thunder_stone)],
+        'base': {
+            'hitpoints': 35,
+            'attack': 55,
+            'specialAttack': 50,
+            'defense': 40,
+            'specialDefense': 50,
+            'speed': 90,
+        },
+        'gender': {
+            'femaleRatio': 0,
+        },
+    },
+    {
+        'id': 25.16,
+        'name': 'Pikachu (Clone)',
+        'catchRate': 190,
+        'type': [PokemonType.Electric],
+        'levelType': LevelType.mediumfast,
+        'exp': 112,
+        'eggCycles': 10,
         'base': {
             'hitpoints': 35,
             'attack': 55,
@@ -2522,6 +2544,23 @@ export const pokemonList = createPokemonArray(
         },
     },
     {
+        'id': 51.02,
+        'name': 'Dugtrio (Punk)',
+        'catchRate': 50,
+        'type': [PokemonType.Ground],
+        'levelType': LevelType.mediumfast,
+        'exp': 149,
+        'eggCycles': 20,
+        'base': {
+            'hitpoints': 35,
+            'attack': 100,
+            'specialAttack': 50,
+            'defense': 50,
+            'specialDefense': 70,
+            'speed': 120,
+        },
+    },
+    {
         'id': 52,
         'name': 'Meowth',
         'catchRate': 255,
@@ -2538,6 +2577,7 @@ export const pokemonList = createPokemonArray(
             'specialDefense': 40,
             'speed': 90,
         },
+        'heldItem': { type: ItemType.item, id: 'Rare_Candy' },
     },
     {
         'id': 52.01,
@@ -2978,7 +3018,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 20,
         'levelType': LevelType.mediumslow,
         'exp': 270,
-        'catchRate': 10,
+        'catchRate': 50,
         'base': {
             'hitpoints': 55,
             'attack': 50,
@@ -3130,6 +3170,23 @@ export const pokemonList = createPokemonArray(
     {
         'id': 70.01,
         'name': 'Valencian Weepinbell',
+        'catchRate': 120,
+        'type': [PokemonType.Grass, PokemonType.Poison],
+        'levelType': LevelType.mediumslow,
+        'exp': 137,
+        'eggCycles': 20,
+        'base': {
+            'hitpoints': 65,
+            'attack': 90,
+            'specialAttack': 85,
+            'defense': 50,
+            'specialDefense': 45,
+            'speed': 55,
+        },
+    },
+    {
+        'id': 70.02,
+        'name': 'Weepinbell (Fancy)',
         'catchRate': 120,
         'type': [PokemonType.Grass, PokemonType.Poison],
         'levelType': LevelType.mediumslow,
@@ -3468,7 +3525,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 20,
         'levelType': LevelType.mediumfast,
         'exp': 207,
-        'catchRate': 10,
+        'catchRate': 75,
         'base': {
             'hitpoints': 95,
             'attack': 75,
@@ -3851,7 +3908,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 20,
         'levelType': LevelType.mediumslow,
         'exp': 207,
-        'catchRate': 10,
+        'catchRate': 45,
         'base': {
             'hitpoints': 60,
             'attack': 65,
@@ -3872,6 +3929,23 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 20,
         'base': {
             'hitpoints': 120,
+            'attack': 65,
+            'specialAttack': 130,
+            'defense': 60,
+            'specialDefense': 75,
+            'speed': 110,
+        },
+    },
+    {
+        'id': 94.03,
+        'name': 'Gengar (Punk)',
+        'catchRate': 45,
+        'type': [PokemonType.Ghost, PokemonType.Poison],
+        'levelType': LevelType.mediumslow,
+        'exp': 225,
+        'eggCycles': 20,
+        'base': {
+            'hitpoints': 60,
             'attack': 65,
             'specialAttack': 130,
             'defense': 60,
@@ -3907,6 +3981,24 @@ export const pokemonList = createPokemonArray(
         'exp': 77,
         'eggCycles': 25,
         'evolutions': [StoneEvolution('Crystal Onix', 'Crystal Steelix', StoneType.Ice_stone)],
+        'base': {
+            'hitpoints': 35,
+            'attack': 45,
+            'specialAttack': 30,
+            'defense': 160,
+            'specialDefense': 45,
+            'speed': 70,
+        },
+        'heldItem': { type: ItemType.underground, id: 'Hard Stone' },
+    },
+    {
+        'id': 95.02,
+        'name': 'Onix (Rocker)',
+        'catchRate': 45,
+        'type': [PokemonType.Rock, PokemonType.Ground],
+        'levelType': LevelType.mediumfast,
+        'exp': 77,
+        'eggCycles': 25,
         'base': {
             'hitpoints': 35,
             'attack': 45,
@@ -4117,6 +4209,23 @@ export const pokemonList = createPokemonArray(
             RegionStoneEvolution(alolaOnly, 'Exeggcute', 'Alolan Exeggutor', StoneType.Leaf_stone),
             DummyEvolution('Exeggcute', 'Pinkan Exeggutor'),
         ],
+        'base': {
+            'hitpoints': 60,
+            'attack': 40,
+            'specialAttack': 60,
+            'defense': 80,
+            'specialDefense': 45,
+            'speed': 40,
+        },
+    },
+    {
+        'id': 102.01,
+        'name': 'Exeggcute (Single)',
+        'catchRate': 90,
+        'type': [PokemonType.Grass, PokemonType.Psychic],
+        'levelType': LevelType.slow,
+        'exp': 65,
+        'eggCycles': 20,
         'base': {
             'hitpoints': 60,
             'attack': 40,
@@ -4534,6 +4643,23 @@ export const pokemonList = createPokemonArray(
         },
     },
     {
+        'id': 114.01,
+        'name': 'Tangela (Pom-pom)',
+        'catchRate': 45,
+        'type': [PokemonType.Grass],
+        'levelType': LevelType.mediumfast,
+        'exp': 87,
+        'eggCycles': 20,
+        'base': {
+            'hitpoints': 65,
+            'attack': 55,
+            'specialAttack': 100,
+            'defense': 115,
+            'specialDefense': 40,
+            'speed': 60,
+        },
+    },
+    {
         'id': 115,
         'name': 'Kangaskhan',
         'catchRate': 45,
@@ -4561,7 +4687,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 20,
         'levelType': LevelType.mediumslow,
         'exp': 207,
-        'catchRate': 10,
+        'catchRate': 45,
         'base': {
             'hitpoints': 105,
             'attack': 125,
@@ -4631,6 +4757,23 @@ export const pokemonList = createPokemonArray(
         },
         'gender': {
             'visualDifference': true,
+        },
+    },
+    {
+        'id': 118.01,
+        'name': 'Goldeen (Diva)',
+        'catchRate': 225,
+        'type': [PokemonType.Water],
+        'levelType': LevelType.mediumfast,
+        'exp': 64,
+        'eggCycles': 20,
+        'base': {
+            'hitpoints': 45,
+            'attack': 67,
+            'specialAttack': 35,
+            'defense': 60,
+            'specialDefense': 50,
+            'speed': 63,
         },
     },
     {
@@ -4866,7 +5009,7 @@ export const pokemonList = createPokemonArray(
         'levelType': LevelType.slow,
         'exp': 175,
         'eggCycles': 25,
-        // 'evolutions': [MegaEvolution('Pinsir', 'Mega Pinsir')],
+        'evolutions': [MegaEvolution(MegaStoneType.Pinsirite, 'Pinsir', 'Mega Pinsir')],
         'base': {
             'hitpoints': 65,
             'attack': 125,
@@ -4883,7 +5026,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 25,
         'levelType': LevelType.mediumslow,
         'exp': 210,
-        'catchRate': 10,
+        'catchRate': 45,
         'base': {
             'hitpoints': 65,
             'attack': 155,
@@ -5602,7 +5745,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 5,
         'levelType': LevelType.slow,
         'exp': 224,
-        'catchRate': 10,
+        'catchRate': 45,
         'base': {
             'hitpoints': 95,
             'attack': 155,
@@ -5670,7 +5813,7 @@ export const pokemonList = createPokemonArray(
     {
         'id': 133,
         'name': 'Eevee',
-        'catchRate': 255,
+        'catchRate': 45,
         'type': [PokemonType.Normal],
         'levelType': LevelType.mediumfast,
         'exp': 65,
@@ -5710,7 +5853,7 @@ export const pokemonList = createPokemonArray(
         'id': 133.01,
         'name': 'Gigantamax Eevee',
         'nativeRegion': Region.none,
-        'catchRate': 255,
+        'catchRate': 45,
         'type': [PokemonType.Normal],
         'levelType': LevelType.mediumfast,
         'exp': 65,
@@ -5730,7 +5873,7 @@ export const pokemonList = createPokemonArray(
     {
         'id': 133.02,
         'name': 'Let\'s Go Eevee',
-        'catchRate': 50,
+        'catchRate': 45,
         'type': [PokemonType.Normal],
         'levelType': LevelType.mediumfast,
         'exp': 65,
@@ -5938,7 +6081,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 35,
         'levelType': LevelType.mediumslow,
         'exp': 215,
-        'catchRate': 10,
+        'catchRate': 45,
         'base': {
             'hitpoints': 80,
             'attack': 135,
@@ -6200,8 +6343,8 @@ export const pokemonList = createPokemonArray(
         'exp': 306,
         'eggCycles': 120,
         // 'evolutions': [
-        //     MegaEvolution('Mewtwo', 'Mega Mewtwo X'),
-        //     MegaEvolution('Mewtwo', 'Mega Mewtwo Y'),
+        //    DayTimedMegaEvolution(MegaStoneType.Mewtwonite_X, 'Mewtwo', 'Mega Mewtwo X'),
+        //    NightTimedMegaEvolution(MegaStoneType.Mewtwonite_Y, 'Mewtwo', 'Mega Mewtwo Y'),
         // ],
         'base': {
             'hitpoints': 106,
@@ -6222,7 +6365,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 120,
         'levelType': LevelType.slow,
         'exp': 351,
-        'catchRate': 2,
+        'catchRate': 3,
         'base': {
             'hitpoints': 106,
             'attack': 190,
@@ -6242,7 +6385,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 120,
         'levelType': LevelType.slow,
         'exp': 351,
-        'catchRate': 2,
+        'catchRate': 3,
         'base': {
             'hitpoints': 106,
             'attack': 150,
@@ -6258,7 +6401,7 @@ export const pokemonList = createPokemonArray(
     {
         'id': 150.03,
         'name': 'Armored Mewtwo',
-        'catchRate': 2,
+        'catchRate': 3,
         'type': [PokemonType.Psychic, PokemonType.Steel],
         'levelType': LevelType.slow,
         'exp': 306,
@@ -6813,7 +6956,7 @@ export const pokemonList = createPokemonArray(
     {
         'id': 175.01,
         'name': 'Spooky Togepi',
-        'catchRate': 30,
+        'catchRate': 190,
         'type': [PokemonType.Ghost],
         'levelType': LevelType.fast,
         'exp': 49,
@@ -6835,7 +6978,7 @@ export const pokemonList = createPokemonArray(
     {
         'id': 175.02,
         'name': 'Surprise Togepi',
-        'catchRate': 30,
+        'catchRate': 190,
         'type': [PokemonType.Fairy],
         'levelType': LevelType.fast,
         'exp': 49,
@@ -6993,7 +7136,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 20,
         'levelType': LevelType.mediumslow,
         'exp': 351,
-        'catchRate': 2,
+        'catchRate': 45,
         'base': {
             'hitpoints': 90,
             'attack': 95,
@@ -7186,6 +7329,7 @@ export const pokemonList = createPokemonArray(
         'gender': {
             'visualDifference': true,
         },
+        'heldItem': { type: ItemType.item, id: 'Rare_Candy' },
     },
     {
         'id': 191,
@@ -7386,7 +7530,10 @@ export const pokemonList = createPokemonArray(
         'levelType': LevelType.fast,
         'exp': 87,
         'eggCycles': 25,
-        'evolutions': [StoneEvolution('Misdreavus', 'Mismagius', StoneType.Dusk_stone)],
+        'evolutions': [
+            StoneEvolution('Misdreavus', 'Mismagius', StoneType.Dusk_stone),
+            DummyEvolution('Misdreavus', 'Mismagius (Illusion)'),
+        ],
         'base': {
             'hitpoints': 60,
             'attack': 60,
@@ -8098,7 +8245,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 25,
         'levelType': LevelType.mediumfast,
         'exp': 351,
-        'catchRate': 2,
+        'catchRate': 25,
         'base': {
             'hitpoints': 75,
             'attack': 125,
@@ -8213,7 +8360,7 @@ export const pokemonList = createPokemonArray(
         'levelType': LevelType.mediumfast,
         'exp': 175,
         'eggCycles': 25,
-        // 'evolutions': [MegaEvolution('Scizor', 'Mega Scizor')],
+        'evolutions': [MegaEvolution(MegaStoneType.Scizorite, 'Scizor', 'Mega Scizor')],
         'base': {
             'hitpoints': 70,
             'attack': 130,
@@ -8233,7 +8380,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 25,
         'levelType': LevelType.mediumfast,
         'exp': 351,
-        'catchRate': 2,
+        'catchRate': 25,
         'base': {
             'hitpoints': 70,
             'attack': 150,
@@ -8246,6 +8393,23 @@ export const pokemonList = createPokemonArray(
     {
         'id': 213,
         'name': 'Shuckle',
+        'catchRate': 190,
+        'type': [PokemonType.Bug, PokemonType.Rock],
+        'levelType': LevelType.mediumslow,
+        'exp': 177,
+        'eggCycles': 20,
+        'base': {
+            'hitpoints': 20,
+            'attack': 10,
+            'specialAttack': 10,
+            'defense': 230,
+            'specialDefense': 230,
+            'speed': 5,
+        },
+    },
+    {
+        'id': 213.01,
+        'name': 'Shuckle (Corked)',
         'catchRate': 190,
         'type': [PokemonType.Bug, PokemonType.Rock],
         'levelType': LevelType.mediumslow,
@@ -8288,7 +8452,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 25,
         'levelType': LevelType.slow,
         'exp': 351,
-        'catchRate': 2,
+        'catchRate': 45,
         'base': {
             'hitpoints': 80,
             'attack': 185,
@@ -8367,7 +8531,7 @@ export const pokemonList = createPokemonArray(
         'levelType': LevelType.mediumfast,
         'exp': 175,
         'eggCycles': 20,
-        'evolutions': [StoneEvolution('Ursaring', 'Ursaluna', StoneType.Peat_block)],
+        'evolutions': [NightTimedStoneEvolution('Ursaring', 'Ursaluna', StoneType.Peat_block)],
         'base': {
             'hitpoints': 90,
             'attack': 130,
@@ -8633,7 +8797,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 20,
         'levelType': LevelType.slow,
         'exp': 351,
-        'catchRate': 2,
+        'catchRate': 45,
         'base': {
             'hitpoints': 75,
             'attack': 90,
@@ -9053,7 +9217,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 40,
         'levelType': LevelType.slow,
         'exp': 351,
-        'catchRate': 2,
+        'catchRate': 45,
         'base': {
             'hitpoints': 100,
             'attack': 164,
@@ -9256,7 +9420,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 20,
         'levelType': LevelType.mediumslow,
         'exp': 351,
-        'catchRate': 2,
+        'catchRate': 45,
         'base': {
             'hitpoints': 70,
             'attack': 110,
@@ -9341,7 +9505,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 20,
         'levelType': LevelType.mediumslow,
         'exp': 351,
-        'catchRate': 2,
+        'catchRate': 45,
         'base': {
             'hitpoints': 80,
             'attack': 160,
@@ -9424,7 +9588,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 20,
         'levelType': LevelType.mediumslow,
         'exp': 351,
-        'catchRate': 2,
+        'catchRate': 45,
         'base': {
             'hitpoints': 100,
             'attack': 150,
@@ -9893,7 +10057,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 20,
         'levelType': LevelType.slow,
         'exp': 351,
-        'catchRate': 2,
+        'catchRate': 45,
         'base': {
             'hitpoints': 68,
             'attack': 85,
@@ -10292,7 +10456,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 25,
         'levelType': LevelType.mediumslow,
         'exp': 351,
-        'catchRate': 2,
+        'catchRate': 45,
         'base': {
             'hitpoints': 50,
             'attack': 85,
@@ -10328,7 +10492,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 20,
         'levelType': LevelType.fast,
         'exp': 351,
-        'catchRate': 2,
+        'catchRate': 45,
         'base': {
             'hitpoints': 50,
             'attack': 105,
@@ -10402,7 +10566,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 35,
         'levelType': LevelType.slow,
         'exp': 351,
-        'catchRate': 2,
+        'catchRate': 45,
         'base': {
             'hitpoints': 70,
             'attack': 140,
@@ -10441,7 +10605,7 @@ export const pokemonList = createPokemonArray(
         'levelType': LevelType.mediumfast,
         'exp': 144,
         'catchRate': 90,
-        // 'evolutions': [MegaEvolution('Medicham', 'Mega Medicham')],
+        // 'evolutions': [MegaEvolution(MegaStoneType.Medichamite, 'Medicham', 'Mega Medicham')],
         'base': {
             'hitpoints': 60,
             'attack': 60,
@@ -10461,7 +10625,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 20,
         'levelType': LevelType.mediumfast,
         'exp': 351,
-        'catchRate': 2,
+        'catchRate': 90,
         'base': {
             'hitpoints': 60,
             'attack': 100,
@@ -10514,7 +10678,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 20,
         'levelType': LevelType.slow,
         'exp': 351,
-        'catchRate': 2,
+        'catchRate': 45,
         'base': {
             'hitpoints': 70,
             'attack': 75,
@@ -10705,7 +10869,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 20,
         'levelType': LevelType.slow,
         'exp': 351,
-        'catchRate': 2,
+        'catchRate': 60,
         'base': {
             'hitpoints': 70,
             'attack': 140,
@@ -10799,7 +10963,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 20,
         'levelType': LevelType.mediumfast,
         'exp': 351,
-        'catchRate': 2,
+        'catchRate': 150,
         'base': {
             'hitpoints': 70,
             'attack': 120,
@@ -10995,7 +11159,7 @@ export const pokemonList = createPokemonArray(
         'levelType': LevelType.erratic,
         'exp': 172,
         'catchRate': 45,
-        // 'evolutions': [MegaEvolution('Altaria', 'Mega Altaria')],
+        // 'evolutions': [MegaEvolution(MegaStoneType.Altarianite, 'Altaria', 'Mega Altaria')],
         'base': {
             'hitpoints': 75,
             'attack': 70,
@@ -11012,7 +11176,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 20,
         'levelType': LevelType.erratic,
         'exp': 351,
-        'catchRate': 2,
+        'catchRate': 45,
         'base': {
             'hitpoints': 75,
             'attack': 110,
@@ -11440,7 +11604,7 @@ export const pokemonList = createPokemonArray(
         'levelType': LevelType.fast,
         'exp': 159,
         'catchRate': 45,
-        // 'evolutions': [MegaEvolution('Banette', 'Mega Banette')],
+        // 'evolutions': [MegaEvolution(MegaStoneType.Bannetite, 'Banette', 'Mega Banette')],
         'base': {
             'hitpoints': 64,
             'attack': 115,
@@ -11457,7 +11621,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 25,
         'levelType': LevelType.fast,
         'exp': 351,
-        'catchRate': 2,
+        'catchRate': 45,
         'base': {
             'hitpoints': 64,
             'attack': 115,
@@ -11562,7 +11726,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 25,
         'levelType': LevelType.mediumslow,
         'exp': 351,
-        'catchRate': 2,
+        'catchRate': 30,
         'base': {
             'hitpoints': 65,
             'attack': 150,
@@ -11637,7 +11801,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 20,
         'levelType': LevelType.mediumfast,
         'exp': 351,
-        'catchRate': 2,
+        'catchRate': 75,
         'base': {
             'hitpoints': 80,
             'attack': 120,
@@ -11864,7 +12028,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 40,
         'levelType': LevelType.slow,
         'exp': 351,
-        'catchRate': 2,
+        'catchRate': 45,
         'base': {
             'hitpoints': 95,
             'attack': 145,
@@ -11947,7 +12111,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 40,
         'levelType': LevelType.slow,
         'exp': 351,
-        'catchRate': 2,
+        'catchRate': 3,
         'base': {
             'hitpoints': 80,
             'attack': 145,
@@ -12049,7 +12213,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 120,
         'levelType': LevelType.slow,
         'exp': 351,
-        'catchRate': 2,
+        'catchRate': 3,
         'base': {
             'hitpoints': 80,
             'attack': 100,
@@ -12091,7 +12255,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 120,
         'levelType': LevelType.slow,
         'exp': 351,
-        'catchRate': 2,
+        'catchRate': 3,
         'base': {
             'hitpoints': 80,
             'attack': 130,
@@ -12132,7 +12296,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 120,
         'levelType': LevelType.slow,
         'exp': 347,
-        'catchRate': 2,
+        'catchRate': 3,
         'base': {
             'hitpoints': 100,
             'attack': 150,
@@ -12173,7 +12337,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 120,
         'levelType': LevelType.slow,
         'exp': 347,
-        'catchRate': 2,
+        'catchRate': 3,
         'base': {
             'hitpoints': 100,
             'attack': 180,
@@ -12234,7 +12398,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 120,
         'levelType': LevelType.slow,
         'exp': 351,
-        'catchRate': 1,
+        'catchRate': 45,
         'base': {
             'hitpoints': 105,
             'attack': 180,
@@ -12356,7 +12520,10 @@ export const pokemonList = createPokemonArray(
         'levelType': LevelType.mediumslow,
         'exp': 64,
         'catchRate': 45,
-        'evolutions': [LevelEvolution('Turtwig', 'Grotle', 18)],
+        'evolutions': [
+            LevelEvolution('Turtwig', 'Grotle', 18),
+            DummyEvolution('Turtwig', 'Grotle (Acorn)'),
+        ],
         'base': {
             'hitpoints': 55,
             'attack': 68,
@@ -12378,6 +12545,26 @@ export const pokemonList = createPokemonArray(
         'exp': 142,
         'catchRate': 45,
         'evolutions': [LevelEvolution('Grotle', 'Torterra', 32)],
+        'base': {
+            'hitpoints': 75,
+            'attack': 89,
+            'specialAttack': 55,
+            'defense': 85,
+            'specialDefense': 65,
+            'speed': 36,
+        },
+        'gender': {
+            'femaleRatio': 0.125,
+        },
+    },
+    {
+        'id': 388.01,
+        'name': 'Grotle (Acorn)',
+        'type': [PokemonType.Grass],
+        'eggCycles': 20,
+        'levelType': LevelType.mediumslow,
+        'exp': 142,
+        'catchRate': 45,
         'base': {
             'hitpoints': 75,
             'attack': 89,
@@ -12930,6 +13117,23 @@ export const pokemonList = createPokemonArray(
         },
     },
     {
+        'id': 412.03,
+        'name': 'Burmy (No Coat)',
+        'type': [PokemonType.Bug],
+        'eggCycles': 15,
+        'levelType': LevelType.mediumfast,
+        'exp': 45,
+        'catchRate': 120,
+        'base': {
+            'hitpoints': 40,
+            'attack': 29,
+            'specialAttack': 29,
+            'defense': 45,
+            'specialDefense': 45,
+            'speed': 36,
+        },
+    },
+    {
         'id': 413,
         'name': 'Wormadam (Plant)',
         'type': [PokemonType.Bug, PokemonType.Grass],
@@ -13070,6 +13274,7 @@ export const pokemonList = createPokemonArray(
         'gender': {
             'visualDifference': true,
         },
+        'heldItem': { type: ItemType.item, id: 'Rare_Candy' },
     },
     {
         'id': 418,
@@ -13327,7 +13532,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 20,
         'levelType': LevelType.mediumfast,
         'exp': 347,
-        'catchRate': 2,
+        'catchRate': 60,
         'base': {
             'hitpoints': 65,
             'attack': 136,
@@ -13340,6 +13545,23 @@ export const pokemonList = createPokemonArray(
     {
         'id': 429,
         'name': 'Mismagius',
+        'type': [PokemonType.Ghost],
+        'eggCycles': 25,
+        'levelType': LevelType.fast,
+        'exp': 173,
+        'catchRate': 45,
+        'base': {
+            'hitpoints': 60,
+            'attack': 60,
+            'specialAttack': 105,
+            'defense': 60,
+            'specialDefense': 105,
+            'speed': 105,
+        },
+    },
+    {
+        'id': 429.01,
+        'name': 'Mismagius (Illusion)',
         'type': [PokemonType.Ghost],
         'eggCycles': 25,
         'levelType': LevelType.fast,
@@ -13566,7 +13788,7 @@ export const pokemonList = createPokemonArray(
         'catchRate': 130,
         'evolutions': [
             // TODO: Evolves while holding an Oval Stone during the Day time
-            StoneEvolution('Happiny', 'Chansey', StoneType.None),
+            DummyEvolution('Happiny', 'Chansey'),
         ],
         'baby': true,
         'base': {
@@ -13592,7 +13814,7 @@ export const pokemonList = createPokemonArray(
         'catchRate': 130,
         'evolutions': [
             // TODO: Evolves while holding an Oval Stone during the Day time
-            StoneEvolution('Handout Happiny', 'Charity Chansey', StoneType.None),
+            DummyEvolution('Handout Happiny', 'Charity Chansey'),
         ],
         'baby': true,
         'base': {
@@ -13712,7 +13934,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 40,
         'levelType': LevelType.slow,
         'exp': 347,
-        'catchRate': 2,
+        'catchRate': 45,
         'base': {
             'hitpoints': 108,
             'attack': 170,
@@ -13816,7 +14038,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 25,
         'levelType': LevelType.mediumslow,
         'exp': 347,
-        'catchRate': 2,
+        'catchRate': 45,
         'base': {
             'hitpoints': 70,
             'attack': 145,
@@ -14014,7 +14236,7 @@ export const pokemonList = createPokemonArray(
         'catchRate': 25,
         'evolutions': [
             // TODO: Evolves when leveled up with a Remoraid in the party
-            StoneEvolution('Mantyke', 'Mantine', StoneType.None),
+            DummyEvolution('Mantyke', 'Mantine'),
         ],
         'baby': true,
         'base': {
@@ -14048,6 +14270,27 @@ export const pokemonList = createPokemonArray(
         },
     },
     {
+        'id': 459.01,
+        'name': 'Snover (Berry)',
+        'type': [PokemonType.Grass, PokemonType.Ice],
+        'eggCycles': 20,
+        'levelType': LevelType.slow,
+        'exp': 67,
+        'catchRate': 120,
+        'base': {
+            'hitpoints': 60,
+            'attack': 62,
+            'specialAttack': 62,
+            'defense': 50,
+            'specialDefense': 60,
+            'speed': 40,
+        },
+        'gender': {
+            'femaleRatio': 0,
+        },
+        'heldItem': { type: ItemType.berry, id: BerryType.Snover },
+    },
+    {
         'id': 460,
         'name': 'Abomasnow',
         'type': [PokemonType.Grass, PokemonType.Ice],
@@ -14075,7 +14318,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 20,
         'levelType': LevelType.slow,
         'exp': 347,
-        'catchRate': 2,
+        'catchRate': 60,
         'base': {
             'hitpoints': 90,
             'attack': 132,
@@ -14407,7 +14650,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 20,
         'levelType': LevelType.slow,
         'exp': 347,
-        'catchRate': 2,
+        'catchRate': 45,
         'base': {
             'hitpoints': 68,
             'attack': 165,
@@ -16066,7 +16309,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 20,
         'levelType': LevelType.fast,
         'exp': 390,
-        'catchRate': 2,
+        'catchRate': 255,
         'base': {
             'hitpoints': 103,
             'attack': 60,
@@ -19107,7 +19350,28 @@ export const pokemonList = createPokemonArray(
         'levelType': LevelType.mediumfast,
         'exp': 75,
         'catchRate': 120,
-        'evolutions': [LevelEvolution('Spewpa', 'Vivillon (Meadow)', 12)],
+        'evolutions': [
+            LevelEvolution('Spewpa', 'Vivillon (Meadow)', 12),
+            DummyEvolution('Spewpa', 'Vivillon (Icy Snow)'),
+            DummyEvolution('Spewpa', 'Vivillon (Polar)'),
+            DummyEvolution('Spewpa', 'Vivillon (Tundra)'),
+            DummyEvolution('Spewpa', 'Vivillon (Continental)'),
+            DummyEvolution('Spewpa', 'Vivillon (Garden)'),
+            DummyEvolution('Spewpa', 'Vivillon (Elegant)'),
+            DummyEvolution('Spewpa', 'Vivillon (Modern)'),
+            DummyEvolution('Spewpa', 'Vivillon (Marine)'),
+            DummyEvolution('Spewpa', 'Vivillon (Archipelago)'),
+            DummyEvolution('Spewpa', 'Vivillon (High Plains)'),
+            DummyEvolution('Spewpa', 'Vivillon (Sandstorm)'),
+            DummyEvolution('Spewpa', 'Vivillon (River)'),
+            DummyEvolution('Spewpa', 'Vivillon (Monsoon)'),
+            DummyEvolution('Spewpa', 'Vivillon (Savanna)'),
+            DummyEvolution('Spewpa', 'Vivillon (Sun)'),
+            DummyEvolution('Spewpa', 'Vivillon (Ocean)'),
+            DummyEvolution('Spewpa', 'Vivillon (Jungle)'),
+            DummyEvolution('Spewpa', 'Vivillon (Poké Ball)'),
+            DummyEvolution('Spewpa', 'Vivillon (Fancy)'),
+        ],
         'base': {
             'hitpoints': 45,
             'attack': 22,
@@ -19138,8 +19402,7 @@ export const pokemonList = createPokemonArray(
         'id': 666.01,
         'name': 'Vivillon (Icy Snow)',
         'type': [PokemonType.Bug, PokemonType.Flying],
-        // Boosted to match standard Vivillon (Meadow)
-        'eggCycles': 35,
+        'eggCycles': 15,
         'levelType': LevelType.mediumfast,
         'exp': 185,
         'catchRate': 45,
@@ -19156,8 +19419,7 @@ export const pokemonList = createPokemonArray(
         'id': 666.02,
         'name': 'Vivillon (Polar)',
         'type': [PokemonType.Bug, PokemonType.Flying],
-        // Boosted to match standard Vivillon (Meadow)
-        'eggCycles': 35,
+        'eggCycles': 15,
         'levelType': LevelType.mediumfast,
         'exp': 185,
         'catchRate': 45,
@@ -19174,8 +19436,7 @@ export const pokemonList = createPokemonArray(
         'id': 666.03,
         'name': 'Vivillon (Tundra)',
         'type': [PokemonType.Bug, PokemonType.Flying],
-        // Boosted to match standard Vivillon (Meadow)
-        'eggCycles': 35,
+        'eggCycles': 15,
         'levelType': LevelType.mediumfast,
         'exp': 185,
         'catchRate': 45,
@@ -19192,8 +19453,7 @@ export const pokemonList = createPokemonArray(
         'id': 666.04,
         'name': 'Vivillon (Continental)',
         'type': [PokemonType.Bug, PokemonType.Flying],
-        // Boosted to match standard Vivillon (Meadow)
-        'eggCycles': 35,
+        'eggCycles': 15,
         'levelType': LevelType.mediumfast,
         'exp': 185,
         'catchRate': 45,
@@ -19210,8 +19470,7 @@ export const pokemonList = createPokemonArray(
         'id': 666.05,
         'name': 'Vivillon (Garden)',
         'type': [PokemonType.Bug, PokemonType.Flying],
-        // Boosted to match standard Vivillon (Meadow)
-        'eggCycles': 35,
+        'eggCycles': 15,
         'levelType': LevelType.mediumfast,
         'exp': 185,
         'catchRate': 45,
@@ -19228,8 +19487,7 @@ export const pokemonList = createPokemonArray(
         'id': 666.06,
         'name': 'Vivillon (Elegant)',
         'type': [PokemonType.Bug, PokemonType.Flying],
-        // Boosted to match standard Vivillon (Meadow)
-        'eggCycles': 35,
+        'eggCycles': 15,
         'levelType': LevelType.mediumfast,
         'exp': 185,
         'catchRate': 45,
@@ -19246,8 +19504,7 @@ export const pokemonList = createPokemonArray(
         'id': 666.07,
         'name': 'Vivillon (Modern)',
         'type': [PokemonType.Bug, PokemonType.Flying],
-        // Boosted to match standard Vivillon (Meadow)
-        'eggCycles': 35,
+        'eggCycles': 15,
         'levelType': LevelType.mediumfast,
         'exp': 185,
         'catchRate': 45,
@@ -19264,8 +19521,7 @@ export const pokemonList = createPokemonArray(
         'id': 666.08,
         'name': 'Vivillon (Marine)',
         'type': [PokemonType.Bug, PokemonType.Flying],
-        // Boosted to match standard Vivillon (Meadow)
-        'eggCycles': 35,
+        'eggCycles': 15,
         'levelType': LevelType.mediumfast,
         'exp': 185,
         'catchRate': 45,
@@ -19282,8 +19538,7 @@ export const pokemonList = createPokemonArray(
         'id': 666.09,
         'name': 'Vivillon (Archipelago)',
         'type': [PokemonType.Bug, PokemonType.Flying],
-        // Boosted to match standard Vivillon (Meadow)
-        'eggCycles': 35,
+        'eggCycles': 15,
         'levelType': LevelType.mediumfast,
         'exp': 185,
         'catchRate': 45,
@@ -19300,8 +19555,7 @@ export const pokemonList = createPokemonArray(
         'id': 666.10,
         'name': 'Vivillon (High Plains)',
         'type': [PokemonType.Bug, PokemonType.Flying],
-        // Boosted to match standard Vivillon (Meadow)
-        'eggCycles': 35,
+        'eggCycles': 15,
         'levelType': LevelType.mediumfast,
         'exp': 185,
         'catchRate': 45,
@@ -19318,8 +19572,7 @@ export const pokemonList = createPokemonArray(
         'id': 666.11,
         'name': 'Vivillon (Sandstorm)',
         'type': [PokemonType.Bug, PokemonType.Flying],
-        // Boosted to match standard Vivillon (Meadow)
-        'eggCycles': 35,
+        'eggCycles': 15,
         'levelType': LevelType.mediumfast,
         'exp': 185,
         'catchRate': 45,
@@ -19336,8 +19589,7 @@ export const pokemonList = createPokemonArray(
         'id': 666.12,
         'name': 'Vivillon (River)',
         'type': [PokemonType.Bug, PokemonType.Flying],
-        // Boosted to match standard Vivillon (Meadow)
-        'eggCycles': 35,
+        'eggCycles': 15,
         'levelType': LevelType.mediumfast,
         'exp': 185,
         'catchRate': 45,
@@ -19354,8 +19606,7 @@ export const pokemonList = createPokemonArray(
         'id': 666.13,
         'name': 'Vivillon (Monsoon)',
         'type': [PokemonType.Bug, PokemonType.Flying],
-        // Boosted to match standard Vivillon (Meadow)
-        'eggCycles': 35,
+        'eggCycles': 15,
         'levelType': LevelType.mediumfast,
         'exp': 185,
         'catchRate': 45,
@@ -19372,8 +19623,7 @@ export const pokemonList = createPokemonArray(
         'id': 666.14,
         'name': 'Vivillon (Savanna)',
         'type': [PokemonType.Bug, PokemonType.Flying],
-        // Boosted to match standard Vivillon (Meadow)
-        'eggCycles': 35,
+        'eggCycles': 15,
         'levelType': LevelType.mediumfast,
         'exp': 185,
         'catchRate': 45,
@@ -19390,8 +19640,7 @@ export const pokemonList = createPokemonArray(
         'id': 666.15,
         'name': 'Vivillon (Sun)',
         'type': [PokemonType.Bug, PokemonType.Flying],
-        // Boosted to match standard Vivillon (Meadow)
-        'eggCycles': 35,
+        'eggCycles': 15,
         'levelType': LevelType.mediumfast,
         'exp': 185,
         'catchRate': 45,
@@ -19408,8 +19657,7 @@ export const pokemonList = createPokemonArray(
         'id': 666.16,
         'name': 'Vivillon (Ocean)',
         'type': [PokemonType.Bug, PokemonType.Flying],
-        // Boosted to match standard Vivillon (Meadow)
-        'eggCycles': 35,
+        'eggCycles': 15,
         'levelType': LevelType.mediumfast,
         'exp': 185,
         'catchRate': 45,
@@ -19426,8 +19674,7 @@ export const pokemonList = createPokemonArray(
         'id': 666.17,
         'name': 'Vivillon (Jungle)',
         'type': [PokemonType.Bug, PokemonType.Flying],
-        // Boosted to match standard Vivillon (Meadow)
-        'eggCycles': 35,
+        'eggCycles': 15,
         'levelType': LevelType.mediumfast,
         'exp': 185,
         'catchRate': 45,
@@ -19444,8 +19691,7 @@ export const pokemonList = createPokemonArray(
         'id': 666.18,
         'name': 'Vivillon (Poké Ball)',
         'type': [PokemonType.Bug, PokemonType.Flying],
-        // Boosted to match standard Vivillon (Meadow)
-        'eggCycles': 35,
+        'eggCycles': 15,
         'levelType': LevelType.mediumfast,
         'exp': 185,
         'catchRate': 45,
@@ -19462,8 +19708,7 @@ export const pokemonList = createPokemonArray(
         'id': 666.19,
         'name': 'Vivillon (Fancy)',
         'type': [PokemonType.Bug, PokemonType.Flying],
-        // Boosted to match standard Vivillon (Meadow)
-        'eggCycles': 35,
+        'eggCycles': 15,
         'levelType': LevelType.mediumfast,
         'exp': 185,
         'catchRate': 45,
@@ -20580,6 +20825,7 @@ export const pokemonList = createPokemonArray(
             'specialDefense': 67,
             'speed': 101,
         },
+        'heldItem': { type: ItemType.item, id: 'Rare_Candy' },
     },
     {
         'id': 703,
@@ -20771,7 +21017,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 20,
         'levelType': LevelType.mediumfast,
         'exp': 67,
-        'catchRate': 130,
+        'catchRate': 120,
         'evolutions': [StoneEvolution('Pumpkaboo (Small)', 'Gourgeist (Small)', StoneType.Linking_cord)],
         'base': {
             'hitpoints': 44,
@@ -20789,7 +21035,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 20,
         'levelType': LevelType.mediumfast,
         'exp': 67,
-        'catchRate': 110,
+        'catchRate': 120,
         'evolutions': [StoneEvolution('Pumpkaboo (Large)', 'Gourgeist (Large)', StoneType.Linking_cord)],
         'base': {
             'hitpoints': 54,
@@ -20807,7 +21053,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 20,
         'levelType': LevelType.mediumfast,
         'exp': 67,
-        'catchRate': 100,
+        'catchRate': 120,
         'evolutions': [StoneEvolution('Pumpkaboo (Super Size)', 'Gourgeist (Super Size)', StoneType.Linking_cord)],
         'base': {
             'hitpoints': 59,
@@ -20842,7 +21088,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 20,
         'levelType': LevelType.mediumfast,
         'exp': 173,
-        'catchRate': 65,
+        'catchRate': 60,
         'base': {
             'hitpoints': 55,
             'attack': 85,
@@ -20859,7 +21105,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 20,
         'levelType': LevelType.mediumfast,
         'exp': 173,
-        'catchRate': 55,
+        'catchRate': 60,
         'base': {
             'hitpoints': 75,
             'attack': 95,
@@ -20876,7 +21122,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 20,
         'levelType': LevelType.mediumfast,
         'exp': 173,
-        'catchRate': 50,
+        'catchRate': 60,
         'base': {
             'hitpoints': 85,
             'attack': 100,
@@ -21083,7 +21329,7 @@ export const pokemonList = createPokemonArray(
         'eggCycles': 25,
         'levelType': LevelType.slow,
         'exp': 347,
-        'catchRate': 2,
+        'catchRate': 3,
         'base': {
             'hitpoints': 50,
             'attack': 160,
@@ -21108,6 +21354,26 @@ export const pokemonList = createPokemonArray(
             'hitpoints': 80,
             'attack': 110,
             'specialAttack': 150,
+            'defense': 60,
+            'specialDefense': 130,
+            'speed': 70,
+        },
+        'gender': {
+            'type': Genders.Genderless,
+        },
+    },
+    {
+        'id': 720.01,
+        'name': 'Hoopa (Unbound)',
+        'type': [PokemonType.Psychic, PokemonType.Dark],
+        'eggCycles': 120,
+        'levelType': LevelType.slow,
+        'exp': 270,
+        'catchRate': 3,
+        'base': {
+            'hitpoints': 80,
+            'attack': 160,
+            'specialAttack': 170,
             'defense': 60,
             'specialDefense': 130,
             'speed': 70,
@@ -23655,7 +23921,7 @@ export const pokemonList = createPokemonArray(
         'levelType': LevelType.slow,
         'exp': 135,
         'catchRate': 3,
-        'evolutions': [StoneEvolution('Meltan', 'Melmetal', StoneType.None)],
+        'evolutions': [DummyEvolution('Meltan', 'Melmetal')],
         'base': {
             'hitpoints': 46,
             'attack': 65,
@@ -27502,7 +27768,7 @@ export const pokemonList = createPokemonArray(
         'catchRate': 45,
         'type': [PokemonType.Normal, PokemonType.Psychic],
         'levelType': LevelType.slow,
-        'exp': 163,
+        'exp': 263,
         'eggCycles': 20,
         'base': {
             'hitpoints': 103,
@@ -27516,7 +27782,7 @@ export const pokemonList = createPokemonArray(
     {
         'id': 900,
         'name': 'Kleavor',
-        'catchRate': 25,
+        'catchRate': 15,
         'type': [PokemonType.Bug, PokemonType.Rock],
         'levelType': LevelType.mediumfast,
         'exp': 175,
@@ -27533,7 +27799,7 @@ export const pokemonList = createPokemonArray(
     {
         'id': 900.01,
         'name': 'Noble Kleavor',
-        'catchRate': 25,
+        'catchRate': 15,
         'type': [PokemonType.Bug, PokemonType.Rock],
         'levelType': LevelType.mediumfast,
         'exp': 175,
@@ -27550,10 +27816,10 @@ export const pokemonList = createPokemonArray(
     {
         'id': 901,
         'name': 'Ursaluna',
-        'catchRate': 75,
+        'catchRate': 20,
         'type': [PokemonType.Ground, PokemonType.Normal],
         'levelType': LevelType.mediumfast,
-        'exp': 175,
+        'exp': 275,
         'eggCycles': 20,
         'base': {
             'hitpoints': 130,
@@ -27570,8 +27836,8 @@ export const pokemonList = createPokemonArray(
         'type': [PokemonType.Water, PokemonType.Ghost],
         'eggCycles': 40,
         'levelType': LevelType.mediumfast,
-        'exp': 161,
-        'catchRate': 25,
+        'exp': 265,
+        'catchRate': 45,
         'base': {
             'hitpoints': 120,
             'attack': 112,
@@ -27587,8 +27853,8 @@ export const pokemonList = createPokemonArray(
         'type': [PokemonType.Water, PokemonType.Ghost],
         'eggCycles': 40,
         'levelType': LevelType.mediumfast,
-        'exp': 161,
-        'catchRate': 25,
+        'exp': 265,
+        'catchRate': 45,
         'base': {
             'hitpoints': 120,
             'attack': 92,
@@ -27604,8 +27870,8 @@ export const pokemonList = createPokemonArray(
         'type': [PokemonType.Fighting, PokemonType.Poison],
         'eggCycles': 20,
         'levelType': LevelType.mediumslow,
-        'exp': 179,
-        'catchRate': 135,
+        'exp': 102,
+        'catchRate': 20,
         'base': {
             'hitpoints': 80,
             'attack': 130,
@@ -27618,10 +27884,10 @@ export const pokemonList = createPokemonArray(
     {
         'id': 904,
         'name': 'Overqwil',
-        'catchRate': 135,
+        'catchRate': 45,
         'type': [PokemonType.Dark, PokemonType.Poison],
         'levelType': LevelType.mediumfast,
-        'exp': 88,
+        'exp': 179,
         'eggCycles': 20,
         'base': {
             'hitpoints': 85,
@@ -27638,7 +27904,7 @@ export const pokemonList = createPokemonArray(
         'type': [PokemonType.Fairy, PokemonType.Flying],
         'eggCycles': 120,
         'levelType': LevelType.slow,
-        'exp': 270,
+        'exp': 116,
         'catchRate': 3,
         'base': {
             'hitpoints': 74,
@@ -27655,7 +27921,7 @@ export const pokemonList = createPokemonArray(
         'type': [PokemonType.Fairy, PokemonType.Flying],
         'eggCycles': 120,
         'levelType': LevelType.slow,
-        'exp': 270,
+        'exp': 116,
         'catchRate': 3,
         'base': {
             'hitpoints': 74,
