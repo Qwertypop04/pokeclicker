@@ -8895,8 +8895,8 @@ dungeonList['Dragonspiral Tower'] = new Dungeon('Dragonspiral Tower',
     [
         new DungeonBossPokemon('Druddigon', 48000000, 100),
         new DungeonBossPokemon('Dragonite', 48000000, 100),
-        new DungeonBossPokemon('Reshiram', 50000000, 100, {hide: true, requirement: new QuestLineStepCompletedRequirement('A memory in Black and White', 0)}),
-        new DungeonBossPokemon('Zekrom', 50000000, 100, {hide: true, requirement: new QuestLineStepCompletedRequirement('A memory in Black and White', 0)}),
+        new DungeonBossPokemon('Reshiram', 50000000, 100, {hide: true, requirement: new QuestLineStartedRequirement('A memory in Black and White')}),
+        new DungeonBossPokemon('Zekrom', 50000000, 100, {hide: true, requirement: new QuestLineStartedRequirement('A memory in Black and White')}),
         new DungeonBossPokemon('Vivillon (Savanna)',  96662023, 60, {
             hide: true,
             requirement: new OneFromManyRequirement([

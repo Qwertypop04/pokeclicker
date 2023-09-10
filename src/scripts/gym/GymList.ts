@@ -1263,9 +1263,7 @@ GymList['Champion Alder'] = new Gym(
     BadgeEnums.Elite_UnovaMemoryChampion,
     96000,
     'After the battle, a fresh wind blew through my heart... Use the battle with me as a stepping stone and move forward!',
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
-    () => {},
-    { champion: true }
+    [new QuestLineStartedRequirement('A memory in Black and White')]
 );
 
 //Kalos Gyms

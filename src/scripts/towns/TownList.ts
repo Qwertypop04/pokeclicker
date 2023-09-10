@@ -5023,7 +5023,7 @@ const AccumulaGhetsis = new NPC('Ghetsis', [
     'That\'s right! We must liberate the Pokémon! Then, and only then, will humans and Pokémon truly be equals. Everyone, I end my words here today by imploring you to consider the relationship between people and Pokémon... and the correct way to proceed. We sincerely appreciate your attention.',
 ], {
     image: 'assets/images/temporaryBattle/Ghetsis2.png',
-    requirement: new MultiRequirement([new QuestLineStepCompletedRequirement('A memory in Black and White', 0), new QuestLineStepCompletedRequirement('A memory in Black and White', 0, GameConstants.AchievementOption.less)])
+    requirement: new MultiRequirement([new QuestLineStartedRequirement('A memory in Black and White'), new QuestLineStepCompletedRequirement('A memory in Black and White', 0, GameConstants.AchievementOption.less)])
 });
 
 const AccumulaN = new NPC('N', [
@@ -5033,7 +5033,7 @@ const AccumulaN = new NPC('N', [
     'Let me hear your Pokémon\'s voice again!',
 ], {
     image: 'assets/images/temporaryBattle/N.png',
-    requirement: new MultiRequirement([new QuestLineStepCompletedRequirement('A memory in Black and White', 0), new QuestLineStepCompletedRequirement('A memory in Black and White', 0, GameConstants.AchievementOption.less)])
+    requirement: new MultiRequirement([new QuestLineStartedRequirement('A memory in Black and White'), new QuestLineStepCompletedRequirement('A memory in Black and White', 0, GameConstants.AchievementOption.less)])
 });
 
 const DreamyardPlasmaGrunt = new NPC('Team Plasma Grunt', [
@@ -5045,7 +5045,7 @@ const DreamyardPlasmaGrunt = new NPC('Team Plasma Grunt', [
     'On the note of releasing Pokémon, we are going to be taking yours!',
 ], {
     image: 'assets/images/temporaryBattle/Memory Team Plasma Grunt (male).png',
-    requirement: new MultiRequirement([new QuestLineStepCompletedRequirement('A memory in Black and White', 0), new QuestLineStepCompletedRequirement('A memory in Black and White', 0, GameConstants.AchievementOption.less)])
+    requirement: new MultiRequirement([new QuestLineStartedRequirement('A memory in Black and White'), new QuestLineStepCompletedRequirement('A memory in Black and White', 0, GameConstants.AchievementOption.less)])
 });
 
 const WellspringPlasmaGrunt = new NPC('Team Plasma Grunt', [
@@ -5055,7 +5055,7 @@ const WellspringPlasmaGrunt = new NPC('Team Plasma Grunt', [
     'Better yet... We\'ll just take them!',
 ], {
     image: 'assets/images/temporaryBattle/Memory Team Plasma Grunt (male).png',
-    requirement: new MultiRequirement([new QuestLineStepCompletedRequirement('A memory in Black and White', 0), new QuestLineStepCompletedRequirement('A memory in Black and White', 0, GameConstants.AchievementOption.less)])
+    requirement: new MultiRequirement([new QuestLineStartedRequirement('A memory in Black and White'), new QuestLineStepCompletedRequirement('A memory in Black and White', 0, GameConstants.AchievementOption.less)])
 });
 
 const NacreneScientist = new NPC('Scientist Satomi', [
@@ -5064,7 +5064,7 @@ const NacreneScientist = new NPC('Scientist Satomi', [
     'Fight Lydia if it was White, and Carter if it was Black.',
 ], {
     image: 'assets/images/trainers/Scientist (female).png',
-    requirement: new MultiRequirement([new QuestLineStepCompletedRequirement('A memory in Black and White', 0), new QuestLineStepCompletedRequirement('A memory in Black and White', 0, GameConstants.AchievementOption.less)])
+    requirement: new MultiRequirement([new QuestLineStartedRequirement('A memory in Black and White'), new QuestLineStepCompletedRequirement('A memory in Black and White', 0, GameConstants.AchievementOption.less)])
 });
 
 const NacreneN1 = new NPC('N', [
@@ -5072,7 +5072,7 @@ const NacreneN1 = new NPC('N', [
     'I think my friends and I should test you to see if you can see this future, too.',
 ], {
     image: 'assets/images/temporaryBattle/N.png',
-    requirement: new MultiRequirement([new QuestLineStepCompletedRequirement('A memory in Black and White', 0), new QuestLineStepCompletedRequirement('A memory in Black and White', 0, GameConstants.AchievementOption.less)])
+    requirement: new MultiRequirement([new QuestLineStartedRequirement('A memory in Black and White'), new QuestLineStepCompletedRequirement('A memory in Black and White', 0, GameConstants.AchievementOption.less)])
 });
 
 const NacreneN2B = new NPC('N', [
@@ -5080,7 +5080,7 @@ const NacreneN2B = new NPC('N', [
     'Now I know what power I need. Zekrom! The legendary Pokémon that, along with the hero, created the Unova region. It\'s my turn to become that hero--and you and I will be friends!',
 ], {
     image: 'assets/images/temporaryBattle/N.png',
-    requirement: new MultiRequirement([new QuestLineStepCompletedRequirement('A memory in Black and White', 0), new QuestLineStepCompletedRequirement('A memory in Black and White', 0, GameConstants.AchievementOption.less), new TemporaryBattleRequirement('School Kid Lydia')])
+    requirement: new MultiRequirement([new QuestLineStartedRequirement('A memory in Black and White'), new QuestLineStepCompletedRequirement('A memory in Black and White', 0, GameConstants.AchievementOption.less), new TemporaryBattleRequirement('School Kid Lydia')])
 });
 
 const NacreneN2W = new NPC('N', [
@@ -5088,7 +5088,7 @@ const NacreneN2W = new NPC('N', [
     'Now I know what power I need. Reshiram! The legendary Pokémon that, along with the hero, created the Unova region. It\'s my turn to become that hero--and you and I will be friends!',
 ], {
     image: 'assets/images/temporaryBattle/N.png',
-    requirement: new MultiRequirement([new QuestLineStepCompletedRequirement('A memory in Black and White', 0), new QuestLineStepCompletedRequirement('A memory in Black and White', 0, GameConstants.AchievementOption.less), new TemporaryBattleRequirement('School Kid Carter')])
+    requirement: new MultiRequirement([new QuestLineStartedRequirement('A memory in Black and White'), new QuestLineStepCompletedRequirement('A memory in Black and White', 0, GameConstants.AchievementOption.less), new TemporaryBattleRequirement('School Kid Carter')])
 });
 
 const VitaminRefundCode = new NPC('Pokémon Breeder', [
@@ -5335,7 +5335,7 @@ TownList['Nacrene City'] = new Town(
     GameConstants.UnovaSubRegions.Unova,
     [TemporaryBattleList['Lenora'], NacreneCityShop, new ShardTraderShop(GameConstants.ShardTraderLocations['Nacrene City'])],
     {
-        requirements: [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
+        requirements: [new QuestLineStartedRequirement('A memory in Black and White')],
         npcs: [VitaminRefundCode],
     }
 );
@@ -5535,7 +5535,7 @@ TownList['Twist Mountain'] = new DungeonTown(
     GameConstants.Region.unova,
     GameConstants.UnovaSubRegions.Unova,
     [
-        new QuestLineStepCompletedRequirement('A memory in Black and White', 0),
+        new QuestLineStartedRequirement('A memory in Black and White'),
         new RouteKillRequirement(10, GameConstants.Region.unova, 7),
     ]
 );
@@ -5561,35 +5561,35 @@ TownList['Pinwheel Forest'] = new DungeonTown(
     'Pinwheel Forest',
     GameConstants.Region.unova,
     GameConstants.UnovaSubRegions.Unova,
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
+    [new QuestLineStartedRequirement('A memory in Black and White')],
     [TemporaryBattleList['Memory Team Plasma Grunt 3'], TemporaryBattleList['Memory Team Plasma Grunt 4']]
 );
 TownList.Dreamyard = new DungeonTown(
     'Dreamyard',
     GameConstants.Region.unova,
     GameConstants.UnovaSubRegions.Unova,
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
+    [new QuestLineStartedRequirement('A memory in Black and White')],
     [TemporaryBattleList['Memory Team Plasma Grunt 1'], TemporaryBattleList['Memory Team Plasma Grunts 2'], TemporaryBattleList['Memory Team Plasma Grunt 2']]
 );
 TownList['Wellspring Cave'] = new DungeonTown(
     'Wellspring Cave',
     GameConstants.Region.unova,
     GameConstants.UnovaSubRegions.Unova,
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
+    [new QuestLineStartedRequirement('A memory in Black and White')],
     [TemporaryBattleList['Memory Team Plasma Grunts 1']]
 );
 TownList['Cold Storage'] = new DungeonTown(
     'Cold Storage',
     GameConstants.Region.unova,
     GameConstants.UnovaSubRegions.Unova,
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
+    [new QuestLineStartedRequirement('A memory in Black and White')],
     [TemporaryBattleList['Memory Team Plasma Grunt 7'], TemporaryBattleList['Memory Team Plasma Grunt 8'], TemporaryBattleList['Memory Team Plasma Grunts 3']]
 );
 TownList['Victory Road Unova Ruins'] = new DungeonTown(
     'Victory Road Unova Ruins',
     GameConstants.Region.unova,
     GameConstants.UnovaSubRegions.Unova,
-    [new QuestLineStepCompletedRequirement('A memory in Black and White', 0)],
+    [new QuestLineStartedRequirement('A memory in Black and White')],
     [TemporaryBattleList['Cheren 8']]
 );
 TownList['P2 Laboratory'] = new DungeonTown(
