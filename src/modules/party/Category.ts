@@ -8,6 +8,8 @@ import { Saveable } from '../DataStore/common/Saveable';
 import BreedingFilters from '../settings/BreedingFilters';
 import PokedexFilters from '../settings/PokedexFilters';
 import Settings from '../settings/Settings';
+import Notifier from '../notifications/Notifier';
+import NotificationConstants from '../notifications/NotificationConstants';
 
 export type PokemonCategory = {
     id: number,
@@ -70,11 +72,31 @@ export default class PokemonCategories implements Saveable {
             return;
         }
 
+        const pokeballFilter = App.game.pokeballFilters.list().find(f => f.options?.category?.observableValue() == cat.id);
+        if (pokeballFilter) {
+            Notifier.notify({
+                title: 'Remove Category',
+                message: `This category is in use by the <strong>${pokeballFilter.name}</strong> Pokéball filter and cannot be removed.`,
+                type: NotificationConstants.NotificationOption.danger,
+                timeout: 1e4,
+            });
+            return;
+        }
+
         App.game.party.caughtPokemon.forEach((p) => {
             if (+p.category === cat.id) {
                 p.category = 0;
             }
         });
+
+        // Remove category from hatchery helper filters if selected
+        App.game.breeding.hatcheryHelpers.available().forEach((helper) => {
+            const idx = helper.categories().indexOf(cat.id);
+            if (idx > -1) {
+                helper.categories().splice(idx, 1);
+            }
+        });
+
         // Remove subscriber
         cat.subscriber?.dispose();
         // Remove category
@@ -84,7 +106,6 @@ export default class PokemonCategories implements Saveable {
             PokedexFilters.category.value(-1);
             Settings.setSettingByName('pokedexCategoryFilter', PokedexFilters.category.value());
         }
-        
         if (BreedingFilters.category.value() === cat.id) {
             BreedingFilters.category.value(-1);
             Settings.setSettingByName('breedingCategoryFilter', BreedingFilters.category.value());
@@ -96,7 +117,7 @@ export default class PokemonCategories implements Saveable {
         PokemonCategories.categories().forEach((c) => {
             categories.push({
                 id: c.id,
-                name: encodeURI(c.name()),
+                name: c.name(),
                 color: c.color(),
             });
         });
@@ -106,19 +127,22 @@ export default class PokemonCategories implements Saveable {
     }
 
     fromJSON(json: Record<string, any>): void {
-        if (!json) {
+        if (!json?.categories) {
             return;
         }
 
+        const categoryOrder = json.categories?.map(c => c.id);
         json.categories?.forEach((category) => {
             const cat = PokemonCategories.categories().find(c => c.id == category.id);
             if (cat) {
-                cat.name(decodeURI(category.name));
+                cat.name(category.name);
                 cat.color(category.color);
             } else {
-                PokemonCategories.addCategory(decodeURI(category.name), category.color, category.id);
+                PokemonCategories.addCategory(category.name, category.color, category.id);
             }
         });
+
+        PokemonCategories.categories().sort((a, b) => categoryOrder.indexOf(a.id) - categoryOrder.indexOf(b.id));
     }
 }
 

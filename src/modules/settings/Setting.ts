@@ -3,10 +3,12 @@ import {
     Computed as KnockoutComputed,
 } from 'knockout';
 import SettingOption from './SettingOption';
+import Requirement from '../requirements/Requirement';
 
 export default class Setting<T> {
     value: T;
     observableValue: KnockoutObservable<T>;
+    private computedOptions: KnockoutComputed<SettingOption<T>[]>;
 
     // We can't set this up in the constructor because App.translation doesn't exist yet
     private cachedTranslatedName: KnockoutComputed<string>;
@@ -15,11 +17,20 @@ export default class Setting<T> {
     constructor(
         public name: string,
         private defaultDisplayName: string,
-        public options: SettingOption<T>[],
+        private _options: SettingOption<T>[] | (() => SettingOption<T>[]),
         public defaultValue: T,
+        public requirement : Requirement = undefined,
     ) {
         this.observableValue = ko.observable(this.defaultValue);
         this.set(defaultValue);
+
+        if (typeof this._options === 'function') {
+            this.computedOptions = ko.pureComputed(this._options);
+        }
+    }
+
+    get options() {
+        return this.computedOptions?.() || this._options as SettingOption<T>[];
     }
 
     set(value: T): void {
@@ -33,16 +44,12 @@ export default class Setting<T> {
     }
 
     validValue(value: T): boolean {
-        if (!this.isUnlocked(value)) {
-            return false;
-        }
-
         if (this.options.length === 0) {
             return true;
         }
         for (let i = 0; i < this.options.length; i += 1) {
             if (this.options[i].value === value) {
-                return true;
+                return this.options[i].isUnlocked();
             }
         }
 
@@ -54,8 +61,16 @@ export default class Setting<T> {
     }
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars, class-methods-use-this
-    isUnlocked(value: T): boolean {
+    isValueUnlocked(value: T): boolean {
         return true;
+    }
+
+    isUnlocked(): boolean {
+        return this.requirement ? this.requirement.isCompleted() : true;
+    }
+
+    getValidOptions() {
+        return this.options.filter((opt) => opt.isUnlocked());
     }
 
     get displayName(): string {
