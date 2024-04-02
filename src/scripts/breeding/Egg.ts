@@ -97,21 +97,20 @@ class Egg implements Saveable {
         this.steps(this.steps() + amount);
         // Notify that the egg is ready to hatch
         if (this.canHatch() && !helper && !this.notified) {
+            let notifMessage;
             if (this.type == EggType.Pokemon) {
-                Notifier.notify({
-                    message: `${PokemonHelper.displayName(PokemonHelper.getPokemonById(this.pokemon).name)()} is ready to hatch!`,
-                    type: NotificationConstants.NotificationOption.success,
-                    sound: NotificationConstants.NotificationSound.Hatchery.ready_to_hatch,
-                    setting: NotificationConstants.NotificationSetting.Hatchery.ready_to_hatch,
-                });
+                notifMessage = `${PokemonHelper.displayName(PokemonHelper.getPokemonById(this.pokemon).name)()} is ready to hatch!`;
+            } else if (this.type == EggType.Fossil) {
+                notifMessage = `The ${GameConstants.PokemonToFossil[PokemonHelper.getPokemonById(this.pokemon).name]} is ready to revive!`;
             } else {
-                Notifier.notify({
-                    message: 'An egg is ready to hatch!',
-                    type: NotificationConstants.NotificationOption.success,
-                    sound: NotificationConstants.NotificationSound.Hatchery.ready_to_hatch,
-                    setting: NotificationConstants.NotificationSetting.Hatchery.ready_to_hatch,
-                });
+                notifMessage = 'An egg is ready to hatch!';
             }
+            Notifier.notify({
+                message: notifMessage,
+                type: NotificationConstants.NotificationOption.success,
+                sound: NotificationConstants.NotificationSound.Hatchery.ready_to_hatch,
+                setting: NotificationConstants.NotificationSetting.Hatchery.ready_to_hatch,
+            });
             this.notified = true;
         }
     }
@@ -134,8 +133,9 @@ class Egg implements Saveable {
         const shadow = GameConstants.ShadowStatus.None;
         if (partyPokemon) {
             // Increase attack
-            partyPokemon.attackBonusPercent += Math.max(1, Math.round((GameConstants.BREEDING_ATTACK_BONUS + partyPokemon.vitaminsUsed[GameConstants.VitaminType.Calcium]()) * (efficiency / 100)));
-            partyPokemon.attackBonusAmount += Math.max(0, Math.round(partyPokemon.vitaminsUsed[GameConstants.VitaminType.Protein]() * (efficiency / 100)));
+            const shinyMultiplier = shiny ? GameConstants.BREEDING_SHINY_ATTACK_MULTIPLIER : 1;
+            partyPokemon.attackBonusPercent += Math.max(1, Math.round((GameConstants.BREEDING_ATTACK_BONUS + partyPokemon.vitaminsUsed[GameConstants.VitaminType.Calcium]()) * (efficiency / 100)) * shinyMultiplier);
+            partyPokemon.attackBonusAmount += Math.max(0, Math.round(partyPokemon.vitaminsUsed[GameConstants.VitaminType.Protein]() * (efficiency / 100)) * shinyMultiplier);
 
             // If breeding (not store egg), reset level, reset evolution check
             if (partyPokemon.breeding) {
@@ -143,12 +143,11 @@ class Egg implements Saveable {
                 partyPokemon.level = 1;
                 partyPokemon.breeding = false;
                 partyPokemon.level = partyPokemon.calculateLevelFromExp();
-                if (partyPokemon.pokerus == GameConstants.Pokerus.Infected) {
-                    partyPokemon.pokerus = GameConstants.Pokerus.Contagious;
-                }
-                if (partyPokemon.evs() >= 50 && partyPokemon.pokerus == GameConstants.Pokerus.Contagious) {
-                    partyPokemon.pokerus = GameConstants.Pokerus.Resistant;
-                }
+            }
+
+            // Update pokerus status
+            if (partyPokemon.pokerus == GameConstants.Pokerus.Infected) {
+                partyPokemon.pokerus = GameConstants.Pokerus.Contagious;
             }
         }
 

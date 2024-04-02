@@ -84,25 +84,28 @@ class PartyPokemon implements Saveable {
         this._pokerus = ko.observable(GameConstants.Pokerus.Uninfected).extend({ numeric: 0 });
         this._effortPoints = ko.observable(0).extend({ numeric: 0 });
         this.evs = ko.pureComputed(() => {
-            const power = App.game.challenges.list.slowEVs.active.peek() ? GameConstants.EP_CHALLENGE_MODIFIER : 1;
-            return Math.floor(this._effortPoints() / GameConstants.EP_EV_RATIO / power);
+            return Math.floor(this.calculateEVs());
         });
-        this.evs.subscribe((newValue) => {
+        const resistantSub = this.evs.subscribe((newValue) => {
             // Change Pokerus status to Resistant when reaching 50 EVs
-            if (this.pokerus && this.pokerus < GameConstants.Pokerus.Resistant && newValue >= 50) {
-                this.pokerus = GameConstants.Pokerus.Resistant;
+            if (this.pokerus && newValue >= 50) {
+                // Only notify if not yet Resistant, i.e. not when game loads already-Resistant party members
+                if (this.pokerus < GameConstants.Pokerus.Resistant) {
+                    this.pokerus = GameConstants.Pokerus.Resistant;
 
-                // Log and notify player
-                Notifier.notify({
-                    message: `${this.name} has become Resistant to Pokérus.`,
-                    pokemonImage: PokemonHelper.getImage(this.id, this.shiny),
-                    type: NotificationConstants.NotificationOption.info,
-                    setting: NotificationConstants.NotificationSetting.General.pokerus,
-                });
-                App.game.logbook.newLog(LogBookTypes.NEW, createLogContent.resistantToPokerus({ pokemon: this.name }));
+                    // Log and notify player
+                    Notifier.notify({
+                        message: `${this.name} has become Resistant to Pokérus.`,
+                        pokemonImage: PokemonHelper.getImage(this.id),
+                        type: NotificationConstants.NotificationOption.info,
+                        sound: NotificationConstants.NotificationSound.General.pokerus,
+                        setting: NotificationConstants.NotificationSetting.General.pokerus,
+                    });
+                    App.game.logbook.newLog(LogBookTypes.NEW, createLogContent.resistantToPokerus({ pokemon: this.name }));
+                }
+                resistantSub.dispose();
             }
         });
-        this._attack = ko.pureComputed(() => this.calculateAttack());
         this.heldItem = ko.observable(undefined);
         this.defaultFemaleSprite = ko.observable(false);
         this.hideShinyImage = ko.observable(false);
@@ -110,6 +113,7 @@ class PartyPokemon implements Saveable {
         this._displayName = ko.pureComputed(() => this._nickname() ? this._nickname() : this._translatedName());
         this._shadow = ko.observable(shadow);
         this._showShadowImage = ko.observable(false);
+        this._attack = ko.computed(() => this.calculateAttack());
         this._canUseHeldItem = ko.pureComputed(() => this.heldItem()?.canUse(this));
         this._canUseHeldItem.subscribe((canUse) => {
             if (!canUse && this.heldItem()) {
@@ -122,10 +126,16 @@ class PartyPokemon implements Saveable {
         const attackBonusMultiplier = 1 + (this.attackBonusPercent / 100);
         const levelMultiplier = ignoreLevel ? 1 : this.level / 100;
         const evsMultiplier = this.calculateEVAttackBonus();
-        const heldItemMultiplier = this.heldItem && this.heldItem() instanceof AttackBonusHeldItem ? (this.heldItem() as AttackBonusHeldItem).attackBonus : 1;
-        const shadowMultiplier = this.shadow == GameConstants.ShadowStatus.Shadow ? 0.8 : (this.shadow == GameConstants.ShadowStatus.Purified ? 1.2 : 1);
+        const heldItemMultiplier = this.heldItemAttackBonus();
+        const shadowMultiplier = this.shadowAttackBonus();
         return Math.max(1, Math.floor((this.baseAttack * attackBonusMultiplier + this.attackBonusAmount) * levelMultiplier * evsMultiplier * heldItemMultiplier * shadowMultiplier));
     }
+
+    public clickAttackBonus = ko.pureComputed((): number => {
+        // Caught + Shiny + Resistant
+        const bonus = 1 + +this.shiny + +(this.pokerus >= GameConstants.Pokerus.Resistant);
+        return bonus;
+    });
 
     public canCatchPokerus(): boolean {
         return App.game.keyItems.hasKeyItem(KeyItemType.Pokerus_virus);
@@ -169,20 +179,28 @@ class PartyPokemon implements Saveable {
         const levelType = PokemonHelper.getPokemonByName(this.name).levelType;
         for (let i = this.level - 1; i < levelRequirements[levelType].length; i++) {
             if (levelRequirements[levelType][i] > this.exp) {
-                return i;
+                return Math.min(i, App.game.badgeCase.maxLevel());
             }
         }
         return this.level;
     }
 
+    public calculateEVs(): number {
+        const power = App.game.challenges.list.slowEVs.active.peek() ? GameConstants.EP_CHALLENGE_MODIFIER : 1;
+        return this._effortPoints() / GameConstants.EP_EV_RATIO / power;
+    }
+
     public gainExp(exp: number) : number {
         const expGained = exp * this.getExpMultiplier();
-        this.exp += expGained;
-        const oldLevel = this.level;
-        const newLevel = this.calculateLevelFromExp();
-        if (oldLevel !== newLevel) {
-            this.level = newLevel;
-            this.checkForLevelEvolution();
+        if (this.level < App.game.badgeCase.maxLevel()) {
+            this.exp += expGained;
+
+            const oldLevel = this.level;
+            const newLevel = this.calculateLevelFromExp();
+            if (oldLevel !== newLevel) {
+                this.level = newLevel;
+                this.checkForLevelEvolution();
+            }
         }
         return expGained;
     }
@@ -347,16 +365,32 @@ class PartyPokemon implements Saveable {
         return (this.baseAttack * attackBonusPercent) + proteinBoost;
     });
 
+    heldItemAttackBonus = ko.pureComputed((): number => {
+        return this.heldItem && this.heldItem() instanceof AttackBonusHeldItem ? (this.heldItem() as AttackBonusHeldItem).attackBonus : 1;
+    });
+
+    shadowAttackBonus = ko.pureComputed((): number => {
+        return this.shadow == GameConstants.ShadowStatus.Shadow ? 0.8 : (this.shadow == GameConstants.ShadowStatus.Purified ? 1.2 : 1);
+    });
+
     breedingEfficiency = ko.pureComputed((): number => {
-        return ((this.getBreedingAttackBonus() * this.calculateEVAttackBonus()) / this.getEggSteps()) * GameConstants.EGG_CYCLE_MULTIPLIER;
+        let breedingAttackBonus = this.getBreedingAttackBonus();
+        if (Settings.getSetting('breedingEfficiencyAllModifiers').observableValue()) {
+            breedingAttackBonus *= this.calculateEVAttackBonus() * this.heldItemAttackBonus() * this.shadowAttackBonus();
+        }
+
+        return (breedingAttackBonus / this.getEggSteps()) * GameConstants.EGG_CYCLE_MULTIPLIER;
     });
 
     public isHatchable = ko.pureComputed(() => {
-        // Only breedable Pokemon
-        if (this.breeding || this.level < 100) {
-            return false;
-        }
+        return !(this.breeding || this.level < 100);
+    });
 
+    public isHatchableFiltered = ko.pureComputed(() => {
+        return this.isHatchable() && this.matchesHatcheryFilters();
+    });
+
+    public matchesHatcheryFilters = ko.pureComputed(() => {
         // Check if search matches englishName or displayName
         const displayName = PokemonHelper.displayName(this.name)();
         const filterName = BreedingFilters.name.value();
@@ -371,10 +405,8 @@ class PartyPokemon implements Saveable {
         }
 
         // Check based on category
-        if (BreedingFilters.category.value() >= 0) {
-            if (this.category !== BreedingFilters.category.value()) {
-                return false;
-            }
+        if (BreedingFilters.category.value() >= 0 && this.category !== BreedingFilters.category.value()) {
+            return false;
         }
 
         // Check based on shiny status
@@ -408,12 +440,20 @@ class PartyPokemon implements Saveable {
             return false;
         }
         // Only Base Pokémon without Mega Evolution
-        if (uniqueTransformation == 'mega-unobtained' && !(PokemonHelper.hasMegaEvolution(pokemon.name) && (pokemon as DataPokemon).evolutions?.some((e) => !App.game.party.alreadyCaughtPokemonByName(e.evolvedPokemon)))) {
+        if (uniqueTransformation == 'mega-unobtained' && !PokemonHelper.hasUncaughtMegaEvolution(pokemon.name)) {
             return false;
         }
         // Only Mega Pokémon
-        if (uniqueTransformation == 'mega-evolution' && !(PokemonHelper.getPokemonPrevolution(pokemon.name)?.some((e) => PokemonHelper.hasMegaEvolution(e.basePokemon)))) {
+        if (uniqueTransformation == 'mega-evolution' && !PokemonHelper.isMegaEvolution(pokemon.name)) {
             return false;
+        }
+
+        // Check based on alternate form status (if native to a different region have to include for that region's progression)
+        if (BreedingFilters.hideAlternate.value() && !Number.isInteger(pokemon.id)) {
+            const hasBaseFormInSameRegion = pokemonList.some((p) => Math.floor(p.id) == Math.floor(pokemon.id) && p.id < pokemon.id && PokemonHelper.calcNativeRegion(p.name) == region);
+            if (hasBaseFormInSameRegion) {
+                return false;
+            }
         }
 
         // Check if either of the types match
@@ -434,32 +474,6 @@ class PartyPokemon implements Saveable {
         return true;
     });
 
-    public hideFromProteinList = ko.pureComputed(() => {
-        // Check if search matches nickname or translated name
-        if (
-            !new RegExp(Settings.getSetting('vitaminSearchFilter').observableValue() , 'i').test(this._translatedName())
-            && !new RegExp(Settings.getSetting('vitaminSearchFilter').observableValue() , 'i').test(this.displayName)
-        ) {
-            return true;
-        }
-        if (Settings.getSetting('vitaminRegionFilter').observableValue() > -2) {
-            if (PokemonHelper.calcNativeRegion(this.name) !== Settings.getSetting('vitaminRegionFilter').observableValue()) {
-                return true;
-            }
-        }
-        const type = Settings.getSetting('vitaminTypeFilter').observableValue();
-        if (type > -2 && !pokemonMap[this.name].type.includes(type)) {
-            return true;
-        }
-        if (this.vitaminUsesRemaining() == 0 && Settings.getSetting('vitaminHideMaxedPokemon').observableValue()) {
-            return true;
-        }
-        if (this._shiny() && Settings.getSetting('vitaminHideShinyPokemon').observableValue()) {
-            return true;
-        }
-        return false;
-    });
-
     public giveHeldItem = (heldItem: HeldItem): void => {
         if (!this.heldItem() || heldItem.name != this.heldItem().name) {
             if (heldItem && !heldItem.canUse(this)) {
@@ -478,7 +492,7 @@ class PartyPokemon implements Saveable {
             }
         }
 
-        if (this.heldItem()) {
+        if (this.heldItem() && Settings.getSetting('confirmChangeHeldItem').value) {
             Notifier.confirm({
                 title: 'Remove held item',
                 message: 'Held items are one time use only.\nRemoved items will be lost.\nAre you sure you want to remove it?',
@@ -492,8 +506,8 @@ class PartyPokemon implements Saveable {
         } else { // Notifier.confirm is async
             this.addOrRemoveHeldItem(heldItem);
         }
-
     }
+
     private addOrRemoveHeldItem(heldItem: HeldItem) {
         if (this.heldItem() && this.heldItem().name == heldItem.name) {
             this.heldItem(undefined);
@@ -502,52 +516,6 @@ class PartyPokemon implements Saveable {
             this.heldItem(heldItem);
         }
     }
-
-    public hideFromHeldItemList = ko.pureComputed(() => {
-        if (!HeldItem.heldItemSelected()?.canUse(this)) {
-            return true;
-        }
-        if (!new RegExp(Settings.getSetting('heldItemSearchFilter').observableValue() , 'i').test(this.displayName)) {
-            return true;
-        }
-        if (Settings.getSetting('heldItemRegionFilter').observableValue() > -2) {
-            if (PokemonHelper.calcNativeRegion(this.name) !== Settings.getSetting('heldItemRegionFilter').observableValue()) {
-                return true;
-            }
-        }
-        const type = Settings.getSetting('heldItemTypeFilter').observableValue();
-        if (type > -2 && !pokemonMap[this.name].type.includes(type)) {
-            return true;
-        }
-        if (Settings.getSetting('heldItemHideHoldingPokemon').observableValue() && this.heldItem()) {
-            return true;
-        }
-        if (Settings.getSetting('heldItemShowHoldingThisItem').observableValue() && this.heldItem() !== HeldItem.heldItemSelected()) {
-            return true;
-        }
-
-        return false;
-    });
-
-    public hideFromConsumableList = ko.pureComputed(() => {
-        if (!new RegExp(Settings.getSetting('consumableSearchFilter').observableValue() , 'i').test(this.displayName)) {
-            return true;
-        }
-        if (Settings.getSetting('consumableRegionFilter').observableValue() > -2) {
-            if (PokemonHelper.calcNativeRegion(this.name) !== Settings.getSetting('consumableRegionFilter').observableValue()) {
-                return true;
-            }
-        }
-        const type = Settings.getSetting('consumableTypeFilter').observableValue();
-        if (type > -2 && !pokemonMap[this.name].type.includes(type)) {
-            return true;
-        }
-        if (Settings.getSetting('consumableHideShinyPokemon').observableValue() && this.shiny) {
-            return true;
-        }
-
-        return false;
-    });
 
     public fromJSON(json: Record<string, any>): void {
         if (json == null) {
