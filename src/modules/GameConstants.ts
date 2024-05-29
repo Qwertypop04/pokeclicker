@@ -49,7 +49,7 @@ export enum Region {
     final = 10,
 }
 
-export const MAX_AVAILABLE_REGION = Region.galar;
+export const MAX_AVAILABLE_REGION = Region.paldea;
 
 export const MaxIDPerRegion = [
     151, // 151 - Kanto
@@ -1661,13 +1661,31 @@ export const HisuiDungeons = [
 
 export const PaldeaDungeons = [
     'Inlet Grotto', // 213
-    'Glaseado Mountain',
+    'Segin Squad\'s Base',
+    'Schedar Squad\'s Base',
+    'Navi Squad\'s Base',
+    'Ruchbah Squad\'s Base',
+    'Caph Squad\'s Base',
+    'South Province Cliff',
+    'West Province Hill',
+    'East Province Mine',
+    'Tagtree Thicket',
+    'Asado Desert',
+    'Colonnade Hollow',
+    'Alfornada Cavern',
+    'Casseroya Lake',
+    'Socarrat Trail',
+    'South Glaseado Mountain',
+    'North Glaseado Mountain',
+    'Glaseado Mountain Peak',
     'Grasswither Shrine',
     'Icerend Shrine',
     'Groundblight Shrine',
     'Firescourge Shrine',
-    'Area Zero',
-    'Area Zero Depths', // 220
+    'Area Zero Fields',
+    'Area Zero Caves',
+    'Area Zero Depths',
+    'Area Zero Underdepths', // 238
 ];
 
 export const RegionDungeons = [

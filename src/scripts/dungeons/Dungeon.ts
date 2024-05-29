@@ -14009,8 +14009,207 @@ dungeonList['Inlet Grotto'] = new Dungeon('Inlet Grotto',
     [new DungeonBossPokemon('Houndoom', 161099869, 30)],
     2200000, 1);
 
-//This is ridiculous. Should certainly be split up if a way to do so is found, and possibly some encounters removed outright.
-dungeonList['Glaseado Mountain'] = new Dungeon('Glaseado Mountain',
+dungeonList['Segin Squad\'s Base'] = new Dungeon('Segin Squad\'s Base',
+    ['Diglett', 'Houndour', 'Yungoos'],
+    {
+        common: [
+            {loot: 'Lucky_egg'},
+            {loot: 'Lucky_incense'},
+        ],
+    },
+    33915762,
+    [new DungeonBossPokemon('Houndoom', 161099869, 30)],
+    2200000, 1);
+
+dungeonList['Schedar Squad\'s Base'] = new Dungeon('Schedar Squad\'s Base',
+    ['Diglett', 'Houndour', 'Yungoos'],
+    {
+        common: [
+            {loot: 'Lucky_egg'},
+            {loot: 'Lucky_incense'},
+        ],
+    },
+    33915762,
+    [new DungeonBossPokemon('Houndoom', 161099869, 30)],
+    2200000, 1);
+
+dungeonList['Navi Squad\'s Base'] = new Dungeon('Navi Squad\'s Base',
+    ['Diglett', 'Houndour', 'Yungoos'],
+    {
+        common: [
+            {loot: 'Lucky_egg'},
+            {loot: 'Lucky_incense'},
+        ],
+    },
+    33915762,
+    [new DungeonBossPokemon('Houndoom', 161099869, 30)],
+    2200000, 1);
+
+dungeonList['Ruchbah Squad\'s Base'] = new Dungeon('Ruchbah Squad\'s Base',
+    ['Diglett', 'Houndour', 'Yungoos'],
+    {
+        common: [
+            {loot: 'Lucky_egg'},
+            {loot: 'Lucky_incense'},
+        ],
+    },
+    33915762,
+    [new DungeonBossPokemon('Houndoom', 161099869, 30)],
+    2200000, 1);
+
+dungeonList['Caph Squad\'s Base'] = new Dungeon('Caph Squad\'s Base',
+    ['Diglett', 'Houndour', 'Yungoos'],
+    {
+        common: [
+            {loot: 'Lucky_egg'},
+            {loot: 'Lucky_incense'},
+        ],
+    },
+    33915762,
+    [new DungeonBossPokemon('Houndoom', 161099869, 30)],
+    2200000, 1);
+
+dungeonList['South Province Cliff'] = new Dungeon('South Province Cliff',
+    ['Diglett', 'Houndour', 'Yungoos'],
+    {
+        common: [
+            {loot: 'Lucky_egg'},
+            {loot: 'Lucky_incense'},
+        ],
+    },
+    33915762,
+    [new DungeonBossPokemon('Houndoom', 161099869, 30)],
+    2200000, 1);
+
+dungeonList['West Province hill'] = new Dungeon('West Province Hill',
+    ['Diglett', 'Houndour', 'Yungoos'],
+    {
+        common: [
+            {loot: 'Lucky_egg'},
+            {loot: 'Lucky_incense'},
+        ],
+    },
+    33915762,
+    [new DungeonBossPokemon('Houndoom', 161099869, 30)],
+    2200000, 1);
+
+dungeonList['East Province Mine'] = new Dungeon('East Province Mine',
+    ['Diglett', 'Houndour', 'Yungoos'],
+    {
+        common: [
+            {loot: 'Lucky_egg'},
+            {loot: 'Lucky_incense'},
+        ],
+    },
+    33915762,
+    [new DungeonBossPokemon('Houndoom', 161099869, 30)],
+    2200000, 1);
+
+dungeonList['tagtree Thicket'] = new Dungeon('Tagtree Thicket',
+    ['Diglett', 'Houndour', 'Yungoos'],
+    {
+        common: [
+            {loot: 'Lucky_egg'},
+            {loot: 'Lucky_incense'},
+        ],
+    },
+    33915762,
+    [new DungeonBossPokemon('Houndoom', 161099869, 30)],
+    2200000, 1);
+
+dungeonList['Asado Desert'] = new Dungeon('Asado Desert',
+    ['Diglett', 'Houndour', 'Yungoos'],
+    {
+        common: [
+            {loot: 'Lucky_egg'},
+            {loot: 'Lucky_incense'},
+        ],
+    },
+    33915762,
+    [new DungeonBossPokemon('Houndoom', 161099869, 30)],
+    2200000, 1);
+
+dungeonList['Colonnade Hollow'] = new Dungeon('Colonnade Hollow',
+    ['Diglett', 'Houndour', 'Yungoos'],
+    {
+        common: [
+            {loot: 'Lucky_egg'},
+            {loot: 'Lucky_incense'},
+        ],
+    },
+    33915762,
+    [new DungeonBossPokemon('Houndoom', 161099869, 30)],
+    2200000, 1);
+
+dungeonList['Alfornada Cavern'] = new Dungeon('Alfornada Cavern',
+    ['Diglett', 'Houndour', 'Yungoos'],
+    {
+        common: [
+            {loot: 'Lucky_egg'},
+            {loot: 'Lucky_incense'},
+        ],
+    },
+    33915762,
+    [new DungeonBossPokemon('Houndoom', 161099869, 30)],
+    2200000, 1);
+
+dungeonList['Casseroya Lake'] = new Dungeon('Casseroya Lake',
+    ['Diglett', 'Houndour', 'Yungoos'],
+    {
+        common: [
+            {loot: 'Lucky_egg'},
+            {loot: 'Lucky_incense'},
+        ],
+    },
+    33915762,
+    [new DungeonBossPokemon('Houndoom', 161099869, 30)],
+    2200000, 1);
+
+dungeonList['Socarrat Trail'] = new Dungeon('Socarrat Trail',
+    ['Diglett', 'Houndour', 'Yungoos'],
+    {
+        common: [
+            {loot: 'Lucky_egg'},
+            {loot: 'Lucky_incense'},
+        ],
+    },
+    33915762,
+    [new DungeonBossPokemon('Houndoom', 161099869, 30)],
+    2200000, 1);
+
+dungeonList['South Glaseado Mountain'] = new Dungeon('South Glaseado Mountain',
+    ['Magneton', 'Haunter', 'Sneasel', 'Ursaring', 'Delibird', 'Kirlia', 'Gardevoir', 'Vigoroth', 'Grumpig'],
+    {
+        common: [
+            {loot: 'Lucky_egg'},
+            {loot: 'Lucky_incense'},
+        ],
+    },
+    33915762,
+    [
+        new DungeonBossPokemon('Spiritomb', 161099869, 30),
+        new DungeonBossPokemon('Cetitan', 161099869, 30),
+        new DungeonBossPokemon('Arctibax', 161099869, 30),
+    ],
+    2200000, 1);
+
+dungeonList['North Glaseado Mountain'] = new Dungeon('North Glaseado Mountain',
+    ['Magneton', 'Haunter', 'Sneasel', 'Ursaring', 'Delibird', 'Kirlia', 'Gardevoir', 'Vigoroth', 'Grumpig'],
+    {
+        common: [
+            {loot: 'Lucky_egg'},
+            {loot: 'Lucky_incense'},
+        ],
+    },
+    33915762,
+    [
+        new DungeonBossPokemon('Spiritomb', 161099869, 30),
+        new DungeonBossPokemon('Cetitan', 161099869, 30),
+        new DungeonBossPokemon('Arctibax', 161099869, 30),
+    ],
+    2200000, 1);
+
+dungeonList['Glaseado Mountain Peak'] = new Dungeon('Glaseado Mountain Peak',
     ['Magneton', 'Haunter', 'Sneasel', 'Ursaring', 'Delibird', 'Kirlia', 'Gardevoir', 'Vigoroth', 'Grumpig'],
     {
         common: [
@@ -14074,9 +14273,23 @@ dungeonList['Firescourge Shrine'] = new Dungeon('Firescourge Shrine',
     [new DungeonBossPokemon('Chi-Yu', 161099869, 60)],
     2200000, 1);
 
-// May be split up into two areas (Area Zero: Heights & Area Zero: Lower (Needs better name)).
-//To have some of the regular Paradox mons be exclusive to one area, I am likely going to have Slither Wing/Iron Moth and Sandy Shocks/Iron Thorns be exclusive to Area Zero (pretty sure they actually are, anyway), and Great Tusk/Iron Treads and Flutter Mane/Iron Jugulis be exclusive to Area Zero Depths
-dungeonList['Area Zero'] = new Dungeon('Area Zero',
+dungeonList['Area Zero Fields'] = new Dungeon('Area Zero Fields',
+    ['Venomoth', 'Meditite', 'Medicham', 'Braviary', 'Corviknight', 'Floette (White)', 'Raichu', 'Jumpluff', 'Girafarig', 'Volcarona', 'Frosmoth', 'Farigiraf', 'Swablu', 'Altaria', 'Flamigo', 'Phanpy', 'Donphan', 'Talonflame', 'Lycanroc (Midday)', 'Lycanroc (Midnight)', 'Garganacl', 'Masquerain', 'Tadbulb', 'Bellibolt', 'Pawniard', 'Bisharp', 'Numel', 'Camerupt', 'Sneasel', 'Weavile', 'Scream Tail', 'Iron Bundle', 'Brute Bonnet', 'Iron Hands', 'Flutter Mane', 'Iron Jugulis', 'Slither Wing', 'Iron Moth', 'Sandy Shocks', 'Iron Thorns'],
+    {
+        common: [
+            {loot: 'Lucky_egg'},
+            {loot: 'Lucky_incense'},
+        ],
+    },
+    33915762,
+    [
+        new DungeonBossPokemon('Glimmora', 161099869, 30, { weight: 4 }),
+        new DungeonBossPokemon('Roaring Moon', 161099869, 30, {hide: true, weight: 2, requirement: new TemporaryBattleRequirement('Paradise Protection Protocol')}),
+        new DungeonBossPokemon('Iron Valiant', 161099869, 30, {hide: true, weight: 2, requirement: new TemporaryBattleRequirement('Paradise Protection Protocol')}),
+    ],
+    2200000, 1);
+
+dungeonList['Area Zero Caves'] = new Dungeon('Area Zero Caves',
     ['Venomoth', 'Meditite', 'Medicham', 'Braviary', 'Corviknight', 'Floette (White)', 'Raichu', 'Jumpluff', 'Girafarig', 'Volcarona', 'Frosmoth', 'Farigiraf', 'Swablu', 'Altaria', 'Flamigo', 'Phanpy', 'Donphan', 'Talonflame', 'Lycanroc (Midday)', 'Lycanroc (Midnight)', 'Garganacl', 'Masquerain', 'Tadbulb', 'Bellibolt', 'Pawniard', 'Bisharp', 'Numel', 'Camerupt', 'Sneasel', 'Weavile', 'Scream Tail', 'Iron Bundle', 'Brute Bonnet', 'Iron Hands', 'Flutter Mane', 'Iron Jugulis', 'Slither Wing', 'Iron Moth', 'Sandy Shocks', 'Iron Thorns'],
     {
         common: [
@@ -14099,7 +14312,22 @@ dungeonList['Area Zero Depths'] = new Dungeon('Area Zero Depths',
             {loot: 'Lucky_egg'},
             {loot: 'Lucky_incense'},
         ],
-        epic: [{loot: 'Heart Scale'}],
+    },
+    33915762,
+    [
+        new DungeonBossPokemon('Glimmora', 161099869, 30, { weight: 5 }),
+        new DungeonBossPokemon('Koraidon', 161099869, 30, {hide: true, requirement: new TemporaryBattleRequirement('Paradise Protection Protocol')}),
+        new DungeonBossPokemon('Miraidon', 161099869, 30, {hide: true, requirement: new TemporaryBattleRequirement('Paradise Protection Protocol')}),
+    ],
+    2200000, 1);
+
+dungeonList['Area Zero Underdepths'] = new Dungeon('Area Zero Underdepths',
+    ['Glimmet', 'Dunsparce', 'Gible', 'Gabite', 'Sableye', 'Garganacl', 'Greavard', 'Houndstone', 'Dugtrio', 'Zweilous', 'Dreepy', 'Drakloak', 'Espathra', 'Dudunsparce (Two-Segment)', 'Great Tusk', 'Iron Treads', 'Scream Tail', 'Iron Bundle', 'Flutter Mane', 'Iron Jugulis', 'Brute Bonnet', 'Iron Hands', /*Slither Wing and Iron Moth are only found in Grass. I have never seen Grass, nor these Pokémon, in the depths, so they may not actually spawn here*/'Slither Wing', 'Iron Moth', /*Sandy Shocks have the same situation as Slither Wing and Iron Moth, except in Rocky environment*/'Sandy Shocks', 'Iron Thorns'],
+    {
+        common: [
+            {loot: 'Lucky_egg'},
+            {loot: 'Lucky_incense'},
+        ],
     },
     33915762,
     [

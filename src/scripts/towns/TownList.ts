@@ -9966,6 +9966,15 @@ TownList.Montenevera = new Town(
         requirements: [new RouteKillRequirement(10, GameConstants.Region.paldea, 2)],
     }
 );
+TownList['Glaseado Mountain'] = new Town(
+    'Glaseado Mountain',
+    GameConstants.Region.paldea,
+    GameConstants.PaldeaSubRegions.Paldea,
+    [new MoveToDungeon(dungeonList['South Glaseado Mountain']), new MoveToDungeon(dungeonList['North Glaseado Mountain']), new MoveToDungeon(dungeonList['Glaseado Mountain Peak']), ],
+    {
+        requirements: [new RouteKillRequirement(10, GameConstants.Region.paldea, 2)],
+    }
+);
 TownList['Pokémon League Paldea'] = new Town(
     'Pokémon League Paldea',
     GameConstants.Region.paldea,
@@ -9975,56 +9984,20 @@ TownList['Pokémon League Paldea'] = new Town(
         requirements: [new RouteKillRequirement(10, GameConstants.Region.paldea, 2)],
     }
 );
-TownList['Segin Squad\'s Base'] = new Town(
-    'Segin Squad\'s Base',
-    GameConstants.Region.paldea,
-    GameConstants.PaldeaSubRegions.Paldea,
-    [],
-    {
-        requirements: [new RouteKillRequirement(10, GameConstants.Region.paldea, 2)],
-    }
-);
-TownList['Schedar Squad\'s Base'] = new Town(
-    'Schedar Squad\'s Base',
-    GameConstants.Region.paldea,
-    GameConstants.PaldeaSubRegions.Paldea,
-    [],
-    {
-        requirements: [new RouteKillRequirement(10, GameConstants.Region.paldea, 2)],
-    }
-);
-TownList['Navi Squad\'s Base'] = new Town(
-    'Navi Squad\'s Base',
-    GameConstants.Region.paldea,
-    GameConstants.PaldeaSubRegions.Paldea,
-    [],
-    {
-        requirements: [new RouteKillRequirement(10, GameConstants.Region.paldea, 2)],
-    }
-);
-TownList['Ruchbah Squad\'s Base'] = new Town(
-    'Ruchbah Squad\'s Base',
-    GameConstants.Region.paldea,
-    GameConstants.PaldeaSubRegions.Paldea,
-    [],
-    {
-        requirements: [new RouteKillRequirement(10, GameConstants.Region.paldea, 2)],
-    }
-);
-TownList['Caph Squad\'s Base'] = new Town(
-    'Caph Squad\'s Base',
-    GameConstants.Region.paldea,
-    GameConstants.PaldeaSubRegions.Paldea,
-    [],
-    {
-        requirements: [new RouteKillRequirement(10, GameConstants.Region.paldea, 2)],
-    }
-);
 TownList['Zero Gate'] = new Town(
     'Zero Gate',
     GameConstants.Region.paldea,
     GameConstants.PaldeaSubRegions.Paldea,
     [],
+    {
+        requirements: [new RouteKillRequirement(10, GameConstants.Region.paldea, 2)],
+    }
+);
+TownList['Area Zero'] = new Town(
+    'Area Zero',
+    GameConstants.Region.paldea,
+    GameConstants.PaldeaSubRegions.Paldea,
+    [new MoveToDungeon(dungeonList['Area Zero Fields']), new MoveToDungeon(dungeonList['Area Zero Caves']), new MoveToDungeon(dungeonList['Area Zero Depths']), new MoveToDungeon(dungeonList['Area Zero Underdepths'])],
     {
         requirements: [new RouteKillRequirement(10, GameConstants.Region.paldea, 2)],
     }
@@ -10046,8 +10019,104 @@ TownList['Inlet Grotto'] = new DungeonTown(
     GameConstants.PaldeaSubRegions.Paldea,
     [new RouteKillRequirement(10, GameConstants.Region.paldea, 1)]
 );
-TownList['Glaseado Mountain'] = new DungeonTown(
-    'Glaseado Mountain',
+TownList['Segin Squad\'s Base'] = new DungeonTown(
+    'Segin Squad\'s Base',
+    GameConstants.Region.paldea,
+    GameConstants.PaldeaSubRegions.Paldea,
+    [new RouteKillRequirement(10, GameConstants.Region.paldea, 1)]
+);
+TownList['Schedar Squad\'s Base'] = new DungeonTown(
+    'Schedar Squad\'s Base',
+    GameConstants.Region.paldea,
+    GameConstants.PaldeaSubRegions.Paldea,
+    [new RouteKillRequirement(10, GameConstants.Region.paldea, 1)]
+);
+TownList['Navi Squad\'s Base'] = new DungeonTown(
+    'Navi Squad\'s Base',
+    GameConstants.Region.paldea,
+    GameConstants.PaldeaSubRegions.Paldea,
+    [new RouteKillRequirement(10, GameConstants.Region.paldea, 1)]
+);
+TownList['Ruchbah Squad\'s Base'] = new DungeonTown(
+    'Ruchbah Squad\'s Base',
+    GameConstants.Region.paldea,
+    GameConstants.PaldeaSubRegions.Paldea,
+    [new RouteKillRequirement(10, GameConstants.Region.paldea, 1)]
+);
+TownList['Caph Squad\'s Base'] = new DungeonTown(
+    'Caph Squad\'s Base',
+    GameConstants.Region.paldea,
+    GameConstants.PaldeaSubRegions.Paldea,
+    [new RouteKillRequirement(10, GameConstants.Region.paldea, 1)]
+);
+TownList['South Province Cliff'] = new DungeonTown(
+    'South Province Cliff',
+    GameConstants.Region.paldea,
+    GameConstants.PaldeaSubRegions.Paldea,
+    [new RouteKillRequirement(10, GameConstants.Region.paldea, 1)]
+);
+TownList['West Province Hill'] = new DungeonTown(
+    'West Province Hill',
+    GameConstants.Region.paldea,
+    GameConstants.PaldeaSubRegions.Paldea,
+    [new RouteKillRequirement(10, GameConstants.Region.paldea, 1)]
+);
+TownList['East Province Mine'] = new DungeonTown(
+    'East Province Mine',
+    GameConstants.Region.paldea,
+    GameConstants.PaldeaSubRegions.Paldea,
+    [new RouteKillRequirement(10, GameConstants.Region.paldea, 1)]
+);
+TownList['Tagtree Thicket'] = new DungeonTown(
+    'Tagtree Thicket',
+    GameConstants.Region.paldea,
+    GameConstants.PaldeaSubRegions.Paldea,
+    [new RouteKillRequirement(10, GameConstants.Region.paldea, 1)]
+);
+TownList['Asado Desert'] = new DungeonTown(
+    'Asado Desert',
+    GameConstants.Region.paldea,
+    GameConstants.PaldeaSubRegions.Paldea,
+    [new RouteKillRequirement(10, GameConstants.Region.paldea, 1)]
+);
+TownList['Colonnade Hollow'] = new DungeonTown(
+    'Colonnade Hollow',
+    GameConstants.Region.paldea,
+    GameConstants.PaldeaSubRegions.Paldea,
+    [new RouteKillRequirement(10, GameConstants.Region.paldea, 1)]
+);
+TownList['Alfornada Cavern'] = new DungeonTown(
+    'Alfornada Cavern',
+    GameConstants.Region.paldea,
+    GameConstants.PaldeaSubRegions.Paldea,
+    [new RouteKillRequirement(10, GameConstants.Region.paldea, 1)]
+);
+TownList['Casseroya Lake'] = new DungeonTown(
+    'Casseroya Lake',
+    GameConstants.Region.paldea,
+    GameConstants.PaldeaSubRegions.Paldea,
+    [new RouteKillRequirement(10, GameConstants.Region.paldea, 1)]
+);
+TownList['Socarrat Trail'] = new DungeonTown(
+    'Socarrat Trail',
+    GameConstants.Region.paldea,
+    GameConstants.PaldeaSubRegions.Paldea,
+    [new RouteKillRequirement(10, GameConstants.Region.paldea, 1)]
+);
+TownList['South Glaseado Mountain'] = new DungeonTown(
+    'South Glaseado Mountain',
+    GameConstants.Region.paldea,
+    GameConstants.PaldeaSubRegions.Paldea,
+    [new RouteKillRequirement(10, GameConstants.Region.paldea, 1)]
+);
+TownList['North Glaseado Mountain'] = new DungeonTown(
+    'North Glaseado Mountain',
+    GameConstants.Region.paldea,
+    GameConstants.PaldeaSubRegions.Paldea,
+    [new RouteKillRequirement(10, GameConstants.Region.paldea, 1)]
+);
+TownList['Glaseado Mountain Peak'] = new DungeonTown(
+    'Glaseado Mountain Peak',
     GameConstants.Region.paldea,
     GameConstants.PaldeaSubRegions.Paldea,
     [new RouteKillRequirement(10, GameConstants.Region.paldea, 1)]
@@ -10076,8 +10145,8 @@ TownList['Firescourge Shrine'] = new DungeonTown(
     GameConstants.PaldeaSubRegions.Paldea,
     [new RouteKillRequirement(10, GameConstants.Region.paldea, 1)]
 );
-TownList['Area Zero'] = new DungeonTown(
-    'Area Zero',
+TownList['Area Zero Fields'] = new DungeonTown(
+    'Area Zero Fields',
     GameConstants.Region.paldea,
     GameConstants.PaldeaSubRegions.Paldea,
     /*[new MultiRequirement([
@@ -10087,11 +10156,23 @@ TownList['Area Zero'] = new DungeonTown(
     ])]*/
     [new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Inlet Grotto'))]
 );
+TownList['Area Zero Caves'] = new DungeonTown(
+    'Area Zero Caves',
+    GameConstants.Region.paldea,
+    GameConstants.PaldeaSubRegions.Paldea,
+    [new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Area Zero Fields'))]
+);
 TownList['Area Zero Depths'] = new DungeonTown(
     'Area Zero Depths',
     GameConstants.Region.paldea,
     GameConstants.PaldeaSubRegions.Paldea,
-    [new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Area Zero'))]
+    [new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Area Zero Fields'))]
+);
+TownList['Area Zero Underdepths'] = new DungeonTown(
+    'Area Zero Underdepths',
+    GameConstants.Region.paldea,
+    GameConstants.PaldeaSubRegions.Paldea,
+    [new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Area Zero Fields'))]
 );
 
 // Used to check if next region can be reached, for example for professor NPC

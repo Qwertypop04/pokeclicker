@@ -2325,7 +2325,7 @@ GymList['Glaseado Mountain'] = new Gym(
     BadgeEnums.Ice_Gym,
     250000,
     '',
-    [new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Glaseado Mountain'))]
+    [new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('South Glaseado Mountain'))]
 );
 GymList['Elite Rika'] = new Gym(
     'Rika',

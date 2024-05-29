@@ -1,6 +1,6 @@
 import BadgeEnums from '../enums/Badges';
 import {
-    Region, KantoSubRegions, getDungeonIndex, AlolaSubRegions, GalarSubRegions, HoennSubRegions, AchievementOption, DayOfWeek,
+    Region, KantoSubRegions, getDungeonIndex, AlolaSubRegions, GalarSubRegions, HoennSubRegions, PaldeaSubRegions, AchievementOption, DayOfWeek,
 } from '../GameConstants';
 import ClearDungeonRequirement from '../requirements/ClearDungeonRequirement';
 import GymBadgeRequirement from '../requirements/GymBadgeRequirement';
@@ -4183,33 +4183,203 @@ Paldea
 Routes.add(new RegionRoute(
     'Poco Path', Region.paldea, 1,
     new RoutePokemon({
-        land: ['Lechonk', 'Pawmi', 'Tarountula', 'Hoppip', 'Fletchling', 'Scatterbug', 'Wingull', 'Buizel'],
-        water: ['Magikarp', 'Arrokuda'],
+        land: ['Gimmighoul (Chest)'],
+        water: ['Gimmighoul (Chest)'],
     }),
     [new GymBadgeRequirement(BadgeEnums.Azure)],
+    undefined,
+    PaldeaSubRegions.Paldea,
 ));
 Routes.add(new RegionRoute(
     'South Province (Area One)', Region.paldea, 2,
     new RoutePokemon({
-        land: ['Hoppip', 'Paldean Wooper', 'Wingull', 'Ralts', 'Combee', 'Sunkern', 'Buizel', 'Pawmi', 'Gastly', 'Fletchling', 'Scatterbug', 'Spewpa', 'Oricorio (Pom-Pom)', 'Lechonk', 'Tarountula', 'Fidough', 'Happiny', 'Pichu', 'Bonsly', 'Skwovet', 'Shroodle', 'Bounsweet', 'Igglybuff', 'Drowzee', /*Fixed encounter only:*/'Wiglett', 'Pachirisu', 'Flamigo', 'Gimmighoul (Chest)'],
-        water: ['Magikarp', 'Arrokuda', 'Azurill', 'Chewtle', 'Psyduck', 'Surskit'],
+        land: ['Gimmighoul (Chest)'],
+        water: ['Gimmighoul (Chest)'],
     }),
     [new GymBadgeRequirement(BadgeEnums.Elite_GalarChampion)],
+    undefined,
+    PaldeaSubRegions.Paldea,
 ));
 Routes.add(new RegionRoute(
     'South Province (Area Two)', Region.paldea, 3,
     new RoutePokemon({
-        land: ['Pikachu', 'Jigglypuff', 'Eevee', 'Mareep', 'Hoppip', 'Starly', 'Fletchling', 'Smoliv', 'Fidough', 'Maschiff', 'Happiny', 'Pichu', 'Bonsly', 'Bounsweet', 'Skwovet', 'Shroodle', 'Applin', 'Igglybuff', 'Rockruff', 'Misdreavus', 'Makuhita', 'Skiddo', 'Yungoos', 'Nacli', 'Sunkern', 'Combee', 'Flabébé (Red)', 'Flabébé (Yellow)', 'Flabébé (Orange)', 'Flabébé (Blue)', 'Flabébé (White)', 'Kricketot', 'Diglett', 'Gastly', 'Drowzee', 'Bronzor', 'Tinkatink', 'Squawkabilly (Green)', 'Squawkabilly (Blue)', 'Squawkabilly (Yellow)', 'Squawkabilly (White)', /*Fixed encounter only:*/'Staravia', 'Vespiquen', 'Gimmighoul (Chest)'],
-        water: ['Psyduck', 'Magikarp', 'Azurill', 'Buizel', 'Chewtle', 'Arrokuda', 'Tadbulb'],
+        land: ['Gimmighoul (Chest)'],
+        water: ['Gimmighoul (Chest)'],
     }),
     [new GymBadgeRequirement(BadgeEnums.Elite_GalarChampion)],
+    undefined,
+    PaldeaSubRegions.Paldea,
 ));
 Routes.add(new RegionRoute(
     'South Province (Area Three)', Region.paldea, 4,
     new RoutePokemon({
-        land: ['Growlithe', 'Gulpin', 'Spoink', 'Shuppet', 'Shinx', 'Oricorio (Baile)', 'Rookidee', 'Nymble', 'Pawmi', 'Klawf', 'Murkrow', 'Dunsparce', 'Happiny', 'Tandemaus', 'Squawkabilly (Green)', 'Squawkabilly (Blue)', 'Squawkabilly (Yellow)', 'Squawkabilly (White)', 'Drifloon', 'Makuhita', 'Yungoos', 'Skiddo', 'Nacli', 'Gastly', 'Drowzee', 'Bronzor', 'Tinkatink', /*Fixed encounter only:*/'Talonflame', 'Staraptor', 'Gimmighoul (Chest)'],
+        land: ['Gimmighoul (Chest)'],
     }),
     [new GymBadgeRequirement(BadgeEnums.Elite_GalarChampion)],
+    undefined,
+    PaldeaSubRegions.Paldea,
+));
+Routes.add(new RegionRoute(
+    'South Province (Area Four)', Region.paldea, 5,
+    new RoutePokemon({
+        land: ['Gimmighoul (Chest)'],
+    }),
+    [new GymBadgeRequirement(BadgeEnums.Elite_GalarChampion)],
+    undefined,
+    PaldeaSubRegions.Paldea,
+));
+Routes.add(new RegionRoute(
+    'South Province (Area Five)', Region.paldea, 6,
+    new RoutePokemon({
+        land: ['Gimmighoul (Chest)'],
+    }),
+    [new GymBadgeRequirement(BadgeEnums.Elite_GalarChampion)],
+    undefined,
+    PaldeaSubRegions.Paldea,
+));
+Routes.add(new RegionRoute(
+    'South Province (Area Six)', Region.paldea, 7,
+    new RoutePokemon({
+        land: ['Gimmighoul (Chest)'],
+    }),
+    [new GymBadgeRequirement(BadgeEnums.Elite_GalarChampion)],
+    undefined,
+    PaldeaSubRegions.Paldea,
+));
+Routes.add(new RegionRoute(
+    'South Paldean Sea', Region.paldea, 8,
+    new RoutePokemon({
+        land: ['Gimmighoul (Chest)'],
+    }),
+    [new GymBadgeRequirement(BadgeEnums.Elite_GalarChampion)],
+    undefined,
+    PaldeaSubRegions.Paldea,
+));
+Routes.add(new RegionRoute(
+    'West Province (Area One)', Region.paldea, 9,
+    new RoutePokemon({
+        land: ['Gimmighoul (Chest)'],
+    }),
+    [new GymBadgeRequirement(BadgeEnums.Elite_GalarChampion)],
+    undefined,
+    PaldeaSubRegions.Paldea,
+));
+Routes.add(new RegionRoute(
+    'West Province (Area Two)', Region.paldea, 10,
+    new RoutePokemon({
+        land: ['Gimmighoul (Chest)'],
+    }),
+    [new GymBadgeRequirement(BadgeEnums.Elite_GalarChampion)],
+    undefined,
+    PaldeaSubRegions.Paldea,
+));
+Routes.add(new RegionRoute(
+    'West Province (Area Three)', Region.paldea, 11,
+    new RoutePokemon({
+        land: ['Gimmighoul (Chest)'],
+    }),
+    [new GymBadgeRequirement(BadgeEnums.Elite_GalarChampion)],
+    undefined,
+    PaldeaSubRegions.Paldea,
+));
+Routes.add(new RegionRoute(
+    'West Paldean Sea', Region.paldea, 12,
+    new RoutePokemon({
+        land: ['Gimmighoul (Chest)'],
+    }),
+    [new GymBadgeRequirement(BadgeEnums.Elite_GalarChampion)],
+    undefined,
+    PaldeaSubRegions.Paldea,
+));
+Routes.add(new RegionRoute(
+    'East Province (Area One)', Region.paldea, 13,
+    new RoutePokemon({
+        land: ['Gimmighoul (Chest)'],
+    }),
+    [new GymBadgeRequirement(BadgeEnums.Elite_GalarChampion)],
+    undefined,
+    PaldeaSubRegions.Paldea,
+));
+Routes.add(new RegionRoute(
+    'East Province (Area Two)', Region.paldea, 14,
+    new RoutePokemon({
+        land: ['Gimmighoul (Chest)'],
+    }),
+    [new GymBadgeRequirement(BadgeEnums.Elite_GalarChampion)],
+    undefined,
+    PaldeaSubRegions.Paldea,
+));
+Routes.add(new RegionRoute(
+    'East Province (Area Three)', Region.paldea, 15,
+    new RoutePokemon({
+        land: ['Gimmighoul (Chest)'],
+    }),
+    [new GymBadgeRequirement(BadgeEnums.Elite_GalarChampion)],
+    undefined,
+    PaldeaSubRegions.Paldea,
+));
+Routes.add(new RegionRoute(
+    'East Paldean Sea', Region.paldea, 16,
+    new RoutePokemon({
+        land: ['Gimmighoul (Chest)'],
+    }),
+    [new GymBadgeRequirement(BadgeEnums.Elite_GalarChampion)],
+    undefined,
+    PaldeaSubRegions.Paldea,
+));
+Routes.add(new RegionRoute(
+    'Dalizapa Passage', Region.paldea, 17,
+    new RoutePokemon({
+        land: ['Gimmighoul (Chest)'],
+    }),
+    [new GymBadgeRequirement(BadgeEnums.Elite_GalarChampion)],
+    undefined,
+    PaldeaSubRegions.Paldea,
+));
+Routes.add(new RegionRoute(
+    'North Province (Area One)', Region.paldea, 18,
+    new RoutePokemon({
+        land: ['Gimmighoul (Chest)'],
+    }),
+    [new GymBadgeRequirement(BadgeEnums.Elite_GalarChampion)],
+    undefined,
+    PaldeaSubRegions.Paldea,
+));
+Routes.add(new RegionRoute(
+    'North Province (Area Two)', Region.paldea, 19,
+    new RoutePokemon({
+        land: ['Gimmighoul (Chest)'],
+    }),
+    [new GymBadgeRequirement(BadgeEnums.Elite_GalarChampion)],
+    undefined,
+    PaldeaSubRegions.Paldea,
+));
+Routes.add(new RegionRoute(
+    'North Province (Area Three)', Region.paldea, 20,
+    new RoutePokemon({
+        land: ['Gimmighoul (Chest)'],
+    }),
+    [new GymBadgeRequirement(BadgeEnums.Elite_GalarChampion)],
+    undefined,
+    PaldeaSubRegions.Paldea,
+));
+Routes.add(new RegionRoute(
+    'North Paldean Sea', Region.paldea, 21,
+    new RoutePokemon({
+        land: ['Gimmighoul (Chest)'],
+    }),
+    [new GymBadgeRequirement(BadgeEnums.Elite_GalarChampion)],
+    undefined,
+    PaldeaSubRegions.Paldea,
+));
+Routes.add(new RegionRoute(
+    'Victory Road', Region.paldea, 22,
+    new RoutePokemon({
+        land: ['Gimmighoul (Chest)'],
+    }),
+    [new GymBadgeRequirement(BadgeEnums.Elite_GalarChampion)],
+    undefined,
+    PaldeaSubRegions.Paldea,
 ));
 
 // Halloween Event
