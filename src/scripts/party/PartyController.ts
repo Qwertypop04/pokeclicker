@@ -203,22 +203,36 @@ class PartyController {
             if (!HeldItem.heldItemSelected()?.canUse(pokemon)) {
                 return false;
             }
-            if (!(Settings.getSetting('heldItemSearchFilter') as SearchSetting).regex().test(pokemon.displayName)) {
+
+            const testString = Settings.getSetting('heldItemDropdownPokemonOrItem').observableValue() === 'pokemon'
+                ? pokemon.displayName : pokemon.heldItem()?.displayName;
+            if (!(Settings.getSetting('heldItemSearchFilter') as SearchSetting).regex().test(testString)) {
                 return false;
             }
+
             if (Settings.getSetting('heldItemRegionFilter').observableValue() > -2) {
                 if (PokemonHelper.calcNativeRegion(pokemon.name) !== Settings.getSetting('heldItemRegionFilter').observableValue()) {
                     return false;
                 }
             }
-            const type = Settings.getSetting('heldItemTypeFilter').observableValue();
-            if (type > -2 && !pokemonMap[pokemon.name].type.includes(type)) {
-                return false;
+            const type1 = Settings.getSetting('heldItemTypeFilter').observableValue();
+            const type2 = Settings.getSetting('heldItemType2Filter').observableValue();
+            if (type1 !== -2 || type2 !== -2) {
+                const { type: types } = pokemonMap[pokemon.name];
+                if ([type1, type2].includes(PokemonType.None)) {
+                    const type = (type1 == PokemonType.None) ? type2 : type1;
+                    if (!BreedingController.isPureType(pokemon, type === -2 ? null : type)) {
+                        return false;
+                    }
+                } else if ((type1 !== -2 && !types.includes(type1)) || (type2 !== -2 && !types.includes(type2))) {
+                    return false;
+                }
             }
+
             if (Settings.getSetting('heldItemHideHoldingPokemon').observableValue() && pokemon.heldItem()) {
                 return false;
             }
-            if (Settings.getSetting('heldItemShowHoldingThisItem').observableValue() && pokemon.heldItem() !== HeldItem.heldItemSelected()) {
+            if (Settings.getSetting('heldItemHideHoldingThisItem').observableValue() && pokemon.heldItem() === HeldItem.heldItemSelected()) {
                 return false;
             }
 
