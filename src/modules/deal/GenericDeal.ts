@@ -16,7 +16,9 @@ export type GenericTraderShopIdentifier =
     'FossilOreburghMiningMuseum' |
     'FossilNacreneMuseum' |
     'FossilAmbretteFossilLab' |
-    'FossilMasterGalarRoute6';
+    'FossilMasterGalarRoute6' |
+    'UnlockArceusPower' |
+    'ScentTrader';
 
 /* eslint-disable @typescript-eslint/no-shadow */
 export enum DealCostOrProfitType {
@@ -186,7 +188,7 @@ export default class GenericDeal {
             switch (cost.type) {
                 case DealCostOrProfitType.Item: player.loseItem(cost.item.name, cost.amount * tradeTimes); break;
                 case DealCostOrProfitType.Shard: player.loseItem(cost.shardItem.name, cost.amount * tradeTimes); break;
-                case DealCostOrProfitType.Berry: GameHelper.incrementObservable(App.game.farming.berryList[cost.berryType], -1 * cost.amount * tradeTimes); break;
+                case DealCostOrProfitType.Berry: GameHelper.incrementObservable(App.game.farming.berryInventory[cost.berryType], -1 * cost.amount * tradeTimes); break;
                 case DealCostOrProfitType.Gem: GameHelper.incrementObservable(App.game.gems.gemWallet[cost.gemType], -1 * cost.amount * tradeTimes); break;
                 case DealCostOrProfitType.Amount: App.game.wallet.loseAmount(new Amount(cost.currency.amount * cost.amount * tradeTimes, cost.currency.currency)); break;
             }
@@ -219,7 +221,7 @@ export default class GenericDeal {
                 case DealCostOrProfitType.Shard:
                     return Math.floor(player.itemList[cost.shardItem.name]() / cost.amount);
                 case DealCostOrProfitType.Berry:
-                    return Math.floor(App.game.farming.berryList[cost.berryType]() / cost.amount);
+                    return Math.floor(App.game.farming.berryInventory[cost.berryType]() / cost.amount);
                 case DealCostOrProfitType.Gem:
                     return Math.floor(App.game.gems.gemWallet[cost.gemType]() / cost.amount);
                 case DealCostOrProfitType.Amount:
@@ -232,7 +234,7 @@ export default class GenericDeal {
         switch (a.type) {
             case DealCostOrProfitType.Gem: return App.game.gems.gemWallet[a.gemType]();
             case DealCostOrProfitType.Shard: return player.itemList[a.shardItem.name]();
-            case DealCostOrProfitType.Berry: return App.game.farming.berryList[a.berryType]();
+            case DealCostOrProfitType.Berry: return App.game.farming.berryInventory[a.berryType]();
             case DealCostOrProfitType.Item: return player.itemList[a.item.name]();
             case DealCostOrProfitType.Amount: return App.game.wallet.currencies[a.currency.currency]();
             default: return 0;
@@ -244,6 +246,10 @@ export default class GenericDeal {
             new GenericDeal({
                 costs: [ { type: DealCostOrProfitType.Item, item: ItemList.Palaeontologist_token, amount: 1 } ],
                 profits: [ { type: DealCostOrProfitType.Item, item: ItemList['Pikachu (Palaeontologist)'], amount: 1, hidePlayerInventory: true } ],
+            }),
+            new GenericDeal({
+                costs: [ { type: DealCostOrProfitType.Item, item: ItemList.Palaeontologist_token, amount: 1 } ],
+                profits: [ { type: DealCostOrProfitType.Amount, currency: new Amount(750, Currency.diamond), amount: 1 } ],
             }),
         ]);
 
@@ -420,6 +426,106 @@ export default class GenericDeal {
                 ],
                 profits: [{ type: DealCostOrProfitType.Item, item: ItemList.Arctovish, amount: 1, hidePlayerInventory: true }],
                 tradeButtonOverride: 'Revive',
+            }),
+        ]);
+
+        GenericDeal.list.UnlockArceusPower = ko.observableArray([
+            new GenericDeal({
+                costs: [{ type: DealCostOrProfitType.Item, item: ItemList.Mind_plate, amount: 1000 }],
+                profits: [{ type: DealCostOrProfitType.Item, item: ItemList['Arceus (Psychic)'], amount: 1, hidePlayerInventory: true }],
+                tradeButtonOverride: 'Unlock',
+            }),
+            new GenericDeal({
+                costs: [{ type: DealCostOrProfitType.Item, item: ItemList.Insect_plate, amount: 1000 }],
+                profits: [{ type: DealCostOrProfitType.Item, item: ItemList['Arceus (Bug)'], amount: 1, hidePlayerInventory: true }],
+                tradeButtonOverride: 'Unlock',
+            }),
+            new GenericDeal({
+                costs: [{ type: DealCostOrProfitType.Item, item: ItemList.Earth_plate, amount: 1000 }],
+                profits: [{ type: DealCostOrProfitType.Item, item: ItemList['Arceus (Ground)'], amount: 1, hidePlayerInventory: true }],
+                tradeButtonOverride: 'Unlock',
+            }),
+            new GenericDeal({
+                costs: [{ type: DealCostOrProfitType.Item, item: ItemList.Meadow_plate, amount: 1000 }],
+                profits: [{ type: DealCostOrProfitType.Item, item: ItemList['Arceus (Grass)'], amount: 1, hidePlayerInventory: true }],
+                tradeButtonOverride: 'Unlock',
+            }),
+            new GenericDeal({
+                costs: [{ type: DealCostOrProfitType.Item, item: ItemList.Splash_plate, amount: 1000 }],
+                profits: [{ type: DealCostOrProfitType.Item, item: ItemList['Arceus (Water)'], amount: 1, hidePlayerInventory: true }],
+                tradeButtonOverride: 'Unlock',
+            }),
+            new GenericDeal({
+                costs: [{ type: DealCostOrProfitType.Item, item: ItemList.Flame_plate, amount: 1000 }],
+                profits: [{ type: DealCostOrProfitType.Item, item: ItemList['Arceus (Fire)'], amount: 1, hidePlayerInventory: true }],
+                tradeButtonOverride: 'Unlock',
+            }),
+            new GenericDeal({
+                costs: [{ type: DealCostOrProfitType.Item, item: ItemList.Toxic_plate, amount: 1000 }],
+                profits: [{ type: DealCostOrProfitType.Item, item: ItemList['Arceus (Poison)'], amount: 1, hidePlayerInventory: true }],
+                tradeButtonOverride: 'Unlock',
+            }),
+            new GenericDeal({
+                costs: [{ type: DealCostOrProfitType.Item, item: ItemList.Zap_plate, amount: 1000 }],
+                profits: [{ type: DealCostOrProfitType.Item, item: ItemList['Arceus (Electric)'], amount: 1, hidePlayerInventory: true }],
+                tradeButtonOverride: 'Unlock',
+            }),
+            new GenericDeal({
+                costs: [{ type: DealCostOrProfitType.Item, item: ItemList.Sky_plate, amount: 1000 }],
+                profits: [{ type: DealCostOrProfitType.Item, item: ItemList['Arceus (Flying)'], amount: 1, hidePlayerInventory: true }],
+                tradeButtonOverride: 'Unlock',
+            }),
+            new GenericDeal({
+                costs: [{ type: DealCostOrProfitType.Item, item: ItemList.Icicle_plate, amount: 1000 }],
+                profits: [{ type: DealCostOrProfitType.Item, item: ItemList['Arceus (Ice)'], amount: 1, hidePlayerInventory: true }],
+                tradeButtonOverride: 'Unlock',
+            }),
+            new GenericDeal({
+                costs: [{ type: DealCostOrProfitType.Item, item: ItemList.Stone_plate, amount: 1000 }],
+                profits: [{ type: DealCostOrProfitType.Item, item: ItemList['Arceus (Rock)'], amount: 1, hidePlayerInventory: true }],
+                tradeButtonOverride: 'Unlock',
+            }),
+            new GenericDeal({
+                costs: [{ type: DealCostOrProfitType.Item, item: ItemList.Draco_plate, amount: 1000 }],
+                profits: [{ type: DealCostOrProfitType.Item, item: ItemList['Arceus (Dragon)'], amount: 1, hidePlayerInventory: true }],
+                tradeButtonOverride: 'Unlock',
+            }),
+            new GenericDeal({
+                costs: [{ type: DealCostOrProfitType.Item, item: ItemList.Iron_plate, amount: 1000 }],
+                profits: [{ type: DealCostOrProfitType.Item, item: ItemList['Arceus (Steel)'], amount: 1, hidePlayerInventory: true }],
+                tradeButtonOverride: 'Unlock',
+            }),
+            new GenericDeal({
+                costs: [{ type: DealCostOrProfitType.Item, item: ItemList.Dread_plate, amount: 1000 }],
+                profits: [{ type: DealCostOrProfitType.Item, item: ItemList['Arceus (Dark)'], amount: 1, hidePlayerInventory: true }],
+                tradeButtonOverride: 'Unlock',
+            }),
+            new GenericDeal({
+                costs: [{ type: DealCostOrProfitType.Item, item: ItemList.Fist_plate, amount: 1000 }],
+                profits: [{ type: DealCostOrProfitType.Item, item: ItemList['Arceus (Fighting)'], amount: 1, hidePlayerInventory: true }],
+                tradeButtonOverride: 'Unlock',
+            }),
+            new GenericDeal({
+                costs: [{ type: DealCostOrProfitType.Item, item: ItemList.Pixie_plate, amount: 1000 }],
+                profits: [{ type: DealCostOrProfitType.Item, item: ItemList['Arceus (Fairy)'], amount: 1, hidePlayerInventory: true }],
+                tradeButtonOverride: 'Unlock',
+            }),
+            new GenericDeal({
+                costs: [{ type: DealCostOrProfitType.Item, item: ItemList.Spooky_plate, amount: 1000 }],
+                profits: [{ type: DealCostOrProfitType.Item, item: ItemList['Arceus (Ghost)'], amount: 1, hidePlayerInventory: true }],
+                tradeButtonOverride: 'Unlock',
+            }),
+        ]);
+        GenericDeal.list.ScentTrader = ko.observableArray([
+            new GenericDeal({
+                costs: [{ type: DealCostOrProfitType.Item, item: ItemList.Joy_Scent, amount: 12 }],
+                profits: [{ type: DealCostOrProfitType.Item, item: ItemList.Excite_Scent, amount: 1 }],
+                tradeButtonOverride: 'Refine',
+            }),
+            new GenericDeal({
+                costs: [{ type: DealCostOrProfitType.Item, item: ItemList.Excite_Scent, amount: 12 }],
+                profits: [{ type: DealCostOrProfitType.Item, item: ItemList.Vivid_Scent, amount: 1 }],
+                tradeButtonOverride: 'Refine',
             }),
         ]);
     }

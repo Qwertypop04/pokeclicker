@@ -136,7 +136,7 @@ class Game implements TmpGameType {
         if (player.regionStarters[GameConstants.Region.kanto]() != GameConstants.Starter.None) {
             Battle.generateNewEnemy();
         } else {
-            const battlePokemon = new BattlePokemon('MissingNo.', 0, PokemonType.None, PokemonType.None, 0, 0, 0, 0, new Amount(0, GameConstants.Currency.money), false, 0, GameConstants.BattlePokemonGender.NoGender, GameConstants.ShadowStatus.None, EncounterType.route);
+            const battlePokemon = new BattlePokemon('MissingNo.', 0, PokemonType.None, PokemonType.None, 0, 0, 0, 0, new Amount(0, GameConstants.Currency.money), false, 0, GameConstants.BattlePokemonGender.NoGender, GameConstants.ShadowStatus.None, false, EncounterType.route);
             Battle.enemyPokemon(battlePokemon);
         }
         //Safari.load();
@@ -151,6 +151,7 @@ class Game implements TmpGameType {
         GenericDeal.generateDeals();
         SafariPokemonList.generateSafariLists();
         RoamingPokemonList.generateIncreasedChanceRoutes(now);
+        MassOutbreak.generateIncreasedChanceRoutes(now);
         WeatherApp.initialize();
         DamageCalculator.initialize();
 
@@ -285,10 +286,13 @@ class Game implements TmpGameType {
                 }
             }
         });
-        // Check for breeding pokemons not in queue
-        const breeding = [...App.game.breeding.eggList.map((l) => l().pokemon), ...App.game.breeding.queueList()];
+        // Check for breeding pokemons not in list or queue
+        const breeding = new Set([
+            ...App.game.breeding.eggList.map((l) => l().pokemon),
+            ...App.game.breeding.queueList().filter((q: HatcheryQueueEntry) => q[0] === EggType.Pokemon).map(q => q[1]),
+        ]);
         App.game.party.caughtPokemon.filter((p) => p.breeding).forEach((p) => {
-            if (!breeding.includes(p.id)) {
+            if (!breeding.has(p.id)) {
                 p.breeding = false;
             }
         });
@@ -472,6 +476,7 @@ class Game implements TmpGameType {
                 }
 
                 GameHelper.updateDay();
+                (App.game.farming.mutations.find(m => m instanceof EnigmaMutation) as EnigmaMutation).resetIndex();
 
                 SeededDateRand.seedWithDate(now);
                 // Give the player a free quest refresh
@@ -487,7 +492,10 @@ class Game implements TmpGameType {
                     });
                 }
                 // Give the players more Battle Cafe spins
-                BattleCafeController.spinsLeft(BattleCafeController.spinsPerDay());
+                if (this.party.getPokemonByName('Milcery')) {
+                    BattleCafeController.accumulateSpins();
+                }
+
                 // Generate the weather forecast
                 WeatherApp.initialize();
                 // Refresh Friend Safari Pokemon List
@@ -505,6 +513,7 @@ class Game implements TmpGameType {
             if (old.getHours() !== now.getHours()) {
                 Weather.generateWeather(now);
                 RoamingPokemonList.generateIncreasedChanceRoutes(now);
+                MassOutbreak.generateIncreasedChanceRoutes(now);
                 // Check if it's weather change time
                 if (now.getHours() % Weather.period === 0) {
                     WeatherApp.checkDateHasPassed();

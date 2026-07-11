@@ -17,6 +17,7 @@ enum PartyPokemonSaveKeys {
     nickname,
     shadow,
     showShadowImage,
+    alpha,
 }
 
 class PartyPokemon implements Saveable, TmpPartyPokemonType {
@@ -42,6 +43,7 @@ class PartyPokemon implements Saveable, TmpPartyPokemonType {
         nickname: '',
         shadow: GameConstants.ShadowStatus.None,
         showShadowImage: false,
+        alpha: false,
     };
 
     // Saveable observables
@@ -52,7 +54,6 @@ class PartyPokemon implements Saveable, TmpPartyPokemonType {
     _attackBonusPercent: KnockoutObservable<number>;
     _attackBonusAmount: KnockoutObservable<number>;
     _category: KnockoutObservableArray<number>;
-    _translatedName: KnockoutObservable<string>;
     _nickname: KnockoutObservable<string>;
     _displayName: KnockoutComputed<string>;
     _pokerus: KnockoutObservable<GameConstants.Pokerus>;
@@ -63,6 +64,7 @@ class PartyPokemon implements Saveable, TmpPartyPokemonType {
     hideShinyImage: KnockoutObservable<boolean>;
     _shadow: KnockoutObservable<GameConstants.ShadowStatus>;
     _showShadowImage: KnockoutObservable<boolean>;
+    _alpha: KnockoutObservable<boolean>;
 
     constructor(
         public id: number,
@@ -72,7 +74,8 @@ class PartyPokemon implements Saveable, TmpPartyPokemonType {
         public eggCycles: number,
         shiny = false,
         public gender,
-        shadow: GameConstants.ShadowStatus
+        shadow: GameConstants.ShadowStatus,
+        alpha = false
     ) {
         this.vitaminsUsed = Object.fromEntries(GameHelper.enumNumbers(GameConstants.VitaminType).map((vitamin) => {
             return [vitamin, ko.observable(0).extend({ numeric: 0 })];
@@ -83,7 +86,6 @@ class PartyPokemon implements Saveable, TmpPartyPokemonType {
         this._attackBonusPercent = ko.observable(0).extend({ numeric: 0 });
         this._attackBonusAmount = ko.observable(0).extend({ numeric: 0 });
         this._category = ko.observableArray([0]);
-        this._translatedName = PokemonHelper.displayName(name);
         this._pokerus = ko.observable(GameConstants.Pokerus.Uninfected).extend({ numeric: 0 });
         this._effortPoints = ko.observable(0).extend({ numeric: 0 });
         this.evs = ko.pureComputed(() => {
@@ -113,9 +115,15 @@ class PartyPokemon implements Saveable, TmpPartyPokemonType {
         this.defaultFemaleSprite = ko.observable(false);
         this.hideShinyImage = ko.observable(false);
         this._nickname = ko.observable();
-        this._displayName = ko.pureComputed(() => this._nickname() ? this._nickname() : this._translatedName());
+        this._nickname.subscribe((value) => {
+            if (value === PokemonHelper.displayName(this.name)) {
+                AchievementHandler.unlockAchievement('A cat named Cat');
+            }
+        });
+        this._displayName = ko.pureComputed(() => this._nickname() || PokemonHelper.displayName(this.name));
         this._shadow = ko.observable(shadow);
         this._showShadowImage = ko.observable(false);
+        this._alpha = ko.observable(alpha);
         this._attack = ko.computed(() => this.calculateAttack());
         this._canUseHeldItem = ko.pureComputed(() => this.heldItem()?.canUse(this));
         this._canUseHeldItem.subscribe((canUse) => {
@@ -143,7 +151,7 @@ class PartyPokemon implements Saveable, TmpPartyPokemonType {
 
     public clickAttackBonus = ko.pureComputed((): number => {
         // Caught + Shiny + Resistant + Purified
-        const bonus = 1 + +this.shiny + +(this.pokerus >= GameConstants.Pokerus.Resistant) + +(this.shadow == GameConstants.ShadowStatus.Purified);
+        const bonus = 1 + +this.shiny + +(this.pokerus >= GameConstants.Pokerus.Resistant) + +(this.shadow == GameConstants.ShadowStatus.Purified) + +this.alpha;
         const heldItemMultiplier = this.heldItem() instanceof HybridAttackBonusHeldItem ? (this.heldItem() as HybridAttackBonusHeldItem).clickAttackBonus : 1;
         return bonus * heldItemMultiplier;
     });
@@ -337,10 +345,11 @@ class PartyPokemon implements Saveable, TmpPartyPokemonType {
     }
 
     public setVitaminAmount(vitamin: GameConstants.VitaminType, amount: number) {
-        if (this.breeding || isNaN(amount) || amount < 0) {
+        if (this.breeding || isNaN(amount)) {
             return;
         }
 
+        amount = Math.max(0, amount);
         const diff = Math.floor(amount) - this.vitaminsUsed[vitamin]();
         if (diff === 0) {
             return;
@@ -398,9 +407,13 @@ class PartyPokemon implements Saveable, TmpPartyPokemonType {
         return Object.values(this.vitaminsUsed).reduce((sum, obs) => sum + obs(), 0);
     });
 
-    vitaminUsesRemaining = ko.pureComputed((): number => {
+    public static maxVitaminUsesAllowed() {
         // Allow 5 for every region visited (including Kanto)
-        return (player.highestRegion() + 1) * 5 - this.totalVitaminsUsed();
+        return (player.highestRegion() + 1) * 5;
+    }
+
+    vitaminUsesRemaining = ko.pureComputed((): number => {
+        return PartyPokemon.maxVitaminUsesAllowed() - this.totalVitaminsUsed();
     });
 
     calculateEVAttackBonus = ko.pureComputed((): number => {
@@ -455,10 +468,7 @@ class PartyPokemon implements Saveable, TmpPartyPokemonType {
         // Check if search matches englishName or displayName
         const nameFilterSetting = Settings.getSetting('breedingNameFilter') as SearchSetting;
         if (nameFilterSetting.observableValue() != '') {
-            const nameFilter = nameFilterSetting.regex();
-            const displayName = PokemonHelper.displayName(this.name)();
-            const partyName = this.displayName;
-            if (!nameFilter.test(displayName) && !nameFilter.test(this.name) && !(partyName != undefined && nameFilter.test(partyName))) {
+            if (!PokemonHelper.matchPokemonByNames(nameFilterSetting.regex(), this.name, this)) {
                 return false;
             }
         }
@@ -661,6 +671,7 @@ class PartyPokemon implements Saveable, TmpPartyPokemonType {
         this._nickname(json[PartyPokemonSaveKeys.nickname] || this.defaults.nickname);
         this.shadow = json[PartyPokemonSaveKeys.shadow] ?? this.defaults.shadow;
         this._showShadowImage(json[PartyPokemonSaveKeys.showShadowImage] ?? this.defaults.showShadowImage);
+        this.alpha = json[PartyPokemonSaveKeys.alpha] ?? this.defaults.alpha;
     }
 
     public toJSON() {
@@ -681,6 +692,7 @@ class PartyPokemon implements Saveable, TmpPartyPokemonType {
             [PartyPokemonSaveKeys.nickname]: this.nickname || undefined,
             [PartyPokemonSaveKeys.shadow]: this.shadow,
             [PartyPokemonSaveKeys.showShadowImage]: this._showShadowImage(),
+            [PartyPokemonSaveKeys.alpha]: this.alpha,
         };
 
         // Don't save anything that is the default option
@@ -794,5 +806,13 @@ class PartyPokemon implements Saveable, TmpPartyPokemonType {
 
     set showShadowImage(value: boolean) {
         this._showShadowImage(value);
+    }
+
+    get alpha(): boolean {
+        return this._alpha();
+    }
+
+    set alpha(bool: boolean) {
+        this._alpha(bool);
     }
 }

@@ -120,7 +120,7 @@ class Pokeballs implements Feature {
 
             new Pokeball(GameConstants.Pokeball.Moonball, (opts) => {
                 const moonCycleMod = MoonCycle.currentMoonCyclePhase();
-                const moonCycleBonus = (4 - Math.abs((moonCycleMod % 8) - 4)) * 5;
+                const moonCycleBonus = MoonCycle.catchChanceBonus(moonCycleMod);
 
                 if (GameConstants.MoonEvoPokemon.has(opts.pokemon)) {
                     return Math.min(20, moonCycleBonus + 10);
@@ -161,10 +161,11 @@ class Pokeballs implements Feature {
      * @param isShiny if the Pokémon is shiny.
      * @returns {GameConstants.Pokeball} pokéball to use.
      */
-    public calculatePokeballToUse(id: number, isShiny: boolean, isShadow: boolean, origEncounterType: EncounterType): GameConstants.Pokeball {
+    public calculatePokeballToUse(id: number, isShiny: boolean, isShadow: boolean, isAlpha, origEncounterType: EncounterType): GameConstants.Pokeball {
         const alreadyCaught = App.game.party.alreadyCaughtPokemon(id);
         const alreadyCaughtShiny = App.game.party.alreadyCaughtPokemon(id, true);
         const alreadyCaughtShadow = App.game.party.alreadyCaughtPokemon(id, false, true);
+        const alreadyCaughtAlpha = App.game.party.alreadyCaughtPokemon(id, false, false, true);
         const pokemon = PokemonHelper.getPokemonById(id);
         const isUltraBeast = GameConstants.UltraBeastType[pokemon.name] != undefined;
         const encounterType = isUltraBeast ? EncounterType.ultraBeast : origEncounterType;
@@ -173,8 +174,10 @@ class Pokeballs implements Feature {
             caught: alreadyCaught,
             caughtShiny: alreadyCaughtShiny,
             caughtShadow: alreadyCaughtShadow,
+            caughtAlpha: alreadyCaughtAlpha,
             shadow: isShadow,
             shiny: isShiny,
+            alpha: isAlpha,
             pokerus: App.game.party.getPokemon(id)?.pokerus,
             pokemonType: [pokemon.type1, pokemon.type2],
             encounterType,
@@ -261,9 +264,5 @@ class Pokeballs implements Feature {
         return {
             'pokeballs': this.pokeballs.map(p => p.quantity()),
         };
-    }
-
-    update(delta: number): void {
-        // This method intentionally left blank
     }
 }

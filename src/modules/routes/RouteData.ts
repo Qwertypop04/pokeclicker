@@ -28,6 +28,9 @@ import StatisticRequirement from '../requirements/StatisticRequirement';
 import PokemonLevelRequirement from '../requirements/PokemonLevelRequirement';
 import { getPokemonByName } from '../pokemons/PokemonHelper';
 import CustomRequirement from '../requirements/CustomRequirement';
+import SeededDateSelectNRequirement from '../requirements/SeededDateSelectNRequirement';
+import type { PokemonNameType } from '../pokemons/PokemonNameType';
+import MassOutbreakRequirement from '../requirements/MassOutbreakRequirement';
 
 /*
 KANTO
@@ -132,6 +135,7 @@ Routes.add(new RegionRoute(
     new RoutePokemon({
         land: ['Spearow', 'Ekans', 'Sandshrew', 'Drowzee'],
         water: ['Tentacool', 'Krabby', 'Horsea', 'Magikarp'],
+        special: [new SpecialRoutePokemon(['Squad Leader Squirtle'], new ObtainedPokemonRequirement('Squad Leader Squirtle'))],
     }),
     [new RouteKillRequirement(10, Region.kanto, 6)],
     6.1,
@@ -540,7 +544,7 @@ Routes.add(new RegionRoute(
 Routes.add(new RegionRoute(
     'Johto Route 30', Region.johto, 30,
     new RoutePokemon({
-        land: ['Pidgey', 'Rattata', 'Caterpie', 'Metapod', 'Weedle', 'Kakuna', 'Zubat', 'Hoothoot', 'Ledyba', 'Spinarak'],
+        land: ['Pidgey', 'Rattata', 'Caterpie', 'Metapod', 'Weedle', 'Kakuna', 'Hoothoot', 'Ledyba', 'Spinarak'],
         water: ['Poliwag', 'Poliwhirl', 'Magikarp'],
         headbutt: ['Exeggcute', 'Pineco'],
     }),
@@ -549,8 +553,8 @@ Routes.add(new RegionRoute(
 Routes.add(new RegionRoute(
     'Johto Route 31', Region.johto, 31,
     new RoutePokemon({
-        land: ['Pidgey', 'Rattata', 'Caterpie', 'Metapod', 'Weedle', 'Kakuna', 'Zubat', 'Poliwag', 'Hoothoot', 'Ledyba', 'Spinarak', 'Bellsprout'],
-        water: ['Poliwhirl', 'Magikarp'],
+        land: ['Pidgey', 'Rattata', 'Caterpie', 'Metapod', 'Weedle', 'Kakuna', 'Hoothoot', 'Ledyba', 'Spinarak', 'Bellsprout'],
+        water: ['Poliwag', 'Poliwhirl', 'Magikarp'],
         headbutt: ['Spearow', 'Exeggcute', 'Aipom', 'Pineco', 'Heracross'],
     }),
     [new TemporaryBattleRequirement('Silver 1')],
@@ -934,6 +938,8 @@ Routes.add(new RegionRoute(
     new RoutePokemon({
         land: ['Zigzagoon', 'Linoone', 'Oddish', 'Tropius', 'Kecleon'],
         water: ['Tentacool', 'Wingull', 'Pelipper', 'Magikarp', 'Carvanha'],
+        special:
+        [new SpecialRoutePokemon(['Feebas'], new ObtainedPokemonRequirement('Feebas'))],
     }),
     [new RouteKillRequirement(10, Region.hoenn, 118)],
 ));
@@ -1129,6 +1135,8 @@ Routes.add(new RegionRoute(
     new RoutePokemon({
         land: ['Hoothoot', 'Wurmple', 'Silcoon', 'Beautifly', 'Cascoon', 'Dustox', 'Bidoof', 'Kricketot', 'Budew', 'Buizel', 'Shellos (West)'],
         water: ['Psyduck', 'Golduck', 'Tentacool', 'Tentacruel', 'Shellder', 'Magikarp', 'Gyarados', 'Gastrodon (West)', 'Finneon', 'Lumineon', 'Barboach', 'Whiscash'],
+        special:
+        [new SpecialRoutePokemon(['Pachirisu'], new ObtainedPokemonRequirement('Pachirisu'))],
     }),
     [new ClearDungeonRequirement(1, getDungeonIndex('Valley Windworks'))],
 ));
@@ -1205,13 +1213,33 @@ Routes.add(new RegionRoute(
     [new RouteKillRequirement(10, Region.sinnoh, 213)],
     210.4,
 ));
+const TrophyGardenList = ['Clefairy', 'Jigglypuff', 'Meowth', 'Chansey', 'Baby Kangaskhan', 'Mr. Mime', 'Jynx', 'Ditto', 'Eevee', 'Porygon', 'Cleffa', 'Igglybuff', 'Togepi', 'Marill', 'Tyrogue', 'Smoochum', 'Elekid', 'Magby', 'Azurill', 'Plusle', 'Minun', 'Castform', 'Budew', 'Chingling', 'Bonsly', 'Mime Jr.', 'Happiny', 'Handout Happiny', 'Munchlax', 'Riolu', 'Mantyke', 'Phione', 'Toxel'];
+
+Routes.add(new RegionRoute(
+    'Trophy Garden', Region.sinnoh, 231,
+    new RoutePokemon({
+        land: ['Pikachu', 'Pichu', 'Roselia', 'Staravia', 'Kricketune'],
+        special:
+        [
+            ...TrophyGardenList.map((pokemon: PokemonNameType, index) => {
+                const req = new MultiRequirement([
+                    new SeededDateSelectNRequirement(index, TrophyGardenList.length, 3),
+                    new ObtainedPokemonRequirement(pokemon),
+                ]);
+                return new SpecialRoutePokemon([pokemon], req);
+            }),
+        ],
+    }),
+    [new RouteKillRequirement(10, Region.sinnoh, 212)],
+    210.5,
+));
 Routes.add(new RegionRoute(
     'Sinnoh Route 211', Region.sinnoh, 211,
     new RoutePokemon({
         land: ['Zubat', 'Machop', 'Machoke', 'Graveler', 'Hoothoot', 'Noctowl', 'Meditite', 'Bidoof', 'Chingling', 'Bronzor'],
     }),
     [new GymBadgeRequirement(BadgeEnums.Fen)],
-    210.5,
+    210.6,
 ));
 Routes.add(new RegionRoute(
     'Sinnoh Route 218', Region.sinnoh, 218,
@@ -1220,7 +1248,7 @@ Routes.add(new RegionRoute(
         water: ['Tentacool', 'Tentacruel', 'Magikarp', 'Gyarados', 'Shellos (West)', 'Finneon', 'Lumineon'],
     }),
     [new TemporaryBattleRequirement('Galactic Boss Cyrus')],
-    210.6,
+    210.7,
 ));
 Routes.add(new RegionRoute(
     'Sinnoh Route 216', Region.sinnoh, 216,
@@ -1261,7 +1289,7 @@ Routes.add(new RegionRoute(
 Routes.add(new RegionRoute(
     'Sinnoh Route 222', Region.sinnoh, 222,
     new RoutePokemon({
-        land: ['Magnemite', 'Magneton', 'Electabuzz', 'Wingull', 'Pelipper', 'Luxio', 'Floatzel', 'Gastrodon (East)', 'Glameow', 'Purugly', 'Chatot'],
+        land: ['Magnemite', 'Magneton', 'Electabuzz', 'Wingull', 'Pelipper', 'Luxio', 'Floatzel', 'Glameow', 'Purugly', 'Chatot'],
         water: ['Tentacool', 'Tentacruel', 'Magikarp', 'Gyarados', 'Remoraid', 'Octillery', 'Sharpedo'],
     }),
     [new ClearDungeonRequirement(1, getDungeonIndex('Distortion World'))],
@@ -1276,7 +1304,7 @@ Routes.add(new RegionRoute(
 Routes.add(new RegionRoute(
     'Sinnoh Route 224', Region.sinnoh, 224,
     new RoutePokemon({
-        land: ['Oddish', 'Gloom', 'Bellsprout', 'Weepinbell', 'Beautifly', 'Dustox', 'Roselia', 'Floatzel', 'Gastrodon (East)', 'Chatot'],
+        land: ['Oddish', 'Gloom', 'Bellsprout', 'Weepinbell', 'Beautifly', 'Dustox', 'Roselia', 'Floatzel', 'Gastrodon (East)'],
         water: ['Tentacruel', 'Magikarp', 'Gyarados', 'Remoraid', 'Octillery', 'Pelipper', 'Luvdisc'],
     }),
     [new GymBadgeRequirement(BadgeEnums.Elite_SinnohChampion)],
@@ -1620,7 +1648,7 @@ Routes.add(new RegionRoute(
     new RoutePokemon({
         land: ['Caterpie', 'Weedle', 'Pidgey', 'Zigzagoon', 'Fletchling', 'Bunnelby', 'Scatterbug'],
     }),
-    [new RouteKillRequirement(10, Region.kalos, 1)],
+    [new TemporaryBattleRequirement('Shauna 1')],
 ));
 Routes.add(new RegionRoute(
     'Kalos Route 3', Region.kalos, 3,
@@ -2207,7 +2235,8 @@ Routes.add(new RegionRoute(
 Routes.add(new RegionRoute(
     'Heavy League Bridge', Region.alola, 33,
     new RoutePokemon({
-        water: ['Magikarp', 'Magikarp', 'Magikarp', 'Magikarp Calico (Orange, White)', 'Magikarp Orange Orca'],
+        water: ['Magikarp'],
+        special: [new SpecialRoutePokemon(['Magikarp Calico (Orange, White)', 'Magikarp Orange Orca'], undefined, 1 / 3)],
     }),
     [new GymBadgeRequirement(BadgeEnums.Quick_League)],
     undefined,
@@ -2218,7 +2247,8 @@ Routes.add(new RegionRoute(
 Routes.add(new RegionRoute(
     'Great League Bridge', Region.alola, 34,
     new RoutePokemon({
-        water: ['Magikarp', 'Magikarp', 'Magikarp', 'Magikarp Orange Two-Tone', 'Magikarp Orange Dapples'],
+        water: ['Magikarp'],
+        special: [new SpecialRoutePokemon(['Magikarp Orange Two-Tone', 'Magikarp Orange Dapples'], undefined, 1 / 3)],
     }),
     [new GymBadgeRequirement(BadgeEnums.Heavy_League)],
     undefined,
@@ -2229,7 +2259,8 @@ Routes.add(new RegionRoute(
 Routes.add(new RegionRoute(
     'Fast League Bridge', Region.alola, 35,
     new RoutePokemon({
-        water: ['Magikarp', 'Magikarp', 'Magikarp', 'Magikarp Calico (Orange, White, Black)', 'Magikarp Orange Two-Tone', 'Magikarp Calico (Orange, White)'],
+        water: ['Magikarp'],
+        special: [new SpecialRoutePokemon(['Magikarp Calico (Orange, White, Black)', 'Magikarp Orange Two-Tone', 'Magikarp Calico (Orange, White)'], undefined, 1 / 3)],
     }),
     [new GymBadgeRequirement(BadgeEnums.Great_League)],
     undefined,
@@ -2240,7 +2271,8 @@ Routes.add(new RegionRoute(
 Routes.add(new RegionRoute(
     'Luxury League Bridge', Region.alola, 36,
     new RoutePokemon({
-        water: ['Magikarp', 'Magikarp', 'Magikarp', 'Magikarp Pink Two-Tone', 'Magikarp Calico (Orange, White, Black)', 'Magikarp Orange Dapples'],
+        water: ['Magikarp'],
+        special: [new SpecialRoutePokemon(['Magikarp Pink Two-Tone', 'Magikarp Calico (Orange, White, Black)', 'Magikarp Orange Dapples'], undefined, 1 / 3)],
     }),
     [new GymBadgeRequirement(BadgeEnums.Fast_League)],
     undefined,
@@ -2251,7 +2283,8 @@ Routes.add(new RegionRoute(
 Routes.add(new RegionRoute(
     'Heal League Bridge', Region.alola, 37,
     new RoutePokemon({
-        water: ['Magikarp', 'Magikarp', 'Magikarp', 'Magikarp Grey Bubbles', 'Magikarp Grey Patches', 'Magikarp Orange Dapples'],
+        water: ['Magikarp'],
+        special: [new SpecialRoutePokemon(['Magikarp Grey Bubbles', 'Magikarp Grey Patches', 'Magikarp Orange Dapples'], undefined, 1 / 3)],
     }),
     [new GymBadgeRequirement(BadgeEnums.Luxury_League)],
     undefined,
@@ -2262,7 +2295,8 @@ Routes.add(new RegionRoute(
 Routes.add(new RegionRoute(
     'Ultra League Bridge', Region.alola, 38,
     new RoutePokemon({
-        water: ['Magikarp', 'Magikarp', 'Magikarp', 'Magikarp Calico (Orange, White, Black)', 'Magikarp Orange Two-Tone', 'Magikarp Calico (Orange, White)', 'Magikarp Apricot Tiger', 'Magikarp Apricot Zebra', 'Magikarp Brown Zebra'],
+        water: ['Magikarp'],
+        special: [new SpecialRoutePokemon(['Magikarp Calico (Orange, White, Black)', 'Magikarp Orange Two-Tone', 'Magikarp Calico (Orange, White)', 'Magikarp Apricot Tiger', 'Magikarp Apricot Zebra', 'Magikarp Brown Zebra'], undefined, 1 / 3)],
     }),
     [new GymBadgeRequirement(BadgeEnums.Heal_League)],
     undefined,
@@ -2273,7 +2307,8 @@ Routes.add(new RegionRoute(
 Routes.add(new RegionRoute(
     'Elite Four League Pier', Region.alola, 39,
     new RoutePokemon({
-        water: ['Magikarp', 'Magikarp', 'Magikarp', 'Magikarp Black Forehead', 'Magikarp Pink Orca', 'Magikarp Grey Patches'],
+        water: ['Magikarp'],
+        special: [new SpecialRoutePokemon(['Magikarp Black Forehead', 'Magikarp Pink Orca', 'Magikarp Grey Patches'], undefined, 1 / 3)],
     }),
     [new GymBadgeRequirement(BadgeEnums.Ultra_League)],
     undefined,
@@ -2284,7 +2319,8 @@ Routes.add(new RegionRoute(
 Routes.add(new RegionRoute(
     'Master League Pier', Region.alola, 40,
     new RoutePokemon({
-        water: ['Magikarp', 'Magikarp', 'Magikarp', 'Magikarp Orange Mask', 'Magikarp Calico (Orange, Gold)', 'Magikarp Grey Bubbles'],
+        water: ['Magikarp'],
+        special: [new SpecialRoutePokemon(['Magikarp Orange Mask', 'Magikarp Calico (Orange, Gold)', 'Magikarp Grey Bubbles'], undefined, 1 / 3)],
     }),
     [new GymBadgeRequirement(BadgeEnums.E4_League)],
     undefined,
@@ -3095,7 +3131,7 @@ Routes.add(new RegionRoute(
         special:
       [
           new SpecialRoutePokemon(['Comfey'], new WeatherRequirement([WeatherType.Clear])),
-          new SpecialRoutePokemon(['Chansey'], new WeatherRequirement([WeatherType.Clear, WeatherType.Overcast, WeatherType.Rain, WeatherType.Thunderstorm, WeatherType.Snow, WeatherType.Blizzard, WeatherType.Harsh_Sunlight, WeatherType.Sandstorm])),          
+          new SpecialRoutePokemon(['Chansey'], new WeatherRequirement([WeatherType.Clear, WeatherType.Overcast, WeatherType.Rain, WeatherType.Thunderstorm, WeatherType.Snow, WeatherType.Blizzard, WeatherType.Harsh_Sunlight, WeatherType.Sandstorm])),
           new SpecialRoutePokemon(['Kingler'], new WeatherRequirement([WeatherType.Clear, WeatherType.Overcast, WeatherType.Rain, WeatherType.Thunderstorm, WeatherType.Harsh_Sunlight])),
           new SpecialRoutePokemon(['Starmie'], new WeatherRequirement([WeatherType.Clear, WeatherType.Overcast, WeatherType.Rain, WeatherType.Thunderstorm, WeatherType.Harsh_Sunlight, WeatherType.Fog])),
           new SpecialRoutePokemon(['Toxapex'], new WeatherRequirement([WeatherType.Clear, WeatherType.Overcast, WeatherType.Fog])),
@@ -3157,7 +3193,7 @@ Routes.add(new RegionRoute(
         water: ['Magikarp', 'Goldeen', 'Arrokuda', 'Corphish'],
         special:
       [
-          new SpecialRoutePokemon(['Chansey'], new WeatherRequirement([WeatherType.Clear, WeatherType.Overcast, WeatherType.Rain, WeatherType.Thunderstorm, WeatherType.Snow, WeatherType.Blizzard, WeatherType.Harsh_Sunlight, WeatherType.Sandstorm])),          
+          new SpecialRoutePokemon(['Chansey'], new WeatherRequirement([WeatherType.Clear, WeatherType.Overcast, WeatherType.Rain, WeatherType.Thunderstorm, WeatherType.Snow, WeatherType.Blizzard, WeatherType.Harsh_Sunlight, WeatherType.Sandstorm])),
           new SpecialRoutePokemon(['Amoonguss'], new WeatherRequirement([WeatherType.Clear, WeatherType.Overcast, WeatherType.Rain, WeatherType.Harsh_Sunlight])),
           new SpecialRoutePokemon(['Cramorant'], new WeatherRequirement([WeatherType.Clear, WeatherType.Overcast, WeatherType.Harsh_Sunlight, WeatherType.Snow, WeatherType.Hail, WeatherType.Blizzard, WeatherType.Windy, WeatherType.Sandstorm, WeatherType.Fog])),
           new SpecialRoutePokemon(['Tangrowth'], new WeatherRequirement([WeatherType.Clear, WeatherType.Harsh_Sunlight])),
@@ -3263,7 +3299,7 @@ Routes.add(new RegionRoute(
         water: ['Magikarp', 'Carvanha', 'Sharpedo', 'Corphish', 'Arrokuda', 'Staryu'],
         special:
       [
-          new SpecialRoutePokemon(['Stoutland'], new WeatherRequirement([WeatherType.Clear])),       
+          new SpecialRoutePokemon(['Stoutland'], new WeatherRequirement([WeatherType.Clear])),
           new SpecialRoutePokemon(['Kangaskhan'], new WeatherRequirement([WeatherType.Clear, WeatherType.Overcast])),
           new SpecialRoutePokemon(['Chansey'], new WeatherRequirement([WeatherType.Clear, WeatherType.Overcast, WeatherType.Rain, WeatherType.Thunderstorm, WeatherType.Snow, WeatherType.Blizzard, WeatherType.Harsh_Sunlight, WeatherType.Sandstorm])),
           new SpecialRoutePokemon(['Kingler'], new WeatherRequirement([WeatherType.Clear, WeatherType.Overcast, WeatherType.Rain, WeatherType.Thunderstorm, WeatherType.Harsh_Sunlight, WeatherType.Sandstorm])),
@@ -3275,7 +3311,7 @@ Routes.add(new RegionRoute(
           new SpecialRoutePokemon(['Drapion'], new WeatherRequirement([WeatherType.Overcast, WeatherType.Harsh_Sunlight])),
           new SpecialRoutePokemon(['Pelipper', 'Shelmet', 'Cramorant (Gulping)'], new WeatherRequirement([WeatherType.Rain])),
           new SpecialRoutePokemon(['Shinx', 'Scrafty', 'Toxicroak'], new WeatherRequirement([WeatherType.Rain, WeatherType.Thunderstorm])),
-          new SpecialRoutePokemon(['Luxray', 'Luxio', 'Magneton', 'Accelgor', 'Cramorant (Gorging)'], new WeatherRequirement([WeatherType.Thunderstorm])),          
+          new SpecialRoutePokemon(['Luxray', 'Luxio', 'Magneton', 'Accelgor', 'Cramorant (Gorging)'], new WeatherRequirement([WeatherType.Thunderstorm])),
           new SpecialRoutePokemon(['Fletchinder', 'Fomantis', 'Lilligant', 'Talonflame'], new WeatherRequirement([WeatherType.Harsh_Sunlight])),
           new SpecialRoutePokemon(['Silicobra', 'Scizor', 'Crustle', 'Skarmory', 'Escavalier', 'Jangmo-o'], new WeatherRequirement([WeatherType.Sandstorm])),
           new SpecialRoutePokemon(['Blissey', 'Wigglytuff', 'Comfey', 'Drifblim', 'Azumarill', 'Gardevoir'], new WeatherRequirement([WeatherType.Fog])),
@@ -3321,7 +3357,7 @@ Routes.add(new RegionRoute(
         special:
       [
           new SpecialRoutePokemon(['Lycanroc (Midday)', 'Mienshao'], new WeatherRequirement([WeatherType.Clear])),
-          new SpecialRoutePokemon(['Chansey'], new WeatherRequirement([WeatherType.Clear, WeatherType.Overcast, WeatherType.Rain, WeatherType.Thunderstorm, WeatherType.Snow, WeatherType.Blizzard, WeatherType.Harsh_Sunlight, WeatherType.Sandstorm])),          
+          new SpecialRoutePokemon(['Chansey'], new WeatherRequirement([WeatherType.Clear, WeatherType.Overcast, WeatherType.Rain, WeatherType.Thunderstorm, WeatherType.Snow, WeatherType.Blizzard, WeatherType.Harsh_Sunlight, WeatherType.Sandstorm])),
           new SpecialRoutePokemon(['Bisharp', 'Braviary', 'Lycanroc (Midnight)', 'Mandibuzz', 'Pawniard'], new WeatherRequirement([WeatherType.Overcast])),
           new SpecialRoutePokemon(['Jangmo-o'], new WeatherRequirement([WeatherType.Overcast, WeatherType.Harsh_Sunlight, WeatherType.Sandstorm, WeatherType.Fog])),
           new SpecialRoutePokemon(['Scrafty', 'Shinx', 'Toxicroak'], new WeatherRequirement([WeatherType.Rain, WeatherType.Thunderstorm])),
@@ -3349,9 +3385,9 @@ Routes.add(new RegionRoute(
       [
           new SpecialRoutePokemon(['Rotom (Mow)'], new WeatherRequirement([WeatherType.Clear])),
           new SpecialRoutePokemon(['Exeggutor'], new WeatherRequirement([WeatherType.Clear, WeatherType.Harsh_Sunlight])),
-          new SpecialRoutePokemon(['Chansey'], new WeatherRequirement([WeatherType.Clear, WeatherType.Overcast, WeatherType.Rain, WeatherType.Thunderstorm, WeatherType.Snow, WeatherType.Blizzard, WeatherType.Harsh_Sunlight, WeatherType.Sandstorm])),          
+          new SpecialRoutePokemon(['Chansey'], new WeatherRequirement([WeatherType.Clear, WeatherType.Overcast, WeatherType.Rain, WeatherType.Thunderstorm, WeatherType.Snow, WeatherType.Blizzard, WeatherType.Harsh_Sunlight, WeatherType.Sandstorm])),
           new SpecialRoutePokemon(['Rotom (Fan)', 'Tentacruel'], new WeatherRequirement([WeatherType.Overcast])),
-          new SpecialRoutePokemon(['Jellicent'], new WeatherRequirement([WeatherType.Overcast, WeatherType.Fog])),          
+          new SpecialRoutePokemon(['Jellicent'], new WeatherRequirement([WeatherType.Overcast, WeatherType.Fog])),
           new SpecialRoutePokemon(['Rotom (Frost)'], new WeatherRequirement([WeatherType.Rain])),
           new SpecialRoutePokemon(['Pelipper'], new WeatherRequirement([WeatherType.Rain, WeatherType.Thunderstorm])),
           new SpecialRoutePokemon(['Rotom (Wash)', 'Chinchou', 'Lanturn'], new WeatherRequirement([WeatherType.Thunderstorm])),
@@ -3404,10 +3440,10 @@ Routes.add(new RegionRoute(
       [
           new SpecialRoutePokemon(['Chansey'], new WeatherRequirement([WeatherType.Clear, WeatherType.Overcast, WeatherType.Rain, WeatherType.Thunderstorm, WeatherType.Snow, WeatherType.Blizzard, WeatherType.Harsh_Sunlight, WeatherType.Sandstorm])),
           new SpecialRoutePokemon(['Exeggutor'], new WeatherRequirement([WeatherType.Clear, WeatherType.Rain, WeatherType.Harsh_Sunlight])),
-          new SpecialRoutePokemon(['Mantyke'], new WeatherRequirement([WeatherType.Clear, WeatherType.Snow, WeatherType.Blizzard, WeatherType.Sandstorm])), 
-          new SpecialRoutePokemon(['Zoroark', 'Tentacruel'], new WeatherRequirement([WeatherType.Overcast])), 
-          new SpecialRoutePokemon(['Pelipper'], new WeatherRequirement([WeatherType.Overcast, WeatherType.Rain, WeatherType.Thunderstorm])),    
-          new SpecialRoutePokemon(['Jellicent'], new WeatherRequirement([WeatherType.Overcast, WeatherType.Fog])),    
+          new SpecialRoutePokemon(['Mantyke'], new WeatherRequirement([WeatherType.Clear, WeatherType.Snow, WeatherType.Blizzard, WeatherType.Sandstorm])),
+          new SpecialRoutePokemon(['Zoroark', 'Tentacruel'], new WeatherRequirement([WeatherType.Overcast])),
+          new SpecialRoutePokemon(['Pelipper'], new WeatherRequirement([WeatherType.Overcast, WeatherType.Rain, WeatherType.Thunderstorm])),
+          new SpecialRoutePokemon(['Jellicent'], new WeatherRequirement([WeatherType.Overcast, WeatherType.Fog])),
           new SpecialRoutePokemon(['Magnezone', 'Chinchou', 'Lanturn'], new WeatherRequirement([WeatherType.Thunderstorm])),
           new SpecialRoutePokemon(['Volcarona', 'Fletchinder'], new WeatherRequirement([WeatherType.Harsh_Sunlight])),
           new SpecialRoutePokemon(['Alakazam', 'Blissey', 'Comfey', 'Drifloon'], new WeatherRequirement([WeatherType.Fog])),
@@ -3430,7 +3466,7 @@ Routes.add(new RegionRoute(
         special:
       [
           new SpecialRoutePokemon(['Mantyke'], new WeatherRequirement([WeatherType.Clear, WeatherType.Snow, WeatherType.Blizzard, WeatherType.Sandstorm])),
-          new SpecialRoutePokemon(['Seadra'], new WeatherRequirement([WeatherType.Clear, WeatherType.Overcast, WeatherType.Rain, WeatherType.Harsh_Sunlight, WeatherType.Sandstorm, WeatherType.Fog])),          
+          new SpecialRoutePokemon(['Seadra'], new WeatherRequirement([WeatherType.Clear, WeatherType.Overcast, WeatherType.Rain, WeatherType.Harsh_Sunlight, WeatherType.Sandstorm, WeatherType.Fog])),
           new SpecialRoutePokemon(['Tentacruel'], new WeatherRequirement([WeatherType.Overcast])),
           new SpecialRoutePokemon(['Jellicent'], new WeatherRequirement([WeatherType.Overcast, WeatherType.Fog])),
           new SpecialRoutePokemon(['Pelipper'], new WeatherRequirement([WeatherType.Rain, WeatherType.Thunderstorm])),
@@ -3479,9 +3515,9 @@ Routes.add(new RegionRoute(
     new RoutePokemon({
         land: ['Audino', 'Mime Jr.'],
         special:
-      [          
+      [
           new SpecialRoutePokemon(['Mamoswine'], new WeatherRequirement([WeatherType.Clear, WeatherType.Overcast, WeatherType.Rain, WeatherType.Thunderstorm, WeatherType.Snow, WeatherType.Blizzard, WeatherType.Harsh_Sunlight, WeatherType.Sandstorm])),
-          new SpecialRoutePokemon(['Jynx'], new WeatherRequirement([WeatherType.Clear, WeatherType.Overcast, WeatherType.Snow, WeatherType.Blizzard, WeatherType.Harsh_Sunlight, WeatherType.Sandstorm, WeatherType.Fog])),        
+          new SpecialRoutePokemon(['Jynx'], new WeatherRequirement([WeatherType.Clear, WeatherType.Overcast, WeatherType.Snow, WeatherType.Blizzard, WeatherType.Harsh_Sunlight, WeatherType.Sandstorm, WeatherType.Fog])),
           new SpecialRoutePokemon(['Piloswine', 'Smoochum', 'Snom', 'Swinub'], new WeatherRequirement([WeatherType.Clear, WeatherType.Overcast, WeatherType.Snow, WeatherType.Blizzard, WeatherType.Harsh_Sunlight, WeatherType.Fog])),
           new SpecialRoutePokemon(['Dubwool', 'Wooloo', 'Snorlax'], new WeatherRequirement([WeatherType.Clear, WeatherType.Harsh_Sunlight])),
           new SpecialRoutePokemon(['Sneasel', 'Phantump'], new WeatherRequirement([WeatherType.Overcast])),
@@ -3515,7 +3551,7 @@ Routes.add(new RegionRoute(
           new SpecialRoutePokemon(['Swablu', 'Weavile'], new WeatherRequirement([WeatherType.Overcast, WeatherType.Rain, WeatherType.Thunderstorm])),
           new SpecialRoutePokemon(['Cryogonal'], new WeatherRequirement([WeatherType.Rain, WeatherType.Thunderstorm, WeatherType.Snow, WeatherType.Blizzard, WeatherType.Sandstorm])),
           new SpecialRoutePokemon(['Vanillish', 'Vanillite'], new WeatherRequirement([WeatherType.Snow, WeatherType.Blizzard])),
-          new SpecialRoutePokemon(['Vanilluxe'], new WeatherRequirement([WeatherType.Snow, WeatherType.Blizzard, WeatherType.Sandstorm])),         
+          new SpecialRoutePokemon(['Vanilluxe'], new WeatherRequirement([WeatherType.Snow, WeatherType.Blizzard, WeatherType.Sandstorm])),
           new SpecialRoutePokemon(['Absol'], new WeatherRequirement([WeatherType.Blizzard])),
           new SpecialRoutePokemon(['Eevee'], new WeatherRequirement([WeatherType.Blizzard, WeatherType.Sandstorm])),
           new SpecialRoutePokemon(['Magmar', 'Magby'], new WeatherRequirement([WeatherType.Harsh_Sunlight])),
@@ -3536,7 +3572,7 @@ Routes.add(new RegionRoute(
         special:
       [
           new SpecialRoutePokemon(['Gurdurr', 'Eevee', 'Conkeldurr', 'Leafeon'], new WeatherRequirement([WeatherType.Clear])),
-          new SpecialRoutePokemon(['Feebas', 'Nidoran(F)', 'Shelmet'], new WeatherRequirement([WeatherType.Clear, WeatherType.Overcast, WeatherType.Rain, WeatherType.Thunderstorm, WeatherType.Snow, WeatherType.Blizzard, WeatherType.Harsh_Sunlight, WeatherType.Fog])),     
+          new SpecialRoutePokemon(['Feebas', 'Nidoran(F)', 'Shelmet'], new WeatherRequirement([WeatherType.Clear, WeatherType.Overcast, WeatherType.Rain, WeatherType.Thunderstorm, WeatherType.Snow, WeatherType.Blizzard, WeatherType.Harsh_Sunlight, WeatherType.Fog])),
           new SpecialRoutePokemon(['Nidoking'], new WeatherRequirement([WeatherType.Clear, WeatherType.Overcast, WeatherType.Rain, WeatherType.Thunderstorm, WeatherType.Snow, WeatherType.Blizzard, WeatherType.Sandstorm, WeatherType.Fog])),
           new SpecialRoutePokemon(['Nidoqueen'], new WeatherRequirement([WeatherType.Clear, WeatherType.Overcast, WeatherType.Rain, WeatherType.Snow, WeatherType.Blizzard, WeatherType.Harsh_Sunlight, WeatherType.Sandstorm, WeatherType.Fog])),
           new SpecialRoutePokemon(['Dubwool', 'Wooloo'], new WeatherRequirement([WeatherType.Clear, WeatherType.Harsh_Sunlight])),
@@ -3569,7 +3605,7 @@ Routes.add(new RegionRoute(
       [
           new SpecialRoutePokemon(['Audino', 'Karrablast', 'Nidoran(M)', 'Nidoran(F)', 'Sinistea'], new WeatherRequirement([WeatherType.Clear, WeatherType.Overcast, WeatherType.Rain, WeatherType.Thunderstorm, WeatherType.Snow, WeatherType.Blizzard, WeatherType.Harsh_Sunlight, WeatherType.Fog])),
           new SpecialRoutePokemon(['Dragapult'], new WeatherRequirement([WeatherType.Clear, WeatherType.Overcast, WeatherType.Rain, WeatherType.Thunderstorm, WeatherType.Snow, WeatherType.Harsh_Sunlight])),
-          new SpecialRoutePokemon(['Polteageist'], new WeatherRequirement([WeatherType.Clear, WeatherType.Rain, WeatherType.Thunderstorm, WeatherType.Blizzard, WeatherType.Harsh_Sunlight, WeatherType.Sandstorm, WeatherType.Fog])),          
+          new SpecialRoutePokemon(['Polteageist'], new WeatherRequirement([WeatherType.Clear, WeatherType.Rain, WeatherType.Thunderstorm, WeatherType.Blizzard, WeatherType.Harsh_Sunlight, WeatherType.Sandstorm, WeatherType.Fog])),
           new SpecialRoutePokemon(['Phantump', 'Trevenant'], new WeatherRequirement([WeatherType.Overcast])),
           new SpecialRoutePokemon(['Lampent'], new WeatherRequirement([WeatherType.Overcast, WeatherType.Fog])),
           new SpecialRoutePokemon(['Dewpider', 'Araquanid'], new WeatherRequirement([WeatherType.Rain, WeatherType.Thunderstorm])),
@@ -3748,280 +3784,374 @@ Routes.add(new RegionRoute(
 /*
 Hisui
 */
+//Obsidian Fieldlands
 Routes.add(new RegionRoute(
     'Aspiration Hill', Region.hisui, 1,
     new RoutePokemon({
-        land: ['Bidoof', 'Starly', 'Shinx', 'Drifloon'],
+        land: ['Pichu', 'Wurmple', 'Bidoof', 'Starly', 'Shinx', 'Drifloon'],
     }),
     [new QuestLineStepCompletedRequirement('The Frenzied Nobles of Hisui', 8)],
 ));
 Routes.add(new RegionRoute(
     'Horseshoe Plains', Region.hisui, 2,
     new RoutePokemon({
-        land: ['Bidoof', 'Starly', 'Eevee', 'Drifloon', 'Buizel', 'Wurmple', 'Silcoon', 'Cascoon', 'Mime Jr.', 'Ponyta', 'Rapidash'],
+        land: ['Ponyta', 'Eevee', 'Wurmple', 'Silcoon', 'Cascoon', 'Starly', 'Bidoof', 'Buizel', 'Drifloon', 'Mime Jr.', 'Rapidash'],
+        special: [
+            new SpecialRoutePokemon(['Chansey', 'Floatzel', 'Happiny', 'Haunter', 'Gengar', 'Onix', 'Lickitung', 'Steelix', 'Sneasel', 'Ursaring', 'Toxicroak', 'Weavile', 'Lickilicky', 'Leafeon', 'Sylveon'], new MassOutbreakRequirement(Region.hisui, 2)),
+        ],
     }),
     [new MultiRequirement([new QuestLineStepCompletedRequirement('The Frenzied Nobles of Hisui', 11), new RouteKillRequirement(10, Region.hisui, 1)])],
 ));
 Routes.add(new RegionRoute(
     'Sandgem Flats', Region.hisui, 3,
     new RoutePokemon({
-        land: ['Mime Jr.', 'Mr. Mime', 'Drifblim', 'Abra', 'Kadabra', 'Luxio', 'Luxray', 'Shellos (West)', 'Gastrodon (West)', 'Alakazam', 'Staravia'],
+        land: ['Abra', 'Kadabra', 'Mr. Mime', 'Luxio', 'Luxray', 'Shellos (West)', 'Gastrodon (West)', 'Drifblim', 'Mime Jr.', 'Alakazam', 'Snorlax', 'Staravia'],
         headbutt: ['Wormadam (Plant)', 'Graveler'],
+        special: [
+            new SpecialRoutePokemon(['Haunter', 'Gengar', 'Onix', 'Lickitung', 'Eevee', 'Steelix', 'Sneasel', 'Ursaring', 'Toxicroak', 'Weavile', 'Lickilicky', 'Leafeon', 'Sylveon'], new MassOutbreakRequirement(Region.hisui, 3)),
+        ],
     }),
     [new ClearDungeonRequirement(1, getDungeonIndex('Floaro Gardens'))],
 ));
 Routes.add(new RegionRoute(
     'Deertrack Path', Region.hisui, 4,
     new RoutePokemon({
-        land: ['Kricketot', 'Zubat', 'Munchlax', 'Starly', 'Drifloon'],
+        land: ['Zubat', 'Kricketot', 'Munchlax', 'Starly', 'Drifloon'],
         headbutt: ['Burmy (Plant)', 'Geodude'],
     }),
-    [new DevelopmentRequirement()],
+    [new MultiRequirement([new QuestLineStepCompletedRequirement('The Frenzied Nobles of Hisui', 16), new RouteKillRequirement(10, Region.hisui, 1)])],
 ));
 Routes.add(new RegionRoute(
     'Deertrack Heights', Region.hisui, 5,
     new RoutePokemon({
-        land: ['Geodude', 'Zubat', 'Golbat', 'Shinx', 'Stantler', 'Starly', 'Staravia', 'Chimchar', 'Monferno'],
-        headbutt: ['Burmy (Plant)', 'Geodude'],
+        land: ['Zubat', 'Golbat', 'Geodude', 'Stantler', 'Chimchar', 'Monferno', 'Starly', 'Staravia', 'Shinx'],
+        headbutt: ['Burmy (Plant)'],
+        special: [
+            new SpecialRoutePokemon(['Wyrdeer'], new MultiRequirement([new ObtainedPokemonRequirement('Wyrdeer'), new MassOutbreakRequirement(Region.hisui, 5)])),
+        ],
     }),
-    [new DevelopmentRequirement()],
+    [new RouteKillRequirement(10, Region.hisui, 4)],
 ));
 Routes.add(new RegionRoute(
     'Windswept Run', Region.hisui, 6,
     new RoutePokemon({
-        land: ['Abra', 'Drifloon', 'Kricketot', 'Kricketune', 'Zubat', 'Buizel', 'Starly', 'Staravia'],
+        land: ['Zubat', 'Golbat', 'Abra', 'Kricketot', 'Kricketune', 'Buizel', 'Drifloon', 'Staravia', 'Starly'],
         headbutt: ['Burmy (Plant)', 'Geodude'],
+        special: [
+            new SpecialRoutePokemon(['Haunter', 'Gengar', 'Onix', 'Lickitung', 'Eevee', 'Steelix', 'Sneasel', 'Ursaring', 'Toxicroak', 'Weavile', 'Lickilicky', 'Leafeon', 'Sylveon'], new MassOutbreakRequirement(Region.hisui, 6)),
+        ],
     }),
-    [new DevelopmentRequirement()],
+    [new RouteKillRequirement(10, Region.hisui, 4)],
 ));
 Routes.add(new RegionRoute(
     'Nature\'s Pantry', Region.hisui, 7,
     new RoutePokemon({
-        land: ['Kricketot', 'Kricketune', 'Pichu', 'Pikachu', 'Zubat', 'Paras', 'Parasect', 'Starly', 'Staravia'],
+        land: ['Pikachu', 'Zubat', 'Golbat', 'Paras', 'Pichu', 'Kricketot', 'Kricketune', 'Parasect', 'Starly', 'Staravia', 'Staraptor'],
         headbutt: ['Burmy (Plant)', 'Geodude'],
+        special: [
+            new SpecialRoutePokemon(['Haunter', 'Gengar', 'Onix', 'Lickitung', 'Eevee', 'Steelix', 'Sneasel', 'Ursaring', 'Toxicroak', 'Weavile', 'Lickilicky', 'Leafeon', 'Sylveon'], new MassOutbreakRequirement(Region.hisui, 7)),
+        ],
     }),
-    [new DevelopmentRequirement()],
+    [new RouteKillRequirement(10, Region.hisui, 5)],
 ));
 Routes.add(new RegionRoute(
     'Worn Bridge', Region.hisui, 8,
     new RoutePokemon({
-        land: ['Geodude', 'Zubat'],
+        land: ['Zubat', 'Geodude', 'Buizel', 'Floatzel', 'Starly', 'Drifloon'],
         headbutt: ['Burmy (Plant)'],
+        special: [
+            new SpecialRoutePokemon(['Magikarp'], new MassOutbreakRequirement(Region.hisui, 8)),
+        ],
     }),
-    [new DevelopmentRequirement()],
+    [new RouteKillRequirement(10, Region.hisui, 7)],
 ));
 Routes.add(new RegionRoute(
     'Gruelling Grove', Region.hisui, 9,
     new RoutePokemon({
         land: ['Combee', 'Heracross', 'Beautifly', 'Dustox', 'Mothim'],
         headbutt: ['Burmy (Plant)', 'Wormadam (Plant)'],
+
     }),
-    [new DevelopmentRequirement()],
+    [new RouteKillRequirement(10, Region.hisui, 8)],
 ));
 Routes.add(new RegionRoute(
     'Tidewater Dam', Region.hisui, 10,
     new RoutePokemon({
-        land: ['Bidoof', 'Bibarel', 'Zubat', 'Golbat', 'Kricketot', 'Kricketune', 'Starly', 'Staravia'],
+        land: ['Zubat', 'Golbat', 'Starly', 'Staravia', 'Bidoof', 'Bibarel', 'Kricketot', 'Kricketune'],
         headbutt: ['Burmy (Plant)', 'Geodude'],
+        special: [
+            new SpecialRoutePokemon(['Sneasel', 'Weavile'], new MassOutbreakRequirement(Region.hisui, 10)),
+        ],
     }),
-    [new DevelopmentRequirement()],
+    [new RouteKillRequirement(10, Region.hisui, 7)],
 ));
 Routes.add(new RegionRoute(
     'Obsidian Falls', Region.hisui, 11,
     new RoutePokemon({
-        land: ['Gyarados'],
+        land: ['Zubat', 'Machop', 'Machoke', 'Geodude', 'Chansey', 'Happiny', 'Graveler', 'Blissey', 'Golbat', 'Starly', 'Staravia', 'Gyarados'],
         water: ['Magikarp'],
         headbutt: ['Burmy (Plant)'],
     }),
-    [new DevelopmentRequirement()],
+    [new RouteKillRequirement(10, Region.hisui, 9)],
 ));
 // Basculegion
 Routes.add(new RegionRoute(
     'Ramanas Island', Region.hisui, 12,
     new RoutePokemon({
-        land: ['Shellos (West)', 'Gastrodon (West)', 'Aipom', 'Drifloon', 'Drifblim', 'Chimchar', 'Monferno', 'Infernape', 'Starly', 'Staravia'],
+        land: ['Aipom', 'Chimchar', 'Monferno', 'Shellos (West)', 'Gastrodon (West)', 'Drifloon', 'Drifblim', 'Infernape', 'Starly', 'Staravia'],
+        water: ['Hisuian Qwilfish'],
         headbutt: ['Combee', 'Graveler'],
     }),
-    [new DevelopmentRequirement()],
+    [new QuestLineStepCompletedRequirement('The Frenzied Nobles of Hisui', 44)],
 ));
+
+//Crimson Mirelands
 Routes.add(new RegionRoute(
     'Golden Lowlands', Region.hisui, 13,
     new RoutePokemon({
-        land: ['Psyduck', 'Gastly', 'Budew', 'Kricketot', 'Kricketune', 'Paras', 'Parasect', 'Carnivine'],
-        headbutt: ['Burmy (Sand)', 'Geodude', 'Graveler'],
+        land: ['Pikachu', 'Paras', 'Parasect', 'Psyduck', 'Gastly', 'Haunter', 'Pichu', 'Kricketot', 'Kricketune', 'Budew', 'Raichu', 'Carnivine'],
+        headbutt: ['Burmy (Sand)', 'Wormadam (Sand)', 'Pachirisu', 'Geodude', 'Graveler'],
+        special: [
+            new SpecialRoutePokemon(['Golduck', 'Teddiursa', 'Ursaring', 'Ursaluna'], new MassOutbreakRequirement(Region.hisui, 13)),
+        ],
     }),
-    [new DevelopmentRequirement()],
+    [new QuestLineStepCompletedRequirement('The Frenzied Nobles of Hisui', 26)],
 ));
 Routes.add(new RegionRoute(
     'Scarlet Bog', Region.hisui, 14,
     new RoutePokemon({
-        land: ['Hippopotas', 'Hippowdon', 'Gastly', 'Haunter', 'Stunky', 'Skuntank', 'Croagunk', 'Geodude', 'Graveler'],
+        land: ['Geodude', 'Graveler', 'Gastly', 'Haunter', 'Onix', 'Stunky', 'Skuntank', 'Hippopotas', 'Hippowdon', 'Croagunk'],
+        headbutt: ['Burmy (Sand)', 'Pachirisu'],
+        special: [
+            new SpecialRoutePokemon(['Whiscash'], new MassOutbreakRequirement(Region.hisui, 14)),
+        ],
     }),
-    [new DevelopmentRequirement()],
+    [new RouteKillRequirement(10, Region.hisui, 13)],
 ));
 Routes.add(new RegionRoute(
-    'Cloudpool Ridge', Region.hisui, 15,
+    'Gapejaw Bog', Region.hisui, 15,
     new RoutePokemon({
-        land: ['Combee', 'Zubat', 'Golbat', 'Roselia', 'Kricketot', 'Kricketune', 'Paras', 'Parasect', 'Murkrow', 'Honchkrow', 'Roserade', 'Carnivine'],
-        headbutt: ['Burmy (Sand)', 'Geodude', 'Graveler'],
+        land: ['Psyduck', 'Geodude', 'Graveler', 'Gastly', 'Haunter', 'Tangela', 'Ralts', 'Roselia', 'Bidoof', 'Bibarel', 'Budew', 'Hippopotas', 'Croagunk', 'Ursaring', 'Pachirisu', 'Hippowdon', 'Tangrowth', 'Yanma', 'Carnivine'],
+        water: ['Barboach', 'Whiscash'],
+        headbutt: ['Burmy (Sand)', 'Wormadam (Sand)', 'Cherubi'],
+        special: [
+            new SpecialRoutePokemon(['Yanmega', 'Eevee', 'Flareon', 'Porygon', 'Snorlax', 'Cyndaquil', 'Quilava', 'Hisuian Typhlosion', 'Umbreon', 'Heracross', 'Porygon2', 'Luxio', 'Luxray', 'Floatzel', 'Drifblim', 'Lopunny', 'Porygon-Z'], new MassOutbreakRequirement(Region.hisui, 15)),
+            new SpecialRoutePokemon(['Cherrim (Overcast)'], new MultiRequirement([new ObtainedPokemonRequirement('Cherrim (Overcast)'), new WeatherRequirement([WeatherType.Clear, WeatherType.Overcast, WeatherType.Rain, WeatherType.Thunderstorm, WeatherType.Snow, WeatherType.Hail, WeatherType.Blizzard, WeatherType.Sandstorm, WeatherType.Fog, WeatherType.Windy])])),
+            new SpecialRoutePokemon(['Cherrim (Sunshine)'], new MultiRequirement([new ObtainedPokemonRequirement('Cherrim (Sunshine)'), new WeatherRequirement([WeatherType.Harsh_Sunlight])])),
+       
+        ],
     }),
-    [new DevelopmentRequirement()],
+    [new RouteKillRequirement(10, Region.hisui, 13)],
 ));
 Routes.add(new RegionRoute(
-    'Diamond Heath', Region.hisui, 16,
+    'Bolderoll Slope', Region.hisui, 16,
     new RoutePokemon({
-        land: ['Paras', 'Parasect', 'Zubat', 'Golbat', 'Rhyhorn'],
-        headbutt: ['Geodude', 'Graveler', 'Bonsly'],
+        land: ['Zubat', 'Golbat', 'Geodude', 'Graveler', 'Rhyhorn', 'Togetic'],
+        headbutt: ['Burmy (Sand)'],
+        special: [
+            new SpecialRoutePokemon(['Rhydon'], new MassOutbreakRequirement(Region.hisui, 16)),
+        ],
     }),
-    [new DevelopmentRequirement()],
+    [new RouteKillRequirement(10, Region.hisui, 14)],
 ));
 Routes.add(new RegionRoute(
     'Cottonsedge Prairie', Region.hisui, 17,
     new RoutePokemon({
-        land: ['Pachirisu', 'Togepi', 'Gastly', 'Haunter', 'Petilil'],
-        headbutt: ['Combee', 'Vespiquen', 'Geodude', 'Graveler'],
+        land: ['Golbat', 'Paras', 'Parasect', 'Gastly', 'Haunter', 'Tangela', 'Togepi', 'Roselia', 'Budew', 'Combee', 'Vespiquen', 'Pachirisu', 'Petilil', 'Carnivine', 'Togetic'],
+        headbutt: ['Burmy (Sand)', 'Geodude', 'Graveler'],
+        special: [
+            new SpecialRoutePokemon(['Chansey', 'Happiny', 'Eevee', 'Flareon', 'Porygon', 'Snorlax', 'Cyndaquil', 'Quilava', 'Hisuian Typhlosion', 'Umbreon', 'Heracross', 'Porygon2', 'Luxio', 'Luxray', 'Floatzel', 'Drifblim', 'Lopunny', 'Porygon-Z'], new MassOutbreakRequirement(Region.hisui, 17)),
+        ],
     }),
-    [new DevelopmentRequirement()],
+    [new RouteKillRequirement(10, Region.hisui, 16)],
 ));
+
 Routes.add(new RegionRoute(
     'Droning Meadow', Region.hisui, 18,
     new RoutePokemon({
-        land: ['Paras', 'Parasect', 'Gastly', 'Haunter', 'Bidoof', 'Bibarel', 'Yanma'],
-        headbutt: ['Combee', 'Vespiquen', 'Pachirisu', 'Geodude', 'Graveler'],
-    }),
-    [new DevelopmentRequirement()],
-));
-Routes.add(new RegionRoute(
-    'Bolderoll Slope', Region.hisui, 19,
-    new RoutePokemon({
-        land: ['Rhyhorn', 'Zubat', 'Zubat', 'Golbat', 'Geodude', 'Graveler'],
-        headbutt: ['Burmy (Sand)'],
-    }),
-    [new DevelopmentRequirement()],
-));
-Routes.add(new RegionRoute(
-    'Gapejaw Bog', Region.hisui, 20,
-    new RoutePokemon({
-        land: ['Bidoof', 'Bibarel', 'Gastly', 'Haunter', 'Croagunk', 'Tangela', 'Budew', 'Roselia', 'Geodude', 'Graveler', 'Ralts', 'Psyduck', 'Hippopotas', 'Tangrowth', 'Hippowdon', 'Carnivine', 'Yanma'],
+        land: ['Paras', 'Parasect', 'Gastly', 'Haunter', 'Yanma', 'Teddiursa', 'Ursaring', 'Turtwig', 'Grotle', 'Bidoof', 'Bibarel', 'Combee', 'Vespiquen', 'Yanmega'],
         water: ['Barboach', 'Whiscash'],
-        headbutt: ['Burmy (Sand)', 'Pachirisu'],
+        headbutt: ['Burmy (Sand)', 'Pachirisu', 'Geodude', 'Graveler'],
+        special: [
+            new SpecialRoutePokemon(['Eevee', 'Flareon', 'Porygon', 'Snorlax', 'Cyndaquil', 'Quilava', 'Hisuian Typhlosion', 'Umbreon', 'Heracross', 'Porygon2', 'Luxio', 'Luxray', 'Floatzel', 'Drifblim', 'Lopunny', 'Porygon-Z'], new MassOutbreakRequirement(Region.hisui, 18)),
+        ],
     }),
-    [new DevelopmentRequirement()],
+    [new RouteKillRequirement(10, Region.hisui, 17)],
 ));
+Routes.add(new RegionRoute(
+    'Diamond Heath', Region.hisui, 19,
+    new RoutePokemon({
+        land: ['Zubat', 'Golbat', 'Paras', 'Parasect', 'Rhyhorn', 'Carnivine'],
+        headbutt: ['Burmy (Sand)', 'Geodude', 'Graveler', 'Bonsly'],
+    }),
+    [new QuestLineStepCompletedRequirement('The Frenzied Nobles of Hisui', 35)],
+));
+Routes.add(new RegionRoute(
+    'Cloudpool Ridge', Region.hisui, 20,
+    new RoutePokemon({
+        land: ['Zubat', 'Golbat', 'Paras', 'Parasect', 'Sudowoodo', 'Murkrow', 'Roselia', 'Kricketot', 'Kricketune', 'Combee', 'Bonsly', 'Roserade', 'Honchkrow', 'Carnivine'],
+        headbutt: ['Burmy (Sand)', 'Geodude', 'Graveler'],
+    }),
+    [new RouteKillRequirement(10, Region.hisui, 19)],
+));
+
 Routes.add(new RegionRoute(
     'Ursa\'s Ring', Region.hisui, 21,
     new RoutePokemon({
-        land: ['Geodude', 'Graveler', 'Gastly', 'Haunter', 'Teddiursa', 'Ursaring', 'Yanma'],
+        land: ['Paras', 'Parasect', 'Geodude', 'Graveler', 'Gastly', 'Haunter', 'Teddiursa', 'Bidoof', 'Bibarel', 'Ursaring', 'Yanma'],
+        water: ['Barboach', 'Whiscash'],
         headbutt: ['Burmy (Sand)', 'Pachirisu'],
+        special: [
+            new SpecialRoutePokemon(['Goomy', 'Hisuian Sliggoo'], new MassOutbreakRequirement(Region.hisui, 21)),
+        ],
     }),
-    [new DevelopmentRequirement()],
+    [new QuestLineStepCompletedRequirement('The Frenzied Nobles of Hisui', 33)],
 ));
 //Basculegion
 Routes.add(new RegionRoute(
     'Holm of Trials', Region.hisui, 22,
     new RoutePokemon({
-        land: ['Psyduck', 'Golduck', 'Gastly', 'Haunter', 'Croagunk', 'Toxicroak', 'Petilil', 'Goomy', 'Hisuian Sliggoo', 'Torterra', 'Carnivine'],
+        land: ['Psyduck', 'Golduck', 'Gastly', 'Haunter', 'Croagunk', 'Toxicroak', 'Petilil', 'Goomy', 'Torterra', 'Hisuian Sliggoo', 'Carnivine'],
         headbutt: ['Burmy (Sand)', 'Pachirisu', 'Geodude', 'Graveler'],
+        special: [
+            new SpecialRoutePokemon(['Eevee', 'Flareon', 'Porygon', 'Snorlax', 'Cyndaquil', 'Quilava', 'Hisuian Typhlosion', 'Umbreon', 'Heracross', 'Porygon2', 'Luxio', 'Luxray', 'Floatzel', 'Drifblim', 'Lopunny', 'Porygon-Z', 'Hisuian Lilligant'], new MassOutbreakRequirement(Region.hisui, 22)),
+        ],
     }),
-    [new DevelopmentRequirement()],
+    [new QuestLineStepCompletedRequirement('The Frenzied Nobles of Hisui', 44)],
 ));
+
+//Cobalt Coastlands
 Routes.add(new RegionRoute(
     'Crossing Slope', Region.hisui, 23,
     new RoutePokemon({
-        land: ['Glameow', 'Purugly', 'Murkrow', 'Starly', 'Staravia', 'Drifloon', 'Drifblim'],
+        land: ['Tangela', 'Eevee', 'Murkrow', 'Glameow', 'Purugly', 'Starly', 'Staravia', 'Mothim', 'Drifloon', 'Drifblim'],
         headbutt: ['Burmy (Trash)', 'Wormadam (Trash)', 'Geodude', 'Graveler'],
+        special: [
+            new SpecialRoutePokemon(['Tangrowth', 'Kadabra', 'Alakazam', 'Magnemite', 'Magneton', 'Rhydon', 'Mr. Mime', 'Vaporeon', 'Flareon', 'Skuntank', 'Carnivine', 'Magnezone', 'Rhyperior'], new MassOutbreakRequirement(Region.hisui, 21)),
+        ],
     }),
-    [new DevelopmentRequirement()],
+    [new QuestLineStepCompletedRequirement('The Frenzied Nobles of Hisui', 39)],
 ));
 Routes.add(new RegionRoute(
     'Ginkgo Landing', Region.hisui, 24,
     new RoutePokemon({
-        land: ['Skorupi', 'Murkrow', 'Spheal', 'Drifloon', 'Buizel', 'Floatzel', 'Walrein', 'Machoke'],
+        land: ['Machop', 'Machoke', 'Murkrow', 'Spheal', 'Buizel', 'Floatzel', 'Drifloon', 'Skorupi', 'Walrein', 'Drapion'],
+        water: ['Drifblim', 'Mantyke'],
         headbutt: ['Burmy (Trash)', 'Wormadam (Trash)', 'Geodude', 'Graveler'],
+        special: [
+            new SpecialRoutePokemon(['Kadabra', 'Alakazam', 'Magnemite', 'Magneton', 'Rhydon', 'Mr. Mime', 'Eevee', 'Vaporeon', 'Flareon', 'Skuntank', 'Carnivine', 'Magnezone', 'Rhyperior'], new MassOutbreakRequirement(Region.hisui, 21)),
+        ],
     }),
-    [new DevelopmentRequirement()],
+    [new RouteKillRequirement(10, Region.hisui, 23)],
 ));
 Routes.add(new RegionRoute(
     'Aipom Hill', Region.hisui, 25,
     new RoutePokemon({
-        land: ['Aipom', 'Ambipom', 'Murkrow', 'Buizel', 'Floatzel', 'Combee', 'Mothim'],
+        land: ['Aipom', 'Murkrow', 'Combee', 'Buizel', 'Floatzel', 'Ambipom', 'Mothim'],
+        water: ['Drifloon', 'Drifblim', 'Mantyke'],
         headbutt: ['Burmy (Trash)', 'Wormadam (Trash)', 'Geodude', 'Graveler'],
     }),
-    [new DevelopmentRequirement()],
+    [new RouteKillRequirement(10, Region.hisui, 24)],
 ));
 Routes.add(new RegionRoute(
     'Bathers\' Lagoon', Region.hisui, 26,
     new RoutePokemon({
-        land: ['Starly', 'Staravia', 'Togepi', 'Drifloon', 'Drifblim', 'Buizel', 'Floatzel', 'Psyduck', 'Golduck', 'Murkrow', 'Beautifly', 'Dustox'],
+        land: ['Psyduck', 'Golduck', 'Togepi', 'Murkrow', 'Starly', 'Staravia', 'Buizel', 'Floatzel', 'Drifloon', 'Drifblim', 'Beautifly', 'Dustox', 'Honchkrow'],
+        water: ['Hisuian Qwilfish', 'Remoraid', 'Mantyke'],
         headbutt: ['Burmy (Trash)', 'Wormadam (Trash)', 'Geodude', 'Graveler'],
     }),
-    [new DevelopmentRequirement()],
+    [new RouteKillRequirement(10, Region.hisui, 25)],
 ));
 Routes.add(new RegionRoute(
     'Hideaway Bay', Region.hisui, 27,
     new RoutePokemon({
-        land: ['Spheal', 'Sealeo', 'Murkrow', 'Happiny', 'Chansey', 'Aipom'],
-        water: ['Remoraid'],
+        land: ['Chansey', 'Aipom', 'Murkrow', 'Spheal', 'Sealeo', 'Happiny', 'Ambipom'],
+        water: ['Hisuian Qwilfish', 'Remoraid', 'Drifloon', 'Drifblim'],
         headbutt: ['Burmy (Trash)', 'Wormadam (Trash)', 'Graveler'],
+        special: [
+            new SpecialRoutePokemon(['Walrein'], new MassOutbreakRequirement(Region.hisui, 27)),
+        ],
     }),
-    [new DevelopmentRequirement()],
+    [new RouteKillRequirement(10, Region.hisui, 25)],
 ));
 Routes.add(new RegionRoute(
     'Deadwood Haunt', Region.hisui, 28,
     new RoutePokemon({
-        land: ['Duskull', 'Dusclops', 'Dusknoir', 'Chatot', 'Starly', 'Staravia', 'Staraptor', 'Drifloon', 'Drifblim'],
-        headbutt: ['Geodude', 'Graveler'],
+        land: ['Duskull', 'Dusclops', 'Dusknoir', 'Starly', 'Staravia', 'Staraptor', 'Drifloon', 'Drifblim', 'Chatot'],
+        water: ['Remoraid'],
+        headbutt: ['Burmy (Trash)', 'Wormadam (Trash)', 'Geodude', 'Graveler'],
+        special: [
+            new SpecialRoutePokemon(['Kadabra', 'Alakazam', 'Magnemite', 'Magneton', 'Rhydon', 'Mr. Mime', 'Eevee', 'Vaporeon', 'Flareon', 'Skuntank', 'Carnivine', 'Magnezone', 'Rhyperior'], new MassOutbreakRequirement(Region.hisui, 28)),
+        ],
     }),
-    [new DevelopmentRequirement()],
+    [new RouteKillRequirement(10, Region.hisui, 26)],
 ));
 Routes.add(new RegionRoute(
     'Sand\'s Reach', Region.hisui, 29,
     new RoutePokemon({
-        land: ['Starly', 'Staravia', 'Drifloon', 'Drifblim'],
-        water: ['Remoraid'],
+        land: ['Gyarados', 'Starly', 'Staravia', 'Drifloon', 'Drifblim'],
+        water: ['Hisuian Qwilfish', 'Remoraid'],
         headbutt: ['Burmy (Trash)', 'Wormadam (Trash)', 'Geodude', 'Graveler'],
     }),
-    [new DevelopmentRequirement()],
+    [new RouteKillRequirement(10, Region.hisui, 28)],
 ));
 Routes.add(new RegionRoute(
     'Castaway Shore', Region.hisui, 30,
     new RoutePokemon({
-        land: ['Machop', 'Machoke', 'Murkrow', 'Skorupi', 'Drapion', 'Octillery'],
+        land: ['Machop', 'Machoke', 'Murkrow', 'Skorupi', 'Octillery', 'Starly', 'Staravia', 'Drifloon', 'Drifblim', 'Staraptor'],
+        water: ['Remoraid', 'Mantyke'],
         headbutt: ['Burmy (Trash)', 'Wormadam (Trash)', 'Geodude', 'Graveler'],
+        special: [
+            new SpecialRoutePokemon(['Drapion'], new MassOutbreakRequirement(Region.hisui, 30)),
+        ],
     }),
-    [new DevelopmentRequirement()],
+    [new RouteKillRequirement(10, Region.hisui, 24)],
 ));
 Routes.add(new RegionRoute(
     'Windbreak Stand', Region.hisui, 31,
     new RoutePokemon({
-        land: ['Parasect', 'Stantler', 'Hisuian Growlithe'],
-        headbutt: ['Wormadam (Trash)', 'Graveler'],
+        land: ['Pikachu', 'Paras', 'Parasect', 'Hisuian Growlithe', 'Murkrow', 'Stantler'],
+        headbutt: ['Burmy (Trash)', 'Wormadam (Trash)', 'Geodude', 'Graveler'],
+        special: [
+            new SpecialRoutePokemon(['Hisuian Arcanine', 'Kadabra', 'Alakazam', 'Magnemite', 'Magneton', 'Rhydon', 'Mr. Mime', 'Eevee', 'Vaporeon', 'Flareon', 'Skuntank', 'Carnivine', 'Magnezone', 'Rhyperior'], new MassOutbreakRequirement(Region.hisui, 31)),
+        ],
     }),
-    [new DevelopmentRequirement()],
+    [new RouteKillRequirement(10, Region.hisui, 24)],
 ));
 Routes.add(new RegionRoute(
     'Spring Path', Region.hisui, 32,
     new RoutePokemon({
-        land: ['Bibarel', 'Toxicroak', 'Mothim'],
+        land: ['Golduck', 'Piplup', 'Prinplup', 'Bibarel', 'Toxicroak', 'Mothim', 'Murkrow', 'Staraptor'],
         headbutt: ['Burmy (Trash)', 'Wormadam (Trash)', 'Graveler'],
+        special: [
+            new SpecialRoutePokemon(['Kadabra', 'Alakazam', 'Magnemite', 'Magneton', 'Rhydon', 'Mr. Mime', 'Eevee', 'Vaporeon', 'Flareon', 'Skuntank', 'Carnivine', 'Magnezone', 'Rhyperior'], new MassOutbreakRequirement(Region.hisui, 32)),
+        ],
     }),
-    [new DevelopmentRequirement()],
+    [new RouteKillRequirement(10, Region.hisui, 31)],
 ));
 Routes.add(new RegionRoute(
     'Islespy Shore', Region.hisui, 33,
     new RoutePokemon({
-        land: ['Sealeo', 'Walrein', 'Murkrow', 'Empoleon'],
+        land: ['Murkrow', 'Octillery', 'Sealeo', 'Walrein', 'Empoleon'],
+        water: ['Tentacool', 'Tentacruel', 'Hisuian Qwilfish', 'Drifloon', 'Drifblim', 'Basculin (White-Striped)'],
+        headbutt: ['Burmy (Trash)', 'Wormadam (Trash)', 'Graveler'],
+        special: [
+            new SpecialRoutePokemon(['Piplup', 'Prinplup', 'Magnemite', 'Magneton', 'Magnezone'], new MassOutbreakRequirement(Region.hisui, 33)),
+        ],
     }),
-    [new DevelopmentRequirement()],
+    [new RouteKillRequirement(10, Region.hisui, 32)],
 ));
 Routes.add(new RegionRoute(
     'Tranquility Cove', Region.hisui, 34,
     new RoutePokemon({
-        land: ['Shellos (East)', 'Staravia', 'Staraptor', 'Togepi', 'Togetic', 'Drifloon', 'Drifblim'],
-        water: ['Mantyke', 'Mantine', 'Basculin (White-Striped)', 'Remoraid', 'Hisuian Qwilfish'],
+        land: ['Togepi', 'Togetic', 'Staravia', 'Staraptor', 'Shellos (East)', 'Drifloon', 'Drifblim', 'Starly'],
+        water: ['Remoraid', 'Hisuian Qwilfish', 'Mantine', 'Mantyke', 'Basculin (White-Striped)'],
         headbutt: ['Burmy (Trash)', 'Wormadam (Trash)', 'Geodude', 'Graveler'],
+        special: [
+            new SpecialRoutePokemon(['Basculegion (Female)', 'Basculegion (Male)'], new MassOutbreakRequirement(Region.hisui, 34)),
+        ],
     }),
-    [new DevelopmentRequirement()],
+    [new QuestLineStepCompletedRequirement('The Frenzied Nobles of Hisui', 44)],
 ));
 Routes.add(new RegionRoute(
     'Lunker\'s Lair', Region.hisui, 35,
@@ -4029,163 +4159,217 @@ Routes.add(new RegionRoute(
         water: ['Tentacool', 'Tentacruel', 'Drifloon', 'Drifblim', 'Hisuian Qwilfish'],
         headbutt: ['Burmy (Trash)', 'Wormadam (Trash)'],
     }),
-    [new DevelopmentRequirement()],
+    [new MultiRequirement([
+        new QuestLineStepCompletedRequirement('The Frenzied Nobles of Hisui', 44),
+        new OneFromManyRequirement([
+            new RouteKillRequirement(10, Region.hisui, 29),
+            new RouteKillRequirement(10, Region.hisui, 30),
+            new RouteKillRequirement(10, Region.hisui, 34),
+        ]),
+    ])],
 ));
 Routes.add(new RegionRoute(
     'Seagrass Haven', Region.hisui, 36,
     new RoutePokemon({
         land: ['Shellos (East)', 'Gastrodon (East)'],
-        water: ['Finneon', 'Lumineon', 'Drifloon', 'Drifblim', 'Tentacool', 'Tentacruel'],
+        water: ['Finneon', 'Lumineon', 'Drifloon', 'Drifblim', 'Tentacool', 'Tentacruel', 'Hisuian Qwilfish'],
         headbutt: ['Burmy (Trash)', 'Wormadam (Trash)'],
     }),
-    [new DevelopmentRequirement()],
+    [new MultiRequirement([
+        new QuestLineStepCompletedRequirement('The Frenzied Nobles of Hisui', 44),
+
+        new RouteKillRequirement(10, Region.hisui, 33),
+
+    ])],
 ));
 Routes.add(new RegionRoute(
     'Tombolo Walk', Region.hisui, 37,
     new RoutePokemon({
         land: ['Happiny', 'Chansey'],
+        water: ['Hisuian Qwilfish', 'Remoraid', 'Drifloon', 'Drifblim'],
         headbutt: ['Burmy (Trash)', 'Wormadam (Trash)', 'Graveler'],
     }),
-    [new DevelopmentRequirement()],
+    [new MultiRequirement([
+        new QuestLineStepCompletedRequirement('The Frenzied Nobles of Hisui', 44),
+        new RouteKillRequirement(10, Region.hisui, 27),
+
+    ])],
 ));
+
+//Coronet highlands 
 Routes.add(new RegionRoute(
     'Heavenward Lookout', Region.hisui, 38,
     new RoutePokemon({
-        land: ['Luxio', 'Luxray', 'Paras', 'Parasect', 'Zubat', 'Golbat', 'Yanma', 'Yanmega'],
+        land: ['Zubat', 'Golbat', 'Paras', 'Parasect', 'Luxio', 'Luxray', 'Yanma', 'Yanmega'],
         headbutt: ['Burmy (Sand)', 'Wormadam (Sand)', 'Graveler'],
     }),
-    [new DevelopmentRequirement()],
+    [new QuestLineStepCompletedRequirement('The Frenzied Nobles of Hisui', 52)],
 ));
 Routes.add(new RegionRoute(
     'Wayward Wood', Region.hisui, 39,
     new RoutePokemon({
-        land: ['Stantler', 'Zubat', 'Golbat', 'Heracross', 'Paras', 'Parasect', 'Mothim'],
-        water: ['Psyduck', 'Golduck'],
+        land: ['Zubat', 'Golbat', 'Paras', 'Parasect', 'Psyduck', 'Golduck', 'Heracross', 'Stantler', 'Mothim'],
         headbutt: ['Bronzor'],
     }),
-    [new DevelopmentRequirement()],
+    [new ClearDungeonRequirement(1, getDungeonIndex('Ancient Wayward Cave'))],
 ));
 Routes.add(new RegionRoute(
     'Lonely Spring', Region.hisui, 40,
     new RoutePokemon({
-        land: ['Carnivine'],
-        water: ['Psyduck', 'Golduck'],
-        headbutt: ['Cherubi', 'Cherrim (Overcast)', 'Bronzor'],
+        land: ['Psyduck', 'Golduck', 'Carnivine'],
+        headbutt: ['Cherubi', 'Bronzor'],
+        special: [
+            new SpecialRoutePokemon(['Chansey', 'Happiny'], new MassOutbreakRequirement(Region.hisui, 40)),
+            new SpecialRoutePokemon(['Cherrim (Overcast)'], new MultiRequirement([new ObtainedPokemonRequirement('Cherrim (Overcast)'), new WeatherRequirement([WeatherType.Clear, WeatherType.Overcast, WeatherType.Rain, WeatherType.Thunderstorm, WeatherType.Snow, WeatherType.Hail, WeatherType.Blizzard, WeatherType.Sandstorm, WeatherType.Fog, WeatherType.Windy])])),
+            new SpecialRoutePokemon(['Cherrim (Sunshine)'], new MultiRequirement([new ObtainedPokemonRequirement('Cherrim (Sunshine)'), new WeatherRequirement([WeatherType.Harsh_Sunlight])])),
+       
+        ],
     }),
-    [new DevelopmentRequirement()],
+    [new RouteKillRequirement(10, Region.hisui, 41)],
 ));
 Routes.add(new RegionRoute(
     'Sonorous Path', Region.hisui, 41,
     new RoutePokemon({
-        land: ['Shinx', 'Luxio', 'Luxray', 'Teddiursa', 'Ursaring'],
+        land: ['Teddiursa', 'Ursaring', 'Shinx', 'Luxio', 'Luxray'],
         headbutt: ['Heracross', 'Bronzor'],
     }),
-    [new DevelopmentRequirement()],
+    [new ClearDungeonRequirement(1, getDungeonIndex('Ancient Quarry'))],
 ));
 Routes.add(new RegionRoute(
     'Celestica Trail', Region.hisui, 42,
     new RoutePokemon({
-        land: ['Rhyhorn', 'Rhydon', 'Onix', 'Steelix', 'Hippopotas', 'Hippowdon', 'Chimecho', 'Hisuian Sneasel'],
-        headbutt: ['Graveler'],
+        land: ['Onix', 'Rhyhorn', 'Rhydon', 'Hisuian Sneasel', 'Chimecho', 'Stunky', 'Skuntank', 'Hippopotas', 'Hippowdon', 'Steelix', 'Magnezone'],
+        water: ['Magikarp'],
+        headbutt: ['Burmy (Sand)', 'Wormadam (Sand)', 'Graveler'],
+        special: [
+            new SpecialRoutePokemon(['Magmar', 'Eevee', 'Jolteon', 'Octillery', 'Dusclops', 'Cranidos', 'Rampardos', 'Shieldon', 'Bastiodon', 'Ambipom', 'Drapion', 'Magmortar', 'Dusknoir', 'Sylveon', 'Rowlet', 'Dartrix', 'Hisuian Decidueye'], new MassOutbreakRequirement(Region.hisui, 42)),
+        ],
     }),
-    [new DevelopmentRequirement()],
+    [new ClearDungeonRequirement(1, getDungeonIndex('Celestica Ruins'))],
 ));
 Routes.add(new RegionRoute(
     'Fabled Spring', Region.hisui, 43,
     new RoutePokemon({
-        land: ['Cleffa', 'Clefairy', 'Clefable', 'Budew', 'Roselia'],
+        land: ['Clefairy', 'Cleffa', 'Roselia', 'Budew', 'Clefable', 'Magnezone'],
         water: ['Basculin (White-Striped)'],
         headbutt: ['Burmy (Sand)', 'Wormadam (Sand)', 'Graveler'],
     }),
-    [new DevelopmentRequirement()],
+    [new RouteKillRequirement(10, Region.hisui, 44)],
 ));
 Routes.add(new RegionRoute(
     'Bolderoll Ravine', Region.hisui, 44,
     new RoutePokemon({
-        land: ['Geodude', 'Graveler', 'Golem', 'Gastly', 'Haunter', 'Machop', 'Machoke'],
-        headbutt: ['Cherubi', 'Cherrim (Overcast)', 'Graveler'],
+        land: ['Machop', 'Machoke', 'Geodude', 'Graveler', 'Gastly', 'Haunter', 'Golem'],
+        headbutt: ['Cherubi', 'Graveler'],
+        special: [
+            new SpecialRoutePokemon(['Magmar', 'Eevee', 'Jolteon', 'Octillery', 'Dusclops', 'Cranidos', 'Rampardos', 'Shieldon', 'Bastiodon', 'Ambipom', 'Drapion', 'Magmortar', 'Dusknoir', 'Sylveon', 'Rowlet', 'Dartrix', 'Hisuian Decidueye'], new MassOutbreakRequirement(Region.hisui, 44)),
+            new SpecialRoutePokemon(['Cherrim (Overcast)'], new MultiRequirement([new ObtainedPokemonRequirement('Cherrim (Overcast)'), new WeatherRequirement([WeatherType.Clear, WeatherType.Overcast, WeatherType.Rain, WeatherType.Thunderstorm, WeatherType.Snow, WeatherType.Hail, WeatherType.Blizzard, WeatherType.Sandstorm, WeatherType.Fog, WeatherType.Windy])])),
+            new SpecialRoutePokemon(['Cherrim (Sunshine)'], new MultiRequirement([new ObtainedPokemonRequirement('Cherrim (Sunshine)'), new WeatherRequirement([WeatherType.Harsh_Sunlight])])),
+       
+        ],
     }),
-    [new DevelopmentRequirement()],
+    [new RouteKillRequirement(10, Region.hisui, 42)],
 ));
 Routes.add(new RegionRoute(
     'Stonetooth Rows', Region.hisui, 45,
     new RoutePokemon({
-        land: ['Bronzor', 'Bronzong', 'Rotom', 'Misdreavus', 'Mismagius'],
+        land: ['Misdreavus', 'Bronzor', 'Bronzong', 'Rotom', 'Mismagius'],
         headbutt: ['Burmy (Sand)', 'Wormadam (Sand)', 'Graveler'],
+        special: [
+            new SpecialRoutePokemon(['Magmar', 'Eevee', 'Jolteon', 'Octillery', 'Dusclops', 'Cranidos', 'Rampardos', 'Shieldon', 'Bastiodon', 'Ambipom', 'Drapion', 'Magmortar', 'Dusknoir', 'Sylveon', 'Rowlet', 'Dartrix', 'Hisuian Decidueye'], new MassOutbreakRequirement(Region.hisui, 45)),
+        ],
     }),
-    [new DevelopmentRequirement()],
+    [new RouteKillRequirement(10, Region.hisui, 44)],
 ));
 Routes.add(new RegionRoute(
     'Cloudcap Pass', Region.hisui, 46,
     new RoutePokemon({
-        land: ['Elekid', 'Electabuzz', 'Electivire', 'Luxio', 'Luxray'],
-        headbutt: ['Burmy (Sand)', 'Wormadam (Sand)', 'Nosepass'],
+        land: ['Machop', 'Machoke', 'Electabuzz', 'Gligar', 'Elekid', 'Luxio', 'Luxray', 'Electivire'],
+        headbutt: ['Burmy (Sand)', 'Wormadam (Sand)', 'Graveler', 'Nosepass'],
     }),
-    [new DevelopmentRequirement()],
+    [new ClearDungeonRequirement(1, getDungeonIndex('Sacred Plaza'))],
 ));
+
+//Alabaster Icelands
 Routes.add(new RegionRoute(
     'Whiteout Valley', Region.hisui, 47,
     new RoutePokemon({
-        land: ['Aipom', 'Snorunt'],
+        land: ['Aipom', 'Snorunt', 'Bergmite'],
         headbutt: ['Burmy (Trash)', 'Wormadam (Trash)'],
     }),
-    [new DevelopmentRequirement()],
+    [new QuestLineStepCompletedRequirement('The Frenzied Nobles of Hisui', 60)],
 ));
 Routes.add(new RegionRoute(
     'Bonechill Wastes', Region.hisui, 48,
     new RoutePokemon({
-        land: ['Swinub', 'Buneary', 'Lopunny', 'Gastly', 'Haunter', 'Glalie', 'Froslass', 'Bergmite', 'Snover', 'Abomasnow', 'Drifloon', 'Drifblim', 'Snorunt', 'Aipom', 'Piloswine'],
+        land: ['Gastly', 'Haunter', 'Aipom', 'Swinub', 'Piloswine', 'Snorunt', 'Glalie', 'Drifloon', 'Drifblim', 'Buneary', 'Lopunny', 'Snover', 'Abomasnow', 'Froslass', 'Bergmite'],
         headbutt: ['Burmy (Trash)', 'Wormadam (Trash)'],
+        special: [
+            new SpecialRoutePokemon(['Pikachu', 'Raichu', 'Rapidash', 'Scyther', 'Electabuzz', 'Eevee', 'Espeon', 'Scizor', 'Sealeo', 'Walrein', 'Tangrowth', 'Electivire', 'Glaceon', 'Oshawott', 'Dewott', 'Hisuian Samurott'], new MassOutbreakRequirement(Region.hisui, 48)),
+        ],
     }),
-    [new DevelopmentRequirement()],
+    [new RouteKillRequirement(10, Region.hisui, 47)],
 ));
 Routes.add(new RegionRoute(
     'Arena\'s Approach', Region.hisui, 49,
     new RoutePokemon({
-        land: ['Machop', 'Machoke', 'Bergmite', 'Gligar', 'Duskull', 'Dusclops', 'Elekid', 'Electabuzz', 'Lickitung', 'Snorlax', 'Lucario', 'Lopunny', 'Aipom', 'Buneary', 'Munchlax', 'Riolu', 'Machamp', 'Piloswine'],
-        headbutt: ['Burmy (Trash)', 'Wormadam (Trash)', 'Bergmite', 'Snorunt', 'Glalie'],
+        land: ['Machop', 'Machoke', 'Electabuzz', 'Aipom', 'Gligar', 'Swinub', 'Piloswine', 'Elekid', 'Duskull', 'Dusclops', 'Ambipom', 'Snover', 'Abomasnow', 'Bergmite', 'Machamp'],
+        headbutt: ['Burmy (Trash)', 'Wormadam (Trash)', 'Snorunt', 'Glalie'],
+        special: [
+            new SpecialRoutePokemon(['Pikachu', 'Raichu', 'Rapidash', 'Scyther', 'Electabuzz', 'Eevee', 'Espeon', 'Scizor', 'Sealeo', 'Walrein', 'Tangrowth', 'Electivire', 'Glaceon', 'Oshawott', 'Dewott', 'Hisuian Samurott'], new MassOutbreakRequirement(Region.hisui, 49)),
+        ],
     }),
-    [new DevelopmentRequirement()],
+    [new RouteKillRequirement(10, Region.hisui, 48)],
 ));
 Routes.add(new RegionRoute(
     'Avalanche Slopes', Region.hisui, 50,
     new RoutePokemon({
-        land: ['Aipom', 'Ambipom', 'Happiny', 'Chansey', 'Swinub', 'Piloswine', 'Gible', 'Gabite', 'Duskull', 'Dusclops', 'Snorunt', 'Glalie', 'Froslass', 'Lickitung', 'Lickilicky', 'Blissey', 'Garchomp'],
+        land: ['Lickitung', 'Chansey', 'Eevee', 'Aipom', 'Misdreavus', 'Swinub', 'Piloswine', 'Blissey', 'Duskull', 'Dusclops', 'Snorunt', 'Glalie', 'Ambipom', 'Happiny', 'Gible', 'Gabite', 'Lickilicky', 'Froslass', 'Bergmite', 'Garchomp'],
         headbutt: ['Burmy (Trash)', 'Wormadam (Trash)'],
+        special: [
+            new SpecialRoutePokemon(['Mamoswine', 'Pikachu', 'Raichu', 'Rapidash', 'Scyther', 'Electabuzz', 'Eevee', 'Espeon', 'Scizor', 'Sealeo', 'Walrein', 'Tangrowth', 'Electivire', 'Glaceon', 'Oshawott', 'Dewott', 'Hisuian Samurott'], new MassOutbreakRequirement(Region.hisui, 50)),
+        ],
     }),
-    [new DevelopmentRequirement()],
+    [new RouteKillRequirement(10, Region.hisui, 49)],
 ));
 Routes.add(new RegionRoute(
     'Icebound Falls', Region.hisui, 51,
     new RoutePokemon({
-        land: ['Machop', 'Machoke', 'Riolu', 'Lucario', 'Elekid', 'Electabuzz', 'Crobat'],
+        land: ['Machop', 'Machoke', 'Electabuzz', 'Aipom', 'Elekid', 'Duskull', 'Dusclops', 'Ambipom', 'Riolu', 'Lucario', 'Crobat'],
         headbutt: ['Burmy (Trash)', 'Wormadam (Trash)', 'Snorunt', 'Glalie'],
     }),
-    [new DevelopmentRequirement()],
+    [new RouteKillRequirement(10, Region.hisui, 49)],
 ));
 Routes.add(new RegionRoute(
     'Heart\'s Crag', Region.hisui, 52,
     new RoutePokemon({
-        land: ['Ralts', 'Kirlia', 'Drifloon', 'Drifblim', 'Aipom', 'Ambipom', 'Gardevoir', 'Rufflet'],
+        land: ['Aipom', 'Ralts', 'Kirlia', 'Drifloon', 'Drifblim', 'Ambipom', 'Gardevoir', 'Rufflet'],
         water: ['Basculin (White-Striped)'],
         headbutt: ['Burmy (Trash)', 'Wormadam (Trash)', 'Snorunt', 'Glalie'],
+        special: [
+            new SpecialRoutePokemon(['Pikachu', 'Raichu', 'Rapidash', 'Scyther', 'Electabuzz', 'Eevee', 'Espeon', 'Scizor', 'Sealeo', 'Walrein', 'Tangrowth', 'Electivire', 'Glaceon', 'Oshawott', 'Dewott', 'Hisuian Samurott'], new MassOutbreakRequirement(Region.hisui, 52)),
+        ],
     }),
-    [new DevelopmentRequirement()],
+    [new ClearDungeonRequirement(1, getDungeonIndex('Avalugg\'s Legacy'))],
 ));
 Routes.add(new RegionRoute(
     'Snowfall Hot Spring', Region.hisui, 53,
     new RoutePokemon({
-        land: ['Machoke', 'Lickitung', 'Snorlax', 'Lucario', 'Lopunny', 'Machop', 'Aipom', 'Buneary', 'Munchlax', 'Riolu'],
+        land: ['Machop', 'Machoke', 'Lickitung', 'Snorlax', 'Aipom', 'Buneary', 'Lopunny', 'Munchlax', 'Riolu', 'Lucario'],
+        headbutt: ['Bergmite'],
     }),
-    [new DevelopmentRequirement()],
+    [new RouteKillRequirement(10, Region.hisui, 54)],
 ));
 Routes.add(new RegionRoute(
     'Glacier Terrace', Region.hisui, 54,
     new RoutePokemon({
-        land: ['Gligar', 'Drifloon', 'Drifblim', 'Aipom', 'Snover', 'Hisuian Sneasel', 'Abomasnow'],
+        land: ['Aipom', 'Misdreavus', 'Gligar', 'Hisuian Sneasel', 'Stantler', 'Bidoof', 'Bibarel', 'Drifloon', 'Drifblim', 'Glameow', 'Purugly', 'Snover', 'Abomasnow', 'Hisuian Zorua', 'Hisuian Zoroark', 'Bergmite'],
         headbutt: ['Burmy (Trash)', 'Wormadam (Trash)', 'Snorunt', 'Glalie'],
+        special: [
+            new SpecialRoutePokemon(['Pikachu', 'Raichu', 'Rapidash', 'Scyther', 'Electabuzz', 'Eevee', 'Espeon', 'Scizor', 'Sealeo', 'Walrein', 'Tangrowth', 'Electivire', 'Glaceon', 'Oshawott', 'Dewott', 'Hisuian Samurott'], new MassOutbreakRequirement(Region.hisui, 54)),
+        ],
     }),
-    [new DevelopmentRequirement()],
+    [new ClearDungeonRequirement(1, getDungeonIndex('Avalugg\'s Legacy'))],
 ));
 
 /*
@@ -4206,7 +4390,7 @@ Routes.add(new RegionRoute(
         land: ['Hoppip', 'Paldean Wooper', 'Wingull', 'Ralts', 'Combee', 'Sunkern', 'Buizel', 'Pawmi', 'Gastly', 'Fletchling', 'Scatterbug', 'Spewpa', 'Oricorio (Pom-Pom)', 'Lechonk', 'Tarountula', 'Fidough', 'Happiny', 'Pichu', 'Bonsly', 'Skwovet', 'Shroodle', 'Bounsweet', 'Igglybuff', 'Drowzee', /*Fixed encounter only:*/'Wiglett', 'Pachirisu', 'Flamigo', 'Gimmighoul (Chest)'],
         water: ['Magikarp', 'Arrokuda', 'Azurill', 'Chewtle', 'Psyduck', 'Surskit'],
     }),
-    [new GymBadgeRequirement(BadgeEnums.Elite_GalarChampion)],
+    [new DevelopmentRequirement()],
 ));
 Routes.add(new RegionRoute(
     'South Province (Area Two)', Region.paldea, 3,
@@ -4214,14 +4398,14 @@ Routes.add(new RegionRoute(
         land: ['Pikachu', 'Jigglypuff', 'Eevee', 'Mareep', 'Hoppip', 'Starly', 'Fletchling', 'Smoliv', 'Fidough', 'Maschiff', 'Happiny', 'Pichu', 'Bonsly', 'Bounsweet', 'Skwovet', 'Shroodle', 'Applin', 'Igglybuff', 'Rockruff', 'Misdreavus', 'Makuhita', 'Skiddo', 'Yungoos', 'Nacli', 'Sunkern', 'Combee', 'Flabébé (Red)', 'Flabébé (Yellow)', 'Flabébé (Orange)', 'Flabébé (Blue)', 'Flabébé (White)', 'Kricketot', 'Diglett', 'Gastly', 'Drowzee', 'Bronzor', 'Tinkatink', 'Squawkabilly (Green)', 'Squawkabilly (Blue)', 'Squawkabilly (Yellow)', 'Squawkabilly (White)', /*Fixed encounter only:*/'Staravia', 'Vespiquen', 'Gimmighoul (Chest)'],
         water: ['Psyduck', 'Magikarp', 'Azurill', 'Buizel', 'Chewtle', 'Arrokuda', 'Tadbulb'],
     }),
-    [new GymBadgeRequirement(BadgeEnums.Elite_GalarChampion)],
+    [new DevelopmentRequirement()],
 ));
 Routes.add(new RegionRoute(
     'South Province (Area Three)', Region.paldea, 4,
     new RoutePokemon({
         land: ['Growlithe', 'Gulpin', 'Spoink', 'Shuppet', 'Shinx', 'Oricorio (Baile)', 'Rookidee', 'Nymble', 'Pawmi', 'Klawf', 'Murkrow', 'Dunsparce', 'Happiny', 'Tandemaus', 'Squawkabilly (Green)', 'Squawkabilly (Blue)', 'Squawkabilly (Yellow)', 'Squawkabilly (White)', 'Drifloon', 'Makuhita', 'Yungoos', 'Skiddo', 'Nacli', 'Gastly', 'Drowzee', 'Bronzor', 'Tinkatink', /*Fixed encounter only:*/'Talonflame', 'Staraptor', 'Gimmighoul (Chest)'],
     }),
-    [new GymBadgeRequirement(BadgeEnums.Elite_GalarChampion)],
+    [new DevelopmentRequirement()],
 ));
 
 // Halloween Event
@@ -4251,26 +4435,26 @@ const santaJynxReq = new OneFromManyRequirement([
     new MultiRequirement([
         new ItemOwnedRequirement('Christmas_present', 11, AchievementOption.less),
         new TemporaryBattleRequirement('Santa Jynx 1'),
-        new SpecialEventRequirement('Merry Christmas!'),
     ]),
     new MultiRequirement([
         new ItemOwnedRequirement('Christmas_present', 27, AchievementOption.less),
         new TemporaryBattleRequirement('Santa Jynx 2'),
-        new SpecialEventRequirement('Merry Christmas!'),
     ]),
     new MultiRequirement([
         new ItemOwnedRequirement('Christmas_present', 49, AchievementOption.less),
         new TemporaryBattleRequirement('Santa Jynx 3'),
-        new SpecialEventRequirement('Merry Christmas!'),
     ]),
     new MultiRequirement([
         new ItemOwnedRequirement('Christmas_present', 150, AchievementOption.less),
         new TemporaryBattleRequirement('Santa Jynx 4'),
-        new SpecialEventRequirement('Merry Christmas!'),
     ]),
 ]);
 Routes.getRoutesByRegion(Region.kanto).forEach(route => {
     route.pokemon.special.push(
-        new SpecialRoutePokemon(['Santa Jynx'], new CustomRequirement(ko.pureComputed(() => santaJynxReq.isCompleted()), true, 'During Merry Christmas! event, Santa Jynx appears for the day once its band is defeated at Bill\'s House and until too many Christmas presents have been collected.')),
-    );
+        new SpecialRoutePokemon(['Santa Jynx'], new MultiRequirement([
+            new SpecialEventRequirement('Merry Christmas!'),
+            new CustomRequirement(ko.pureComputed(() => santaJynxReq.isCompleted()), true,
+                'Santa Jynx appears for the day after defeating its Band at Bill\'s House, and will remain until the maximum number of Christmas presents have been collected.'),
+        ]),
+        ));
 });
